@@ -1,0 +1,7 @@
+.custom-announcement-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 95px;
+  background: var(--Black, #000);
+}

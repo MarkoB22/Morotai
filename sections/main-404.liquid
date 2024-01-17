@@ -1,0 +1,24 @@
+{{ '404.css' | asset_url | stylesheet_tag }}
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="not-found">
+      {% render 'svg-icons' with 'morotai-logo', fill: 'black' %}
+      <div>
+        <p class="not-found-banner">{{ 'sections.404.not_found_banner' | t }}</p>
+      </div>
+      <p style="    min-height: 80px;
+    max-height: 200px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">{{ 'sections.404.not_found_description_html' | t }}</p>
+      <a href="{{ routes.collections_url}}/damen" class="button accent2"
+        ><span>{{ 'general.shop_womens' | t }}</span></a
+      >
+      <a href="{{ routes.collections_url}}/herren-neu" class="button accent2"
+        ><span>{{ 'general.shop_mens' | t }}</span></a
+      >
+    </div>
+  </div>
+</div>

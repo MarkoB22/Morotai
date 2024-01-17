@@ -1,0 +1,550 @@
+<style>
+     .modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 80%;
+  }
+
+  .modal-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .close {
+    height: 25px;
+    width: 25px;
+    border-radius: 250px;
+    color: black;
+    position: absolute;
+    top: -7px;
+    right: 6px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+     z-index: 20000;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #333;
+  }
+
+  .close:hover
+   {
+    color: #333;
+  }
+
+  #popup-text {
+    margin-bottom: 0rem;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+</style>
+
+<script>
+  function openModal(badgeType) {
+    var modal = document.getElementById('popup1');
+    var popupText = document.getElementById('popup-text');
+
+    popupText.innerHTML = badgeType;
+
+    modal.style.display = 'block';
+  }
+
+  function closeModal() {
+    var modal = document.getElementById('popup1');
+    modal.style.display = 'none';
+  }
+
+  var closeBtn = document.querySelector('.close');
+  if(closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  window.addEventListener('click', function (event) {
+    var modal = document.getElementById('popup1');
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+</script>
+
+{%- case product-badges -%}
+  {% when '360 STRETCH' %}
+    <a
+      href="#popup1"
+      onclick="
+        {% if request.locale.iso_code == 'en' %}
+        openModal('360 STRETCH' )
+        {% else %}
+        openModal('360 STRETCH' )
+        {% endif %}
+      "
+    >
+      <img
+        id="popup-trigger"
+        src="{{ '360_STRETCH.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'WATER RESISTANT' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('WATER RESISTANT' ){% else %}openModal('WASSERRESISTEND' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'WATER_RESISTANT.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'WATER-REPELLENT' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('WATER-REPELLENT' ){% else %}openModal('WASSERABWEISEND' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'WATER-REPELLENT.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'ULTRA LIGHT' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('ULTRA LIGHT' ){% else %}openModal('LEICHT' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'ULTRA_LIGHT.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'ZIPPER POCKETS' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('ZIPPER POCKETS' ){% else %}openModal('REISSVERSCHLUSSTASCHEN' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'ZIPPER_POCKETS.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'AIR VENTS' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('AIR VENTS' ){% else %}openModal('LUFTEINSCHLÜSSE' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'AIR_VENTS.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'ANTI-WRINKLE' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('ANTI-WRINKLE' ){% else %}openModal('KNITTERFREI' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'ANTI-WRINKLE.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'BREATHABLE' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('BREATHABLE' ){% else %}openModal('ATMUNGSAKTIV' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'BREATHABLE.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'CHEST POCKET' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('CHEST POCKET' ){% else %}openModal('BRUSTTASCHE' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'CHEST_POCKET.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'DOUBLE LAYER' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('DOUBLE LAYER' ){% else %}openModal('ZWEI SCHICHTEN' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'DOUBLE_LAYER.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'DRAWSTRING' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('DRAWSTRING' ){% else %}openModal('KORDELZUG' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'DRAWSTRING.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'DURABLE' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('DURABLE' ){% else %}openModal('LANGLEBIG' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'DURABLE.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'ELASTIC CORD' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('ELASTIC CORD' ){% else %}openModal('ELASTISCHE KORDEL' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'ELASTIC_CORD.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'ELASTIC WAISTBAND' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('ELASTIC WAISTBAND' ){% else %}openModal('ELASTISCHER BUND' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'ELASTIC_WAISTBAND.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'FLATLOCK SEAM' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('FLATLOCK-SEAM' ){% else %}openModal('FLACHNAHT' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'FLATLOCK_SEAM.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'EMBROIDERED LOGO' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('EMBROIDERED-LOGO' ){% else %}openModal('GESTICKTES LOGO' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'EMBROIDERED_LOGO.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'HALF-ZIP' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('HALF-ZIP' ){% else %}openModal('HALBER REISSVERSCHLUSS' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'HALF_ZIP.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'HIGH WAIST' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('HIGH WAIST' ){% else %}openModal('HOHE TAILLE' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'HIGH_WAIST.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'LASER MESH' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('LASER MESH' ){% else %}openModal('LASER MESH' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'LASER_MESH.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'MESH INSERT' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('MESH-INSERT' ){% else %}openModal('MESH EINSATZ' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'MESH_INSERT.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'MODULAR PUSH-UP' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('MODULAR PUSH-UP' ){% else %}openModal('MODULAR PUSH-UP' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'MODULAR_PUSH-UP.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'MOISTURE WICKING' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('MOISTURE-WICKING' ){% else %}openModal('FEUCHTIGKEITSABWEISEND' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'MOISTURE_WICKING.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'OPAQUE FABRIC' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('OPAQUE-FABRIC' ){% else %}openModal('BLICKDICHTER STOFF' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'OPAQUE_FABRIC.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'PERFECT FIT' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('PERFECT FIT' ){% else %}openModal('PERFEKTE PASSFORM' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'PERFECT_FIT.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'PHONE POCKET' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('PHONE POCKET' ){% else %}openModal('HANDYTASCHE' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'PHONE_POCKET.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'QUICK DRY' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('QUICK DRY' ){% else %}openModal('SCHNELLTROCKNEND' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'QUICK_DRY.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'REFLECTIVE PRINTS' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('REFLECTIVE PRINTS' ){% else %}openModal('REFLEKTIERENDER DRUCKE' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'REFLECTIVE_PRINTS.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'SEAMLESS DESIGN' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('SEAMLESS DESIGN' ){% else %}openModal('NAHTLOSES DESIGN' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'SEAMLESS_DESIGN.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'SIDE POCKETS' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('SIDE POCKETS' ){% else %}openModal('SEITENTASCHEN' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'SIDE_POCKETS.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'THUMBHOLES' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('THUMBHOLES' ){% else %}openModal('DAUMENLÖCHER' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'THUMBHOLES.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'SOFT FLEECE' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('SOFT-FLEECE' ){% else %}openModal('WEICHER VLIES' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'SOFT_FLEECE.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'EASY CARE' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('EASY CARE' ){% else %}openModal('PFLEGELEICHT' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'EASY_CARE.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'FLEXIBILITY' %}
+    <a
+      href="#popup1"
+      onclick="{% if request.locale.iso_code == 'en' %} openModal('FLEXIBILITY' ){% else %}openModal('FLEXIBEL' ){% endif %}"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'FLEXIBILITY.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+{%- endcase -%}
+
+<div id="popup1" class="modal">
+  <div class="modal-content">
+    <span class="close">
+      <p style="background-color: grey; align-items: center; height: 25px; border-radius: 250px; display: flex; margin-bottom: 0px; justify-content: center;">
+        &times;
+      </p>
+    </span>
+    <p id="popup-text"></p>
+  </div>
+</div>

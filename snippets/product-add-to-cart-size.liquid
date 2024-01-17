@@ -1,0 +1,50 @@
+<div {{ block.shopify_attributes }}>
+            {%- if product != blank -%}
+              <product-form class="product-form" data-section="{{ section.id }}">
+                <div class="product-form__error-message-wrapper form-notification error" role="alert" hidden>
+                  {% render 'svg-icons' with 'thb-error' %}
+                  <span class="product-form__error-message"></span>
+                </div>
+                {%- form 'product',
+                  product,
+                  id: product_form_id,
+                  class: 'form',
+                  novalidate: 'novalidate',
+                  data-type: 'add-to-cart-form'
+                -%}
+                  <input
+                    type="hidden"
+                    name="id"
+                    value="{{ product.selected_or_first_available_variant.id }}"
+                    disabled
+                  >
+                  <div class="product-add-to-cart-container">
+                    <div class="form-notification error" style="display:none;"></div>
+                    <div class="add_to_cart_holder">
+                      <button
+                        type="submit"
+                        name="add"
+                        id="AddToCart"
+                        class="single-add-to-cart-button button outline {% unless product.selected_or_first_available_variant.available %}sold-out{% endunless %}"
+                        {% if product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span class="single-add-to-cart-button--text">
+                          {%- if product.selected_or_first_available_variant.available -%}
+                            {{ 'products.product.add_to_cart' | t }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <span class="loading-overlay">
+                          {% render 'svg-icons' with 'thb-loading' %}
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                {%- endform -%}
+              </product-form>
+            {%- else -%}
+            {%- endif -%}
+          </div>

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h1 class="text-center text-uppercase">{{ 'sections.returns.title' | t }}</h1>
+    <p class="text-center mb-m">{{ 'sections.returns.description' | t }}</p>
+    <p class="text-center mb-m">{{ 'sections.returns.description2' | t }}</p>
+
+    <div class="grid-3 mb-m">
+      <a href="https://morotai.shipping-portal.com/rp/" class="item-link justify-between center-align">
+        <p class="mb-none text-center">{{ 'sections.returns.domestic.title' | t }}</p>
+
+        {% render 'svg-icons' with 'germany-outline' %}
+        <p class="mb-none text-center">{{ 'sections.returns.domestic.description' | t }}</p>
+      </a>
+
+      <a href="https://web.global-e.com/Returns/Portal/oQFA" class="item-link justify-between center-align">
+        <p class="mb-none text-center">{{ 'sections.returns.international.title' | t }}</p>
+        <img
+          src="{{ 'ww-shipment.png' | file_img_url: '100x100' }}"
+          height="100px"
+          width="100px"
+        >
+        <p class="mb-none text-center">{{ 'sections.returns.international.description' | t }}</p>
+      </a>
+
+      <a href="kontakt-1" class="item-link justify-between center-align">
+        <p class="mb-none text-center">{{ 'sections.returns.contact.title' | t }}</p>
+        <img
+          src="{{ 'contact.png' | file_img_url: '100x100' }}"
+          height="100px"
+          width="100px"
+        >
+        <p class="mb-none text-center">{{ 'sections.returns.contact.description' | t }}</p>
+      </a>
+    </div>
+  </div>
+</div>

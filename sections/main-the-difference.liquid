@@ -1,0 +1,3866 @@
+{% liquid
+  assign full_width = section.settings.full_width
+  assign copyright_text = section.settings.copyright_text
+  assign show_language_switcher = section.settings.show_language_switcher
+  assign show_currency_switcher = section.settings.show_currency_switcher
+  assign show_payment_icons = section.settings.show_payment_icons
+  	assign desktop_height = section.settings.desktop_height
+	assign mobile_height = section.settings.mobile_height
+	assign full_width2 = section.settings.full_width2
+	assign fallback_image = section.settings.fallback_image
+	assign overlay_opacity = section.settings.overlay_opacity
+	assign video = section.settings.video
+	assign video_hosted = section.settings.video_hosted
+	assign subheading = section.settings.subheading
+	assign heading = section.settings.heading
+	assign text = section.settings.text
+	assign lightbox_button = section.settings.lightbox_button
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+%}
+
+{% assign alleProdukteUrl = 'https://morotai.com/collections/alle-produkte' | url_escape %}
+{% assign currentTextMotivation = 1 %}
+
+{% if request.locale.iso_code == 'en' %}
+  {% assign language_param = 'en' %}
+{% else %}
+  {% assign language_param = 'de' %}
+{% endif %}
+
+{% if language_param == 'en' %}
+  {% assign neotechUrl = 'https://morotai.com/en-hr/collections/neotech-line' | url_escape %}
+{% else %}
+  {% assign neotechUrl = 'https://morotai.com/de-hr/collections/neotech-line' | url_escape %}
+{% endif %}
+
+{% assign currentTextAufDen = 1 %}
+
+<link rel="stylesheet" href="{{ 'footer.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'footer.css' | asset_url | stylesheet_tag }}</noscript>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+  function changeImageSource(language, collection, element) {
+  $('.changeImageBtn').click(function () {
+  console.log("CLICK DETECTED");
+
+     $('.changeImageBtn').removeClass('underlined');
+     $(element).addClass('underlined');
+
+    var neotechLink = document.getElementById('neotechLink');
+
+    var engineeringGerman = "Eine Kollektion, gefertigt aus ultraleichten, hochleistungsfähigen Stoffen. Diese Kleidungsstücke bieten eine Vielzahl von Eigenschaften, wobei Atmungsaktivität und höchster Komfort im Vordergrund stehen. Entwickelt für Vielseitigkeit und zugeschnitten auf alle Sportarten, repräsentiert diese Linie den Höhepunkt technischer Sportbekleidung.";
+    var engineeringEnglish = "A collection crafted from ultra-lightweight, high-performance fabrics. These garments offer a variety of features, with a focus on breathability and maximum comfort. Designed for versatility and tailored to all sports, this line represents the pinnacle of technical sportswear.";
+
+    var chromeEnglish = "This premium line offers first-class functionality and aesthetics in perfect harmony. Whether running, cycling or in the gym, the CHROME LINE guarantees optimal comfort and maximum freedom of movement. With high-quality materials and cutting-edge technology, the Chrome line is the ideal choice for those who prioritize quality and futuristic style.";
+    var chromeGerman = "Diese Premium-Linie bietet erstklassige Funktionalität und Ästhetik in perfekter Harmonie. Ob beim Laufen, Radfahren oder im Fitnessstudio, die CHROME LINE garantiert optimalen Komfort und maximale Bewegungsfreiheit. Mit hochwertigen Materialien und modernster Technologie ist die Chrome-Linie die ideale Wahl für diejenigen, die Qualität und futuristischen Stil priorisieren.";
+
+    var essentialGerman = "Eine vielseitige Kollektion, entworfen für den täglichen Gebrauch. Diese Linie verbindet Stil und Komfort und bietet eine Mischung aus Lifestyle- und Streetwear-Ästhetik. Gefertigt aus einer Vielzahl von Stoffen, vereint die Essential-Linie modernes Design und außergewöhnlichen Komfort, was sie zur perfekten Wahl für Ihre täglichen Abenteuer macht.";
+    var essentialEnglish = "A versatile collection designed for everyday use. Combining style and comfort, this line offers a mix of lifestyle and streetwear aesthetics. Crafted from a variety of fabrics, the Essential line combines modern design and exceptional comfort, making it the perfect choice for your everyday adventures.";
+
+    var neotechGerman = "Eine Kollektion, gefertigt aus hochmodernen Fleece-Material. Diese Linie definiert Funktionalität und Komfort neu und bietet eine perfekte Balance zwischen Stil und Leistung. Ob bei der Verfolgung von Outdoor-Abenteuern oder gemütlichen Momenten im Inneren, die NEOTECH LINE garantiert unvergleichliche Wärme und Flexibilität. Mit fortschrittlicher Fleece-Technologie und außergewöhnlicher Handwerkskunst ist NEOTECH die ultimative Wahl für diejenigen, die sowohl Funktionalität als auch Mode suchen.";
+    var neotechEnglish = "A collection made from state-of-the-art fleece material. This line redefines functionality and comfort, offering a perfect balance between style and performance. Whether pursuing outdoor adventures or cozy moments indoors, the NEOTECH LINE guarantees unparalleled warmth and flexibility. With advanced fleece technology and exceptional craftsmanship, NEOTECH is the ultimate choice for those seeking both functionality and fashion.";
+
+    var buttons = document.querySelectorAll('.TextButtonRegular');
+    buttons.forEach(function (button) {
+      button.classList.remove('underline');
+    });
+
+    element.classList.add('underline');
+
+    var neededText = "";
+    var collectionText = 'en' ? chromeEnglish : chromeGerman;
+  
+    var image = $('#imageToChange');
+    var image2 = $('#imageToChange2');
+    var image3 = $('#imageToChange3');
+
+    https://morotai.com/collections/damen-engineering-line
+
+    if (collection === 'essential') {
+      neededText = 'essential';
+      collectionText = language == 'en' ? essentialEnglish : essentialGerman;
+      neotechLink.href = language == 'en' ? 'https://morotai.com/en-hr/collections/style-line' : "https://morotai.com/collections/style-line";
+      image.attr('src', '{{ 'MOROTAI_CT_by_Tribunalova_8_1.jpg' | file_img_url: '1500x2000' }}');
+      image2.attr('src', '{{ 'M-231J111-06_NKMR_Corporate_Sweatshirt_Dark_Grey_005_1.jpg' | file_img_url: '1500x2000' }}');
+      image3.attr('src', '{{ 'W-231B201-01_Premium_Soft_Tights_Black_007.jpg' | file_img_url: '1500x2000' }}');
+    } else if (collection === 'neotech') {
+      neededText = 'neotech';
+      collectionText = language == 'en' ? neotechEnglish : neotechGerman;
+      neotechLink.href = language == 'en' ? 'https://morotai.com/en-hr/collections/neotech-line' : "https://morotai.com/de-hr/collections/neotech-line";
+      image2.attr('src', '{{ 'M-231J104-06_NKMR_NEO_Zip_Sweatjacket_Dark_Grey_006.jpg' | file_img_url: '1500x2000' }}');
+      image.attr('src', '{{ 'MOROTAI_Iceland_22_21.jpg' | file_img_url: '1500x2000' }}');
+      image3.attr('src', '{{ 'W-231J204-01_NEO_Zip_Sweatjacket_Black_008.jpg' | file_img_url: '1500x2000' }}');
+      }
+       else if (collection === 'engineering') {
+      neededText = 'engineering';
+      collectionText = language == 'en' ? engineeringEnglish : engineeringGerman;
+      neotechLink.href = language == 'en' ? 'https://morotai.com/en-hr/collections/engineering-line' : "https://morotai.com/collections/engineering-line";
+      image2.attr('src', '{{ 'M-201T101-01_NKMR_Training_Dry_Half_Zip_Top_008.jpg' | file_img_url: '1500x2000' }}');
+      image.attr('src', '{{ 'MOROTAI_Summer_Berlin_35_1.jpg' | file_img_url: '1500x2000' }}');
+      image3.attr('src', '{{ 'W-210B206-04_Mesh_Performance_Tights_Grey_Melange_005.jpg' | file_img_url: '1500x2000' }}');
+                              
+    } else if (collection === 'chrome') {
+      neededText = 'chrome';
+      collectionText = language == 'en' ? chromeEnglish : chromeGerman;
+      neotechLink.href = language == 'en' ? 'https://morotai.com/en-hr/collections/chrome-line' : "https://morotai.com/collections/chrome-line";
+      image2.attr('src', '{{ 'M-221B101-01_NKMR_Kansei_Chrome_Basketball_Shorts_008_1_fd6583d5-d2e3-4a5b-bc34-089634721608.jpg' | file_img_url: '1500x2000' }}');
+      image.attr('src', '{{ 'MOROTAI_CHROME_By_Tribunalova_final_8.jpg' | file_img_url: '1500x2000' }}');
+      image3.attr('src', '{{ 'W-221B203-01_NAKA_Kansei_Chrome_Tights_007.jpg' | file_img_url: '1500x2000' }}');
+  }
+     var displayTextOfColletion = document.getElementById('display-text-collection');
+     displayTextOfColletion.innerText = neededText;
+
+     var displayText = document.getElementById('collectionDescription');
+     displayText.innerText = collectionText;
+
+     var collectionButtonText = 'en' ? "DISCOVER " + neededText : "ENTDECKE " + neededText;
+     var displayTextButtonNew = document.getElementById('shopAll');
+     displayTextButtonNew.innerText = collectionButtonText;
+}
+);
+  }
+</script>
+
+<script>
+  function updateImage() {
+    var image = document.getElementById('responsive-image');
+
+    if (window.innerWidth <= 768) {
+      image.src = "{{ 'MOROTAI_CHROME_By_Tribunalova_final_1_7_1.png' | file_img_url: '375x600' }}";
+    } else {
+      image.src = "{{ 'The-Difference-Banner.png' | file_img_url: '1920x700' }}";
+    }
+  }
+
+  updateImage();
+
+  window.addEventListener('resize', updateImage);
+</script>
+
+<script>
+    let aufDenCurrentText = 1;
+    let motivationText = 1;
+
+    var textCountMotivation = 1;
+
+  function updateText(slideNumber, text) {
+
+    var displayText = document.getElementById('display-text');
+
+    displayText.innerText = text;
+
+     document.querySelectorAll('.Frame49 .Ellipse11, .Frame49 .Ellipse10, .Frame49 .Ellipse12').forEach(function (el) {
+      el.style.background = 'white';
+    });
+
+    if (slideNumber === 1) {
+      document.querySelector('.Frame49 .Ellipse11').style.background = 'grey';
+      textCountMotivation = 1;
+    } else if (slideNumber === 2) {
+      document.querySelector('.Frame49 .Ellipse10').style.background = 'grey';
+      textCountMotivation = 2;
+    } else if (slideNumber === 3) {
+      document.querySelector('.Frame49 .Ellipse12').style.background = 'grey';
+      textCountMotivation = 3;
+    }
+  }
+
+  var textCount = 1;
+
+  function updateText2(slideNumber, text) {
+     
+    var displayText = document.getElementById('display-text2');
+
+    displayText.innerText = text;
+
+    document.querySelectorAll('.Frame52 .Ellipse11, .Frame52 .Ellipse10, .Frame52 .Ellipse12').forEach(function (el) {
+      el.style.background = 'black';
+    });
+
+    if (slideNumber === 1) {
+      document.querySelector('.Frame52 .Ellipse11').style.background = 'grey';
+      textCount = 1;
+    } else if (slideNumber === 2) {
+      document.querySelector('.Frame52 .Ellipse10').style.background = 'grey';
+            textCount = 2;
+    } else if (slideNumber === 3) {
+      document.querySelector('.Frame52 .Ellipse12').style.background = 'grey';
+            textCount = 3;
+    }
+  }
+
+   function updateTextEnglish(arrow, language) {
+    textNumberOne = language == 'en' ? "Sport is more than just a physical challenge – the right equipment is crucial. Scientific studies show that suitable sports clothing can significantly influence your motivation and performance. At MOROTAI we understand how challenging it can sometimes be to motivate yourself to exercise. That’s why we develop clothing that inspires you to live an active lifestyle." : "Sport ist mehr als nur eine körperliche Herausforderung – die richtige Ausrüstung ist entscheidend. Wissenschaftliche Studien zeigen, dass passende Sport- bekleidung maßgeblich deine Motivation und Leistung beeinflussen kann. Bei MOROTAI verstehen wir, wie herausfordernd es manchmal sein kann, sich zum Sport zu motivieren. Deshalb entwickeln wir Kleidung, die dich zu einem aktiven Lebensstil inspiriert.";
+    textNumberTwo = language == 'en' ? "Importance of Comfort: Comfort in your sportswear is essential. Uncomfortable clothing can distract during training and lead to discomfort. Well-fitting sportswear allows you freedom of movement and prevents the clothes from slipping or twisting. Sportswear that offers comfort and well-being strengthens your self-confidence and promotes your motivation, which in turn leads to better athletic performance." : "Bedeutung von Komfort: Komfort in deiner Sportbekleidung ist essentiell. Unbequeme Kleidung kann während des Trainings ablenken und zu Unbehagen führen. Gut sitzende Sportbekleidung ermöglicht dir Bewegungsfreiheit und verhindert das Verrutschen oder Verziehen der Kleidungsstücke. Sportbekleidung, die Komfort und Wohlbefinden bietet, stärkt dein Selbstvertrauen und fördert deine Motivation, was wiederum zu besserer sportlicher Leistung führt.";
+    textNumberThree = language == 'en' ? "Performance Enhancement: High-quality sportswear can enhance your performance by wicking away moisture and protecting your body from overheating. It supports specific movements, such as compression clothing, thus contributing to the improvement of your athletic performance. It is important that you feel comfortable in your sportswear, as this affects your performance, physical well-being, and self-confidence." : "Leistungssteigerung: Hochwertige Sportbekleidung kann deine Leistung steigern, indem sie Feuchtigkeit ableitet und deinen Körper vor Überhitzung schützt. Sie unterstützt bestimmte Bewegungen, wie beispielsweise Kompressionskleidung, und trägt so zur Verbesserung deiner sportlichen Performance bei. Es ist wichtig, dass du dich in deiner Sportbekleidung wohl fühlst, da dies deine Leistung, dein körperliches Wohlbefinden und dein Selbstvertrauen beeinflusst.";
+
+    var finalTextMot = textNumberOne;
+
+     document.querySelectorAll('.Frame49 .Ellipse11, .Frame49 .Ellipse10, .Frame49 .Ellipse12').forEach(function (el) {
+      el.style.background = 'white';
+    });
+    
+    if(arrow == 'right') {
+      if(textCountMotivation == 1) {
+      finalTextMot = textNumberTwo;
+      textCountMotivation = 2;
+        document.querySelector('.Frame49 .Ellipse10').style.background = 'grey';
+      }
+      else if (textCountMotivation == 2) {
+      finalTextMot = textNumberThree;
+      textCountMotivation = 3;
+         document.querySelector('.Frame49 .Ellipse12').style.background = 'grey';
+      }
+      else if (textCountMotivation == 3) {
+      finalTexMott = textNumberOne;
+      textCountMotivation = 1;
+        document.querySelector('.Frame49 .Ellipse11').style.background = 'grey';
+      }
+     }
+  else {
+    if(textCountMotivation == 1) {
+      finalTextMot = textNumberThree;
+      textCountMotivation = 3;
+      document.querySelector('.Frame49 .Ellipse12').style.background = 'grey';
+      }
+      else if (textCountMotivation == 2) {
+      finalTextMot = textNumberOne;
+       textCountMotivation = 1;
+      document.querySelector('.Frame49 .Ellipse11').style.background = 'grey';
+      }
+      else if ( textCountMotivation== 3) {
+      finalTextMot = textNumberTwo;
+      textCountMotivation = 2;
+      document.querySelector('.Frame49 .Ellipse10').style.background = 'grey';
+    }
+  }
+
+    var displayText = document.getElementById('display-text');
+    displayText.innerText = finalTextMot;
+  }
+
+  function updateTextEnglish2(arrow, language) {
+    textNumberOne = language == 'en' ? "Get your favorite activewear pieces, at MOROTAI we focus on what really counts - sport. As a dedicated athlete or recreational athlete, you are looking for an easy way to live your active lifestyle. With us you will not only find sportswear that works perfectly during training, but also styles that are ideal before and after sport. We understand that exercise is about the experience itself, not the hassle of choosing your wardrobe." : "Fokus auf das Wesentliche: Der Sport Bei MOROTAI konzentrieren wir uns auf das, was wirklich zählt – den Sport. Als engagierter Sportler oder Freizeitsportler suchst du nach einem einfachen Weg, deinen aktiven Lebensstil zu leben. Bei uns findest du nicht nur Sportbekleidung, die während des Trainings perfekt funktioniert, sondern auch Styles, die vor und nach dem Sport ideal sind. Wir verstehen, dass es beim Sport um das Erlebnis selbst geht, nicht um die Mühen der Auswahl deiner Garderobe.";
+    textNumberTwo = language == 'en' ? "Solutions for an Active Lifestyle Our clothing at MOROTAI is designed to support your entire active lifestyle. It solves a variety of problems - from selecting pieces to combining them. We offer smart, technical details and styles that you can wear anytime, whether before, during, or after sports. Imagine opening your closet and immediately finding the right pieces that always harmonize and are suitable for every situation." : "Lösungen für den aktiven Lebensstil Unsere Kleidung bei MOROTAI ist darauf ausgerichtet, deinen gesamten aktiven Lebensstil zu unterstützen. Sie löst vielerlei Probleme – von der Auswahl der Teile bis hin zu ihrer Kombination. Wir bieten smarte, technische Details und Styles, die du jederzeit tragen kannst, egal ob vor, während oder nach dem Sport. Stelle dir vor, du öffnest deinen Schrank und findest sofort die passenden Teile, die immer zusammen harmonieren und für jede Situation geeignet sind.";
+    textNumberThree = language == 'en' ? "Sportswear for the Entire Lifestyle At MOROTAI, it's not just about time in the gym or on the running track. We cover the complete lifestyle of an active person. Our products are designed to accompany you at every moment of your active life – whether it’s during training, leisure, or the moments in between. We create functional, stylish, and easy-to-combine sportswear that enriches your everyday life and helps you focus on what really matters – your passion, your fitness, your active life." : "Sportbekleidung für den gesamten Lifestyle Bei MOROTAI geht es nicht nur um die Zeit im Fitnessstudio oder auf der Laufstrecke. Wir decken den kompletten Lifestyle eines aktiven Menschen ab. Unsere Produkte sind so konzipiert, dass sie dich in jedem Moment deines aktiven Lebens begleiten – sei es beim Training, in der Freizeit oder in den Momenten dazwischen. Wir schaffen funktionale, stilvolle und einfach zu kombinierende Sportbekleidung, die deinen Alltag bereichert und dir hilft, dich auf das zu konzentrieren, was wirklich zählt – deine Leidenschaft, deine Fitness, dein aktives Leben.";
+
+    var finalText = textNumberOne;
+
+    document.querySelectorAll('.Frame52 .Ellipse11, .Frame52 .Ellipse10, .Frame52 .Ellipse12').forEach(function (el) {
+      el.style.background = 'black';
+    });
+
+    if(arrow == 'right') {
+      if(textCount == 1) {
+      finalText = textNumberTwo;
+      textCount = 2;
+        document.querySelector('.Frame52 .Ellipse10').style.background = 'grey';
+      }
+      else if (textCount == 2) {
+      finalText = textNumberThree;
+      textCount = 3;
+         document.querySelector('.Frame52 .Ellipse12').style.background = 'grey';
+      }
+      else if (textCount == 3) {
+      finalText = textNumberOne;
+      textCount = 1;
+        document.querySelector('.Frame52 .Ellipse11').style.background = 'grey';
+      }
+     }
+  else {
+    if(textCount == 1) {
+      finalText = textNumberThree;
+      textCount = 3;
+               document.querySelector('.Frame52 .Ellipse12').style.background = 'grey';
+
+      }
+      else if (textCount == 2) {
+      finalText = textNumberOne;
+      textCount = 1;
+                document.querySelector('.Frame52 .Ellipse11').style.background = 'grey';
+
+      }
+      else if (textCount == 3) {
+      finalText = textNumberTwo;
+      textCount = 2;
+                document.querySelector('.Frame52 .Ellipse10').style.background = 'grey';
+
+    }
+  }
+
+    var displayText = document.getElementById('display-text2');
+
+    displayText.innerText = finalText;
+  }
+</script>
+
+<script>
+  $(document).ready(function() {
+    var swipeElement160 = $('.Frame160 .Frame146');
+    setupSwipeDetection(swipeElement160, 'Frame160');
+
+    var swipeElement168 = $('.Frame168 .Frame146');
+    setupSwipeDetection(swipeElement168, 'Frame168');
+
+    function setupSwipeDetection(swipeElement, parentFrame) {
+      var startX, startY;
+      var minSwipeDistance = 50;
+
+      swipeElement.on('touchstart', function(e) {
+        startX = e.originalEvent.touches[0].pageX;
+        startY = e.originalEvent.touches[0].pageY;
+      });
+
+      swipeElement.on('touchend', function(e) {
+        var endX = e.originalEvent.changedTouches[0].pageX;
+        var endY = e.originalEvent.changedTouches[0].pageY;
+
+        var deltaX = endX - startX;
+        var deltaY = endY - startY;
+
+        if (Math.abs(deltaX) > minSwipeDistance && Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (deltaX > 0) {
+            handleSwipe('right', parentFrame);
+          } else {
+            handleSwipe('left', parentFrame);
+          }
+        }
+      });
+    }
+
+    var testval = '{{language_param }}';
+
+    function handleSwipe(direction) {
+      console.log('Swipe detected on .Frame146!', 'Direction:', direction);
+      if(direction == 'right') {
+        if(testval == 'de') {
+          updateTextEnglish('right', 'de')
+          updateTextEnglish2('right', 'de')
+        }
+        else if(testval == 'en') {
+          updateTextEnglish('right', 'en')
+          updateTextEnglish2('right', 'en')
+        }
+      }
+       else if(direction == 'left') {
+                 if(testval == 'de') {
+                   updateTextEnglish('left', 'de')
+                   updateTextEnglish2('left', 'de')
+                 }
+        else if(testval == 'en') {
+          updateTextEnglish('left', 'en')
+          updateTextEnglish2('left', 'en')}
+      }
+    }
+  });
+</script>
+
+<div>
+<div class="TheDifference">
+
+  {% comment %}
+<div style="position: relative; display: inline-block;">
+  <img style="width: 100%; height: auto; display: block;" id="responsive-image" src="{{ 'The_Differnce_Banner.jpg' | file_img_url: '1920x700' }}" alt="Banner Image">
+  <div class="new-banner" style="white-space: nowrap; font-family: 'Didot-Regular'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 4vw; font-weight: bold;">
+    {{ 'difference_page.difference_title' | t }}
+  </div>
+
+     <div class="new-banner-two" style="    flex-direction: column;
+    display: flex;    text-align: start; white-space: nowrap; font-family: 'Didot-Regular'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 4vw; font-weight: bold;">
+   <span>{{ 'difference_page.difference_title_first_half' | t }}</span>
+   <span>{{ 'difference_page.difference_title_second_half' | t }}</span>
+  </div>
+</div>
+{% endcomment %}
+
+
+  <div
+    class="Frame170"
+    
+  >
+    <div
+      class="Frame150"
+      style="align-items: flex-start;"
+    >
+    <div class="produkte">
+    
+
+ {% if request.locale.iso_code == 'en' %}
+<div
+        class="ProdukteDieEsDirEinfachMachenAktivZuBleiben"
+  style="display: flex; flex-direction: column;"
+      >
+        <span>{{ 'difference_page.intro_title' | t }}</span>
+        <span>{{ 'difference_page.intro_title_part_two' | t }}</span>
+        <span>{{ 'difference_page.intro_title_part_three' | t }}</span>
+      </div>            {% else %}
+<div
+        class="ProdukteDieEsDirEinfachMachenAktivZuBleiben"
+      >
+        {{ 'difference_page.intro_title' | t }}
+       
+      </div>              
+   {% endif %}
+
+
+      
+     </div>
+      <div
+        class="Frame171"
+      >
+        <img
+          class="Unbenannt1"
+          src="{{ 'diff-page.jpg' | file_img_url: '1250x650' }}"
+        >
+        <div
+          class="Frame149"
+        >
+          <div
+            class="MorotaiStelltZeitloseSportbekleidungHerDieSowohlFunktionalAlsAuchStilvollIstDieProdukteSindInSchwarzWeiUndGrauGehaltenSieSindMultifunktionalSowohlFuRSportlicheAktivitaTenAlsAuchFuRDenAlltagMitPraktischenFeaturesMorotaiLegtWertAufKomfortPerfektePassformUndASthetischesDesignWasDieSportmotivationSteigertDieKleidungIstSpeziellFuRDenSportlifestyleKonzipiertMitWeichenMaterialienUndLanglebigemDesignMorotaiVerbindetKomfortFunktionalitaTUndStilUmEinOptimalesSporterlebnisZuGewaHrleistenUndLegtDabeiBesonderenWertAufQualitaTUndNachhaltigkeit"
+          >
+            {{ 'difference_page.intro_description' | t }}
+          </div>
+          <a               
+            href="{{ alleProdukteUrl }}"
+>
+          <div
+            class="Button"
+            style="width: 243px; height: 43px; padding-top: 11px; padding-bottom: 10px; padding-left: 25px; padding-right: 25px; background: white; border-top-left-radius: 1px; border-top-right-radius: 1px; backdrop-filter: blur(14px); justify-content: center; align-items: center; gap: 8px; display: inline-flex"
+          >
+            <div
+              class="ShopAll"
+              style="text-align: center; color: black; font-size: 18px; font-family: Rajdhani; font-weight: 500; text-transform: uppercase; line-height: 21.60px; word-wrap: break-word"
+            >
+              {{ 'difference_page.intro_button' | t }} 
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="Frame153"
+      style="background: white;"
+    >
+      <div
+        class="Frame151"
+      >
+         <div
+          class="KonzentrationAufDasWesentliche"
+          style="display: flex; flex-direction: column"
+        >
+          <span>{{ 'difference_page.subtitle_top_part_one' | t }}</span>
+          <span>{{ 'difference_page.subtitle_top_part_two' | t }}</span>
+        </div>
+        <div
+          class="AufDenSport"
+          style="width: 65%"
+        >
+            {{ 'difference_page.subtitle_bottom' | t }}
+        </div>
+      </div>
+      <div
+        class="Frame152"
+      >
+        <img
+          class="MorotaiIceland22411"
+          src="{{ 'MOROTAI_Iceland_22_4_1_1.png' | file_img_url: '1250x650' }}"
+        >
+        <div
+          class="UnsereMissionIstEsSportbekleidungZuKreierenDieDichNichtNurBefaHigtSondernAuchInspiriertEinenAktivenLebensstilZuVerfolgenUndZuGenieEn"
+        >
+          {{ 'difference_page.description' | t }}
+        </div>
+      </div>
+    </div>
+    <div
+      class="Frame159"
+    >
+      <div class="Frame154">
+        <div
+          class="MaximalerKomfort"
+        >
+          <div
+            class="MaximalerKomfort"
+            style="align-items: flex-start;"
+          >
+            {{ 'difference_page.attributes.max_comfort' | t }}
+          </div>
+          <div
+            class="UnsereSportbekleidungIstSoBequemDassManSieNieWiederAusziehenMoChteDaUnsereSportbekleidungSowohlBeimSportAlsAuchImAlltagGetragenWerdenKannIstDasKeinProblem"
+            style="max-width: 500px;"
+          >
+            {{ 'difference_page.attributes.max_comfort_description' | t }}
+          </div>
+        </div>
+        <div class="MaximalerKomfort third" style="align-items: flex-end; max-width: 500px;">
+         <img
+              style="width: 100%; height: auto; max-width: 500px;"
+              src="{{ 'custom_resized_9b17ac00-b15e-441d-9203-5a6007175b38.jpg' | file_img_url: '3195x4472' }}"
+            >
+        </div>
+      </div>
+      <div class="Frame155" style="justify-content: flex-start; align-items: center; gap: 160px; display: inline-flex">
+        <div class="MultifunkTionalitaT" style="width: 100%; position: relative">
+          <div
+            class="Rectangle82"
+          ></div>
+          <div class="Group2" style="width: 100% height: auto;">
+            <img
+              class="icons-img"
+              style="width: 100%; max-width: 500px; height: auto;"
+              src="{{ 'custom_resized_f002a1f6-cb0e-4f0a-8cb3-02f64461a23c.jpg' | file_img_url: '3195x4472' }}"
+            >
+          </div>
+        </div>
+        <div
+          class="MultifunktionalitaT"
+          style="width: 100% !important; max-width: 500px;"
+        >
+          <div
+            class="MultifunktionalitaT"
+          >
+            {{ 'difference_page.attributes.multifunctional' | t }}
+          </div>
+          <div
+            class="UnsereProdukteSindMultifunktionalSieEignenSichFuRAlleGaNgigenSportArtenSodassDuNichtFuRJedeSportartEinAnderesOutfitBenoTigst"
+            style="color: white"
+          >
+            {{ 'difference_page.attributes.multifunctional_description' | t }}
+          </div>
+        </div>
+      </div>
+      <div
+        class="Frame156"
+        style="justify-content: flex-start; align-items: center; gap: 160px; display: inline-flex"
+      >
+        <div
+          class="SmarteDetails newSD"
+          style="width: 100%; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex; max-width: 500px;"
+        >
+          <div
+            class="SmarteDetails"
+            style="align-self: stretch; color: white; font-size: 36px; font-family: Rajdhani; font-weight: 600; text-transform: uppercase; line-height: 57.60px; word-wrap: break-word"
+          >
+            {{ 'difference_page.attributes.details' | t }}
+          </div>
+          <div
+            class="UnserFokusLiegtDaraufDeineTraiNingserfahrungSoKomfortabelWieMoGlichZuGestaltenDamitDuDichVollUndGanzAufDeinWorkoutKonzentrierenKannstInnovativeDetailsHelfenDirDabeiDasDuDeinTrainingSicherUndEffizentAbsolvierenKannstDurchschnittlichHatJedesProduktMindestens4SmarteDetails"
+            style="align-self: stretch; color: white; font-size: 1.6vw; font-family: Rajdhani; font-weight: 400; line-height: 120%; word-wrap: break-word"
+          >
+            {{ 'difference_page.attributes.details_description' | t }}
+          </div>
+        </div>
+        <div class="SmarteDetails third" style="width: 100%; position: relative; justify-content: flex-end; display: flex;">
+          <img
+            src="{{ 'custom_resized_ae807d5f-d0de-4f8e-a986-b49232beeab4.jpg' | file_img_url: '3195x4472' }}"
+            class="Rectangle83"
+            style="max-width: 500px;"
+          >
+        </div>
+      </div>
+      <div class="Frame157" style="justify-content: flex-start; align-items: center; gap: 160px; display: inline-flex">
+        <div class="ZeitloseDesigns" style="position: relative">
+          <div
+            class="Rectangle85"
+          ></div>
+          <div
+            class="Frame120"
+          >
+            <img
+              class="M231b10301NkmrCorporateSweatpantsBlack000"
+              src="{{ 'custom_resized_4e8ca692-113d-4ff7-b218-056b44f5bdd6.jpg' | file_img_url: '3195x4472' }}"
+              style="max-width: 500px;"
+            >
+          </div>
+        </div>
+        <div
+          class="ZeitloseDesigns"
+          style="max-width: 500px"
+        >
+          <div
+            class="ZeitloseDesigns"
+          >
+            {{ 'difference_page.attributes.timeless' | t }}
+          </div>
+          <div
+            class="WirVerbindenModernenStilMitEinemKlarenUnkompliziertenDesignInDerSportmodeWasUnsereBekleidungNichtNurZeitgemaSondernAuchLanglebigUndZeitlosMachtEinPerFekterBegleiterFuRVieleJahreOhneAnModischerRelevanzZuVerlieren"
+          >
+            {{ 'difference_page.attributes.timeless_description' | t }}
+          </div>
+        </div>
+      </div>
+      <div
+        class="Frame158"
+        style="width: 100%; justify-content: flex-start; align-items: center; gap: 60px; display: inline-flex"
+      >
+        <div
+          class="FarblicheEinfachheit"
+          style=""
+        >
+          <div
+            class="FarblicheEinfachheit"
+            style="align-items: flex-start;"
+          >
+            {{ 'difference_page.attributes.color' | t }}
+          </div>
+          <div
+            class="WirHabenEineMinimalistischeFarbPaletteGewaHltDamitSichUnsereProDukteProblemlosKombinierenLassenEgalWelcheProdukteDuAusDeinemKleiderschrankWaHlstSiePassenImMerPerfektZusammenUndGarantieRenEinStilvollesOutfitEineSorgeWeNigerFuRDich"
+          >
+            {{ 'difference_page.attributes.color_description' | t }}
+          </div>
+        </div>
+        <div class="FarblicheEinfachheit" style="align-items: flex-end;">
+          <img
+          class="MorotaiChromeByTribunalovaFinalWeb111"
+          src="{{ 'custom_resized_98ee9075-eb1f-4853-b98a-9e0290079f20.jpg' | file_img_url: '3195x4472' }}"
+          style="max-width: 500px;"
+        >
+        </div>
+      </div>
+    </div>
+    <div
+      class="Frame161"
+    >
+      <div
+        class="KonzentrationAufDasWesentlicheAufDenSport"
+      >
+         <div
+          class=""
+          style="display: flex; flex-direction: column"; 
+        >
+          <span>{{ 'difference_page.slider.title_part_one' | t }}</span>
+          <span style="margin-bottom: 50px;">{{ 'difference_page.slider.title_part_two' | t }}</span>
+        </div>
+        <div
+          class=""
+          style="text-align: end;"
+        >
+            {{ 'difference_page.slider.title_part_three' | t }}
+        </div>
+      </div>
+      <div
+        class="Frame172"
+        style="    flex-direction: column;
+    display: flex;
+    gap: 64px;"
+      >
+        <img
+          class="MorotaiChromeByTribunalovaFinalWeb111"
+          src="{{ 'MOROTAI_CHROME_By_Tribunalova_final_web_11_1_2.png' | file_img_url: '1250x650' }}"
+        >
+        <div
+          class="Frame160"
+        >
+          <div
+            class="Frame146"
+          >
+
+            {% if request.locale.iso_code == 'en' %}
+                <div class="pointer-inline" style="left: 14%; margin-top: 100px;  position: absolute;" onclick="updateTextEnglish2('left', 'en')">{%- render 'svg-icons' with 'left-arrow-black' -%}</div>
+            {% else %}
+                <div class="pointer-inline" style="left: 14%; margin-top: 100px;  position: absolute;" onclick="updateTextEnglish2('left', 'de')">{%- render 'svg-icons' with 'left-arrow-black' -%}</div>
+            {% endif %}
+            
+            <div
+              class="SichereDirDeineLiebstebActivewearTeileUmBeiMorotaiKonzentrierenWirUnsAufDasWasWirklichZaHltDenSportAlsEngagierterSportlerOderFreizeitsportlerSuchstDuNachEinemEinfachenWegDeinenAktivenLebensstilZuLebenBeiUnsFindestDuNichtNurSportbekleidungDieWaHrendDesTrainingsPerfektFunktioniertSondernAuchStylesDieVorUndNachDemSportIdealSindWirVerstehenDassEsBeimSportUmDasErlebnisSelbstGehtNichtUmDieMuHenDerAuswahlDeinerGarderobe"
+            id="display-text2"
+            style="height: 250px;"
+              >
+              {{ 'difference_page.slider.content' | t }}
+            </div>
+
+            {% if request.locale.iso_code == 'en' %}
+                <div class="pointer-inline" style="right: 14%; margin-top: 100px; position: absolute;" onclick="updateTextEnglish2('right', 'en')">{%- render 'svg-icons' with 'new-right-arrow' -%}</div>
+            {% else %}
+                <div class="pointer-inline" style="right: 14%;  margin-top: 100px;  position: absolute;" onclick="updateTextEnglish2('right', 'de')">{%- render 'svg-icons' with 'new-right-arrow' -%}</div>
+            {% endif %}
+            
+          </div>
+         <div class="Frame52" id="display-text2">
+  <div style="background: grey;" class="Ellipse11" onclick="{% if request.locale.iso_code == 'en' %} updateText2(1, 'Focus on the Essentials: The Sport At MOROTAI, we focus on what really matters – the sport. Whether you're a dedicated athlete or a recreational sportsperson, you're looking for a simple way to live your active lifestyle. With us, you will find not only sportswear that works perfectly during training but also styles that are ideal before and after sports. We understand that sports are about the experience itself, not the hassle of choosing your wardrobe.') {% else %} updateText2(1, 'Fokus auf das Wesentliche: Der Sport Bei MOROTAI konzentrieren wir uns auf das, was wirklich zählt – den Sport. Als engagierter Sportler oder Freizeitsportler suchst du nach einem einfachen Weg, deinen aktiven Lebensstil zu leben. Bei uns findest du nicht nur Sportbekleidung, die während des Trainings perfekt funktioniert, sondern auch Styles, die vor und nach dem Sport ideal sind. Wir verstehen, dass es beim Sport um das Erlebnis selbst geht, nicht um die Mühen der Auswahl deiner Garderobe. ') {% endif %}"></div>
+  <div style="background: black;"  class="Ellipse10" onclick="{% if request.locale.iso_code == 'en' %} updateText2(2, 'Solutions for an Active Lifestyle Our clothing at MOROTAI is designed to support your entire active lifestyle. It solves a variety of problems - from selecting pieces to combining them. We offer smart, technical details and styles that you can wear anytime, whether before, during, or after sports. Imagine opening your closet and immediately finding the right pieces that always harmonize and are suitable for every situation. ') {% else %} updateText2(2, 'Lösungen für den aktiven Lebensstil Unsere Kleidung bei MOROTAI ist darauf ausgerichtet, deinen gesamten aktiven Lebensstil zu unterstützen. Sie löst vielerlei Probleme – von der Auswahl der Teile bis hin zu ihrer Kombination. Wir bieten smarte, technische Details und Styles, die du jederzeit tragen kannst, egal ob vor, während oder nach dem Sport. Stelle dir vor, du öffnest deinen Schrank und findest sofort die passenden Teile, die immer zusammen harmonieren und für jede Situation geeignet sind. ') {% endif %}"></div>
+  <div style="background: black;" class="Ellipse12" onclick="{% if request.locale.iso_code == 'en' %} updateText2(3, 'Sportswear for the Entire Lifestyle At MOROTAI, it is not just about time in the gym or on the running track. We cover the complete lifestyle of an active person. Our products are designed to accompany you at every moment of your active life – whether it’s during training, leisure, or the moments in between. We create functional, stylish, and easy-to-combine sportswear that enriches your everyday life and helps you focus on what really matters – your passion, your fitness, your active life. ') {% else %} updateText2(3, 'Sportbekleidung für den gesamten Lifestyle Bei MOROTAI geht es nicht nur um die Zeit im Fitnessstudio oder auf der Laufstrecke. Wir decken den kompletten Lifestyle eines aktiven Menschen ab. Unsere Produkte sind so konzipiert, dass sie dich in jedem Moment deines aktiven Lebens begleiten – sei es beim Training, in der Freizeit oder in den Momenten dazwischen. Wir schaffen funktionale, stilvolle und einfach zu kombinierende Sportbekleidung, die deinen Alltag bereichert und dir hilft, dich auf das zu konzentrieren, was wirklich zählt – deine Leidenschaft, deine Fitness, dein aktives Leben. ') {% endif %}"></div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="Frame167"
+    >
+      <div
+        class="Frame162"
+      >
+       <div class="Produktlinien1Ziel">
+  <span class="left-part desktop-version">{{ 'difference_page.collections.collections_title' | t }}</span>
+  <span class="centered-equal desktop-version">=</span>
+  <span class="right-part desktop-version">{{ 'difference_page.collections.collections_title_ziel' | t }}</span>
+</div>
+        <div
+          class="UnsereMissionIstEsSportbekleidungZuKreierenDieDichNichtNurBefaHigtSondernAuchInspiriertEinenAktivenLebensstilZuVerfolgenUndZuGeniessen"
+        >
+          {{ 'difference_page.collections.collections_description' | t }}
+        </div>
+      </div>
+      <div
+        class="Frame166"
+      >
+        <div
+          class="Frame165"
+        >
+          <div
+            class="Frame8"
+          >
+            <div class="TextButtonRegular" >
+              <div
+                class="InsideMorotai changeImageBtn chrome"
+                id="buttonContainer"
+                onclick="changeImageSource('{{ language_param }}', 'chrome', this)"
+              >
+                {{ 'difference_page.collections.chrome' | t }}
+              </div>
+              <div
+                class="Vector5"
+              ></div>
+            </div>
+            <div class="TextButtonRegular"  >
+              <div
+                class="InsideMorotai changeImageBtn neotech underlined"
+                id="buttonContainer"
+                onclick="changeImageSource('{{ language_param }}', 'neotech', this)"
+              >
+                {{ 'difference_page.collections.neotech' | t }}
+              </div>
+              <div
+                class="Vector5"
+              ></div>
+            </div>
+                  
+            <div class="TextButtonRegular">
+              <div
+                class="InsideMorotai changeImageBtn engineering"
+                id="buttonContainer"
+                onclick="changeImageSource('{{ language_param }}', 'engineering', this)"
+              >
+                {{ 'difference_page.collections.engineering' | t }}
+              </div>
+              <div
+                class="Vector5"
+              ></div>
+            </div>
+            <div class="TextButtonRegular">
+              <div
+                class="InsideMorotai changeImageBtn essential"
+                id="buttonContainer"
+                 onclick="changeImageSource('{{ language_param }}', 'essential', this)"
+              >
+                {{ 'difference_page.collections.essential' | t }}
+              </div>
+              <div
+                class="Vector5"
+              ></div>
+            </div>
+          </div>
+          <div
+            class="Frame164"
+          >
+            <div
+              class="Frame163"
+            >
+              <div
+                class="NeotechCollection"
+                id="display-text-collection"
+              >
+                {{ 'difference_page.collections.neotech_collection' | t }}
+              </div>
+              <div
+                class="EineKollektionGefertigtAusHochmodernenFleeceMaterialDieseLinieDefiniertFunktionalitaTUndKomfortNeuUndBietetEinePerfekteBalanceZwischenStilUndLeistungObBeiDerVerfolgungVonOutdoorAbenteuernOderGemuTlichenMomentenImInnerenDieNeotechLinieGarantiertUnverGleichlicheWaRmeUndFlexibilitaTMitFortschrittlicherFleeceTechnologieUndAuErgewoHnlicherHandwerkskunstIstNeotechDieUltimativeWahlFuRDiejenigenDieSowohlFunktionalitaTAlsAuchModeSuchen"
+             id="collectionDescription"
+                  >
+                {{ 'difference_page.collections.neotech_description' | t }}
+              </div>
+            </div>
+            <a               
+              href="{{ neotechUrl }}"
+              id="neotechLink"
+>
+            <div
+              class="Button neotech-button"
+              style="width: auto; height: 43px; padding-top: 11px; padding-bottom: 10px; padding-left: 25px; padding-right: 25px; background: white; border-radius: 1px; backdrop-filter: blur(14px); justify-content: center; align-items: center; gap: 8px; display: inline-flex"
+            >
+              <div
+                class="ShopAll"
+                id="shopAll"
+                style="text-align: center; color: black; font-size: 18px; font-family: Rajdhani; font-weight: 500; text-transform: uppercase; line-height: 21.60px; word-wrap: break-word"
+              >
+                {{ 'difference_page.collections.neotech_button' | t }}
+              </div>
+              <div class="IconArrowRight" style="width: 17px; height: 17px; position: relative">
+                                          {%- render 'svg-icons' with 'simple-right-icon' -%}
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div
+          class="Frame148"
+        >
+          <img
+            class="MorotaiChromeByTribunalovaFinal16"
+            src="{{ 'MOROTAI_Iceland_22_21.jpg' | file_img_url: '1500x2000' }}"
+              id="imageToChange"
+            style="width: 100%"
+          >
+          <div
+            class="Frame147"
+          >
+            <img
+              class="M231j10406nkmrneozipsweatjacketDarkgrey006"
+              src="{{ 'M-231J104-06NKMRNEOZipSweatjacket_DarkGrey_006_1.png' | file_img_url: '1500x2000' }}"
+                id="imageToChange2"
+            >
+            <img
+              class="W231j20401NeoZipSweatjacketBlack007"
+              src="{{ 'W-231J204-01_NEO_Zip_Sweatjacket_Black_007_1.png' | file_img_url: '1500x2000' }}"
+                id="imageToChange3"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row {% if full_width %}full-width-row-full{% endif %}">
+	<div class="small-12 columns">
+		<background-video class="background-video {{ mobile_height }} {{ desktop_height }} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
+			{%- if fallback_image != blank -%}
+			<div class="background-video__fallback-img">
+				<img data-src="{{ fallback_image | image_url }}" alt="{{ fallback_image.alt | escape }}" width="{{ fallback_image.width }}" height="{{ fallback_image.height }}" class="lazyload" />
+				<noscript>
+				<img src="{{ fallback_image | image_url }}" alt="{{ fallback_image.alt | escape }}" width="{{ fallback_image.width }}" height="{{ fallback_image.height }}" />
+				</noscript>
+			</div>
+			{%- endif -%}
+			<div class="background-video__iframe" data-provider="{{ video.type }}">
+				{%- if video_hosted == blank -%}
+					{%- if video != blank -%}
+						{%- if video.type == 'youtube' -%}
+							<iframe data-src="https://www.youtube.com/embed/{{ video.id }}?loop=1&autoplay=1&mute=1&playlist={{ video.id }}&iv_load_policy=3&disablekb=1&controls=0&playsinline=1&enablejsapi=1" frameborder="0" class="lazyload" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.heading | escape }}" tabindex="-1"></iframe>
+						{%- else -%}
+							<iframe data-src="https://player.vimeo.com/video/{{ video.id }}?background=1" frameborder="0" class="lazyload" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.heading | escape }}" tabindex="-1"></iframe>
+						{%- endif -%}
+					{%- endif -%}
+				{%- else -%}
+					{{ video_hosted | video_tag: autoplay: true, loop: true, controls: false, muted: true }}
+				{%- endif -%}
+			</div>
+			<div class="background-video__overlay" style="--overlay-opacity: {{ overlay_opacity | divided_by: 100.00 }}"></div>
+			<div class="background-video__content-wrap">
+				<div class="background-video__content">
+					{%- if subheading != blank -%}
+					<p class="subheading">{{ subheading }}</p>
+					{%- endif -%}
+					{%- if heading != blank -%}
+					<h3 class="h1">{{ heading | newline_to_br }}</h3>
+					{%- endif -%}
+					{%- if text != blank -%}
+					<p>{{ text }}</p>
+					{%- endif -%}
+					{%- if lightbox_button -%}
+					<modal-opener class="video-lightbox-modal__opener no-js-hidden" data-modal="#VideoLightbox-{{ section.id }}">
+						<button id="VideoLightboxToggle-{{ section.id }}" class="video-lightbox-modal__button" type="button" aria-haspopup="dialog">
+							{% render 'svg-icons' with 'thb-video-play' %}</button>
+					</modal-opener>
+					<a href="{{ video.url }}" class="video-lightbox-modal__button no-js" target="_blank">{% render 'svg-icons' with 'thb-video-play' %}</a>
+					<modal-dialog id="VideoLightbox-{{ section.id }}" class="video-lightbox-modal">
+				    <div role="dialog" aria-label="{{ heading }}" aria-modal="true" class="video-lightbox-modal__content" tabindex="-1">
+							<button id="ModalClose-{{ section.id }}" type="button" class="video-lightbox-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'svg-icons' with 'close' %}</button>
+			        <div class="video-lightbox-modal__content-info">
+								{%- if video_hosted == blank -%}
+									{%- if video.type == 'youtube' -%}
+					          <iframe data-src="https://www.youtube.com/embed/{{ video.id }}?enablejsapi=1" class="js-youtube lazyload" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					        {%- else -%}
+					          <iframe data-src="https://player.vimeo.com/video/{{ video.id }}" class="js-vimeo lazyload" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					        {%- endif -%}
+								{%- else -%}
+									{{ video_hosted | video_tag: autoplay: false, loop: false, controls: true }}
+								{%- endif -%}
+			        </div>
+				    </div>
+				  </modal-dialog>
+					{%- endif -%}
+				</div>
+			</div>
+		</background-video>
+	</div>
+</div>
+{{- 'background-video.css' | asset_url | stylesheet_tag -}}
+<script src="{{ 'background-video.js' | asset_url }}" defer="defer"></script>
+    
+    <div class="MorotaiChromeLine1"></div>
+    <div
+      class="Frame169"
+      style="margin-top: 80px"
+    >
+      <div
+        class="DieseSportbekleidungGibtDirMotivation"
+      >
+      <span>{{ 'difference_page.outro_title' | t }}</span>
+      <span>{{ 'difference_page.outro_title_part_two' | t }}</span>
+      </div>
+      <div
+        class="Frame168"
+      >
+
+        <div class="Frame146">
+        {% if request.locale.iso_code == 'en' %}
+                <div class="pointer-inline" style="left: 14%;     margin-top: 80px; position: absolute;" onclick="updateTextEnglish('left', 'en')">{%- render 'svg-icons' with 'left-white-arrow' -%}</div>
+            {% else %}
+                <div class="pointer-inline" style="left: 14%;     margin-top: 80px; position: absolute;" onclick="updateTextEnglish('left', 'de')">{%- render 'svg-icons' with 'left-white-arrow' -%}</div>
+            {% endif %} 
+        
+        <div
+          class="SportIstMehrAlsNurEineKoRperlicheHerausforderungDieRichtigeAusruSTungIstEntscheidendWissenschaftlicheStudienZeigenDassPassendeSportBekleidungMaGeblichDeineMotivationUndLeistungBeeinflussenKannBeiMorotaiVerstehenWirWieHerausforderndEsManchmalSeinKannSichZumSportZuMotivierenDeshalbEntwickelnWirKleidungDieDichZuEinemAktivenLebensstilInspiriert"
+          id="display-text"
+        >
+          {{ 'difference_page.outro_description' | t }}
+        </div>
+
+{% if request.locale.iso_code == 'en' %}
+                <div class="pointer-inline" style="right: 14%;     margin-top: 80px; position: absolute;" onclick="updateTextEnglish('right', 'en')">{%- render 'svg-icons' with 'right-white-arrow' -%}</div>
+            {% else %}
+                <div class="pointer-inline" style="right: 14%;     margin-top: 80px; position: absolute;" onclick="updateTextEnglish('right', 'de')">{%- render 'svg-icons' with 'right-white-arrow' -%}</div>
+            {% endif %}
+        </div>
+            <div class="Frame49" id="slider">
+  <div style="background: grey;" class="Ellipse11" onclick="{% if request.locale.iso_code == 'en' %} updateText(1, 'Sport is more than just a physical challenge – the right equipment is crucial. Scientific studies show that suitable sportswear can significantly influence your motivation and performance. At MOROTAI, we understand how challenging it can sometimes be to motivate yourself to do sports. Thats why we develop clothing that inspires you to lead an active lifestyle.') {% else %} updateText(1, 'Sport ist mehr als nur eine körperliche Herausforderung – die richtige Ausrüstung ist entscheidend. Wissenschaftliche Studien zeigen, dass passende Sportbekleidung maßgeblich deine Motivation und Leistung beeinflussen kann. Bei MOROTAI verstehen wir, wie herausfordernd es manchmal sein kann, sich zum Sport zu motivieren. Deshalb entwickeln wir Kleidung, die dich zu einem aktiven Lebensstil inspiriert.') {% endif %}"></div>
+  <div class="Ellipse10" onclick="{% if request.locale.iso_code == 'en' %} updateText(2, 'Importance of Comfort:  Comfort in your sportswear is essential. Uncomfortable clothing can distract during training and lead to discomfort. Well-fitting sportswear allows you freedom of movement and prevents the clothes from slipping or twisting. Sportswear that offers comfort and well-being strengthens your self-confidence and promotes your motivation, which in turn leads to better athletic performance.') {% else %} updateText(2, 'Bedeutung von Komfort: Komfort in deiner Sportbekleidung ist essentiell. Unbequeme Kleidung kann während des Trainings ablenken und zu Unbehagen führen. Gut sitzende Sportbekleidung ermöglicht dir Bewegungsfreiheit und verhindert das Verrutschen oder Verziehen der Kleidungsstücke. Sportbekleidung, die Komfort und Wohlbefinden bietet, stärkt dein Selbstvertrauen und fördert deine Motivation, was wiederum zu besserer sportlicher Leistung führt.') {% endif %}"></div>
+  <div class="Ellipse12" onclick="{% if request.locale.iso_code == 'en' %} updateText(3, 'Performance Enhancement:  High-quality sportswear can enhance your performance by wicking away moisture and protecting your body from overheating. It supports specific movements, such as compression clothing, thus contributing to the improvement of your athletic performance. It is important that you feel comfortable in your sportswear, as this affects your performance, physical well-being, and self-confidence.') {% else %} updateText(3, 'Leistungssteigerung: Hochwertige Sportbekleidung kann deine Leistung steigern, indem sie Feuchtigkeit ableitet und deinen Körper vor Überhitzung schützt. Sie unterstützt bestimmte Bewegungen, wie beispielsweise Kompressionskleidung, und trägt so zur Verbesserung deiner sportlichen Performance bei. Es ist wichtig, dass du dich in deiner Sportbekleidung wohl fühlst, da dies deine Leistung, dein körperliches Wohlbefinden und dein Selbstvertrauen beeinflusst.') {% endif %}"></div>
+</div>
+
+            </div>
+      <img
+        class="MorotaiCtByTribunalovaWeb102"
+        src="{{ 'MOROTAI_CT_by_Tribunalova_web_10_2_1.png' | file_img_url: '1250x650' }}"
+      >
+           </div>
+
+   
+    
+     <footer class="footer custom" id="footer" style="display: block !important; width: 100%;">
+  <div
+    class="custom-footer"
+    style="
+      display: flex;
+      padding: 12px 0px 9px 0px;
+      justify-content: center;
+      align-items: center;
+      gap: 95px;
+      border-top: 1px solid var(--White, #FFF);
+      border-bottom: 1px solid var(--White, #FFF);
+      background: var(--Black, #000);
+    "
+  >
+    <span class="footer-quote">
+      {{ 'sections.footer.footer-quote' | t }}
+    </span>
+  </div>
+  <div
+    class="menu-container row {% if full_width %}full-width-row{% endif %}"
+  >
+    {%- for block in section.blocks -%}
+      {% if block.type == 'text' %}
+        {%- liquid
+          assign column_class = 'small-12 medium-4 large-2'
+          case block.settings.column_size
+            when 'medium'
+              assign column_class = 'small-12 medium-3'
+            when 'large'
+              assign column_class = 'small-12 medium-6'
+          endcase
+        -%}
+        <div class="{{ column_class | escape }} columns" {{ block.shopify_attributes }}>
+          <div class="widget widget--text">
+            {%- if block.settings.title != blank -%}
+              <div class="thb-widget-title">{{ block.settings.title }}</div>
+            {%- endif -%}
+            {%- if block.settings.image != blank -%}
+              {% assign image = block.settings.image %}
+              {% assign master_width = image.src.width | append: 'x' | append: image.src.height %}
+              {%- render 'responsive-image', image: image, sizes: master_width, retina: 1 -%}
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <div class="rte text-size--{{ block.settings.text_size }}">
+                {{ block.settings.text }}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.button_text != blank -%}
+              <a
+                class="text-button"
+                href="{{ block.settings.button_link }}"
+                role="button"
+                title="{{ block.settings.button_text | escape }}"
+              >
+                {{- block.settings.button_text -}}
+              </a>
+            {%- endif -%}
+            {%- if block.settings.show_social_links -%}
+              {%- render 'social-links' -%}
+            {%- endif -%}
+          </div>
+        </div>
+      {% endif %}
+    {%- endfor -%}
+    <div
+      class="menu-blocks gap-none"
+      id="menu-blocks"
+    >
+      {%- for block in section.blocks -%}
+
+        {%- if block.type == 'menu' -%}
+          {%- liquid
+            assign column_class = 'small-12 medium-4 large-3 pv-5'
+          -%}
+          <div class="{{ column_class | escape }} widget--menu-column" {{ block.shopify_attributes }}>
+            <div class="widget widget--menu">
+              <button class="thb-widget-title collapsible" tabindex="0">
+                {{ block.settings.title }}
+                <span></span>
+              </button>
+              {%- if block.settings.menu != blank -%}
+                <ul class="thb-widget-menu">
+                  {% for link in block.settings.menu.links %}
+                    {% assign has_sub_menu = false %}
+                    {% if link.links.size > 0 %}
+                      {% assign has_sub_menu = true %}
+                    {% endif %}
+                    <li class="{% if has_sub_menu %}menu-item-has-children{% endif %}{% if link.active %} active{% endif %}">
+                      <a
+                        href="{{ link.url }}"
+                        title="{{ link.title | escape }}"
+                        {% if link.url == 'https://www.morotai.world' %}
+                          target="_blank"
+                        {% endif %}
+                        {%- if link.active %}
+                          aria-current="page"
+                        {% endif -%}
+                      >
+                        {{- link.title -}}
+                      </a>
+                      {%- if has_sub_menu -%}
+                        <span class="thb-arrow" tabindex="0">
+                          {%- render 'svg-icons' with 'thb-dropdown-bottom' -%}
+                        </span>
+                      {%- endif %}
+                      {% if has_sub_menu %}
+                        <ul class="sub-menu" tabindex="-1">
+                          {% for l in link.links %}
+                            {% assign has_sub_menu = false %}
+                            {% if l.links.size > 0 %}
+                              {% assign has_sub_menu = true %}
+                            {% endif %}
+                            <li
+                              class="{% if has_sub_menu %}menu-item-has-children{% endif %}{% if l.active %} active{% endif %}"
+                              role="none"
+                            >
+                              <a href="{{ l.url }}" title="{{ l.title | escape }}" role="menuitem">{{ l.title }}</a>
+                              {%- if has_sub_menu -%}
+                                <span class="thb-arrow" tabindex="0">
+                                  {%- render 'svg-icons' with 'thb-dropdown-bottom' -%}
+                                </span>
+                              {%- endif %}
+                              {% if has_sub_menu %}
+                                <ul class="sub-menu" role="menu">
+                                  {% for sub_link in l.links %}
+                                    {% assign has_sub_menu = false %}
+                                    {% if sub_link.links.size > 0 %}
+                                      {% assign has_sub_menu = true %}
+                                    {% endif %}
+                                    <li
+                                      class="{% if has_sub_menu %}menu-item-has-children{% endif %}{% if sub_link.active %} active{% endif %}"
+                                      role="none"
+                                    >
+                                      <a
+                                        href="{{ sub_link.url }}"
+                                        title="{{ sub_link.title | escape }}"
+                                        role="menuitem"
+                                      >
+                                        {{- sub_link.title -}}
+                                      </a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <div
+      class="footer-logo-ig-container"
+      id="footer-logo-ig-container"
+    >
+      {% render 'svg-icons' with 'footer-logo' %}
+
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 25px">
+        <a class="logolink logocontainer" href="https://www.tiktok.com/@morotaiofficial">
+          {%- render 'svg-icons' with 'tiktok-icon' -%}
+        </a>
+
+        <a class="logolink logocontainer" href="https://www.facebook.com/MOROTAIofficial/">
+          {%- render 'svg-icons' with 'facebook-icon' -%}
+        </a>
+        <a class="logolink logocontainer" href="https://www.instagram.com/morotaiofficial/">
+          {%- render 'svg-icons' with 'ig-icon' -%}
+        </a>
+        <a class="logolink logocontainer" href="https://www.pinterest.com/MOROTAIofficial/">
+          {%- render 'svg-icons' with 'pinterest-icon' -%}
+        </a>
+        <a class="logolink logocontainer" href="https://www.youtube.com/channel/UCSPoF7auZw9t34ykKUShibA">
+          {%- render 'svg-icons' with 'youtube-icon' -%}
+        </a>
+      </div>
+      <div class="sub-footer">
+        <div class="row {% if full_width %}full-width-row{% endif %}">
+          <div class="localization small-12 medium-8 columns">
+            {% render 'localization',
+              show_language_switcher: show_language_switcher,
+              show_currency_switcher: show_currency_switcher
+            %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'signup' -%}
+        {%- liquid
+          assign column_class = 'small-12 medium-4 large-2'
+          case block.settings.column_size
+            when 'medium'
+              assign column_class = 'small-12 medium-3'
+            when 'large'
+              assign column_class = 'small-12 medium-6'
+          endcase
+        -%}
+        <div class="{{ column_class | escape }} columns" {{ block.shopify_attributes }}>
+          <div class="widget widget--signup">
+            {% if block.settings.title != blank %}
+              <div class="thb-widget-title">{{ block.settings.title }}</div>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              {{ block.settings.text }}
+            {% endif %}
+            {% render 'email-signup-form' %}
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'social' -%}
+        {%- liquid
+          assign column_class = 'small-6 medium-4 large-2'
+          case block.settings.column_size
+            when 'medium'
+              assign column_class = 'small-12 medium-3'
+            when 'large'
+              assign column_class = 'small-12 medium-6'
+          endcase
+        -%}
+        <div class="{{ column_class | escape }} columns" {{ block.shopify_attributes }}>
+          <div class="widget widget--social">
+            {% if block.settings.title != blank %}
+              <div class="thb-widget-title">{{ block.settings.title }}</div>
+            {% endif %}
+            {% render 'social-links' %}
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  <div
+    style="
+      display: flex;
+      padding: 12px 0px 9px 0px;
+      justify-content: center;
+      align-items: center;
+      gap: 95px;
+      border-top: 1px solid var(--White, #FFF);
+      border-bottom: 1px solid var(--White, #FFF);
+      background: var(--Black, #000);
+    "
+  >
+    <div class="row {% if full_width %}full-width-row{% endif %}">
+      <div class="small-12 medium-4 columns">
+        {%- if show_payment_icons -%}
+          <div class="footer-payment-icons">
+            {%- unless shop.enabled_payment_types == empty -%}
+              {%- for type in shop.enabled_payment_types -%}
+                <figure>{{ type | payment_type_svg_tag: class: 'payment-icons__icon' }}</figure>
+              {%- endfor -%}
+            {%- endunless -%}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="small-12 columns">
+        <p style="margin-bottom: 0px; display: flex; justify-content: center;">
+          &copy; {{ 'now' | date: '%Y' }}
+          {{ shop.name }}, {{ 'copyright.copyright-text' | t }}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+           </div>
+</div>
+</div>
+
+<style>
+                .TheDifference {
+                  background: black;
+                  
+                }
+
+    @media (max-width: 768px) {
+  .TheDifference {
+    display: flex;
+    justify-content: center;
+                }
+      
+      .Frame170 {
+       align-items: center !important;
+      }
+      
+      .Frame162 {
+            width: 100%;
+      }
+      .Frame150 {
+        width: 95% !important;
+      }
+       .Frame151 {
+                width: 95% !important;
+
+      }
+      .Frame169 {
+                width: 95% !important;
+
+      }
+      .Frame172 {
+                width: 95% !important;
+
+      }
+      .Frame152 {
+                width: 95% !important;
+
+      }
+      .KonzentrationAufDasWesentlicheAufDenSport {
+                        width: 95% !important;
+
+      }
+      .Frame159 {
+                width: 95% !important;
+
+      }
+      .Frame161 {
+                width: 95% !important;
+
+      }
+      .Frame167 {
+                width: 95% !important;
+
+      }
+
+    
+
+       #shopAll {
+    font-size: 12px !important;
+  }
+    }
+
+    @media (min-width: 768px) {
+
+    .Frame165 {
+        max-width: 50%;
+      }
+    }
+ 
+
+                .TheDifferenceBanner {height: auto;}
+
+                .Frame170 {
+                 width:100%; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex
+                }
+
+  @media (max-width: 768px) {
+  .Frame170 {
+      top: 319px !important;
+  }
+    }
+
+                    @media only screen and (min-width: 769px) and (max-width: 1000px) {
+  .WasMorotaiAndersMacht {
+    font-size: 44px !important;
+  }
+      }
+  
+
+                .Frame150 {
+                  padding-top: 312px; padding-bottom: 160px; padding-left: 18%; align-items: center; padding-right: 18%; background: black; flex-direction: column; justify-content: flex-start;  gap: 120px; display: flex
+                }
+
+ 
+   @media (max-width: 768px) {
+  .Frame150 {
+        gap: 0px !important;
+  }
+    }
+  
+    @media (max-width: 768px) {
+  .Button.neotech-button {
+    margin-top: 20px !important;
+  }
+    }
+
+      @media (max-width: 768px) {
+  .SmarteDetails.newSD {
+    font-size: 42px !important;
+  }
+      }
+  
+  .TextButtonRegular::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white; 
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+
+  .TextButtonRegular.underline::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+   
+
+  .underlined {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 769px) {
+  .mobile-version {
+    display: none;
+  }
+    }
+
+.mobile-version {max-width: 100%;}
+      
+  
+  
+
+                @media (max-width: 1080px) {
+                .Frame150 {
+                  padding-top: 120px !important; padding-bottom: 120px !important; padding-left: 0px !important; padding-right: 0px !important;
+                }
+                .Frame153 {
+                  gap: 64px !important; padding-top: 120px !important; padding-bottom: 120px !important; padding-left: 0px !important; padding-right: 0px !important;
+                }
+                  .Frame159 {
+                  padding-top: 150px !important; padding-bottom: 70px !important; padding-left: 0px !important; padding-right: 0px !important;
+                }
+                }
+
+  @media (max-width: 768px) {
+.Frame159 {
+    padding-top: 80px !important;
+
+}
+  }
+
+    @media (max-width: 768px) {
+  .new-banner {
+    display: none !important;
+  }
+    }
+
+  @media (min-width: 769px) {
+  .new-banner-two {
+    display: none !important;
+  }
+    }
+  
+    .Frame156 {
+      width: 100%; justify-content: flex-start; align-items: center; gap: 160px; display: inline-flex;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      
+      .KonzentrationAufDasWesentliche {
+       
+          width: 100%;
+          font-size: 42px !important;
+          line-height: 1.2 !important;
+      }
+
+      .AufDenSport {
+        width: 100%;
+          font-size: 42px !important;
+          line-height: 1.2 !important;
+      }
+  }
+
+
+    @media (max-width: 768px) {
+  .Button.arrow-button {
+        display: none !important;
+  }
+      .produkte {
+        margin-bottom: 64px !important;
+      }
+      .AufDenSport {
+            text-align: right;
+    width: 80% !important;
+      }
+
+.KonzentrationAufDasWesentliche {
+   align-self: flex-start;
+    width: 77.5% !important;
+}
+     
+    }
+
+    @media (max-width: 1200px) {
+  .Frame155 {
+  }
+    }
+
+  
+
+ @media (max-width: 1218px) {
+  .produkte {
+  }
+}
+  
+   @media (max-width: 1919px) {
+    .Rectangle81 {
+       width: 250px;
+    }
+    .Rectangle80 {
+             width: 250px;
+
+    }
+    .Frame116 {
+             width: 250px;
+
+    }
+    .Frame117 {
+             width: 250px;
+
+    }
+    }
+
+                .ProdukteDieEsDirEinfachMachenAktivZuBleiben {
+                  color: white;
+              font-size: 85px;
+              font-family: Rajdhani;
+              font-weight: 600;
+              text-transform: uppercase;
+              width: 100%;
+              line-height: 1.2;
+              word-wrap: break-word;
+                  align-self: flex-start;
+                }
+
+  .PRODUKTE, DIE ES DIR EINFACH MACHEN, AKTIV ZU BLEIBEN.PRODUKTE, DIE ES DIR EINFACH MACHEN, AKTIV ZU BLEIBEN.
+
+            @media screen and (max-width: 1200px) {
+                  .ProdukteDieEsDirEinfachMachenAktivZuBleiben {
+                       font-size: 42px !important;
+                          line-height: 1.0 !important;
+              }
+          }
+
+  
+            @media screen and (max-width: 768px) {
+                  .ProdukteDieEsDirEinfachMachenAktivZuBleiben {
+                       align-self: center;
+              }
+          }
+
+                .Unbenannt1 {
+                  width: 100%; height: 30%
+                }
+
+
+   @media screen and (max-width: 768px) {
+  .pointer-inline {
+    display: none;
+  }
+   }
+  
+  .pointer-inline {
+      cursor: pointer;
+    }
+
+            @media screen and (max-width: 768px) {
+                  .ProdukteDieEsDirEinfachMachenAktivZuBleiben {
+                       font-size: 42px !important;
+                          line-height: 1.0 !important;
+              }
+          }
+          .Unbenannt1 {
+            width: 100%;
+            height: 90%;
+        }
+
+     @media screen and (max-width: 768px) {
+                  .Unbenannt1 {
+                                width: 100% !important;
+              }
+     .Produktlinien1Ziel {
+  display: flex;
+}
+
+.left-part {
+  margin-right: auto;
+}
+
+.centered-equal {
+    margin-left: 45%;
+  text-align: center;
+}
+
+.right-part {
+  margin-left: auto;
+}
+          }
+
+                .Frame171 {
+                  flex-direction: column; align-items: center; justify-content: flex-start; gap: 64px; display: flex
+                }
+
+    @media screen and (max-width: 1200px) {
+                  .Frame171 {
+                    align-self: center;
+              }
+          }
+
+  @media (max-width: 768px) {
+              .new-banner {
+                font-size: 25px !important;
+                text-align: start;
+                white-space: normal;
+                width: 40%;
+                
+              }
+          }
+
+                .Frame149 {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 64px;
+                display: flex;
+              }
+
+     @media screen and (max-width: 768px) {
+    .SichereDirDeineLiebstebActivewearTeileUmBeiMorotaiKonzentrierenWirUnsAufDasWasWirklichZaHltDenSportAlsEngagierterSportlerOderFreizeitsportlerSuchstDuNachEinemEinfachenWegDeinenAktivenLebensstilZuLebenBeiUnsFindestDuNichtNurSportbekleidungDieWaHrendDesTrainingsPerfektFunktioniertSondernAuchStylesDieVorUndNachDemSportIdealSindWirVerstehenDassEsBeimSportUmDasErlebnisSelbstGehtNichtUmDieMuHenDerAuswahlDeinerGarderobe
+  {
+    color: black; font-size: 20px !important; font-family: Rajdhani; font-weight: 400; line-height: 120% !important; word-wrap: break-word;
+  }
+     }
+
+    .SichereDirDeineLiebstebActivewearTeileUmBeiMorotaiKonzentrierenWirUnsAufDasWasWirklichZaHltDenSportAlsEngagierterSportlerOderFreizeitsportlerSuchstDuNachEinemEinfachenWegDeinenAktivenLebensstilZuLebenBeiUnsFindestDuNichtNurSportbekleidungDieWaHrendDesTrainingsPerfektFunktioniertSondernAuchStylesDieVorUndNachDemSportIdealSindWirVerstehenDassEsBeimSportUmDasErlebnisSelbstGehtNichtUmDieMuHenDerAuswahlDeinerGarderobe {
+      line-height: 120%;
+      font-size: 30px;
+    }
+  
+              .MorotaiStelltZeitloseSportbekleidungHerDieSowohlFunktionalAlsAuchStilvollIstDieProdukteSindInSchwarzWeiUndGrauGehaltenSieSindMultifunktionalSowohlFuRSportlicheAktivitaTenAlsAuchFuRDenAlltagMitPraktischenFeaturesMorotaiLegtWertAufKomfortPerfektePassformUndASthetischesDesignWasDieSportmotivationSteigertDieKleidungIstSpeziellFuRDenSportlifestyleKonzipiertMitWeichenMaterialienUndLanglebigemDesignMorotaiVerbindetKomfortFunktionalitaTUndStilUmEinOptimalesSporterlebnisZuGewaHrleistenUndLegtDabeiBesonderenWertAufQualitaTUndNachhaltigkeit {
+              width: 100%;
+              color: white;
+              font-size: 30px;
+              font-family: Rajdhani;
+              font-weight: 400;
+              line-height: 1.2;
+              word-wrap: break-word;
+                align-self: flex-start;
+              }
+
+            @media screen and (max-width: 768px) {
+                  .MorotaiStelltZeitloseSportbekleidungHerDieSowohlFunktionalAlsAuchStilvollIstDieProdukteSindInSchwarzWeiUndGrauGehaltenSieSindMultifunktionalSowohlFuRSportlicheAktivitaTenAlsAuchFuRDenAlltagMitPraktischenFeaturesMorotaiLegtWertAufKomfortPerfektePassformUndASthetischesDesignWasDieSportmotivationSteigertDieKleidungIstSpeziellFuRDenSportlifestyleKonzipiertMitWeichenMaterialienUndLanglebigemDesignMorotaiVerbindetKomfortFunktionalitaTUndStilUmEinOptimalesSporterlebnisZuGewaHrleistenUndLegtDabeiBesonderenWertAufQualitaTUndNachhaltigkeit {
+                  width: 100% !important;
+                  align-self: center;
+                    font-size: 20px !important;
+              }
+          }
+
+
+   @media only screen and (min-width: 768px) {
+  .Frame148 {
+       width: 100%;
+    max-width: 50%;
+  }
+  }
+
+  
+            @media screen and (min-width: 1200px) {
+
+  .icons-img {
+    max-width: 725px;
+  }
+            }
+  
+            @media screen and (max-width: 786px) {
+  .MultifunktionalitaT .UnsereProdukteSindMultifunktionalSieEignenSichFuRAlleGaNgigenSportArtenSodassDuNichtFuRJedeSportartEinAnderesOutfitBenoTigst {
+    font-size: 20px !important;
+    line-height: 19.20px !important;
+  }
+              .UnserFokusLiegtDaraufDeineTraiNingserfahrungSoKomfortabelWieMoGlichZuGestaltenDamitDuDichVollUndGanzAufDeinWorkoutKonzentrierenKannstInnovativeDetailsHelfenDirDabeiDasDuDeinTrainingSicherUndEffizentAbsolvierenKannstDurchschnittlichHatJedesProduktMindestens4SmarteDetails {
+                 font-size: 20px !important;
+    line-height: 19.20px !important;
+              }
+              .ZeitloseDesigns .WirVerbindenModernenStilMitEinemKlarenUnkompliziertenDesignInDerSportmodeWasUnsereBekleidungNichtNurZeitgemaSondernAuchLanglebigUndZeitlosMachtEinPerFekterBegleiterFuRVieleJahreOhneAnModischerRelevanzZuVerlieren {
+                    font-size: 20px !important;
+    line-height: 19.20px !important;
+              }
+              .FarblicheEinfachheit .WirHabenEineMinimalistischeFarbPaletteGewaHltDamitSichUnsereProDukteProblemlosKombinierenLassenEgalWelcheProdukteDuAusDeinemKleiderschrankWaHlstSiePassenImMerPerfektZusammenUndGarantieRenEinStilvollesOutfitEineSorgeWeNigerFuRDich {
+                font-size: 20px !important;
+    line-height: 19.20px !important;
+              }
+            }
+
+@media screen and (min-width: 768px) {
+  .ProdukteDieEsDirEinfachMachenAktivZuBleiben {
+  }
+}
+    @media screen and (min-width: 1200px) {
+                  .MorotaiStelltZeitloseSportbekleidungHerDieSowohlFunktionalAlsAuchStilvollIstDieProdukteSindInSchwarzWeiUndGrauGehaltenSieSindMultifunktionalSowohlFuRSportlicheAktivitaTenAlsAuchFuRDenAlltagMitPraktischenFeaturesMorotaiLegtWertAufKomfortPerfektePassformUndASthetischesDesignWasDieSportmotivationSteigertDieKleidungIstSpeziellFuRDenSportlifestyleKonzipiertMitWeichenMaterialienUndLanglebigemDesignMorotaiVerbindetKomfortFunktionalitaTUndStilUmEinOptimalesSporterlebnisZuGewaHrleistenUndLegtDabeiBesonderenWertAufQualitaTUndNachhaltigkeit {
+                              font-size: 30px !important;
+              }
+          }
+
+              .Button {
+                padding-top: 11px;
+                padding-bottom: 10px;
+                padding-left: 25px;
+                padding-right: 25px;
+                background: white;
+                border-top-left-radius: 1px;
+                border-top-right-radius: 1px;
+                backdrop-filter: blur(14px);
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                display: inline-flex;
+              }
+
+              .ShopAll {
+                text-align: center;
+                color: black;
+                font-size: 18px;
+                font-family: Rajdhani;
+                font-weight: 500;
+                text-transform: uppercase;
+                line-height: 21.60px;
+                word-wrap: break-word;
+              }
+
+              .Frame153 {
+                width: 100%;
+                padding-top: 160px;
+                padding-bottom: 160px;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 160px;
+                display: flex;
+              }
+
+              .Frame151 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                display: flex;
+              }
+
+       @media only screen and (max-width: 768px) {
+        .Frame151 {
+          align-items: center;
+        }
+      }
+
+    @media only screen and (min-width: 768px) {
+        .Frame151 {
+          width: 100% !important;
+        }
+      }
+
+
+              .KonzentrationAufDasWesentliche {
+                 margin-bottom: 50px;
+                width: 100%;
+                color: black;
+                font-size: 85px;
+                font-family: Rajdhani;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 93.50px;
+                word-wrap: break-word;
+              }
+
+         @media only screen and (max-width: 768px) {
+        .KonzentrationAufDasWesentliche {
+          color: black; font-size: 42px !important; font-family: Rajdhani; font-weight: 600; text-transform: uppercase; line-height: 45.80px !important; word-wrap: break-word
+        }
+      }
+
+    @media only screen and (max-width: 1080px) {
+  .SicherUndBequemVerStautWaHrendDuAktivBistOhneDassEsStoRtOderVerlorenGeht {
+      line-height: 15.60px !important;
+      word-wrap: break-word !important;
+      font-size: 13px !important;
+  }
+      .PhonePocketFinalFormat2011
+    {
+      margin-bottom: 7.5px;
+    }
+      .Frame118 {
+        padding-top: 20px !important;
+      }
+    }
+
+              .AufDenSport {
+                color: black;
+                font-size: 85px;
+                font-family: Rajdhani;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 93.50px;
+                word-wrap: break-word;
+                align-self: flex-end;
+              }
+
+       @media only screen and (max-width: 768px) {
+        .AufDenSport {
+      width: 187px; color: black; font-size: 42px !important; font-family: Rajdhani; font-weight: 600; line-height: 45.80px !important; word-wrap: break-word;
+        }
+      }
+
+
+              .Frame152 {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 64px;
+                display: flex;
+              }
+
+              .MorotaiIceland22411 {
+                width: 100%;
+                height: 100%;
+              }
+
+       @media only screen and (max-width: 768px) {
+        .MorotaiIceland22411 {
+          align-self: center;
+        align-items: center;
+        display: flex;
+        }
+      }
+
+
+              .UnsereMissionIstEsSportbekleidungZuKreierenDieDichNichtNurBefaHigtSondernAuchInspiriertEinenAktivenLebensstilZuVerfolgenUndZuGenieEn {
+      
+                align-self: flex-start;
+    display: flex;
+                line-height: normal;
+                font-weight: 700;
+                color: black;
+                font-size: 42px;
+                font-family: Rajdhani;
+                font-weight: 700;
+                text-transform: uppercase;
+                word-wrap: break-word;
+              }
+
+      @media only screen and (max-width: 768px) {
+        .UnsereMissionIstEsSportbekleidungZuKreierenDieDichNichtNurBefaHigtSondernAuchInspiriertEinenAktivenLebensstilZuVerfolgenUndZuGenieEn {
+           font-size: 24px !important; align-self: center;
+        }
+      }
+
+
+              .Frame159 {
+                width: 100%;
+                padding-top: 150px;
+                padding-bottom: 150px;
+                background: black;
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 100px;
+                display: flex;
+                align-items: center;
+              }
+
+              .Frame154 {
+                width: 100%;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 160px;
+                display: inline-flex;
+              }
+
+    @media only screen and (max-width: 768px) {
+        .Frame154 {
+           font-size: 24px !important; align-self: center; display: flex !important; flex-direction: column! important; gap: 60px !important;
+        }
+      }
+
+
+    .Frame156 {
+          justify-content: flex-start;
+          align-items: center;
+          gap: 160px;
+          display: inline-flex;
+          width: 100%;
+    }
+
+   @media only screen and (min-width: 1201px) {
+        .Frame169 {
+          padding-left: 18%;
+          padding-right: 18%;
+        }
+      }
+
+  @media only screen and (min-width: 1201px) {
+        .Frame167 {
+          padding-left: 18%;
+          padding-right: 18%;
+        }
+      }
+
+  @media only screen and (min-width: 1201px) {
+        .Frame161 {
+          padding-left: 18%;
+          padding-right: 18%;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        .Frame156 {
+           font-size: 24px !important; align-self: center; display: flex !important; flex-direction: column! important; gap: 60px !important;
+        }
+      }
+
+  @media only screen and (max-width: 1217px) and @media only screen and (min-width: 769px) {
+          .Frame156 {
+           
+              }
+      }
+
+    @media only screen and (max-width: 768px) {
+          .Frame156 {
+            
+              }
+      }
+
+
+  @media only screen and (max-width: 1200px) {
+          .Frame156 {
+            display: flex;
+      flex-direction: column;
+              }
+      }
+
+    @media only screen and (max-width: 1200px) {
+          .Frame158 {
+            display: flex;
+      flex-direction: column;
+            
+              }
+      }
+
+    @media only screen and (max-width: 786px) {
+    .M231b10301NkmrCorporateSweatpantsBlack000, .M231b10307NkmrCorporateSweatpantsLightGrey000, .M231j10306NkmrNeoSweathoodieDarkGrey000, .M231j11106NkmrCorporateSweatshirtDarkGrey000, .M231j10107NkmrKimoHoodieLightGrey000, .M231j10407NkmrNeoZipSweatjacketLightGrey000, .UntitledSession0011Copy {
+      
+  }
+    }
+
+      @media only screen and (max-width: 786px) {
+
+   .M231j10301NkmrNeoSweathoodieBlack000 {
+     width: 60px !important;
+      height: 80px !important;
+   }
+      }
+
+     @media only screen and (max-width: 786px) {
+   .M231j10301NkmrNeoSweathoodieBlack000 {
+     width: 60px !important;
+      height: 80px !important;
+   }
+      }
+
+    @media only screen and (max-width: 1200px) {
+          .Frame157 {
+          display: flex !important;
+            flex-direction: column-reverse !important;
+                width: 100%;
+            gap: 60px !important;
+              }
+      }
+
+              .MaximalerKomfort {
+                width: 465px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 24px;
+                display: inline-flex;
+              }
+
+              .MaximalerKomfort {
+                align-self: stretch;
+                color: white;
+                font-size: 42px;
+                font-family: Rajdhani;
+                font-weight: 600;
+                line-height: 57.60px;
+                word-wrap: break-word;
+              }
+
+     @media only screen and (max-width: 1200px) {
+          .Frame154 {
+            display: flex;
+      flex-direction: column;
+              }
+      }
+
+
+
+
+              .UnsereSportbekleidungIstSoBequemDassManSieNieWiederAusziehenMoChteDaUnsereSportbekleidungSowohlBeimSportAlsAuchImAlltagGetragenWerdenKannIstDasKeinProblem {
+                align-self: stretch;
+                color: white;
+                font-size: 1.6vw;
+                font-family: Rajdhani;
+                font-weight: 400;
+                line-height: 1.8vw;
+                word-wrap: break-word;
+              }
+
+       @media only screen and (max-width: 768px) {
+        .UnsereSportbekleidungIstSoBequemDassManSieNieWiederAusziehenMoChteDaUnsereSportbekleidungSowohlBeimSportAlsAuchImAlltagGetragenWerdenKannIstDasKeinProblem {
+            font-size: 20px !important; line-height: 19.20px !important;
+        }
+      }
+
+                .MaximalerKomfort {
+                 width: 100%;
+              height: auto;
+              position: relative;
+              }
+
+       @media only screen and (max-width: 768px) {
+        .MaximalerKomfort {
+      font-size: 36px !important; line-height: 43.20px !important;
+        }
+      }
+
+
+
+              .Rectangle81 {
+                width: 100%;
+                height: 400px;
+                left: 312.50px;
+                top: 400px;
+                position: absolute;
+              }
+
+
+
+      @media only screen and (max-width: 768px) {
+        .Rectangle81 {
+      width: 177.50px; height: 233px; left: 177.50px; top: 233px; position: absolute
+        }
+      }
+
+
+
+              .Frame116 {
+                width: 100%;
+                height: 400px;
+                padding: 50px;
+                left: 312.50px;
+                top: 0px;
+                position: absolute;
+                background: #363636;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                display: inline-flex;
+              }
+
+      @media only screen and (max-width: 768px) {
+        .Frame116 {
+      width: 177.50px; height: 233px; padding: 24px; left: 177.50px; top: 0px; position: absolute; background: #363636; flex-direction: column; justify-content: space-between; align-items: center; display: inline-flex
+        }
+      }
+
+
+              .StretchFinalFormat2011 {
+                width: 133px;
+                height: 133px;
+                mix-blend-mode: lighten;
+              }
+
+      @media only screen and (max-width: 1080px) {
+        .StretchFinalFormat2011 {
+    height: 74px !important;
+        width: 74px !important;    }
+      }
+
+
+
+              .UnsereProdukteBesitZenZumGroTeil360StrechFuRMaximalenTragekomfort {
+                align-self: stretch;
+                text-align: center;
+                color: white;
+                font-size: 24px;
+                font-family: Rajdhani;
+                font-weight: 700;
+                line-height: 28.80px;
+                word-wrap: break-word;
+              }
+
+    @media only screen and (max-width: 1080px) {
+        .UnsereProdukteBesitZenZumGroTeil360StrechFuRMaximalenTragekomfort {
+      line-height: 15.60px !important;
+      word-wrap: break-word !important;
+      font-size: 13px !important;
+        }
+      }
+
+
+              .Rectangle80 {
+                width: 100%;
+                height: 400px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+              }
+
+       @media only screen and (max-width: 768px) {
+        .Rectangle80 {
+      width: 177.50px; height: 233px; left: 0px; top: 0px; position: absolute
+        }
+      }
+
+              .Frame117 {
+                width: 100%;
+                height: 400px;
+                padding: 50px;
+                left: 0px;
+                top: 400px;
+                position: absolute;
+                background: #363636;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                display: inline-flex;
+              }
+
+       @media only screen and (max-width: 768px) {
+        .Frame117 {
+      width: 177.50px; height: 233px; padding: 24px; left: -0px; top: 233px; position: absolute; background: #363636; flex-direction: column; justify-content: space-between; align-items: center; display: inline-flex
+        }
+      }
+
+
+              .FleeceFinalFormat2011 {
+                width: 133px;
+                height: 133px;
+                mix-blend-mode: lighten;
+              }
+
+     @media only screen and (max-width: 1080px) {
+        .FleeceFinalFormat2011 {
+        height: 74px !important;
+        width: 74px !important;
+        }
+      }
+
+
+              .UnserMaterialienGehoRenZuDenHochwertigeStenDieInDerBrancheVerwendetWerden {
+                align-self: stretch;
+                text-align: center;
+                color: white;
+                font-size: 24px;
+                font-family: Rajdhani;
+                font-weight: 700;
+                line-height: 28.80px;
+                word-wrap: break-word;
+              }
+
+      @media only screen and (max-width: 1080px) {
+        .UnserMaterialienGehoRenZuDenHochwertigeStenDieInDerBrancheVerwendetWerden {
+      line-height: 15.60px !important;
+      word-wrap: break-word !important;
+      font-size: 13px !important;
+        }
+      }
+
+              .Frame155 {
+                align-items: center;
+                width: 100%;
+                justify-content: center;
+                gap: 160px;
+                display: inline-flex;
+              }
+
+  @media only screen and (min-width: 1201px) {
+        .Frame150 {
+          padding-left: 18%;
+          padding-right: 18%;
+        }
+      }
+
+  @media only screen and (min-width: 1201px) {
+        .Frame153 {
+          padding-left: 18%;
+          padding-right: 18%;
+        }
+      }
+
+  @media only screen and (min-width: 1201px) {
+        .Frame159 {
+          padding-left: 18%;
+          padding-right: 18%;
+        }
+      }
+
+    @media only screen and (max-width: 1200px) {
+        .Frame155 {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        .Frame155 {
+            gap: 0px !important;
+        }
+      }
+
+    @media only screen and (max-width: 1500px) {
+        .Frame155 {
+        }
+      }
+
+              .MultifunkTionalitaT {
+            
+                position: relative;
+              }
+
+     @media only screen and (max-width: 1080px) {
+        .MultifunkTionalitaT {
+                   width: 100% !important;
+        }
+      }
+
+              .Rectangle82 {
+                width: 100%;
+                height: auto;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                background: black;
+              }
+
+
+     @media only screen and (max-width: 1080px) {
+        .Rectangle82 {
+        width: 100% !important;
+        }
+      }
+
+              .Group2 {
+                width: 100%;
+                height: auto;
+              }
+
+      @media only screen and (max-width: 1080px) {
+        .Group2 {
+        left: 37.5px !important;
+        width: 100% !important;
+        }
+      }
+
+
+              .AthleticsFinalFormat21 {
+                width: 103px;
+                height: 120px;
+                left: 111px;
+                top: 0px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat23 {
+                width: 103px;
+                height: 120px;
+                left: 169px;
+                top: 96px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat28 {
+                width: 103px;
+                height: 120px;
+                left: 169px;
+                top: 286px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat210 {
+                width: 103px;
+                height: 120px;
+                left: 169px;
+                top: 472px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat25 {
+                width: 103px;
+                height: 120px;
+                left: 0px;
+                top: 191px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat217 {
+                width: 103px;
+                height: 120px;
+                left: 0px;
+                top: 567px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat22 {
+                width: 103px;
+                height: 120px;
+                left: 223px;
+                top: 0px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat216 {
+                width: 103px;
+                height: 120px;
+                left: 225px;
+                top: 567px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+                .AthleticsFinalFormat24 {
+                width: 103px;
+                height: 120px;
+                left: 281px;
+                top: 96px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat29 {
+                width: 103px;
+                height: 120px;
+                left: 281px;
+                top: 286px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat211 {
+                width: 103px;
+                height: 120px;
+                left: 281px;
+                top: 472px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat212 {
+                width: 103px;
+                height: 120px;
+                left: 57px;
+                top: 472px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat26 {
+                width: 103px;
+                height: 120px;
+                left: 112px;
+                top: 191px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat213 {
+                width: 103px;
+                height: 120px;
+                left: 112px;
+                top: 381px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat214 {
+                width: 103px;
+                height: 120px;
+                left: 338px;
+                top: 381px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat27 {
+                width: 103px;
+                height: 120px;
+                left: 338px;
+                top: 191px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+              .AthleticsFinalFormat215 {
+                width: 103px;
+                height: 120px;
+                left: 338px;
+                top: 565px;
+                position: absolute;
+                mix-blend-mode: difference;
+              }
+
+      @media only screen and (max-width: 1080px) {
+        .AthleticsFinalFormat21 {
+                width: 69px;
+                height: 81px;
+          left: 75.06px; top: 0px;
+              }
+
+              .AthleticsFinalFormat23 {
+                width: 69px;
+                height: 81px;
+                left: 114.27px; top: 64.91px;
+              }
+
+              .AthleticsFinalFormat28 {
+                width: 69px;
+                height: 81px;
+                left: 114.27px; top: 193.39px;
+              }
+
+              .AthleticsFinalFormat210 {
+                width: 69px;
+                height: 81px;
+                left: 114.27px; top: 319.16px;
+              }
+
+              .AthleticsFinalFormat25 {
+                width: 69px;
+                height: 81px;
+                left: 0px; top: 129.15px;
+              }
+
+              .AthleticsFinalFormat217 {
+                width: 69px;
+                height: 81px;
+                left: 0px; top: 383.39px;
+
+                      }
+
+              .AthleticsFinalFormat22 {
+                width: 69px;
+                height: 81px;
+                left: 150.79px; top: 0px;
+              }
+
+              .AthleticsFinalFormat216 {
+                width: 69px;
+                height: 81px;
+                left: 152.14px;
+                top: 383.39px;
+              }
+
+                .AthleticsFinalFormat24 {
+                width: 69px;
+                height: 81px;
+                  left: 190.01px; top: 64.91px;
+              }
+
+              .AthleticsFinalFormat29 {
+                width: 69px;
+                height: 81px;
+                left: 190.01px; top: 193.39px;
+              }
+
+              .AthleticsFinalFormat211 {
+                width: 69px;
+                height: 81px;
+                left: 190.01px; top: 319.16px;
+              }
+
+              .AthleticsFinalFormat212 {
+                width: 69px;
+                height: 81px;
+                left: 38.54px; top: 319.16px;
+              }
+
+              .AthleticsFinalFormat26 {
+                width: 69px;
+                height: 81px;
+                left: 75.73px; top: 129.15px;
+              }
+
+              .AthleticsFinalFormat213 {
+                width: 69px;
+                height: 81px;
+                left: 75.73px; top: 257.62px;
+              }
+
+              .AthleticsFinalFormat214 {
+                width: 69px;
+                height: 81px;
+                left: 228.55px; top: 257.62px;
+              }
+
+              .AthleticsFinalFormat27 {
+                width: 69px;
+                height: 81px;
+                left: 228.55px; top: 129.15px;
+              }
+
+              .AthleticsFinalFormat215 {
+                width: 69px;
+                height: 81px;
+                left: 228.55px; top: 382.04px;
+              }
+      }
+
+              .MultifunktionalitaT {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 24px;
+                display: inline-flex;
+              }
+
+    @media only screen and (max-width: 1080px) {
+        .MultifunktionalitaT {
+                       
+                }
+      }
+
+
+              .MultifunktionalitaT .MultifunktionalitaT {
+                align-self: stretch;
+                color: white;
+                font-size: 42px;
+                font-family: Rajdhani;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 57.60px;
+                word-wrap: break-word;
+              }
+
+     @media only screen and (max-width: 1080px) {
+        .MultifunktionalitaT .MultifunktionalitaT {
+          font-size: 36px !important; font-family: Rajdhani; font-weight: 600; text-transform: uppercase; line-height: 43.20px !important; word-wrap: break-word;
+        }
+      }
+
+
+
+              .MultifunktionalitaT .UnsereProdukteSindMultifunktionalSieEignenSichFuRAlleGaNgigenSportArtenSodassDuNichtFuRJedeSportartEinAnderesOutfitBenoTigst {
+                align-self: stretch;
+                color: white;
+                font-size: 1.6vw;
+                font-family: Rajdhani;
+                font-weight: 400;
+                line-height: 1.8vw;
+                word-wrap: break-word;
+              }
+
+
+
+              .SmarteDetails1 {
+                width: 465px;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 24px;
+                display: inline-flex;
+              }
+
+              .SmarteDetails2 {
+                align-self: stretch;
+                color: white;
+                font-size: 42px;
+                font-family: Rajdhani;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 57.60px;
+                word-wrap: break-word;
+              }
+
+              .SmarteDetails3 {
+               width: 625px; height: 800px; position: relative
+              }
+
+
+     @media only screen and (min-width: 769px)
+  {
+      .SmarteDetails .Rectangle83 {
+                width: 100%;
+              }
+  }
+
+    @media only screen and (max-width: 768px) {
+  .Rectangle83 {
+      width: 100%;
+      height: auto;
+      left: 0px;
+      top: 0px;
+  }
+    }
+              .SmarteDetails .Rectangle84 {
+                width: 100%;
+                height: 400px;
+                left: 312.50px;
+                top: 400px;
+                position: absolute;
+              }
+
+              .SmarteDetails .Frame118 {
+                width: 100%;
+                height: 400px;
+                padding: 50px;
+                left: 312.50px;
+                top: -0px;
+                position: absolute;
+                background: #363636;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                display: inline-flex;
+              }
+
+    @media only screen and (max-width: 768px) {
+  .Frame118 {
+      width: 177.5px !important;
+      height: 233px !important;
+      padding: 24px;
+      left: 177.5px !important;
+      top: 0px;
+      position: absolute;
+      background: #363636;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      display: inline-flex;
+  }
+    }
+
+
+    @media only screen and (max-width: 1080px) {
+  .Frame119 {
+      padding-top: 20px !important;
+  }
+    }
+
+    @media only screen and (max-width: 768px) {
+  .Frame119 {
+      width: 177.5px !important;
+      height: 233px !important;
+      padding: 24px;
+      left: 0px !important;
+      top: 233px !important;
+      position: absolute;
+      background: #363636;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      display: inline-flex;
+
+  }
+    }
+
+    @media only screen and (max-width: 1080px) {
+  .ReflektierendeDetailsErhoHenDieSichtbarkeitUndSicherheitBeiDunkelheit {
+      line-height: 15.60px !important;
+      word-wrap: break-word !important;
+      font-size: 13px !important;
+  }
+    }
+
+    @media only screen and (max-width: 768px) {
+  .Rectangle84 {
+      width: 177.5px !important;
+      height: 233px !important;
+      left: 177.5px !important;
+      top: 233px !important;
+      position: absolute;
+  }
+    }
+
+    @media only screen and (min-width: 1200px)
+  .MaximalerKomfort.third {
+      margin-right: 312.5px;
+  }
+
+                .PhonePocketFinalFormat2011 {
+                width: 133px;
+                height: 133px;
+                mix-blend-mode: lighten;
+              }
+
+              .SicherUndBequemVerStautWaHrendDuAktivBistOhneDassEsStoRtOderVerlorenGeht {
+                align-self: stretch;
+                text-align: center;
+                color: white;
+                font-size: 24px;
+                font-family: Rajdhani;
+                font-weight: 700;
+                line-height: 28.80px;
+                word-wrap: break-word;
+              }
+
+              .Frame119 {
+                width: 312.50px;
+                height: 400px;
+                padding: 50px;
+                left: 0px;
+                top: 400px;
+                position: absolute;
+                background: #363636;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                display: inline-flex;
+              }
+
+              .ReflectiveZipperFinalFormat2011 {
+                width: 133px;
+                height: 133px;
+                mix-blend-mode: lighten;
+              }
+
+    @media only screen and (max-width: 1080px) {
+  .ReflectiveZipperFinalFormat2011 {
+      margin-bottom: 7.5px;
+  }
+    }
+
+              .ReflektierendeDetailsErhoHenDieSichtbarkeitUndSicherheitBeiDunkelheit {
+                align-self: stretch;
+                text-align: center;
+                color: white;
+                font-size: 24px;
+                font-family: Rajdhani;
+                font-weight: 700;
+                line-height: 28.80px;
+                word-wrap: break-word;
+              }
+
+              .Frame157 {
+                justify-content: flex-start;
+                align-items: center;
+                gap: 160px;
+                display: inline-flex;
+                width: 100%;
+              }
+
+              .Rectangle85 {
+                height: 830px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                background: black;
+              }
+
+              .Frame120 {
+                width: 100%;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 12px;
+              }
+
+     @media only screen and (max-width: 786px) {
+  .Frame120 {
+     justify-content: flex-start;
+     display: flex;
+  }
+    }
+
+              .ZeitloseDesigns {
+                width: 100%;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 24px;
+                display: inline-flex;
+              }
+
+              .ZeitloseDesigns .ZeitloseDesigns {
+                align-self: stretch;
+                color: white;
+                font-size: 36px;
+                font-family: Rajdhani;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 57.60px;
+                word-wrap: break-word;
+              }
+
+              .ZeitloseDesigns .WirVerbindenModernenStilMitEinemKlarenUnkompliziertenDesignInDerSportmodeWasUnsereBekleidungNichtNurZeitgemaSondernAuchLanglebigUndZeitlosMachtEinPerFekterBegleiterFuRVieleJahreOhneAnModischerRelevanzZuVerlieren {
+                align-self: stretch;
+                color: white;
+                font-size: 1.6vw;
+                font-family: Rajdhani;
+                font-weight: 400;
+                line-height: 1.8vw;
+                word-wrap: break-word;
+              }
+
+              .Frame158 {
+                justify-content: flex-start;
+                align-items: center;
+                gap: 160px;
+                display: inline-flex;
+              }
+
+              .FarblicheEinfachheit {
+                width: 100%;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 24px;
+                display: inline-flex;
+              }
+
+              .FarblicheEinfachheit .FarblicheEinfachheit {
+                align-self: stretch;
+                color: white;
+                width: 100%;
+                font-size: 42px;
+                font-family: Rajdhani;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 57.60px;
+                word-wrap: break-word;
+              }
+
+       @media only screen and (max-width: 786px) {
+.Frame161 {padding-top: 120px !important}
+  .FarblicheEinfachheit .FarblicheEinfachheit {
+    
+                font-size: 36px !important;
+              }
+       }
+              .FarblicheEinfachheit .WirHabenEineMinimalistischeFarbPaletteGewaHltDamitSichUnsereProDukteProblemlosKombinierenLassenEgalWelcheProdukteDuAusDeinemKleiderschrankWaHlstSiePassenImMerPerfektZusammenUndGarantieRenEinStilvollesOutfitEineSorgeWeNigerFuRDich {
+                align-self: stretch;
+                color: white;
+                font-size: 1.6vw;
+                font-family: Rajdhani;
+                font-weight: 400;
+                line-height: 1.8vw;
+                word-wrap: break-word;
+              }
+
+              .Rectangle86 {
+                height: 800px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                background: black;
+                border: 1px white solid;
+              }
+
+              .Rectangle87,
+              .Rectangle88,
+              .Rectangle89,
+              .Rectangle90,
+              .Rectangle91,
+              .Rectangle92,
+              .Rectangle93,
+              .Rectangle94,
+              .Rectangle95 {
+                align-self: stretch;
+                flex: 1 1 0;
+                border: 1px white solid;
+              }
+
+                .Rectangle96 {
+                align-self: stretch;
+                flex: 1 1 0;
+                background: #1F2322;
+                border: 1px white solid;
+              }
+
+              .Rectangle97 {
+                align-self: stretch;
+                flex: 1 1 0;
+                background: #141616;
+                border: 1px white solid;
+              }
+
+              .Rectangle98 {
+                align-self: stretch;
+                flex: 1 1 0;
+                background: black;
+                border: 1px white solid;
+              }
+
+              .Frame161 {
+                background: white;
+                width: 100% !important;
+                padding-top: 160px;
+                padding-bottom: 120px;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 120px;
+                display: flex;
+              }
+
+     @media only screen and (max-width: 786px) {
+  .Frame161 {
+  gap: 60px !important;
+    align-items: center;
+    
+  }
+    }
+
+              .KonzentrationAufDasWesentlicheAufDenSport {
+                width: 100%;
+                color: black;
+                align-self: center;
+                font-family: Rajdhani;
+                font-weight: 600;
+                text-transform: uppercase;
+                word-wrap: break-word;
+                font-size: 85px !important;
+                line-height: 110%;
+              }
+
+       @media only screen and (max-width: 786px) {
+  .KonzentrationAufDasWesentlicheAufDenSport {
+    font-size: 42px !important;
+  }
+       }
+
+  .DieseSportbekleidungGibtDirMotivation {
+    margin-top: 50px;
+        flex-direction: column;
+    display: flex;
+    align-self: flex-start;
+    width: 80%;
+    color: white; font-family: Rajdhani; font-weight: 600; text-transform: uppercase; word-wrap: break-word;
+  }
+
+         @media only screen and (max-width: 786px) {
+.DieseSportbekleidungGibtDirMotivation {
+  font-size: 42px !important;
+  line-height: 91.6% !important;
+  }
+         }
+
+  
+          .M231b10301NkmrCorporateSweatpantsBlack000
+{
+  width: 100% !important;
+}
+       .MorotaiChromeByTribunalovaFinalWeb111 {
+           width: 100% !important;
+       }
+    }
+
+              .Frame172 {
+                
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 64px;
+                display: flex;
+              }
+
+              .Frame160 {
+                width: 100%;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+                display: flex;
+              }
+
+              .Frame146 {
+                width: 100%;
+                justify-content: flex-start;
+                    align-items: flex-start;
+                gap: 32px;
+                display: inline-flex;
+                overflow: hidden;
+
+                              }
+  
+       @media only screen and (max-width: 786px) {
+         .Frame146 {
+            height: 375px;
+         }
+         .Frame172 {
+           gap: 44px !important;
+         }
+       }
+
+              .Button {
+                width: 61.16px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background: white;
+                border-radius: 1px;
+                backdrop-filter: blur(14px);
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                display: flex;
+              }
+
+  .MorotaiChromeByTribunalovaFinalWeb111 {
+    
+  }
+
+       @media only screen and (max-width: 786px) {
+ .MorotaiChromeByTribunalovaFinalWeb111 {
+    margin-bottom: 24px !important;
+  }
+       }
+
+              .Arrow {
+                width: 25.88px;
+                height: 21.16px;
+                position: relative;
+                transform: rotate(90deg);
+                transform-origin: 0 0;
+              }
+
+              .Vector10,
+              .Vector11 {
+                width: 0.08px;
+                height: 24.42px;
+                position: absolute;
+                border: 1.54px black solid;
+              }
+
+              .SichereDirDeineLiebstebActivewearTeileUmBeiMorotaiKonzentrierenWirUnsAufDasWasWirklichZaHltDenSport {
+                flex: 1 1 0;
+                color: black;
+                font-size: 1.6vw;
+                font-family: Rajdhani;
+                font-weight: 400;
+                line-height: 1.8vw;
+                word-wrap: break-word;
+              }
+
+              .Frame52 {
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 20px;
+                display: inline-flex;
+              }
+
+              .Ellipse11,
+              .Ellipse10,
+              .Ellipse12 {
+                width: 15px;
+                height: 15px;
+                background: black;
+                border-radius: 9999px;
+                cursor: pointer;
+              }
+
+              .Frame167 {
+                padding-top: 173px;
+                padding-bottom: 160px;
+                width: 100%;
+                background: black;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 130px;
+                display: flex;
+              }
+       @media only screen and (max-width: 786px) {
+         .Frame164 {
+           gap: 0px !important;
+         }
+  .Frame167 {
+                padding-top: 120px !important;
+    pading-bottom: 120px !important;
+              }
+       }
+
+              .Frame162 {
+                
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 40px;
+                display: flex;
+                      align-self: center;
+
+              }
+
+
+              .Produktlinien1Ziel {
+    max-width: 100%;
+                    display: flex;
+                    flex-direction: column;
+    justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+      color: white;
+      font-size: 85px;
+      font-family: Rajdhani;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 1.2;
+      word-wrap: break-word;
+              }
+
+    @media only screen and (max-width: 786px) {
+  .Produktlinien1Ziel {
+          color: white; font-size: 36px !important; font-family: Rajdhani; font-weight: 600; text-transform: uppercase; word-wrap: break-word
+  }
+    }
+
+              .UnsereMissionIstEsSportbekleidungZuKreierenDieDichNichtNurBefaHigtSondernAuchInspiriertEinenAktivenLebensstilZuVerfolgenUndZuGeniessen {
+                width: 100%;
+                color: white;
+                font-size: 42px;
+                font-family: Rajdhani;
+                font-weight: 500;
+                line-height: 120%;
+                word-wrap: break-word;
+              }
+
+      @media only screen and (max-width: 786px) {
+  .UnsereMissionIstEsSportbekleidungZuKreierenDieDichNichtNurBefaHigtSondernAuchInspiriertEinenAktivenLebensstilZuVerfolgenUndZuGeniessen {
+    color: white; font-size: 22px; font-family: Rajdhani; font-weight: 500; line-height: 28.80px; word-wrap: break-word
+  }
+    }
+
+              .Frame166 {
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 24px;
+                align-self: center;
+                
+                display: inline-flex;
+              }
+
+    @media only screen and (max-width: 1200px) {
+  .Frame166 {
+         display: flex;
+          flex-direction: column;
+  }
+    }
+
+              .Frame165 {
+                
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 48px;
+                display: inline-flex;
+              }
+
+              .Frame8 {
+                border-radius: 23px;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 30px;
+                display: inline-flex;
+              }
+  
+    @media only screen and (max-width: 768px) {
+  .Frame8 {
+              }
+    }
+
+    @media only screen and (max-width: 768px) {
+  .InsideMorotai {
+    font-size: 16px !important;
+  }
+}
+
+
+              .TextButtonRegular {
+                     cursor: pointer;
+              }
+
+              .InsideMorotai {
+                text-align: center;
+                color: white;
+                font-size: 18px;
+                font-family: Rajdhani;
+                font-weight: 500;
+                text-transform: uppercase;
+                line-height: 21.60px;
+                word-wrap: break-word;
+              }
+
+              .Vector5 {
+                width: 1px;
+                height: 0px;
+                left: -1px;
+                top: 19px;
+                position: absolute;
+                border: 1px white solid;
+              }
+
+              .Frame164 {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 98px;
+                display: flex;
+              }
+
+              .Frame163 {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 24px;
+                display: flex;
+              }
+
+              .NeotechCollection {
+                color: white;
+                width: 100%;
+                font-size: 3.8vw;
+                font-family: Didot;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 86.40px;
+                word-wrap: break-word;
+              }
+
+
+
+     @media only screen and (max-width: 768px) {
+  .NeotechCollection {
+        align-self: center; color: white; font-size: 6.2vw; font-family: Didot; font-weight: 700; text-transform: uppercase; line-height: 1.8vw; word-wrap: break-word
+    }
+  }
+
+
+
+              .EineKollektionGefertigtAusHochmodernenFleeceMaterialDieseLinieDefiniertFunktionalitaTUndKomfortNeuUndBietetEinePerfekteBalanceZwischenStilUndLeistungObBeiDerVerfolgungVonOutdoorAbenteuernOderGemuTlichenMomentenImInnerenDieNeotechLinieGarantiertUnverGleichlicheWaRmeUndFlexibilitaTMitFortschrittlicherFleeceTechnologieUndAuErgewoHnlicherHandwerkskunstIstNeotechDieUltimativeWahlFuRDiejenigenDieSowohlFunktionalitaTAlsAuchModeSuchen {
+                color: white;
+                font-size: 16.vw;
+                font-family: Rajdhani;
+                font-weight: 400;
+                line-height: 1.8vw;
+                word-wrap: break-word;
+              }
+
+   @media only screen and (min-width: 768px) {
+  .EineKollektionGefertigtAusHochmodernenFleeceMaterialDieseLinieDefiniertFunktionalitaTUndKomfortNeuUndBietetEinePerfekteBalanceZwischenStilUndLeistungObBeiDerVerfolgungVonOutdoorAbenteuernOderGemuTlichenMomentenImInnerenDieNeotechLinieGarantiertUnverGleichlicheWaRmeUndFlexibilitaTMitFortschrittlicherFleeceTechnologieUndAuErgewoHnlicherHandwerkskunstIstNeotechDieUltimativeWahlFuRDiejenigenDieSowohlFunktionalitaTAlsAuchModeSuchen {
+              height: 300px; 
+                overflow: hidden;
+  }
+  }
+
+       @media only screen and (max-width: 768px) {
+  .EineKollektionGefertigtAusHochmodernenFleeceMaterialDieseLinieDefiniertFunktionalitaTUndKomfortNeuUndBietetEinePerfekteBalanceZwischenStilUndLeistungObBeiDerVerfolgungVonOutdoorAbenteuernOderGemuTlichenMomentenImInnerenDieNeotechLinieGarantiertUnverGleichlicheWaRmeUndFlexibilitaTMitFortschrittlicherFleeceTechnologieUndAuErgewoHnlicherHandwerkskunstIstNeotechDieUltimativeWahlFuRDiejenigenDieSowohlFunktionalitaTAlsAuchModeSuchen {
+                 align-self: center; width: 100%;  color: white; font-size: 20px; font-family: Rajdhani; font-weight: 400; line-height: 19.20px; word-wrap: break-word
+              }
+  }
+
+
+
+              .Button {
+                padding-top: 11px;
+                padding-bottom: 10px;
+                padding-left: 25px;
+                padding-right: 25px;
+                background: white;
+                border-radius: 1px;
+                backdrop-filter: blur(14px);
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                display: inline-flex;
+              }
+
+              .ShopAll {
+                text-align: center;
+                color: black;
+                font-size: 18px;
+                font-family: Rajdhani;
+                font-weight: 500;
+                text-transform: uppercase;
+                line-height: 21.60px;
+                word-wrap: break-word;
+              }
+
+              .IconArrowRight {
+                width: 17px;
+                height: 17px;
+                position: relative;
+              }
+
+              .Vector7 {
+                width: 17px;
+                height: 6px;
+                left: 0px;
+                top: 5px;
+                position: absolute;
+                border: 0.50px black solid;
+              }
+
+              .Frame148 {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 16px;
+                display: inline-flex;
+              
+              }
+
+     @media only screen and (max-width: 768px) {
+  .Frame148 {
+   align-self: center;
+  }
+  }
+  
+  .M231j10406nkmrneozipsweatjacketDarkgrey006,
+              .W231j20401NeoZipSweatjacketBlack007 {
+                    max-width: 100%;
+                width: 50%;
+              }
+
+              .Frame147 {
+                width: 100%;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 16px;
+                display: inline-flex;
+              }
+
+
+  
+
+    @media only screen and (max-width: 768px) {
+  .Frame147 {
+  }
+  }
+
+    @media only screen and (max-width: 768px) {
+  .M231j10406nkmrneozipsweatjacketDarkgrey006 {
+          width: 50%;
+    height: auto !important;
+  }
+      .W231j20401NeoZipSweatjacketBlack007 {
+        width: 50%;
+          height: auto !important;
+
+      }
+  }
+
+
+
+
+
+              .M231j10406nkmrneozipsweatjacketDarkgrey006,
+              .W231j20401NeoZipSweatjacketBlack007 {
+                flex: 1 1 0;
+                    width: calc(50% - 8px);
+              }
+
+              .Frame169 {
+                width: 100%;
+                padding-bottom: 118px;
+                background: black;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 64px;
+                display: flex;
+              }
+
+              .DieseSportbekleidungGibtDirMotivation {
+                width: 100%;
+                align-self: center;
+                color: white;
+                font-size: 85px;
+                font-family: Rajdhani;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 93.50px;
+                word-wrap: break-word;
+              }
+
+              .Frame168 {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 40px;
+                display: flex;
+              }
+
+              .SportIstMehrAlsNurEineKoRperlicheHerausforderungDieRichtigeAusruSTungIstEntscheidendWissenschaftlicheStudienZeigenDassPassendeSportBekleidungMaGeblichDeineMotivationUndLeistungBeeinflussenKannBeiMorotaiVerstehenWirWieHerausforderndEsManchmalSeinKannSichZumSportZuMotivierenDeshalbEntwickelnWirKleidungDieDichZuEinemAktivenLebensstilInspiriert {
+                width: 100%;
+                align-self: center;
+                color: white;
+                font-size: 30px;
+                font-family: Rajdhani;
+                font-weight: 400;
+                height: 250px;
+                line-height: 120%;
+                word-wrap: break-word;
+              }
+
+    @media only screen and (max-width: 768px) {
+  .SportIstMehrAlsNurEineKoRperlicheHerausforderungDieRichtigeAusruSTungIstEntscheidendWissenschaftlicheStudienZeigenDassPassendeSportBekleidungMaGeblichDeineMotivationUndLeistungBeeinflussenKannBeiMorotaiVerstehenWirWieHerausforderndEsManchmalSeinKannSichZumSportZuMotivierenDeshalbEntwickelnWirKleidungDieDichZuEinemAktivenLebensstilInspiriert {
+       color: white; font-size: 20px !important; font-family: Rajdhani; font-weight: 400; line-height: 120% !important; word-wrap: break-word
+  }
+  }
+
+
+              .Frame49 {
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 20px;
+                display: inline-flex;
+              }
+
+              .Ellipse11,
+              .Ellipse10,
+              .Ellipse12 {
+                width: 15px;
+                height: 15px;
+                background: white;
+                border-radius: 9999px;
+              }
+
+              .MorotaiCtByTribunalovaWeb102 {
+                width: 100%;
+                height: auto;
+                align-self: center;
+              }
+
+              .WasMorotaiAndersMacht {
+              left: 50%;
+              top: 50%;
+              position: absolute;
+              color: white;
+              font-size: 86px;
+              font-family: Didot;
+              font-weight: 700;
+              text-transform: uppercase;
+              word-wrap: break-word;
+              font-family: 'Didot';
+              transform: translate(-50%, -50%);
+
+                 @media (max-width: 1600px) {
+          font-size: 56px;
+      }
+              }
+
+            @media (max-width: 768px) {
+              .WasMorotaiAndersMacht {
+                  font-size: 23px;
+                top: 26% !important;
+              }
+
+              .UnsereProdukteSindMultifunktionalSieEignenSichFuRAlleGaNgigenSportArtenSodassDuNichtFuRJedeSportartEinAnderesOutfitBenoTigst {
+                margin-bottom: 70px;
+              }
+
+              @media only screen and (max-width: 768px) {
+              .KonzentrationAufDasWesentlicheAufDenSport {
+                align-self: center;
+                color: black;
+                font-family: Rajdhani;
+                font-weight: 600;
+                text-transform: uppercase;
+                word-wrap: break-word;
+                align-self: center;
+              }
+            }
+
+              .sub-footer {
+    margin-top: 0px;
+    margin-bottom: 7px;
+  }
+    .sub-footer .thb-localization-forms .shopify-localization-form > div {
+      margin: 0px;
+  }
+    .thb-localization-forms .shopify-localization-form>div {
+      margin-left: 0px;
+  }
+  .localization .shopify-localization-form {
+    gap: 15px;
+  }
+      @media screen and (max-width: 767px) {
+        .custom-footer,
+        .widget--menu-column,
+        .columns {
+            padding: 20px;
+            gap: 20px;
+            text-align: center;
+            border: none;
+        }
+        .custom-footer {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .footer-logo-ig-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 50px;
+          flex: 20%;
+          padding-top: 55px;
+          background: var(--Black, #000);
+          border-left: 1px solid var(--White, #FFF);
+        }
+        @media screen and (min-width: 768px) {
+          .footer-logo-ig-container {
+          padding: 55px 118px 24px 118px;
+          }
+        }
+        @media screen and (max-width: 768px) {
+        .menu-container {
+          padding-top: 55px;
+          justify-content: center;
+        }
+      }
+      .menu-blocks {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 55px 45px 109px 45px;
+          align-items: flex-start;
+          gap: 100px;
+          justify-content: center;
+          flex: 1.5;
+      }
+      @media screen and (max-width: 1671px) {
+        .menu-blocks {
+            padding: 55px 80px 55px 80px;
+            flex: unset;
+        }
+        .menu-container {
+          display: block;
+        }
+        .footer-logo-ig-container {
+          border-left: 0px;
+          border-top: 1px solid var(--White, #FFF);
+        }
+      }
+  @media only screen and (min-width: 768px)
+      .row {
+          padding: 0px;
+      }
+      .row {
+          padding: 0px
+      }
+  .newsletter-wrapper {
+    padding-top:35px;
+    padding-bottom:35px;
+    max-width:1024px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .newsletter-title {
+    text-align: center;
+    font-size:32px;
+    margin-bottom:0;
+  }
+  .newsletter-after {
+    margin-left:auto;
+    margin-right:auto;
+    max-width:1024px;
+    text-align:center;
+  }
+</style>
+
+       {% schema %}
+{
+"name": "Footer",
+"settings": [
+	{
+		"type": "checkbox",
+		"id": "full_width",
+		"default": false,
+		"label": "Make section full width"
+	},
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Additional copyright text",
+      "default": "All rights reserved."
+    },
+	{
+      "type": "checkbox",
+      "id": "show_language_switcher",
+      "label": "Enable language switcher",
+      "default": true,
+		"info": "To add a language, go to your [language settings](/admin/settings/languages)."
+    },
+	{
+      "type": "checkbox",
+      "id": "show_currency_switcher",
+      "label": "Enable currency switcher",
+      "default": true,
+		"info": "To add a country/region, go to your [payment settings](/admin/settings/payments)."
+    },
+	{
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons",
+      "default": true,
+		"info": "By default your theme shows the icons that are associated with the payment gateway you have enabled in the [payment settings](/admin/settings/payments)."
+    },
+  {
+				"type": "select",
+				"id": "desktop_height",
+				"label": "Desktop height",
+				"options": [
+					{
+						"value": "desktop-height-auto",
+						"label": "Adapt to content"
+					},
+					{
+						"value": "desktop-height-450",
+						"label": "450px"
+					},
+					{
+						"value": "desktop-height-550",
+						"label": "550px"
+					},
+					{
+						"value": "desktop-height-650",
+						"label": "650px"
+					},
+					{
+						"value": "desktop-height-750",
+						"label": "750px"
+					},
+					{
+						"value": "desktop-height-full",
+						"label": "Full screen"
+					}
+				],
+				"default": "desktop-height-650"
+			},
+			{
+				"type": "select",
+				"id": "mobile_height",
+				"label": "Mobile height",
+				"options": [
+					{
+						"value": "mobile-height-auto",
+						"label": "Adapt to content"
+					},
+					{
+						"value": "mobile-height-350",
+						"label": "350px"
+					},
+					{
+						"value": "mobile-height-400",
+						"label": "400px"
+					},
+					{
+						"value": "mobile-height-450",
+						"label": "450px"
+					},
+					{
+						"value": "mobile-height-500",
+						"label": "500px"
+					},
+					{
+						"value": "mobile-height-full",
+						"label": "Full screen"
+					}
+				],
+				"default": "mobile-height-500"
+			},
+			{
+				"type": "checkbox",
+				"id": "full_width2",
+				"label": "Make section full width",
+				"default": true
+			},
+			{
+				"type": "text",
+				"id": "subheading",
+				"label": "Subheading",
+				"default": "Add a tagline"
+			},
+			{
+        "type": "textarea",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Background video heading"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text",
+        "default": "Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review."
+      },
+			{
+				"type": "checkbox",
+				"id": "lightbox_button",
+				"label": "Display lightbox play button",
+				"default": true
+			},
+      {
+				"type": "video_url",
+        "id": "video",
+        "label": "Video URL",
+				"accept": [
+          "youtube",
+          "vimeo"
+        ],
+				"placeholder": "Use a YouTube or Vimeo URL",
+				"default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+				"info": "Video plays in a lightbox."
+      },
+			{
+			  "type": "video",
+			  "id": "video_hosted",
+			  "label": "Shopify-hosted video",
+				"info": "Overrides the Video URL setting."
+			},
+			{
+        "type": "image_picker",
+        "id": "fallback_image",
+        "label": "Fallback image",
+				"info": "1920 x 1080 px .jpg recommended."
+      },
+			{
+				"type": "range",
+				"id": "overlay_opacity",
+				"min": 0,
+				"max": 100,
+				"step": 5,
+				"unit": "%",
+				"label": "Overlay opacity",
+				"default": 25
+			},
+			{
+        "type": "header",
+        "content": "Spacing"
+      },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": false,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": false,
+				"label": "Remove bottom spacing"
+			}
+],
+"blocks": [
+	{
+     "type": "@app"
+   },
+	{
+      "type": "text",
+      "name": "Text",
+		"settings": [
+			{
+				 "type": "select",
+				 "id": "column_size",
+				 "label": "Column size",
+				 "options": [
+					 { "value": "small", "label": "Small" },
+					 { "value": "medium", "label": "Medium" },
+					 { "value": "large", "label": "Large" }
+				 ],
+				 "default": "small"
+			},
+			{
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        },
+			{
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+				"info": "240 x 100 px .png recommended."
+        },
+			{
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add company info here.</p>"
+        },
+			{
+				"type": "select",
+				"id": "text_size",
+				"label": "Text size",
+				"options": [
+					{
+						"value": "small",
+						"label": "Small"
+					},
+					{
+						"value": "medium",
+						"label": "Medium"
+					},
+					{
+						"value": "large",
+						"label": "Large"
+					}
+				],
+				"default": "medium"
+			},
+			{
+          "id": "button_text",
+          "type": "text",
+          "label": "Button label",
+          "default": "Explore",
+				"info": "Leave the label blank to hide the button."
+        },
+        {
+          "id": "button_link",
+          "type": "url",
+          "label": "Button link"
+        },
+			{
+        "type": "checkbox",
+        "id": "show_social_links",
+        "label": "Show social links",
+        "default": true
+      }
+		]
+    },
+    {
+      "type": "menu",
+      "name": "Menu",
+		"settings": [
+			{
+				 "type": "select",
+				 "id": "column_size",
+				 "label": "Column size",
+				 "options": [
+					 { "value": "small", "label": "Small" },
+					 { "value": "medium", "label": "Medium" },
+					 { "value": "large", "label": "Large" }
+				 ],
+				 "default": "small"
+			},
+			{
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        },
+			{
+				"type": "link_list",
+				"id": "menu",
+				"default": "footer",
+				"label": "Menu",
+				"info": "Select navigation to display"
+			}
+		]
+    },
+	{
+      "type": "social",
+      "name": "Social links",
+		"settings": [
+			{
+				 "type": "select",
+				 "id": "column_size",
+				 "label": "Column size",
+				 "options": [
+					 { "value": "small", "label": "Small" },
+					 { "value": "medium", "label": "Medium" },
+					 { "value": "large", "label": "Large" }
+				 ],
+				 "default": "small"
+			},
+			{
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        }
+		]
+    },
+	{
+      "type": "signup",
+      "name": "Email signup",
+		"limit": 1,
+		"settings": [
+			{
+				 "type": "select",
+				 "id": "column_size",
+				 "label": "Column size",
+				 "options": [
+					 { "value": "small", "label": "Small" },
+					 { "value": "medium", "label": "Medium" },
+					 { "value": "large", "label": "Large" }
+				 ],
+				 "default": "small"
+			},
+			{
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        },
+			{
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add a text to attract more customers to <strong>sign up!</strong></p>"
+        }
+		]
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,35 @@
+
+
+
+.not-found {
+  max-width: 470px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0; }
+  @media only screen and (min-width: 768px) {
+    .not-found {
+      padding: 70px 0; } }
+  @media only screen and (min-width: 1068px) {
+    .not-found {
+      padding: 100px 0; } }
+  .not-found .button {
+    margin-top: 20px; }
+
+
+ .not-found-banner {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    display: inline-flex;
+    padding: 7px 30px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: var(--button-letter-spacing);
+    border: 1px solid var(--solid-button-background);
+    background: var(--solid-button-background);
+    color: var(--solid-button-label);
+    border-radius: var(--button-border-radius);
+  }

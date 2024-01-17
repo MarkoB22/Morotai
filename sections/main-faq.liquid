@@ -1,0 +1,77 @@
+{{ 'faq.css' | asset_url | stylesheet_tag }}
+
+<div>
+  <div class="banner-wrapper">
+    <img
+      src="{{ 'HelpcenterBanner.jpg' | file_img_url: '2048x922' }}"
+      alt="{{ "banner" | escape }}"
+      class="banner-image"
+    >
+
+    <div class="banner-content">
+      <h1 class="subheading white-text text-center heading">{{ 'sections.faq.title' | t }}</h1>
+
+      <form class="search-faq" role="search" method="get" action="/en/search">
+        <input class="search-input" type="search" placeholder="Search" value="" name="q" autocomplete="off">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="grid-2 mb-m">
+        <a href="tracking" class="item-link justify-center center-align">
+          {% render 'svg-icons' with 'track-order' %}
+          <p class="text-uppercase mb-none">{{ 'sections.faq.track' | t }}</p>
+        </a>
+        <a href="returns" class="item-link justify-center center-align">
+          {% render 'svg-icons' with 'return-order' %}
+          <p class="text-uppercase mb-none">{{ 'sections.faq.return' | t }}</p>
+        </a>
+      </div>
+
+      <h2 class="text-center text-uppercase">{{ 'sections.faq.information' | t }}</h2>
+
+      <div class="grid-3">
+        <a href="payment-faq" class="item-link">
+          <p class="font-bold text-uppercase">{{ 'sections.faq.payment.title' | t }}</p>
+          <p class="subheading mb-none">{{ 'sections.faq.article' | t: count: 3 }}</p>
+        </a>
+
+        <a href="order-faq" class="item-link">
+          <p class="font-bold text-uppercase">{{ 'sections.faq.order.title' | t }}</p>
+          <p class="subheading mb-none">{{ 'sections.faq.article' | t: count: 7 }}</p>
+        </a>
+
+        <a href="tracking-delivery-faq" class="item-link">
+          <p class="font-bold text-uppercase">{{ 'sections.faq.tracking_delivery.title' | t }}</p>
+          <p class="subheading mb-none">{{ 'sections.faq.article' | t: count: 7 }}</p>
+        </a>
+
+        <a href="exchange-return-faq" class="item-link">
+          <p class="font-bold text-uppercase">{{ 'sections.faq.exchange_return.title' | t }}</p>
+          <p class="subheading mb-none">{{ 'sections.faq.article' | t: count: 7 }}</p>
+        </a>
+
+        <a href="international-inquiries-faq" class="item-link">
+          <p class="font-bold text-uppercase">{{ 'sections.faq.inquiries.title' | t }}</p>
+          <p class="subheading mb-none">{{ 'sections.faq.article' | t: count: 3 }}</p>
+        </a>
+
+        <a href="sustainability-faq" class="item-link">
+          <p class="font-bold text-uppercase">{{ 'sections.faq.sustainability.title' | t }}</p>
+          <p class="subheading mb-none">{{ 'sections.faq.article' | t: count: 5 }}</p>
+        </a>
+
+        <a href="products-faq" class="item-link">
+          <p class="font-bold text-uppercase">{{ 'sections.faq.products.title' | t }}</p>
+          <p class="subheading mb-none">{{ 'sections.faq.article' | t: count: 4 }}</p>
+        </a>
+
+        <a href="wholesale-faq" class="item-link">
+          <p class="font-bold text-uppercase">{{ 'sections.faq.wholesale.title' | t }}</p>
+          <p class="subheading mb-none">{{ 'sections.faq.article' | t: count: 2 }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
