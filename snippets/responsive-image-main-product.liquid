@@ -1,68 +1,51 @@
 {%- assign image_sizes = sizes | split: ',' -%}
 {%- capture srcset -%}
-  {%- for size in image_sizes -%}
-    {%- assign small_size = '20x' -%}
-    {%- assign size_array = size | split: "x" -%}
-		{%- assign size_width = size_array[0] -%}
-		{%- if size_array[0] != "0" -%}
-			{%- assign size_x = size_array[0] | append: 'x' -%}
-		{%- else -%}
-			{%- assign size_width = image.width | times: size_array[1] | divided_by: image.height | floor -%}
-		{%- endif -%}
-    {%- if size_array[1] != "0" -%}
-      {%- assign size_x = size -%}
-      {%- assign small_x = size_array[1] | times: 20 | divided_by: size_array[0] | floor -%}
-      {%- assign small_size = small_size | append: small_x -%}
-    {%- endif -%}
-    {{- image.src | img_url: size_x, crop: 'center' }} {{ size_width }}w,
-  {%- endfor -%}
+{%- for size in image_sizes -%}
+{%- assign small_size = '20x' -%}
+{%- assign size_array = size | split: "x" -%}
+{%- assign size_width = size_array[0] -%}
+{%- if size_array[0] != "0" -%}
+{%- assign size_x = size_array[0] | append: 'x' -%}
+{%- else -%}
+{%- assign size_width = image.width | times: size_array[1] | divided_by: image.height | floor -%}
+{%- endif -%}
+{%- if size_array[1] != "0" -%}
+{%- assign size_x = size -%}
+{%- assign small_x = size_array[1] | times: 20 | divided_by: size_array[0] | floor -%}
+{%- assign small_size = small_size | append: small_x -%}
+{%- endif -%}
+{{- image.src | img_url: size_x, crop: 'center' }} {{ size_width }}w,
+{%- endfor -%}
 {%- endcapture -%}
 {%- liquid
-  assign l = srcset | size | minus: 1
-  assign w = image.width
-  assign h = image.height
-  if retina
-    assign w = image.width | divided_by: 2
-    assign h = image.height | divided_by: 2
-  endif
+assign l = srcset | size | minus: 1
+assign w = image.width
+assign h = image.height
+if retina
+assign w = image.width | divided_by: 2
+assign h = image.height | divided_by: 2
+endif
 
-  assign focal_point = image.presentation.focal_point
+assign focal_point = image.presentation.focal_point
 -%}
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-<img
-  class="main-product-img lazyload{% if retina %} retina_size{% endif %} {{ class | escape }}"
-  width="{{ w }}"
-  height="{{ h }}"
-  data-sizes="auto"
-  src="{{- image.src | img_url: small_size, crop: 'center' -}}"
-  data-srcset="{{ srcset | slice: 0, l | strip_newlines -}}"
-  alt="{{ image.alt | escape }}"
-  {% if focal_point -%}
-    style="object-position: {{ focal_point }};"
-  {% endif %}
->
+<img class="main-product-img lazyload{% if retina %} retina_size{% endif %} {{ class | escape }}" width="{{ w }}"
+  height="{{ h }}" data-sizes="auto" src="{{- image.src | img_url: small_size, crop: 'center' -}}"
+  data-srcset="{{ srcset | slice: 0, l | strip_newlines -}}" alt="{{ image.alt | escape }}" {% if focal_point -%}
+  style="object-position: {{ focal_point }};" {% endif %}>
 
 <style>
   /* must be the same as height in main-product.liquid .product-slider-wrapper */
   .main-product-img {
     width: 100%;
-    height: 76vh !important;
     max-height: 750px !important;
   }
 </style>
 
 <noscript>
-  <img
-    width="{{ image.width }}"
-    height="{{ image.height }}"
-    sizes="auto"
-    src="{{- image.src | img_url: small_size, crop: 'center' -}}"
-    srcset="{{ srcset | slice: 0, l | strip_newlines }}"
-    alt="{{ image.alt | escape }}"
-    loading="lazy"
-    {% if focal_point -%}
-      style="object-position: {{ focal_point }};"
-    {% endif %}
-  >
+  <img width="{{ image.width }}" height="{{ image.height }}" sizes="auto"
+    src="{{- image.src | img_url: small_size, crop: 'center' -}}" srcset="{{ srcset | slice: 0, l | strip_newlines }}"
+    alt="{{ image.alt | escape }}" loading="lazy" {% if focal_point -%} style="object-position: {{ focal_point }};" {%
+    endif %}>
 </noscript>
 {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
