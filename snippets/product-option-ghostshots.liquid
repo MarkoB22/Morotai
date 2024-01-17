@@ -133,7 +133,7 @@ assign val_array = val_array | remove_first: ',' | split: ','
           {% if option.name == 'Farbe' %}
           {%- for variant in product.variants -%}
           {% if variant.title contains value %}
-          {% assign imagePath = variant.image %}
+          {% assign imagePath = variant.image | image_url %}
           {% break %}
           {% endif %}
           {%- endfor -%}
