@@ -92,9 +92,10 @@ assign val_array = val_array | remove_first: ',' | split: ','
 
 
 {%- when 'button' -%}
+     test if code updated on 
+
 {% if option.name == 'Größe' %} 
 {% for variant in product.variants %}
-   test if code updated on EN version
 	{% assign variant_title_parts = variant.title | split: ' ' %}
 	{% assign size = variant_title_parts.first %}
 	{% assign color = variant_title_parts.last %}
