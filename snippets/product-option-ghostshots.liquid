@@ -93,7 +93,7 @@ assign val_array = val_array | remove_first: ',' | split: ','
 
 {%- when 'button' -%}
   {{ option.name }}
-{% if option.name == 'Größe' or option.name == 'size' %} 
+{% if option.name == 'Größe' or option.name == 'size' or option.name == 'Size' %} 
 {% for variant in product.variants %}
 	{% assign variant_title_parts = variant.title | split: ' ' %}
 	{% assign size = variant_title_parts.first %}
