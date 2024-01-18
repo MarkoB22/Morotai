@@ -1213,3 +1213,8 @@
   opacity: 0;
   transition: all ease-in-out .3s;
 }
+
+.not_reversed {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
