@@ -101,7 +101,7 @@ assign val_array = val_array | remove_first: ',' | split: ','
 			<div class="low_quantity hidden_low_quantity" color="{{ color }}" size="{{ size }}">{{ "products.product.only" | t }} {{ variant.inventory_quantity }} {{ "products.product.left_in_stock" | t }}</div>
 		{% endif %}
 		{% if variant.inventory_quantity == 0 %}
-			<div class="low_quantity hidden_low_quantity" color="{{ color }}" size="{{ size }}">{{ "products.product.out_of_stock" | t }}</div>
+			<div class="low_quantity hidden_low_quantity" color="{{ color }}" size="{{ size }}">{{ "products.product.out_of_stock" | t }}!</div>
 		{% endif %}
 	{% endfor %}
 {% endif %}
