@@ -149,7 +149,7 @@ assign product_content_alignment = settings.product_content_alignment
   }
 </style>
 
-<product-card class="product-card text-{{ product_content_alignment }}">
+<product-card class="product-card text-{{ product_content_alignment }} {{ active_index }}">
   <figure
     class="product-featured-image   {% if products_hover_images and product_card_product.images.size > 1 and products_hover_images_count > 0 %}thb-hover{% endif %}">
     {%- for product in product_card_product.options_with_values -%}

@@ -231,7 +231,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    transform: translateY(100%); }
+    transform: none; }
     .product-card .product-card-swatches .product-card-swatch {
       display: inline-flex;
       margin: 0;
