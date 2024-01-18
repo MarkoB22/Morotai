@@ -131,10 +131,10 @@ assign val_array = val_array | remove_first: ',' | split: ','
         <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
           style="{% if option.name == 'Farbe' %}width: 92px; height: 105px;{% else %} padding: 6.605px 12px 4.395px 12.5px;{% endif %}">
           {% if option.name == 'Farbe' %}
+          "test - Farbe"
           {%- for variant in product.variants -%}
           {% if variant.title contains value %}
           {% assign imagePath = variant.image | image_url %}
-          imagePath: {{ imagePath | image_url }}
           {% break %}
           {% endif %}
           {%- endfor -%}
