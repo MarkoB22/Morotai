@@ -164,6 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('selectedSize: ', selectedSize);
 
     const quantity_warnings = document.querySelectorAll('.low_quantity');
+    console.log('quantity_warnings:', quantity_warnings);
     if (quantity_warnings.length > 0) {
       quantity_warnings.forEach(function (quantity_warning) {
         quantity_warning.classList.add('hidden_low_quantity');
