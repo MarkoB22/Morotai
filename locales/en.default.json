@@ -1,1 +1,770 @@
-{"general":{"continue_shopping":"Continue shopping","shop_womens":"SHOP WOMENS","shop_mens":"SHOP MENS","close":"Close","cart_drawer":{"title":"Cart","view_cart":"View Cart","checkout":"Checkout","cart_empty":"Your cart is currently empty.","start_shopping":"Start Shopping","you_may_also_like":"You may also like","add_order_note":"Add order note","black_friday_discount":"BLACK FRIDAY* SALE - Buy 2, Get 3!","save":"Save","free_shipping":{"spend_more_for_free_shipping_html":"Spend <span>{{ amount }}<\/span> more for FREE shipping.","free_shipping_applied_at_checkout":"FREE shipping will be applied at checkout"}},"meta":{"page":"Page","tags":"Tag"},"color":"color","farbe":"color"},"newsletter":{"label":"Email","success":"Thanks for subscribing","title":"BECOME PART OF THE MOROTAI COMMUNITY","description_html":"Subscribe to our newsletter and always stay up-to-date! <br>Be the first to know about new products, exclusive styles and unique offers.","after_html":"By registering, you agree to receive exclusive promotional messages about MOROTAI products, events and promotions and you also agree to the <a href=\"https:\/\/morotai.de\/datenschutz\/\">Privacy Policy<\/a> and the <a href=\"https:\/\/morotai.de\/agb\/\">Terms of use<\/a> from MOROTAI. You can unsubscribe at any time."},"copyright":{"copyright-text":"All rights reserved."},"social":{"links":{"twitter":"Twitter","facebook":"Facebook","pinterest":"Pinterest","instagram":"Instagram","youtube":"YouTube","vimeo":"Vimeo","tiktok":"TikTok","linkedin":"Linkedin","wechat":"WeChat"}},"search":{"heading":"Search Results","no_results":"No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.","results_found":{"one":"{{ count }} result found for “{{ key }}”","other":"{{ count }} results found for “{{ key }}”"},"results_with_count":{"one":"{{ count }} result","other":"{{ count }} results"}},"accessibility":{"skip_to_text":"Skip to content","close":"Close","unit_price_separator":"per","link_messages":{"new_window":"Opens in a new window."}},"blogs":{"blog":{"all":"All"},"article":{"read_more":"Read more","tags":"Tags:","comments_html":{"one":"<span>{{ count }} comment on<\/span> {{ title }}","other":"<span>{{ count }} comments on<\/span> {{ title }}"},"moderated":"Please note, comments need to be approved before they are published.","comment_form_title":"Leave a comment","comment_form_note":"Your email address will not be published.","name":"Name","email":"Email","message":"Comment","post":"Post comment","success":"Your comment was posted successfully! Thank you!","success_moderated":"Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.","share_this_article":"Share this article","previous_article":"Previous article","next_article":"Next article"}},"onboarding":{"product_vendor":"Product vendor","product_title":"Example product title","collection_title":"Your collection's name"},"products":{"product":{"model_details":"MODEL DETAILS","color":"color","size":"size","quick_view":"Quick view","out_of_stock":"Out of stock","on_sale":"Sale","product_variants":"Product variants","product_information":"Product information","add_to_cart":"Add to cart","sold_out":"Sold out","save_html":"Save {{ saved_amount }}","unavailable":"Unavailable","price":{"from_price_html":"<span class=\"from\">From<\/span> {{ price }}","regular_price":"Regular price","sale_price":"Sale price","unit_price":"Unit price"},"model_details_size":{"170_57_S":"The model is 170 cm tall, weighs 57 kg and is wearing size S.","167_57_S":"The model is 167 cm tall, weighs 57 kg and is wearing size S.","183_82_M":"The model is 183 cm tall, weighs 82 kg and is wearing size M.","186_85_M":"The model is 186 cm tall, weighs 85 kg and is wearing size M.","173_57_S":"The model is 173 cm tall, weighs 57 kg and is wearing size S.","180_82_M":"The model is 180 cm tall, weighs 82 kg and is wearing size M.","192_81_M":"The model is 192 cm tall, weighs 81 kg and is wearing size M."},"badges":{"warranty":"WARRANTY","delivery":"STANDARD DELIVERY","pay_safe":"PAY SAFE","return_policy":"100 DAYS RETURN POLICY","working_days":"3-7 working days","temperature_range":"Temperature range","weather_conditions":"Weather conditions"},"weather_conditions":{"hot":"HOT","rain":"RAIN","cold":"COLD","low_light":"LOW LIGHT"},"include_taxes":"Tax included.","reviews":{"one":"{{ count }} review","other":"{{ count }} reviews"},"available":{"one":"Available in {{ count }} color","other":"Available in {{ count }} colors","sizes":"Available sizes"},"shipping_policy_html":"<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.","quantity":{"label":"Quantity","input_label":"Quantity for {{ product }}","increase":"Increase quantity for {{ product }}","decrease":"Decrease quantity for {{ product }}"},"inventory":{"only_x_left":"{{ quantity }} in stock","x_units_available":"{{ quantity }} in stock, ready to ship","low_stock":"Low stock","in_stock":"In stock"},"pickup_availability":{"heading":"Pickup Availability","view_store_info":"View store information","check_other_stores":"Check availability at other stores","pick_up_available":"Pickup available","pick_up_available_at_html":"Pickup available at <span>{{ location_name }}<\/span>","pick_up_unavailable_at_html":"Pickup currently unavailable at <span>{{ location_name }}<\/span>","unavailable":"Couldn't load pickup availability","refresh":"Refresh"},"view_product_details":"View product details","product_drawer":{"select_options":"Select options"},"xr_button":"View in your space","xr_button_label":"View in your space, loads item in augmented reality window","attributes":{"360-STRETCH":"360 STRETCH","WATER-RESISTANT":"WATER RESISTANT","WATER-REPELLENT":"WATER-REPELLENT","LIGHT-WEIGHT":"LIGHT WEIGHT","ZIPPER-POCKETS":"ZIPPER POCKETS","AIR-VENTS":"AIR VENTS","ANTI-WRINKLE":"ANTI-WRINKLE","BREATHABLE":"BREATHABLE","CHEST-POCKET":"CHEST POCKET","DOUBLE-LAYER":"DOUBLE LAYER","DRAWSTRING":"DRAWSTRING","DURABLE":"DURABLE","ELASTIC-CORD":"ELASTIC CORD","ELASTIC-WAISTBAND":"ELASTIC WAISTBAND","FLATLOCK-SEAM":"FLATLOCK SEAM","EMBROIDERED-LOGO":"EMBROIDERED LOGO","HALF-ZIP":"HALF-ZIP","HIGH-WAIST":"HIGH WAIST","LASER-MESH":"LASER MESH","MESH-INSERT":"MESH INSERT","MODULAR-PUSH-UP":"MODULAR PUSH-UP","MOISTURE-WICKING":"MOISTURE WICKING","OPAQUE-FABRIC":"OPAQUE FABRIC","PERFECT-FIT":"PERFECT FIT","PHONE-POCKET":"PHONE POCKET","QUICK-DRY":"QUICK DRY","REFLECTIVE-PRINTS":"REFLECTIVE PRINTS","SEAMLESS-DESIGN":"SEAMLESS DESIGN","SIDE-POCKETS":"SIDE POCKETS","THUMBHOLES":"THUMBHOLES","SOFT-FLEECE":"SOFT FLEECE","EASY-CARE":"EASY CARE","FLEXIBILITY":"FLEXIBILITY"}},"facets":{"apply":"Apply","clear":"Clear","clear_all":"Clear all","from":"From","filter_and_sort":"Filter and sort","filter_by_label":"Filter:","filter_button":"Filter","filters_selected":{"one":"{{ count }} selected","other":"{{ count }} selected"},"max_price":"The highest price is {{ price }}","product_count":{"one":"{{ product_count }} of {{ count }} product","other":"{{ product_count }} of {{ count }} products"},"product_count_simple":{"one":"{{ count }} product","other":"{{ count }} products"},"reset":"Reset","sort_button":"Sort","sort_by_label":"Sort by","to":"To","clear_filter":"Clear filter"}},"sections":{"tracking":{"title":"Track order","disclamer":"* only for orders to Germany"},"returns":{"title":"Returns & Exchanges","description":"We stand behind the quality of every product we sell. If your purchase does not work out for any reason, you can initiate a return or exchange within 100 days of receiving your order as long as the product is unwashed and unworn with tags included. We cover the return shipping costs for German orders. All refund requests will only be refunded to the original payment method. Please note that a refund does not include the original shipping costs.","description2":"At this time, we do not offer free returns on international orders or refunds for any applicable taxes and duties from your original order. For tax and duty refund requests for returned items, please contact your local customs office to receive appropriate compensation, if applicable.","domestic":{"title":"Domestic returns & exchanges","description":"Visit our exchange center"},"international":{"title":"International returns & exchanges","description":"Returns & exchanges for international customers"},"contact":{"title":"Contact","description":"Contact customer support"}},"header":{"search":"Search","search_for":"Search for anything","popular_searches":"POPULAR SEARCHES","my_account":"My Account","login":"Login","cart":"Cart","products":"Products","articles":"Articles","suggestions":"Suggestions","view_all_results":"View all results"},"footer":{"footer-quote":"FIND YOUR INNER WARRIOR"},"breadcrumbs":{"home":"Home","shop":"Shop","search":"Search","my_account":"My Account","cart":"Cart"},"404":{"not_found_banner":"404 PAGE NOT FOUND","not_found":"Page not found","not_found_description_html":"Oops, like a skilled athlete on an obstacle course, you've taken an unexpected turn, this page couldn't be found.","continue_shopping":"Continue shopping"},"faq":{"title":"FAQ & HELPCENTER","search_placeholder":"Search","track":"Track order","return":"Return order","information":"GET MORE INFORMATION","ordering_shipping":"Ordering & Shipping","returns_exchanges":"Returns & Exchanges","tracking_delivery":{"title":"TRACKING & DELIVERY","order_arrival":{"question":"How long will it take for my order to arrive?","answer":"Shipments usually take 1-5 business days to arrive. Please note, time may vary due to weather, customs, or any unforeseen variables.\nIf you did not find the answer to your question, please contact customer service directly at: support@morotai.com","answer_html":"Shipments usually take 1-5 business days to arrive. Please note, time may vary due to weather, customs, or any unforeseen variables.\nIf you did not find the answer to your question, please contact customer service directly at: <a href=\"mailto:support@morotai.com\">support@morotai.com<\/a>"},"courier_providers":{"question":"What courier providers do you use?","answer":"All orders are shipped via DHL and DHL Express. Depending on on the country."},"multiple_orders":{"question":"Can multiple orders be combined?","answer":"Due to high volume of orders we cannot combine orders. Please be sure to place all desired items in the cart before checking out."},"po_box":{"question":"Can I use a PO Box for my delivery address?","answer":"No, we do not ship to PO boxes."},"gear_quality":{"question":"What should I do if my gear is experiencing a quality issue?","answer":"If you've received a defective item, please do NOT process a return or exchange. In the event that your gear is damaged for whatever reason, our customer experience team will be more than happy to rectify this situation for you accordingly. Please CLICK HERE to contact our team to ensure we rectify this situation for you as quickly as possible!","answer_html":"If you've received a defective item, please do NOT process a return or exchange. In the event that your gear is damaged for whatever reason, our customer experience team will be more than happy to rectify this situation for you accordingly. Please <a href=\"kontakt-1\">CLICK HERE<\/a> to contact our team to ensure we rectify this situation for you as quickly as possible!"},"order_returned":{"question":"My order was Returned To Sender. Now what?","answer":"If your order was Returned To Sender due to an invalid address or an issue with delivery, we will issue a full refund of the cost of the gear as soon as the package arrives back at our warehouse. Please note that the shipping cost will not be included in the final refund."},"lost_package":{"question":"What do I do if my package is lost, damaged, or stolen?","answer":"For any international customers experiencing a lost, damaged, or stolen package, please email our support team at support@morotai.com or the whatsapp number +49 7231 3740190.","answer_html":"For any international customers experiencing a lost, damaged, or stolen package, please email our support team at <a href=\"mailto:support@morotai.com\">support@morotai.com<\/a> or the whatsapp number +49 7231 3740190."}},"product_information":"Product Information","in_store_inquiries":"In-Store Inquiries","international_inquiries":"International Inquiries","wholesale":{"title":"WHOLESALE","partner":{"question":"How can I be wholesale partner for MOROTAI?","answer":"Please CLICK HERE if you're interested in becoming an official MOROTAI wholesaler. From there, one of our associates will be in touch should we decide it's a good fit.","answer_html":"Please <a href=\"kontakt-1\">CLICK HERE<\/a> if you're interested in becoming an official MOROTAI wholesaler. From there, one of our associates will be in touch should we decide it's a good fit."},"defects":{"question":"I purchased gear through an MOROTAI wholesaler, and it's defective.","answer":"If you received a defective item that you originally purchased from an MOROTAI wholesaler, you'll need to contact that wholesaler directly as we do not have access to the order or payment information that's required to verify your information and rectify the situation accordingly. "}},"article":{"one":"1 article","other":"{{ count }} articles"},"payment":{"title":"PAYMENT","secure":{"question":"Is my payment secure?","answer":"On MOROTAI Online Store, every purchase is made with maximum security. We only use protected connections, as demonstrated by the « https » URL prefix and the lock symbol that appears in the browser’s address bar.\n To safeguard your credit card purchases, you will always be asked to enter your CVV code for every order.\nOur Payments department may carry out anti-fraud checks before approving the transaction and for greater protection, they may contact you for further details before confirming the order."},"accept":{"question":"What payment do you accept?","answer":"We accept all major credit cards such as VISA, Mastercard, American Express, Maestro, Union Pay. You can pay with Apple Pay, Google Pay and Paypal. Bank Transfer and Sofort Überweisung."},"invoice":{"question":"How does the purchase on invoice with Klarna work?","answer_html":"The principle is simple: from the invoice date, you usually have 30 days to settle your bill. You pay only after you have received the goods. You shop comfortably, complete your order, and check the products at home at your leisure. The invoice will be sent either by email, separately by post, or together with the goods, depending on the retailer. You can view all your invoices at any time here or in the Klarna app. If you are not satisfied with your goods, you can report a “problem” in the Klarna app, so your invoice is paused until you have been able to resolve your issue with us. Therefore use {{ link_placeholder }} or the whatsapp number +49 7231 3740190."}},"order":{"title":"ORDER","response_time":{"question":"How long will it take for Customer Service to respond?","answer":"You can expect a response within 1 business day. Our customer service team works Monday-Friday. \nPlease allow 2-3 business days for a response during sales and holidays."},"order_shippment":{"question":"When will my order ship?","answer":"We fulfill all orders within 1-2 business days.\nPlease note that during sales and holidays, we require 3-7 business days for processing."},"edit_information":{"question":"I inputted the wrong address at checkout. Can I edit my shipping information?","answer":"We are only able to update your shipping address as long as your order has not yet shipped. Please CONTACT US to request an address update to your most recent order.","answer_html":"We are only able to update your shipping address as long as your order has not yet shipped. Please <a href=\"kontakt-1\">CONTACT US<\/a> to request an address update to your most recent order."},"edit_order":{"question":"I ordered the wrong items. Can I cancel or change my order after it has been placed?","answer":"In an attempt to fulfill all orders within 1 business day, we are unable to make any edits or modifications to an order once it has been placed. However, in the event that a mistake was made while placing your order, please CLICK HERE to submit a cancellation request.\nPlease note that cancellation requests are not guaranteed, but our team will do its best to process your cancellation as long as your order has not been processed at our warehouse. ","answer_html":"In an attempt to fulfill all orders within 1 business day, we are unable to make any edits or modifications to an order once it has been placed. However, in the event that a mistake was made while placing your order, please <a href=\"kontakt-1\">CLICK HERE<\/a> to submit a cancellation request.\nPlease note that cancellation requests are not guaranteed, but our team will do its best to process your cancellation as long as your order has not been processed at our warehouse. "},"discounts":{"question":"Do you offer any discounts?","answer_html":"MOROTAI rarely offers discounts. If you have a discount code that is no longer working, please contact our customer support. If you are a trainer, athlete, or student, also reach out to our customer support for a potential discount. The email for customer support is {{ link_placeholder }} or the whatsapp number +49 7231 3740190."},"gift_cards":{"question":"Do you sell Gift Cards?","answer":"You can purchase Gift Cards HERE. Gift cards are delivered via email and contain instructions to redeem them at checkout. Our Gift Cards have no additional processing fees.","answer_html":"You can purchase Gift Cards <a href=\"kontakt-1\">HERE<\/a>. Gift cards are delivered via email and contain instructions to redeem them at checkout. Our Gift Cards have no additional processing fees."},"gift_cards_expiration":{"question":"Do Gift Cards expire?","answer":"Gift Cards are programmed to expire after 2 years. If your Gift Card has expired and you still have a remaining balance, please CLICK HERE to submit a request to our customer experience team to issue you a new card. ","answer_html":"Gift Cards are programmed to expire after 2 years. If your Gift Card has expired and you still have a remaining balance, please <a href=\"kontakt-1\">CLICK HERE<\/a> to submit a request to our customer experience team to issue you a new card. "}},"exchange_return":{"title":"EXCHANGE & RETURN","policy":{"question":"What is your Return\/Exchange policy?","answer":"POLICY We stand behind the quality of every product we sell. If your purchase does not work out for any reason, you may initiate a return or exchange within 100 days of receiving your order as long as the product is unwashed and unworn with tags included.\nWe will pay for the return shipping cost for german orders. Any refund requests will only be refunded to the original form of payment. Please note that if a refund is requested, your refund will not include the original cost of shipping.\nAt this time, we do not offer free return shipping for international orders or refunds on any Taxes & Duties incurred from your original order. However, for any international exchange orders, we will cover the cost of sending your exchange back to you. For Taxes & Duties refund inquiries for any returned items, please reach out to your local customs office to receive appropriate compensation if applicable.","answer2":"EXCEPTIONS\nDue to limited availability, Limited Edition Drops are final sale and are not eligible to be returned or exchanged.\nFor hygienic reasons, we do not accept returns or exchanges on facemasks, face coverings, balaclavas, compression bottoms, underwear, or socks."},"how_to":{"question":"How do I return or exchange a product?","answer":"Visit our Returns & Exchanges page to initiate a Return or Exchange.Please note that returns using our provided return label will incur a return shipping fee. However, exchanges and store credit refunds are exempt from this charge."},"processed":{"question":"When will my return be processed?","answer":"Please allow 3-5 business days from the time your return package is marked as delivered back at our warehouse for us to process your return\/exchange."},"wrong_item":{"question":"I received the wrong item in my order. What should I do now?","answer":"Please CLICK HERE to contact our team so we can ensure we ship the correct item out to you as quickly as possible!","answer_html":"Please <a href=\"kontakt-1\">CLICK HERE<\/a> to contact our team so we can ensure we ship the correct item out to you as quickly as possible!"},"pay_shipping":{"question":"Will I have to pay for return shipping?","answer":"We provide complimentary returns for exchanges and store credit refunds on orders within 14 days of delivery. However, a return label fee is applicable for returns seeking a refund to the original payment method."},"store_credit":{"question":"When will I receive my store credit?","answer":"Once returned items are received, we can either issue store credit for you within 2-3 business days or refund your payment within about 15 days."},"refund":{"question":"Why is my return refund less than what I originally paid?","answer":"We're only able to refund what was actually paid. Therefore, if you used a discount code in your original order, that amount will not be refunded back to your original form of payment.\nAdditionally, please note that the initial cost of shipping is non-refundable and will not be included in your refund back to your original form of payment. "}},"inquiries":{"title":"INTERNATIONAL INQUIRIES","international_ship":{"question":"Do you ship internationally?","answer":"We ship to:\nAruba, Austria, Albania, Costa Rica, Croatia, Denmark, Andorra, United Arab Emirates, Antigua and Barbuda, Anguilla, Armenia, Angola, Argentina, Australia, Azerbaijan, Bosnia and Herzegovina, Barbados, Bangladesh, Belgium, Burkina Faso, Bulgaria, Bahrain, Burundi, Benin, Bermuda, Brunei Darussalam, Bolivia, Brazil, Bahamas, Bhutan, Botswana, Belize, Canada, Congo-Brazzaville, Côte d’Ivoire, Cook Islands, Chile, Cameroon, China, Colombia, Cabo Verde, Cyprus, Czech Republic, Djibouti, Dominica, Germany, Dominican Republic, Algeria, Ecuador, Estonia, Egypt, Spain, Ethiopia, Fiji, Falkland Islands, Faroe Islands, France, Gabon, Grenada, Georgia, French Guiana, Guernsey, Ghana, Gibraltar, Greenland, Gambia, Guinea, Guadeloupe, Equatorial Guinea, Greece, Guinea-Bissau, Guyana, Hong Kong SAR, Honduras, Haiti, Hungary, Indonesia, Ireland, Israel, Isle of Man, India, Iceland, Italy, Jersey, Jamaica, Jordan, Japan, Kenya, Kyrgyzstan, Cambodia, Kiribati, Comoros, ","answer2":"St. Kitts and Nevis, South Korea, Kuwait, Cayman Islands, Kazakhstan, Laos, Lebanon, St. Lucia, Liechtenstein, Liberia, Lesotho, Lithuania, Luxembourg, Latvia, Morocco, Monaco, Moldova, Montenegro, Madagascar, North Macedonia, Mongolia, Macau SAR, Martinique, Mauritania, Montserrat, Malta, Mauritius, Maldives, Malawi, Mexico, Malaysia, Namibia, Nigeria, Nicaragua, Netherlands, Romania, Finland, United Kingdom, St. Barthélemy, Switzerland, Curaçao, Guatemala, Sri Lanka, St. Martin, Mozambique, New Caledonia, Norway, Nepal, Nauru, Niue, New Zealand, Oman, Panama, Peru, French Polynesia, Papua New Guinea, Philippines, Pakistan, Poland, Portugal, Paraguay, Qatar, Réunion, Serbia, Rwanda,","answer3":" Saudi Arabia, Solomon Islands, Seychelles, Sudan, Sweden, Singapore, St. Helena, Slovenia, Slovakia, Sierra Leone, San Marino, Suriname, São Tomé and Príncipe, El Salvador, Sint Maarten, Eswatini, Turks and Caicos Islands, Chad, Togo, Thailand, Timor-Leste, Turkmenistan, Tunisia, Tonga, Turkey, Trinidad and Tobago, Tuvalu, Taiwan, Tanzania, Uganda, United States, Uruguay, Uzbekistan, Vatican City, St. Vincent and the Grenadines, Venezuela, British Virgin Islands, Vietnam, Vanuatu, Wallis and Futuna, Samoa, Mayotte, South Africa, Zambia, and Zimbabwe.","answer4":"Please note that Taxes & Duties are not calculated at checkout and are the customer's responsibility. International customers are entitled to receive an additional bill from the courier once the package passes customs or following delivery. Please note that these fees are imposed by your customs office and are NOT from MOROTAI.\nIf you do not pay the fees or decide to reject your order, your package will be returned back to MOROTAI and we will refund you the cost of the order excluding shipping."},"tax_refund":{"question":"Are Taxes & Duties refunded if I initiate an international return\/exchange?","answer":"Due to the fact that Taxes & Duties are imposed by your customs office and NOT from MOROTAI, we do not collect any of those fees. MOROTAI  is only able to refund what was paid for the cost of goods. Therefore, should you decide to return your gear, we'll issue a refund of the gear, not inclusive of the shipping costs. For Taxes & Duties refunds, you'll have to contact your customs office directly with proof that your items were returned."},"checkout_tax":{"question":"Are Taxes & Duties calculated at checkout?","answer":"We offer a Taxes & Duties prepaid option called DHL Delivered Duty Paid (DDP) at checkout for select countries. However, please note that each country has different thresholds put in place that do not allow for a Taxes & Duties prepaid option at checkout if the order value exceeds a certain amount. \nShould you choose not to use DHL DDP, you can opt to use Taxes & Duties Unpaid through DHL depending on your preference, also known as Delivered Duty Unpaid (DDU).","answer2":" If you decide to use a DDU courier option, you will receive a bill from the courier directly. Please note that these fees are imposed by your customs office and NOT from, or collected by, MOROTAI.\nIf you do not pay the fees or decide to reject your order, your package will be returned back to MOROTAI  and we will refund you the cost of the order, excluding the cost of shipping, once the package arrives back at our warehouse."}},"sustainability":{"title":"SUSTAINABILTY","warehouse":{"question":"What is a sustainable warehouse?","answer":"A sustainable warehouse is when the storage boxes are not made from the usual plastic or metal, but in our case, from recycled paper. We use the majority of our shipping materials such as stickers, boxes, and labels made from paper that can be reused."},"products":{"question":"Are MOROTAI products sustainable?","answer":"How we wish we could simply answer “Yes”. But unfortunately, it's not that simple. Sustainable textile industry is a massive challenge. However, what we can say for sure is: We're doing our best. We rely on organic cotton, recycled polyester and are in the process of further minimizing our environmental impact. As we also take social responsibility seriously, we closely examine our supply chain and working conditions.\nBy producing timeless sportswear that doesn’t go out of fashion, we can also avoid overproduction of clothing. For transportation, we primarily use ships, as they are more environmentally friendly than airplanes. Only in emergencies 1% do we use a plane. The high quality of our products makes them particularly durable, saving you many purchases. For us, being sustainable mainly means developing a product that can be used for a long time."},"manufacturing":{"question":"Where does MOROTAI manufacture its products?","answer":"Our products are manufactured in China, Pakistan, Turkey, and in the future also in Portugal. To ensure that the conditions on-site are satisfactory, we only collaborate with production facilities that are regularly audited by amfori BSCI or comparable social standards by external assessors."},"manufacturing_in_germany":{"question":"Could you also produce in Germany? Why don't you manufacture in Germany?","answer":"One of the biggest misconceptions about sustainability is that production in Asia is always bad and production in Europe is always good. It's not that simple. Our production outside of Germany primarily enables us to offer affordable prices to create basics for everyone, and this can be done fairly. It would be rash to completely withdraw our orders and thus take away the work from these factories. International standards ensure that everything in our production is above board.\nThrough long-standing relationships, we have established a responsible supply chain and are committed to fair working conditions and decent wages in our production facilities. We work closely with our production partners to ensure that social and environmental standards are met. Sustainability is a holistic approach that goes beyond the location of production and encompasses the entire supply chain."},"go_green":{"question":"What is DHL GoGreen?","answer":"GoGreen is an eco-friendly shipping and receiving service by DHL and Deutsche Post.\nThe emissions generated by shipping are offset through investments in global climate protection projects. This allows our products to be delivered to you in a climate-neutral manner through compensation."}},"products":{"title":"PRODUCTS","size":{"question":"How do I know what size i am?","answer":"MOROTAI Products are performance fitted. If you are not sure about which size to choose, please feel free to contact us. Generally, our products are cut close to the body, resulting in a slim fit. We recommend choosing one size larger for a looser fit."},"washing":{"question":"What’s the best way to wash my MOROTAI gear?","answer":"For the best care, we recommend washing on cold or warm and tumble dry or hang dry. Additionally, to ensure the longevity of your gear, we recommend using detergent that does not contain any synthetic dyes, such as blue detergent, as synthetic dyes have the potential to interact negatively with fabric dyes causing discoloration. We recommend using clear detergent when washing your MOROTAI gear."},"restacked_items":{"question":"What’s the best way to find out about restocked items?","answer_html":"The best way to stay up-to-date on general restocks and new product releases is to follow us on our Instagram, Facebook and sign up for our mailing list. For any specific restock questions, please don't hesitate to reach out to our customer experience team by clicking <a href=\"kontakt-1\">HERE<\/a>.","answer":"The best way to stay up-to-date on general restocks and new product releases is to follow us on our Instagram, Facebook and sign up for our mailing list. For any specific restock questions, please don't hesitate to reach out to our customer experience team by clicking HERE."},"alternatives":{"question":"Where else can I find MOROTAI products?","answer":"At this time all MOROTAI products are sold exclusively on our webshop and at select retailers such as Zalando and Aboutyou."},"description":"Product description"}},"cart":{"title":"Your cart","order_summary":"Order summary","add_notes":"Add notes","subtotal":"Subtotal","note":"Order special instructions","checkout":"Checkout","empty":"Your cart is empty","ready":"Ready to find your new favorite products?","cart_error":"There was an error while updating your cart. Please try again.","cart_quantity_error_html":"You can only add {{ quantity }} of this item to your cart.","taxes_and_shipping_policy_at_checkout_html":"Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout","taxes_included_but_shipping_at_checkout":"Tax included and shipping calculated at checkout","taxes_included_and_shipping_policy_html":"Tax included. <a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.","taxes_and_shipping_at_checkout":"Taxes and shipping calculated at checkout","headings":{"product":"Product","price":"Price","total":"Total","quantity":"Quantity"}},"collection_template":{"empty":"No products found","use_fewer_filters_html":"Use fewer filters or <a class=\"clear-filters text-button\" href=\"{{ link }}\">clear all<\/a>","load_more":"Load more"},"password":{"login_using":"Enter using password","opening_soon":"Opening soon","enter_using":"Enter store using password:","are_you_the_store_owner":"Are you the store owner?","login_here":"Log in here","cancel":"Cancel"},"featured_collection":{"shop_collection":"Shop {{ collection }}"},"featured_blog":{"view_all":"View all posts","onboarding_title":"Blog post","onboarding_content":"Give your customers a summary of your blog post"},"shop_the_look":{"view_product":"View Product"},"signup":{"enter_your_email":"Enter your email"},"countdown_banner":{"days":"Days","hours":"Hours","minutes":"Minutes","seconds":"Seconds"},"contact":{"form":{"name":"Name","email":"Email","phone":"Phone number","comment":"Comment","send":"Send Message","post_success":"Thanks for contacting us. We'll get back to you as soon as possible.","error_heading":"Please adjust the following:"},"map":{"location":"Location {{ index }}"}}},"localization":{"country_label":"Country\/region","language_label":"Language","update_language":"Update language","update_country":"Update country\/region"},"customer":{"login_page":{"login":"Login","login_description":"If you have an account with us, please log in.","create_account":"Create an account","create_account_description":"Enter your information below to proceed. If you already have an account, please log in instead.","email":"Email address","forgot_password":"Forgot your password?","dont_have_an_account":"Don’t have an account?","password":"Password","title":"Login","sign_in":"Sign in","first_name":"First name","last_name":"Last name","submit_register":"Create an account","already_have_an_account":"Already have an account?","submit":"Submit","cancel":"Cancel"},"recover_password":{"title":"Reset your password","subtext":"We will send you an email to reset your password","success":"We've sent you an email with a link to update your password."},"reset_password":{"title":"Reset account password","subtext":"Enter a new password for {{ email }}","password":"Password","password_confirm":"Confirm password","submit":"Reset password"},"account":{"title":"My Account","details":"Account details","view_addresses":"View addresses","default_address":"Default address","log_out":"Log out","return_to_account_details":"Return to account details"},"order":{"title":"Order {{ name }}","date_html":"Placed on {{ date }}","cancelled_html":"Order Cancelled on {{ date }}","cancelled_reason":"Reason: {{ reason }}","billing_address":"Billing Address","payment_status":"Payment Status","shipping_address":"Shipping Address","fulfillment_status":"Fulfillment Status","discount":"Discount","shipping":"Shipping","tax":"Tax","product":"Product","sku":"SKU","price":"Price","quantity":"Quantity","total":"Total","fulfilled_at_html":"Fulfilled {{ date }}","track_shipment":"Track shipment","tracking_url":"Tracking link","tracking_company":"Carrier","tracking_number":"Tracking number","subtotal":"Subtotal"},"orders":{"title":"Order history","order_number":"Order","order_number_link":"Order number {{ number }}","date":"Date","payment_status":"Payment status","fulfillment_status":"Fulfillment status","total":"Total","none":"You haven't placed any orders yet."},"activate_account":{"title":"Activate account","subtext":"Create your password to activate your account.","password":"Password","password_confirm":"Confirm password","submit":"Activate account","cancel":"Decline invitation"},"addresses":{"title":"Addresses","default":"Default","add_new":"Add a new address","edit_address":"Edit address","first_name":"First name","last_name":"Last name","company":"Company","address1":"Address 1","address2":"Address 2","city":"City","country":"Country\/region","province":"Province","zip":"Postal\/ZIP code","phone":"Phone","set_default":"Set as default address","add":"Add address","update":"Update address","cancel":"Cancel","edit":"Edit","delete":"Delete","delete_confirm":"Are you sure you wish to delete this address?"}},"gift_cards":{"issued":{"title":"Here's your {{ value }} gift card for {{ shop }}!","subtext":"Your gift card","gift_card_code":"Gift card code","shop_link":"Continue shopping","remaining_html":"Remaining {{ balance }}","add_to_apple_wallet":"Add to Apple Wallet","qr_image_alt":"QR code — scan to redeem gift card","copy_code":"Copy code","expired":"Expired","copy_code_success":"Code copied successfully","print_gift_card":"Print"}},"product_rows":{"materials":"Materials","care_guide":"Care guide"},"difference_page":{"difference_title":"WHAT MAKES MOROTAI DIFFERENT","difference_title_first_half":"WHAT MAKES","difference_title_second_half":"MOROTAI DIFFERENT","intro_title":"PRODUCTS THAT","intro_title_part_two":"MAKE IT EASY","intro_title_part_three":"TO STAY ACTIVE.","intro_description":"MOROTAI creates timeless sportswear that is both functional and stylish. The products are available in black, white and gray. They are multifunctional, both for sporting activities and for everyday life, with practical features. MOROTAI values comfort, perfect fit and aesthetic design, which increases sports motivation. The clothing is specifically designed for the sports lifestyle, with soft materials and durable design. MOROTAI combines comfort, functionality and style to ensure an optimal sports experience and places particular emphasis on quality and sustainability.","intro_button":"DISCOVER ALL PRODUCTS","subtitle_top_part_one":"OTHER SPORTS BRANDS","subtitle_top_part_two":"JUST DRESS YOU.","subtitle_bottom":"MOROTAI KNOWS WHAT YOU NEED FOR YOUR SPORTS LIFESTYLE.","description":"Our mission is to create sportswear that not only empowers but also inspires you to pursue and enjoy an active lifestyle.","attributes":{"max_comfort":"MAXIMUM COMFORT","max_comfort_description":"Our sportswear is so comfortable that you'll never want to take it off again. Since our sportswear can be worn both during sports and in everyday life, this is not a problem.","stretch":"Most of our products have 360° stretch for maximum comfort.","quality":"Our materials are among the highest quality used in the industry.","multifunctional":"MULTIFUNCTIONALITY","multifunctional_description":"Our products are multifunctional. They are suitable for all common sports, so you don't need a different outfit for each sport.","details":"SMART DETAILS","details_description":"Our focus is on making your training experience as comfortable as possible so that you can fully concentrate on your workout. Innovative details help you complete your training safely and efficiently. On average, each product has at least 4 smart details.","practical":"Safely and conveniently stored while you're active without getting in the way or getting lost.","reflective":"Reflective details increase visibility and safety in the dark.","timeless":"TIMELESS DESIGNS","timeless_description":"We combine modern style with a clear, uncomplicated design in sports fashion, which makes our clothing not only contemporary, but also durable and timeless - a perfect companion for many years without losing its fashion relevance.","color":"COLOR SIMPLICITY","color_description":"We have chosen a minimalist color palette so that our products can be easily combined. No matter which products you choose from your wardrobe, they always fit together perfectly and guarantee a stylish outfit - one less thing to worry about."},"slider":{"title_part_one":"FOCUSING ON","title_part_two":"THE ESSENTIALS","title_part_three":"OF SPORT","content":"Focus on the Essentials: The Sport At MOROTAI, we focus on what really matters – the sport. Whether you are a dedicated athlete or a recreational sportsperson, you are looking for a simple way to live your active lifestyle. With us, you will find not only sportswear that works perfectly during training but also styles that are ideal before and after sports. We understand that sports are about the experience itself, not the hassle of choosing your wardrobe."},"collections":{"collections_title":"4 PRODUCT LINES","collections_title_ziel":"1 GOAL","collections_description":"OUR MISSION IS TO CREATE SPORTSWEAR THAT NOT ONLY EMPOWERS BUT ALSO INSPIRES YOU TO PURSUIT AND ENJOY AN ACTIVE LIFESTYLE.","collections_full":"4 PRODUCT LINES = 1 GOAL","chrome":"CHROME","chrome_collection":"CHROME COLLECTION","chrome_description":"","chrome_button":"DISCOVER CHROME","neotech":"NEOTECH","neotech_collection":"NEOTECH","neotech_description":"A collection made from state-of-the-art fleece material. This line redefines functionality and comfort, offering a perfect balance between style and performance. Whether pursuing outdoor adventures or cozy moments indoors, the NEOTECH LINE guarantees unparalleled warmth and flexibility. With advanced fleece technology and exceptional craftsmanship, NEOTECH is the ultimate choice for those seeking both functionality and fashion","neotech_button":"DISCOVER NEOTECH","engineering":"ENGINEERING","engineering_collection":"ENGINEERING COLLECTION","engineering_description":"","engineering_button":"DISCOVER ENGINEERING","essential":"ESSENTIAL","essential_collection":"ESSENTIAL COLLECTION","essential_description":"","essential_button":"DISCOVER ESSENTIAL"},"outro_title":"THIS SPORTS CLOTHING","outro_title_part_two":"GIVES YOU MOTIVATION.","outro_description":"Sport is more than just a physical challenge – the right equipment is crucial. Scientific studies show that suitable sports clothing can significantly influence your motivation and performance. At MOROTAI we understand how challenging it can sometimes be to motivate yourself to exercise. That’s why we develop clothing that inspires you to live an active lifestyle."}}
+{
+  "general": {
+    "continue_shopping": "Continue shopping",
+    "shop_womens": "SHOP WOMENS",
+    "shop_mens": "SHOP MENS",
+    "close": "Close",
+    "cart_drawer": {
+      "title": "Cart",
+      "view_cart": "View Cart",
+      "checkout": "Checkout",
+      "cart_empty": "Your cart is currently empty.",
+      "start_shopping": "Start Shopping",
+      "you_may_also_like": "You may also like",
+      "add_order_note": "Add order note",
+      "black_friday_discount": "BLACK FRIDAY* SALE - Buy 2, Get 3!",
+      "save": "Save",
+      "free_shipping": {
+        "spend_more_for_free_shipping_html": "Spend <span>{{ amount }}<\/span> more for FREE shipping.",
+        "free_shipping_applied_at_checkout": "FREE shipping will be applied at checkout"
+      }
+    },
+    "meta": {
+      "page": "Page",
+      "tags": "Tag"
+    },
+    "color": "color",
+    "farbe": "color"
+  },
+  "newsletter": {
+    "label": "Email",
+    "success": "Thanks for subscribing",
+    "title": "BECOME PART OF THE MOROTAI COMMUNITY",
+    "description_html": "Subscribe to our newsletter and always stay up-to-date! <br>Be the first to know about new products, exclusive styles and unique offers.",
+    "after_html": "By registering, you agree to receive exclusive promotional messages about MOROTAI products, events and promotions and you also agree to the <a href=\"https:\/\/morotai.de\/datenschutz\/\">Privacy Policy<\/a> and the <a href=\"https:\/\/morotai.de\/agb\/\">Terms of use<\/a> from MOROTAI. You can unsubscribe at any time."
+  },
+  "copyright": {
+    "copyright-text": "All rights reserved."
+  },
+  "social": {
+    "links": {
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "pinterest": "Pinterest",
+      "instagram": "Instagram",
+      "youtube": "YouTube",
+      "vimeo": "Vimeo",
+      "tiktok": "TikTok",
+      "linkedin": "Linkedin",
+      "wechat": "WeChat"
+    }
+  },
+  "search": {
+    "heading": "Search Results",
+    "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
+    "results_found": {
+      "one": "{{ count }} result found for “{{ key }}”",
+      "other": "{{ count }} results found for “{{ key }}”"
+    },
+    "results_with_count": {
+      "one": "{{ count }} result",
+      "other": "{{ count }} results"
+    }
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "close": "Close",
+    "unit_price_separator": "per",
+    "link_messages": {
+      "new_window": "Opens in a new window."
+    }
+  },
+  "blogs": {
+    "blog": {
+      "all": "All"
+    },
+    "article": {
+      "read_more": "Read more",
+      "tags": "Tags:",
+      "comments_html": {
+        "one": "<span>{{ count }} comment on<\/span> {{ title }}",
+        "other": "<span>{{ count }} comments on<\/span> {{ title }}"
+      },
+      "moderated": "Please note, comments need to be approved before they are published.",
+      "comment_form_title": "Leave a comment",
+      "comment_form_note": "Your email address will not be published.",
+      "name": "Name",
+      "email": "Email",
+      "message": "Comment",
+      "post": "Post comment",
+      "success": "Your comment was posted successfully! Thank you!",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "share_this_article": "Share this article",
+      "previous_article": "Previous article",
+      "next_article": "Next article"
+    }
+  },
+  "onboarding": {
+    "product_vendor": "Product vendor",
+    "product_title": "Example product title",
+    "collection_title": "Your collection's name"
+  },
+  "products": {
+    "product": {
+      "model_details": "MODEL DETAILS",
+      "color": "color",
+      "size": "size",
+      "quick_view": "Quick view",
+      "out_of_stock": "Out of stock",
+      "on_sale": "Sale",
+      "product_variants": "Product variants",
+      "product_information": "Product information",
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "save_html": "Save {{ saved_amount }}",
+      "unavailable": "Unavailable",
+      "only": "ONLY",
+      "left_in_stock": "LEFT IN STOCK!",
+      "price": {
+        "from_price_html": "<span class=\"from\">From<\/span> {{ price }}",
+        "regular_price": "Regular price",
+        "sale_price": "Sale price",
+        "unit_price": "Unit price"
+      },
+      "model_details_size": {
+        "170_57_S": "The model is 170 cm tall, weighs 57 kg and is wearing size S.",
+        "167_57_S": "The model is 167 cm tall, weighs 57 kg and is wearing size S.",
+        "183_82_M": "The model is 183 cm tall, weighs 82 kg and is wearing size M.",
+        "186_85_M": "The model is 186 cm tall, weighs 85 kg and is wearing size M.",
+        "173_57_S": "The model is 173 cm tall, weighs 57 kg and is wearing size S.",
+        "180_82_M": "The model is 180 cm tall, weighs 82 kg and is wearing size M.",
+        "192_81_M": "The model is 192 cm tall, weighs 81 kg and is wearing size M."
+      },
+      "badges": {
+        "warranty": "WARRANTY",
+        "delivery": "STANDARD DELIVERY",
+        "pay_safe": "PAY SAFE",
+        "return_policy": "100 DAYS RETURN POLICY",
+        "working_days": "3-7 working days",
+        "temperature_range": "Temperature range",
+        "weather_conditions": "Weather conditions"
+      },
+      "weather_conditions": {
+        "hot": "HOT",
+        "rain": "RAIN",
+        "cold": "COLD",
+        "low_light": "LOW LIGHT"
+      },
+      "include_taxes": "Tax included.",
+      "reviews": {
+        "one": "{{ count }} review",
+        "other": "{{ count }} reviews"
+      },
+      "available": {
+        "one": "Available in {{ count }} color",
+        "other": "Available in {{ count }} colors",
+        "sizes": "Available sizes"
+      },
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "quantity": {
+        "label": "Quantity",
+        "input_label": "Quantity for {{ product }}",
+        "increase": "Increase quantity for {{ product }}",
+        "decrease": "Decrease quantity for {{ product }}"
+      },
+      "inventory": {
+        "only_x_left": "{{ quantity }} in stock",
+        "x_units_available": "{{ quantity }} in stock, ready to ship",
+        "low_stock": "Low stock",
+        "in_stock": "In stock"
+      },
+      "pickup_availability": {
+        "heading": "Pickup Availability",
+        "view_store_info": "View store information",
+        "check_other_stores": "Check availability at other stores",
+        "pick_up_available": "Pickup available",
+        "pick_up_available_at_html": "Pickup available at <span>{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span>{{ location_name }}<\/span>",
+        "unavailable": "Couldn't load pickup availability",
+        "refresh": "Refresh"
+      },
+      "view_product_details": "View product details",
+      "product_drawer": {
+        "select_options": "Select options"
+      },
+      "xr_button": "View in your space",
+      "xr_button_label": "View in your space, loads item in augmented reality window",
+      "attributes": {
+        "360-STRETCH": "360 STRETCH",
+        "WATER-RESISTANT": "WATER RESISTANT",
+        "WATER-REPELLENT": "WATER-REPELLENT",
+        "LIGHT-WEIGHT": "LIGHT WEIGHT",
+        "ZIPPER-POCKETS": "ZIPPER POCKETS",
+        "AIR-VENTS": "AIR VENTS",
+        "ANTI-WRINKLE": "ANTI-WRINKLE",
+        "BREATHABLE": "BREATHABLE",
+        "CHEST-POCKET": "CHEST POCKET",
+        "DOUBLE-LAYER": "DOUBLE LAYER",
+        "DRAWSTRING": "DRAWSTRING",
+        "DURABLE": "DURABLE",
+        "ELASTIC-CORD": "ELASTIC CORD",
+        "ELASTIC-WAISTBAND": "ELASTIC WAISTBAND",
+        "FLATLOCK-SEAM": "FLATLOCK SEAM",
+        "EMBROIDERED-LOGO": "EMBROIDERED LOGO",
+        "HALF-ZIP": "HALF-ZIP",
+        "HIGH-WAIST": "HIGH WAIST",
+        "LASER-MESH": "LASER MESH",
+        "MESH-INSERT": "MESH INSERT",
+        "MODULAR-PUSH-UP": "MODULAR PUSH-UP",
+        "MOISTURE-WICKING": "MOISTURE WICKING",
+        "OPAQUE-FABRIC": "OPAQUE FABRIC",
+        "PERFECT-FIT": "PERFECT FIT",
+        "PHONE-POCKET": "PHONE POCKET",
+        "QUICK-DRY": "QUICK DRY",
+        "REFLECTIVE-PRINTS": "REFLECTIVE PRINTS",
+        "SEAMLESS-DESIGN": "SEAMLESS DESIGN",
+        "SIDE-POCKETS": "SIDE POCKETS",
+        "THUMBHOLES": "THUMBHOLES",
+        "SOFT-FLEECE": "SOFT FLEECE",
+        "EASY-CARE": "EASY CARE",
+        "FLEXIBILITY": "FLEXIBILITY"
+      }
+    },
+    "facets": {
+      "apply": "Apply",
+      "clear": "Clear",
+      "clear_all": "Clear all",
+      "from": "From",
+      "filter_and_sort": "Filter and sort",
+      "filter_by_label": "Filter:",
+      "filter_button": "Filter",
+      "filters_selected": {
+        "one": "{{ count }} selected",
+        "other": "{{ count }} selected"
+      },
+      "max_price": "The highest price is {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} of {{ count }} product",
+        "other": "{{ product_count }} of {{ count }} products"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "reset": "Reset",
+      "sort_button": "Sort",
+      "sort_by_label": "Sort by",
+      "to": "To",
+      "clear_filter": "Clear filter"
+    }
+  },
+  "sections": {
+    "tracking": {
+      "title": "Track order",
+      "disclamer": "* only for orders to Germany"
+    },
+    "returns": {
+      "title": "Returns & Exchanges",
+      "description": "We stand behind the quality of every product we sell. If your purchase does not work out for any reason, you can initiate a return or exchange within 100 days of receiving your order as long as the product is unwashed and unworn with tags included. We cover the return shipping costs for German orders. All refund requests will only be refunded to the original payment method. Please note that a refund does not include the original shipping costs.",
+      "description2": "At this time, we do not offer free returns on international orders or refunds for any applicable taxes and duties from your original order. For tax and duty refund requests for returned items, please contact your local customs office to receive appropriate compensation, if applicable.",
+      "domestic": {
+        "title": "Domestic returns & exchanges",
+        "description": "Visit our exchange center"
+      },
+      "international": {
+        "title": "International returns & exchanges",
+        "description": "Returns & exchanges for international customers"
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "Contact customer support"
+      }
+    },
+    "header": {
+      "search": "Search",
+      "search_for": "Search for anything",
+      "popular_searches": "POPULAR SEARCHES",
+      "my_account": "My Account",
+      "login": "Login",
+      "cart": "Cart",
+      "products": "Products",
+      "articles": "Articles",
+      "suggestions": "Suggestions",
+      "view_all_results": "View all results"
+    },
+    "footer": {
+      "footer-quote": "FIND YOUR INNER WARRIOR"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "shop": "Shop",
+      "search": "Search",
+      "my_account": "My Account",
+      "cart": "Cart"
+    },
+    "404": {
+      "not_found_banner": "404 PAGE NOT FOUND",
+      "not_found": "Page not found",
+      "not_found_description_html": "Oops, like a skilled athlete on an obstacle course, you've taken an unexpected turn, this page couldn't be found.",
+      "continue_shopping": "Continue shopping"
+    },
+    "faq": {
+      "title": "FAQ & HELPCENTER",
+      "search_placeholder": "Search",
+      "track": "Track order",
+      "return": "Return order",
+      "information": "GET MORE INFORMATION",
+      "ordering_shipping": "Ordering & Shipping",
+      "returns_exchanges": "Returns & Exchanges",
+      "tracking_delivery": {
+        "title": "TRACKING & DELIVERY",
+        "order_arrival": {
+          "question": "How long will it take for my order to arrive?",
+          "answer": "Shipments usually take 1-5 business days to arrive. Please note, time may vary due to weather, customs, or any unforeseen variables.\nIf you did not find the answer to your question, please contact customer service directly at: support@morotai.com",
+          "answer_html": "Shipments usually take 1-5 business days to arrive. Please note, time may vary due to weather, customs, or any unforeseen variables.\nIf you did not find the answer to your question, please contact customer service directly at: <a href=\"mailto:support@morotai.com\">support@morotai.com<\/a>"
+        },
+        "courier_providers": {
+          "question": "What courier providers do you use?",
+          "answer": "All orders are shipped via DHL and DHL Express. Depending on on the country."
+        },
+        "multiple_orders": {
+          "question": "Can multiple orders be combined?",
+          "answer": "Due to high volume of orders we cannot combine orders. Please be sure to place all desired items in the cart before checking out."
+        },
+        "po_box": {
+          "question": "Can I use a PO Box for my delivery address?",
+          "answer": "No, we do not ship to PO boxes."
+        },
+        "gear_quality": {
+          "question": "What should I do if my gear is experiencing a quality issue?",
+          "answer": "If you've received a defective item, please do NOT process a return or exchange. In the event that your gear is damaged for whatever reason, our customer experience team will be more than happy to rectify this situation for you accordingly. Please CLICK HERE to contact our team to ensure we rectify this situation for you as quickly as possible!",
+          "answer_html": "If you've received a defective item, please do NOT process a return or exchange. In the event that your gear is damaged for whatever reason, our customer experience team will be more than happy to rectify this situation for you accordingly. Please <a href=\"kontakt-1\">CLICK HERE<\/a> to contact our team to ensure we rectify this situation for you as quickly as possible!"
+        },
+        "order_returned": {
+          "question": "My order was Returned To Sender. Now what?",
+          "answer": "If your order was Returned To Sender due to an invalid address or an issue with delivery, we will issue a full refund of the cost of the gear as soon as the package arrives back at our warehouse. Please note that the shipping cost will not be included in the final refund."
+        },
+        "lost_package": {
+          "question": "What do I do if my package is lost, damaged, or stolen?",
+          "answer": "For any international customers experiencing a lost, damaged, or stolen package, please email our support team at support@morotai.com or the whatsapp number +49 7231 3740190.",
+          "answer_html": "For any international customers experiencing a lost, damaged, or stolen package, please email our support team at <a href=\"mailto:support@morotai.com\">support@morotai.com<\/a> or the whatsapp number +49 7231 3740190."
+        }
+      },
+      "product_information": "Product Information",
+      "in_store_inquiries": "In-Store Inquiries",
+      "international_inquiries": "International Inquiries",
+      "wholesale": {
+        "title": "WHOLESALE",
+        "partner": {
+          "question": "How can I be wholesale partner for MOROTAI?",
+          "answer": "Please CLICK HERE if you're interested in becoming an official MOROTAI wholesaler. From there, one of our associates will be in touch should we decide it's a good fit.",
+          "answer_html": "Please <a href=\"kontakt-1\">CLICK HERE<\/a> if you're interested in becoming an official MOROTAI wholesaler. From there, one of our associates will be in touch should we decide it's a good fit."
+        },
+        "defects": {
+          "question": "I purchased gear through an MOROTAI wholesaler, and it's defective.",
+          "answer": "If you received a defective item that you originally purchased from an MOROTAI wholesaler, you'll need to contact that wholesaler directly as we do not have access to the order or payment information that's required to verify your information and rectify the situation accordingly. "
+        }
+      },
+      "article": {
+        "one": "1 article",
+        "other": "{{ count }} articles"
+      },
+      "payment": {
+        "title": "PAYMENT",
+        "secure": {
+          "question": "Is my payment secure?",
+          "answer": "On MOROTAI Online Store, every purchase is made with maximum security. We only use protected connections, as demonstrated by the « https » URL prefix and the lock symbol that appears in the browser’s address bar.\n To safeguard your credit card purchases, you will always be asked to enter your CVV code for every order.\nOur Payments department may carry out anti-fraud checks before approving the transaction and for greater protection, they may contact you for further details before confirming the order."
+        },
+        "accept": {
+          "question": "What payment do you accept?",
+          "answer": "We accept all major credit cards such as VISA, Mastercard, American Express, Maestro, Union Pay. You can pay with Apple Pay, Google Pay and Paypal. Bank Transfer and Sofort Überweisung."
+        },
+        "invoice": {
+          "question": "How does the purchase on invoice with Klarna work?",
+          "answer_html": "The principle is simple: from the invoice date, you usually have 30 days to settle your bill. You pay only after you have received the goods. You shop comfortably, complete your order, and check the products at home at your leisure. The invoice will be sent either by email, separately by post, or together with the goods, depending on the retailer. You can view all your invoices at any time here or in the Klarna app. If you are not satisfied with your goods, you can report a “problem” in the Klarna app, so your invoice is paused until you have been able to resolve your issue with us. Therefore use {{ link_placeholder }} or the whatsapp number +49 7231 3740190."
+        }
+      },
+      "order": {
+        "title": "ORDER",
+        "response_time": {
+          "question": "How long will it take for Customer Service to respond?",
+          "answer": "You can expect a response within 1 business day. Our customer service team works Monday-Friday. \nPlease allow 2-3 business days for a response during sales and holidays."
+        },
+        "order_shippment": {
+          "question": "When will my order ship?",
+          "answer": "We fulfill all orders within 1-2 business days.\nPlease note that during sales and holidays, we require 3-7 business days for processing."
+        },
+        "edit_information": {
+          "question": "I inputted the wrong address at checkout. Can I edit my shipping information?",
+          "answer": "We are only able to update your shipping address as long as your order has not yet shipped. Please CONTACT US to request an address update to your most recent order.",
+          "answer_html": "We are only able to update your shipping address as long as your order has not yet shipped. Please <a href=\"kontakt-1\">CONTACT US<\/a> to request an address update to your most recent order."
+        },
+        "edit_order": {
+          "question": "I ordered the wrong items. Can I cancel or change my order after it has been placed?",
+          "answer": "In an attempt to fulfill all orders within 1 business day, we are unable to make any edits or modifications to an order once it has been placed. However, in the event that a mistake was made while placing your order, please CLICK HERE to submit a cancellation request.\nPlease note that cancellation requests are not guaranteed, but our team will do its best to process your cancellation as long as your order has not been processed at our warehouse. ",
+          "answer_html": "In an attempt to fulfill all orders within 1 business day, we are unable to make any edits or modifications to an order once it has been placed. However, in the event that a mistake was made while placing your order, please <a href=\"kontakt-1\">CLICK HERE<\/a> to submit a cancellation request.\nPlease note that cancellation requests are not guaranteed, but our team will do its best to process your cancellation as long as your order has not been processed at our warehouse. "
+        },
+        "discounts": {
+          "question": "Do you offer any discounts?",
+          "answer_html": "MOROTAI rarely offers discounts. If you have a discount code that is no longer working, please contact our customer support. If you are a trainer, athlete, or student, also reach out to our customer support for a potential discount. The email for customer support is {{ link_placeholder }} or the whatsapp number +49 7231 3740190."
+        },
+        "gift_cards": {
+          "question": "Do you sell Gift Cards?",
+          "answer": "You can purchase Gift Cards HERE. Gift cards are delivered via email and contain instructions to redeem them at checkout. Our Gift Cards have no additional processing fees.",
+          "answer_html": "You can purchase Gift Cards <a href=\"kontakt-1\">HERE<\/a>. Gift cards are delivered via email and contain instructions to redeem them at checkout. Our Gift Cards have no additional processing fees."
+        },
+        "gift_cards_expiration": {
+          "question": "Do Gift Cards expire?",
+          "answer": "Gift Cards are programmed to expire after 2 years. If your Gift Card has expired and you still have a remaining balance, please CLICK HERE to submit a request to our customer experience team to issue you a new card. ",
+          "answer_html": "Gift Cards are programmed to expire after 2 years. If your Gift Card has expired and you still have a remaining balance, please <a href=\"kontakt-1\">CLICK HERE<\/a> to submit a request to our customer experience team to issue you a new card. "
+        }
+      },
+      "exchange_return": {
+        "title": "EXCHANGE & RETURN",
+        "policy": {
+          "question": "What is your Return\/Exchange policy?",
+          "answer": "POLICY We stand behind the quality of every product we sell. If your purchase does not work out for any reason, you may initiate a return or exchange within 100 days of receiving your order as long as the product is unwashed and unworn with tags included.\nWe will pay for the return shipping cost for german orders. Any refund requests will only be refunded to the original form of payment. Please note that if a refund is requested, your refund will not include the original cost of shipping.\nAt this time, we do not offer free return shipping for international orders or refunds on any Taxes & Duties incurred from your original order. However, for any international exchange orders, we will cover the cost of sending your exchange back to you. For Taxes & Duties refund inquiries for any returned items, please reach out to your local customs office to receive appropriate compensation if applicable.",
+          "answer2": "EXCEPTIONS\nDue to limited availability, Limited Edition Drops are final sale and are not eligible to be returned or exchanged.\nFor hygienic reasons, we do not accept returns or exchanges on facemasks, face coverings, balaclavas, compression bottoms, underwear, or socks."
+        },
+        "how_to": {
+          "question": "How do I return or exchange a product?",
+          "answer": "Visit our Returns & Exchanges page to initiate a Return or Exchange.Please note that returns using our provided return label will incur a return shipping fee. However, exchanges and store credit refunds are exempt from this charge."
+        },
+        "processed": {
+          "question": "When will my return be processed?",
+          "answer": "Please allow 3-5 business days from the time your return package is marked as delivered back at our warehouse for us to process your return\/exchange."
+        },
+        "wrong_item": {
+          "question": "I received the wrong item in my order. What should I do now?",
+          "answer": "Please CLICK HERE to contact our team so we can ensure we ship the correct item out to you as quickly as possible!",
+          "answer_html": "Please <a href=\"kontakt-1\">CLICK HERE<\/a> to contact our team so we can ensure we ship the correct item out to you as quickly as possible!"
+        },
+        "pay_shipping": {
+          "question": "Will I have to pay for return shipping?",
+          "answer": "We provide complimentary returns for exchanges and store credit refunds on orders within 14 days of delivery. However, a return label fee is applicable for returns seeking a refund to the original payment method."
+        },
+        "store_credit": {
+          "question": "When will I receive my store credit?",
+          "answer": "Once returned items are received, we can either issue store credit for you within 2-3 business days or refund your payment within about 15 days."
+        },
+        "refund": {
+          "question": "Why is my return refund less than what I originally paid?",
+          "answer": "We're only able to refund what was actually paid. Therefore, if you used a discount code in your original order, that amount will not be refunded back to your original form of payment.\nAdditionally, please note that the initial cost of shipping is non-refundable and will not be included in your refund back to your original form of payment. "
+        }
+      },
+      "inquiries": {
+        "title": "INTERNATIONAL INQUIRIES",
+        "international_ship": {
+          "question": "Do you ship internationally?",
+          "answer": "We ship to:\nAruba, Austria, Albania, Costa Rica, Croatia, Denmark, Andorra, United Arab Emirates, Antigua and Barbuda, Anguilla, Armenia, Angola, Argentina, Australia, Azerbaijan, Bosnia and Herzegovina, Barbados, Bangladesh, Belgium, Burkina Faso, Bulgaria, Bahrain, Burundi, Benin, Bermuda, Brunei Darussalam, Bolivia, Brazil, Bahamas, Bhutan, Botswana, Belize, Canada, Congo-Brazzaville, Côte d’Ivoire, Cook Islands, Chile, Cameroon, China, Colombia, Cabo Verde, Cyprus, Czech Republic, Djibouti, Dominica, Germany, Dominican Republic, Algeria, Ecuador, Estonia, Egypt, Spain, Ethiopia, Fiji, Falkland Islands, Faroe Islands, France, Gabon, Grenada, Georgia, French Guiana, Guernsey, Ghana, Gibraltar, Greenland, Gambia, Guinea, Guadeloupe, Equatorial Guinea, Greece, Guinea-Bissau, Guyana, Hong Kong SAR, Honduras, Haiti, Hungary, Indonesia, Ireland, Israel, Isle of Man, India, Iceland, Italy, Jersey, Jamaica, Jordan, Japan, Kenya, Kyrgyzstan, Cambodia, Kiribati, Comoros, ",
+          "answer2": "St. Kitts and Nevis, South Korea, Kuwait, Cayman Islands, Kazakhstan, Laos, Lebanon, St. Lucia, Liechtenstein, Liberia, Lesotho, Lithuania, Luxembourg, Latvia, Morocco, Monaco, Moldova, Montenegro, Madagascar, North Macedonia, Mongolia, Macau SAR, Martinique, Mauritania, Montserrat, Malta, Mauritius, Maldives, Malawi, Mexico, Malaysia, Namibia, Nigeria, Nicaragua, Netherlands, Romania, Finland, United Kingdom, St. Barthélemy, Switzerland, Curaçao, Guatemala, Sri Lanka, St. Martin, Mozambique, New Caledonia, Norway, Nepal, Nauru, Niue, New Zealand, Oman, Panama, Peru, French Polynesia, Papua New Guinea, Philippines, Pakistan, Poland, Portugal, Paraguay, Qatar, Réunion, Serbia, Rwanda,",
+          "answer3": " Saudi Arabia, Solomon Islands, Seychelles, Sudan, Sweden, Singapore, St. Helena, Slovenia, Slovakia, Sierra Leone, San Marino, Suriname, São Tomé and Príncipe, El Salvador, Sint Maarten, Eswatini, Turks and Caicos Islands, Chad, Togo, Thailand, Timor-Leste, Turkmenistan, Tunisia, Tonga, Turkey, Trinidad and Tobago, Tuvalu, Taiwan, Tanzania, Uganda, United States, Uruguay, Uzbekistan, Vatican City, St. Vincent and the Grenadines, Venezuela, British Virgin Islands, Vietnam, Vanuatu, Wallis and Futuna, Samoa, Mayotte, South Africa, Zambia, and Zimbabwe.",
+          "answer4": "Please note that Taxes & Duties are not calculated at checkout and are the customer's responsibility. International customers are entitled to receive an additional bill from the courier once the package passes customs or following delivery. Please note that these fees are imposed by your customs office and are NOT from MOROTAI.\nIf you do not pay the fees or decide to reject your order, your package will be returned back to MOROTAI and we will refund you the cost of the order excluding shipping."
+        },
+        "tax_refund": {
+          "question": "Are Taxes & Duties refunded if I initiate an international return\/exchange?",
+          "answer": "Due to the fact that Taxes & Duties are imposed by your customs office and NOT from MOROTAI, we do not collect any of those fees. MOROTAI  is only able to refund what was paid for the cost of goods. Therefore, should you decide to return your gear, we'll issue a refund of the gear, not inclusive of the shipping costs. For Taxes & Duties refunds, you'll have to contact your customs office directly with proof that your items were returned."
+        },
+        "checkout_tax": {
+          "question": "Are Taxes & Duties calculated at checkout?",
+          "answer": "We offer a Taxes & Duties prepaid option called DHL Delivered Duty Paid (DDP) at checkout for select countries. However, please note that each country has different thresholds put in place that do not allow for a Taxes & Duties prepaid option at checkout if the order value exceeds a certain amount. \nShould you choose not to use DHL DDP, you can opt to use Taxes & Duties Unpaid through DHL depending on your preference, also known as Delivered Duty Unpaid (DDU).",
+          "answer2": " If you decide to use a DDU courier option, you will receive a bill from the courier directly. Please note that these fees are imposed by your customs office and NOT from, or collected by, MOROTAI.\nIf you do not pay the fees or decide to reject your order, your package will be returned back to MOROTAI  and we will refund you the cost of the order, excluding the cost of shipping, once the package arrives back at our warehouse."
+        }
+      },
+      "sustainability": {
+        "title": "SUSTAINABILTY",
+        "warehouse": {
+          "question": "What is a sustainable warehouse?",
+          "answer": "A sustainable warehouse is when the storage boxes are not made from the usual plastic or metal, but in our case, from recycled paper. We use the majority of our shipping materials such as stickers, boxes, and labels made from paper that can be reused."
+        },
+        "products": {
+          "question": "Are MOROTAI products sustainable?",
+          "answer": "How we wish we could simply answer “Yes”. But unfortunately, it's not that simple. Sustainable textile industry is a massive challenge. However, what we can say for sure is: We're doing our best. We rely on organic cotton, recycled polyester and are in the process of further minimizing our environmental impact. As we also take social responsibility seriously, we closely examine our supply chain and working conditions.\nBy producing timeless sportswear that doesn’t go out of fashion, we can also avoid overproduction of clothing. For transportation, we primarily use ships, as they are more environmentally friendly than airplanes. Only in emergencies 1% do we use a plane. The high quality of our products makes them particularly durable, saving you many purchases. For us, being sustainable mainly means developing a product that can be used for a long time."
+        },
+        "manufacturing": {
+          "question": "Where does MOROTAI manufacture its products?",
+          "answer": "Our products are manufactured in China, Pakistan, Turkey, and in the future also in Portugal. To ensure that the conditions on-site are satisfactory, we only collaborate with production facilities that are regularly audited by amfori BSCI or comparable social standards by external assessors."
+        },
+        "manufacturing_in_germany": {
+          "question": "Could you also produce in Germany? Why don't you manufacture in Germany?",
+          "answer": "One of the biggest misconceptions about sustainability is that production in Asia is always bad and production in Europe is always good. It's not that simple. Our production outside of Germany primarily enables us to offer affordable prices to create basics for everyone, and this can be done fairly. It would be rash to completely withdraw our orders and thus take away the work from these factories. International standards ensure that everything in our production is above board.\nThrough long-standing relationships, we have established a responsible supply chain and are committed to fair working conditions and decent wages in our production facilities. We work closely with our production partners to ensure that social and environmental standards are met. Sustainability is a holistic approach that goes beyond the location of production and encompasses the entire supply chain."
+        },
+        "go_green": {
+          "question": "What is DHL GoGreen?",
+          "answer": "GoGreen is an eco-friendly shipping and receiving service by DHL and Deutsche Post.\nThe emissions generated by shipping are offset through investments in global climate protection projects. This allows our products to be delivered to you in a climate-neutral manner through compensation."
+        }
+      },
+      "products": {
+        "title": "PRODUCTS",
+        "size": {
+          "question": "How do I know what size i am?",
+          "answer": "MOROTAI Products are performance fitted. If you are not sure about which size to choose, please feel free to contact us. Generally, our products are cut close to the body, resulting in a slim fit. We recommend choosing one size larger for a looser fit."
+        },
+        "washing": {
+          "question": "What’s the best way to wash my MOROTAI gear?",
+          "answer": "For the best care, we recommend washing on cold or warm and tumble dry or hang dry. Additionally, to ensure the longevity of your gear, we recommend using detergent that does not contain any synthetic dyes, such as blue detergent, as synthetic dyes have the potential to interact negatively with fabric dyes causing discoloration. We recommend using clear detergent when washing your MOROTAI gear."
+        },
+        "restacked_items": {
+          "question": "What’s the best way to find out about restocked items?",
+          "answer_html": "The best way to stay up-to-date on general restocks and new product releases is to follow us on our Instagram, Facebook and sign up for our mailing list. For any specific restock questions, please don't hesitate to reach out to our customer experience team by clicking <a href=\"kontakt-1\">HERE<\/a>.",
+          "answer": "The best way to stay up-to-date on general restocks and new product releases is to follow us on our Instagram, Facebook and sign up for our mailing list. For any specific restock questions, please don't hesitate to reach out to our customer experience team by clicking HERE."
+        },
+        "alternatives": {
+          "question": "Where else can I find MOROTAI products?",
+          "answer": "At this time all MOROTAI products are sold exclusively on our webshop and at select retailers such as Zalando and Aboutyou."
+        },
+        "description": "Product description"
+      }
+    },
+    "cart": {
+      "title": "Your cart",
+      "order_summary": "Order summary",
+      "add_notes": "Add notes",
+      "subtotal": "Subtotal",
+      "note": "Order special instructions",
+      "checkout": "Checkout",
+      "empty": "Your cart is empty",
+      "ready": "Ready to find your new favorite products?",
+      "cart_error": "There was an error while updating your cart. Please try again.",
+      "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
+      "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
+      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
+      "headings": {
+        "product": "Product",
+        "price": "Price",
+        "total": "Total",
+        "quantity": "Quantity"
+      }
+    },
+    "collection_template": {
+      "empty": "No products found",
+      "use_fewer_filters_html": "Use fewer filters or <a class=\"clear-filters text-button\" href=\"{{ link }}\">clear all<\/a>",
+      "load_more": "Load more"
+    },
+    "password": {
+      "login_using": "Enter using password",
+      "opening_soon": "Opening soon",
+      "enter_using": "Enter store using password:",
+      "are_you_the_store_owner": "Are you the store owner?",
+      "login_here": "Log in here",
+      "cancel": "Cancel"
+    },
+    "featured_collection": {
+      "shop_collection": "Shop {{ collection }}"
+    },
+    "featured_blog": {
+      "view_all": "View all posts",
+      "onboarding_title": "Blog post",
+      "onboarding_content": "Give your customers a summary of your blog post"
+    },
+    "shop_the_look": {
+      "view_product": "View Product"
+    },
+    "signup": {
+      "enter_your_email": "Enter your email"
+    },
+    "countdown_banner": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
+    },
+    "contact": {
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone number",
+        "comment": "Comment",
+        "send": "Send Message",
+        "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "error_heading": "Please adjust the following:"
+      },
+      "map": {
+        "location": "Location {{ index }}"
+      }
+    }
+  },
+  "localization": {
+    "country_label": "Country\/region",
+    "language_label": "Language",
+    "update_language": "Update language",
+    "update_country": "Update country\/region"
+  },
+  "customer": {
+    "login_page": {
+      "login": "Login",
+      "login_description": "If you have an account with us, please log in.",
+      "create_account": "Create an account",
+      "create_account_description": "Enter your information below to proceed. If you already have an account, please log in instead.",
+      "email": "Email address",
+      "forgot_password": "Forgot your password?",
+      "dont_have_an_account": "Don’t have an account?",
+      "password": "Password",
+      "title": "Login",
+      "sign_in": "Sign in",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "submit_register": "Create an account",
+      "already_have_an_account": "Already have an account?",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "subtext": "We will send you an email to reset your password",
+      "success": "We've sent you an email with a link to update your password."
+    },
+    "reset_password": {
+      "title": "Reset account password",
+      "subtext": "Enter a new password for {{ email }}",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Reset password"
+    },
+    "account": {
+      "title": "My Account",
+      "details": "Account details",
+      "view_addresses": "View addresses",
+      "default_address": "Default address",
+      "log_out": "Log out",
+      "return_to_account_details": "Return to account details"
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date_html": "Placed on {{ date }}",
+      "cancelled_html": "Order Cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing Address",
+      "payment_status": "Payment Status",
+      "shipping_address": "Shipping Address",
+      "fulfillment_status": "Fulfillment Status",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "product": "Product",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "fulfilled_at_html": "Fulfilled {{ date }}",
+      "track_shipment": "Track shipment",
+      "tracking_url": "Tracking link",
+      "tracking_company": "Carrier",
+      "tracking_number": "Tracking number",
+      "subtotal": "Subtotal"
+    },
+    "orders": {
+      "title": "Order history",
+      "order_number": "Order",
+      "order_number_link": "Order number {{ number }}",
+      "date": "Date",
+      "payment_status": "Payment status",
+      "fulfillment_status": "Fulfillment status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "activate_account": {
+      "title": "Activate account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Activate account",
+      "cancel": "Decline invitation"
+    },
+    "addresses": {
+      "title": "Addresses",
+      "default": "Default",
+      "add_new": "Add a new address",
+      "edit_address": "Edit address",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "company": "Company",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "city": "City",
+      "country": "Country\/region",
+      "province": "Province",
+      "zip": "Postal\/ZIP code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add address",
+      "update": "Update address",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you wish to delete this address?"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Here's your {{ value }} gift card for {{ shop }}!",
+      "subtext": "Your gift card",
+      "gift_card_code": "Gift card code",
+      "shop_link": "Continue shopping",
+      "remaining_html": "Remaining {{ balance }}",
+      "add_to_apple_wallet": "Add to Apple Wallet",
+      "qr_image_alt": "QR code — scan to redeem gift card",
+      "copy_code": "Copy code",
+      "expired": "Expired",
+      "copy_code_success": "Code copied successfully",
+      "print_gift_card": "Print"
+    }
+  },
+  "product_rows": {
+    "materials": "Materials",
+    "care_guide": "Care guide"
+  },
+  "difference_page": {
+    "difference_title": "WHAT MAKES MOROTAI DIFFERENT",
+    "difference_title_first_half": "WHAT MAKES",
+    "difference_title_second_half": "MOROTAI DIFFERENT",
+    "intro_title": "PRODUCTS THAT",
+    "intro_title_part_two": "MAKE IT EASY",
+    "intro_title_part_three": "TO STAY ACTIVE.",
+    "intro_description": "MOROTAI creates timeless sportswear that is both functional and stylish. The products are available in black, white and gray. They are multifunctional, both for sporting activities and for everyday life, with practical features. MOROTAI values comfort, perfect fit and aesthetic design, which increases sports motivation. The clothing is specifically designed for the sports lifestyle, with soft materials and durable design. MOROTAI combines comfort, functionality and style to ensure an optimal sports experience and places particular emphasis on quality and sustainability.",
+    "intro_button": "DISCOVER ALL PRODUCTS",
+    "subtitle_top_part_one": "OTHER SPORTS BRANDS",
+    "subtitle_top_part_two": "JUST DRESS YOU.",
+    "subtitle_bottom": "MOROTAI KNOWS WHAT YOU NEED FOR YOUR SPORTS LIFESTYLE.",
+    "description": "Our mission is to create sportswear that not only empowers but also inspires you to pursue and enjoy an active lifestyle.",
+    "attributes": {
+      "max_comfort": "MAXIMUM COMFORT",
+      "max_comfort_description": "Our sportswear is so comfortable that you'll never want to take it off again. Since our sportswear can be worn both during sports and in everyday life, this is not a problem.",
+      "stretch": "Most of our products have 360° stretch for maximum comfort.",
+      "quality": "Our materials are among the highest quality used in the industry.",
+      "multifunctional": "MULTIFUNCTIONALITY",
+      "multifunctional_description": "Our products are multifunctional. They are suitable for all common sports, so you don't need a different outfit for each sport.",
+      "details": "SMART DETAILS",
+      "details_description": "Our focus is on making your training experience as comfortable as possible so that you can fully concentrate on your workout. Innovative details help you complete your training safely and efficiently. On average, each product has at least 4 smart details.",
+      "practical": "Safely and conveniently stored while you're active without getting in the way or getting lost.",
+      "reflective": "Reflective details increase visibility and safety in the dark.",
+      "timeless": "TIMELESS DESIGNS",
+      "timeless_description": "We combine modern style with a clear, uncomplicated design in sports fashion, which makes our clothing not only contemporary, but also durable and timeless - a perfect companion for many years without losing its fashion relevance.",
+      "color": "COLOR SIMPLICITY",
+      "color_description": "We have chosen a minimalist color palette so that our products can be easily combined. No matter which products you choose from your wardrobe, they always fit together perfectly and guarantee a stylish outfit - one less thing to worry about."
+    },
+    "slider": {
+      "title_part_one": "FOCUSING ON",
+      "title_part_two": "THE ESSENTIALS",
+      "title_part_three": "OF SPORT",
+      "content": "Focus on the Essentials: The Sport At MOROTAI, we focus on what really matters – the sport. Whether you are a dedicated athlete or a recreational sportsperson, you are looking for a simple way to live your active lifestyle. With us, you will find not only sportswear that works perfectly during training but also styles that are ideal before and after sports. We understand that sports are about the experience itself, not the hassle of choosing your wardrobe."
+    },
+    "collections": {
+      "collections_title": "4 PRODUCT LINES",
+      "collections_title_ziel": "1 GOAL",
+      "collections_description": "OUR MISSION IS TO CREATE SPORTSWEAR THAT NOT ONLY EMPOWERS BUT ALSO INSPIRES YOU TO PURSUIT AND ENJOY AN ACTIVE LIFESTYLE.",
+      "collections_full": "4 PRODUCT LINES = 1 GOAL",
+      "chrome": "CHROME",
+      "chrome_collection": "CHROME COLLECTION",
+      "chrome_description": "",
+      "chrome_button": "DISCOVER CHROME",
+      "neotech": "NEOTECH",
+      "neotech_collection": "NEOTECH",
+      "neotech_description": "A collection made from state-of-the-art fleece material. This line redefines functionality and comfort, offering a perfect balance between style and performance. Whether pursuing outdoor adventures or cozy moments indoors, the NEOTECH LINE guarantees unparalleled warmth and flexibility. With advanced fleece technology and exceptional craftsmanship, NEOTECH is the ultimate choice for those seeking both functionality and fashion",
+      "neotech_button": "DISCOVER NEOTECH",
+      "engineering": "ENGINEERING",
+      "engineering_collection": "ENGINEERING COLLECTION",
+      "engineering_description": "",
+      "engineering_button": "DISCOVER ENGINEERING",
+      "essential": "ESSENTIAL",
+      "essential_collection": "ESSENTIAL COLLECTION",
+      "essential_description": "",
+      "essential_button": "DISCOVER ESSENTIAL"
+    },
+    "outro_title": "THIS SPORTS CLOTHING",
+    "outro_title_part_two": "GIVES YOU MOTIVATION.",
+    "outro_description": "Sport is more than just a physical challenge – the right equipment is crucial. Scientific studies show that suitable sports clothing can significantly influence your motivation and performance. At MOROTAI we understand how challenging it can sometimes be to motivate yourself to exercise. That’s why we develop clothing that inspires you to live an active lifestyle."
+  }
+}
