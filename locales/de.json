@@ -24,8 +24,7 @@
             "tags": "Tag"
         },
         "color": "color",
-        "farbe": "color",
-
+        "farbe": "color"
     },
     "newsletter": {
         "label": "Email",
