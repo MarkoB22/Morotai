@@ -153,9 +153,9 @@ assign val_array = val_array | remove_first: ',' | split: ','
 document.addEventListener('DOMContentLoaded', function() {
   function handleInputChange() {
     console.log('handleInputChange initialized');
-    const colorInputs = document.querySelectorAll('input[name="Farbe"]');
+    const colorInputs = document.querySelectorAll('input[name="Farbe"], input[name="Color"]');
     console.log('colorInputs: ', colorInputs);
-    const sizeInputs = document.querySelectorAll('input[name="Größe"]');
+    const sizeInputs = document.querySelectorAll('input[name="Größe"]', input[name="Size"]);
     console.log('sizeInputs: ', sizeInputs);
 
     const selectedColor = [...colorInputs].find(input => input.checked)?.getAttribute('value') || '';
