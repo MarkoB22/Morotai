@@ -152,11 +152,16 @@ assign val_array = val_array | remove_first: ',' | split: ','
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   function handleInputChange() {
-    const colorInputs = document.querySelectorAll('input[name="Farbe"], input[name="Color"]');
-    const sizeInputs = document.querySelectorAll('input[name="Größe"], input[name="Size"]');
+    console.log('handleInputChange initialized');
+    const colorInputs = document.querySelectorAll('input[name="Farbe"]');
+    console.log('colorInputs: ', colorInputs);
+    const sizeInputs = document.querySelectorAll('input[name="Größe"]');
+    console.log('sizeInputs: ', sizeInputs);
 
     const selectedColor = [...colorInputs].find(input => input.checked)?.getAttribute('value') || '';
+    console.log('selectedColor: ', selectedColor);
     const selectedSize = [...sizeInputs].find(input => input.checked)?.getAttribute('value') || '';
+    console.log('selectedSize: ', selectedSize);
 
     const quantity_warnings = document.querySelectorAll('.low_quantity');
     if (quantity_warnings.length > 0) {
@@ -165,22 +170,26 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       const matchingElement = document.querySelector(`.low_quantity[color="${selectedColor}"][size="${selectedSize}"]`);
+      console.log('matchingElement: ', matchingElement);
 
       if (matchingElement) {
+        console.log('remove hidden from matching element');
         matchingElement.classList.remove('hidden_low_quantity');
       }
     }
   }
 
-  const colorInputs = document.querySelectorAll('input[name="Farbe"], input[name="Color"]');
-  const sizeInputs = document.querySelectorAll('input[name="Größe"], input[name="Size"]');
+  const colorInputs = document.querySelectorAll('input[name="Farbe"]');
+  const sizeInputs = document.querySelectorAll('input[name="Größe"]');
 
   colorInputs.forEach(input => {
     input.addEventListener('change', handleInputChange);
+    console.log('color input changed');
   });
 
   sizeInputs.forEach(input => {
     input.addEventListener('change', handleInputChange);
+    console.log('size input changed');
   });
 
   handleInputChange();
