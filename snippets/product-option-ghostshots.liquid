@@ -105,7 +105,7 @@ assign val_array = val_array | remove_first: ',' | split: ','
 		{% endif %}
 	{% endfor %}
 {% endif %}
-<fieldset class="product-form__input product-form__input--block {% if option.name == 'Größe' or option.name == 'size' or option.name == 'Size' %} not_reversed{% endif %}">
+<fieldset class="product-form__input product-form__input--block">
 	<div class="form__label">
 		{%- liquid
 		assign optionClassTrans = 'general.' | append: option.name | downcase | t
