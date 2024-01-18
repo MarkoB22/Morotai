@@ -152,8 +152,8 @@ assign val_array = val_array | remove_first: ',' | split: ','
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   function handleInputChange() {
-    const colorInputs = document.querySelectorAll('input[name="Farbe"]');
-    const sizeInputs = document.querySelectorAll('input[name="Größe"]');
+    const colorInputs = document.querySelectorAll('input[name="Farbe"], input[name="Color"]');
+    const sizeInputs = document.querySelectorAll('input[name="Größe"], input[name="Size"]');
 
     const selectedColor = [...colorInputs].find(input => input.checked)?.getAttribute('value') || '';
     const selectedSize = [...sizeInputs].find(input => input.checked)?.getAttribute('value') || '';
@@ -172,8 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  const colorInputs = document.querySelectorAll('input[name="Farbe"]');
-  const sizeInputs = document.querySelectorAll('input[name="Größe"]');
+  const colorInputs = document.querySelectorAll('input[name="Farbe"], input[name="Color"]');
+  const sizeInputs = document.querySelectorAll('input[name="Größe"], input[name="Size"]');
 
   colorInputs.forEach(input => {
     input.addEventListener('change', handleInputChange);
