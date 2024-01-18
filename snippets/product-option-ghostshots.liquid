@@ -180,9 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  const colorInputs = document.querySelectorAll('input[name="Farbe"]');
-  const sizeInputs = document.querySelectorAll('input[name="Größe"]');
-
   colorInputs.forEach(input => {
     input.addEventListener('change', handleInputChange);
     console.log('color input changed');
