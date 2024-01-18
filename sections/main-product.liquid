@@ -718,7 +718,6 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 text-transform: uppercase;">{{ product.title }}</h1>
-TEST
                     <div class="product-price-container">
                       <div class="no-js-hidden" id="price-{{ section.id }}">
                         {% render 'product-price', product: product, use_variant: true, show_badges: true %}
@@ -816,6 +815,7 @@ TEST
                           flex-direction: column;
                           align-items: flex-start;
                           margin-top: 15px;
+                          margin-bottom: 15px;
                           gap: 8px;
                         "
                       >
@@ -903,26 +903,7 @@ TEST
 	assign current_variant = product.selected_or_first_available_variant
 	assign inventory_quantity = current_variant.inventory_quantity
 -%}
-
-                <span>{{ inventory_quantity }}</span>
                 
- {%- if inventory_quantity <= 3 -%}
-    {% if request.locale.iso_code == 'en' %}
-                        <span style="color: var(--Black, #000); text-align: center; font-family: Rajdhani; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; /* 21.6px */text-transform: uppercase;">ONLY {{ inventory_quantity }} LEFT IN STOCK!</span>
-                                              {% else %}
-                                      <span style="color: var(--Black, #000);
-text-align: center;
-font-family: Rajdhani;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%; /* 21.6px */
-text-transform: uppercase;">NUR NOCH {{ inventory_quantity }} AUF LAGER!</span>
-                        {% endif %}
-
-   
-    
-  {%- endif -%}
                 {%- when 'variant_picker' -%}
                   {%- unless product.has_only_default_variant -%}
                     {% assign is_disabled = block.settings.variant_is_disabled %}
@@ -1447,7 +1428,7 @@ text-transform: uppercase;">NUR NOCH {{ inventory_quantity }} AUF LAGER!</span>
     form: form,
     is_disabled: is_disabled
   %}
-{%- endif -%}
+{%- endif -%} 
 
 {{ sizing_popup }}
 
