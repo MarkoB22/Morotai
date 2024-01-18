@@ -132,6 +132,8 @@ assign val_array = val_array | remove_first: ',' | split: ','
           style="{% if option.name == 'Farbe' %}width: 92px; height: 105px;{% else %} padding: 6.605px 12px 4.395px 12.5px;{% endif %}">
           {% if option.name == 'Farbe' %}
           {%- for variant in product.variants -%}
+          variant title: {{ variant.title }} &nbsp;
+          value: {{ value }}
           {% if variant.title contains value %}
           {% assign imagePath = variant.image | image_url %}
           {% break %}
