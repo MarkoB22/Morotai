@@ -150,6 +150,20 @@ assign product_content_alignment = settings.product_content_alignment
 </style>
 
 <product-card class="product-card text-{{ product_content_alignment }} {{ active_index }}">
+  {% if active_index %}
+  {% assign colorImage = '' %}
+    {% for variant in product_card_product.variants %}
+      {% if forloop.index == active_index %}
+        {% if variant.featured_media %}
+          {% assign colorImage = variant.featured_media %}
+        {% else %}
+          {% assign colorImage = product_card_product.featured_media %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+
   <figure
     class="product-featured-image   {% if products_hover_images and product_card_product.images.size > 1 and products_hover_images_count > 0 %}thb-hover{% endif %}">
     {%- for product in product_card_product.options_with_values -%}
@@ -263,7 +277,11 @@ assign product_content_alignment = settings.product_content_alignment
       {%- endfor %}
       {%- endif -%}
       {%- if featured_media -%}
-      {%- render 'responsive-image', class: 'product-primary-image', image: featured_media, sizes: sizes -%}
+        {% if colorImage %}
+          {%- render 'responsive-image', class: 'product-primary-image', image: colorImage, sizes: sizes -%}
+        {% else %}
+          {%- render 'responsive-image', class: 'product-primary-image', image: featured_media, sizes: sizes -%}
+        {%- endif -%}
       {%- else -%}
       <div class="thb-placeholder">
         {{ 'product-1' | placeholder_svg_tag }}
@@ -302,7 +320,7 @@ assign product_content_alignment = settings.product_content_alignment
       {% render 'product-price', product: product_card_product %}
 
     </div>
-    {% render 'product-card-swatch', product: product_card_product, sizes: sizes %}
+    {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}
     {%- if settings.show_products_rating and product_card_product.metafields.reviews.rating.value != blank -%}
     <div class="star-rating" style="--star-rating: {{ product_card_product.metafields.reviews.rating.value.rating }};">
     </div>

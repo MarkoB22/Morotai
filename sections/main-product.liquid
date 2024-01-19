@@ -912,10 +912,8 @@ text-transform: uppercase;">{{ product.title }}</h1>
                       class="no-js-hidden"
                       data-section="{{ section.id }}"
                       data-url="{{ product.url }}"
-                      data-is-disabled="{{ is_disabled }}"
-                    >
-                      <div style="flex-direction: column-reverse;
-    display: flex;" class="variations" {{ block.shopify_attributes }}>
+                      data-is-disabled="{{ is_disabled }}">
+                      <div style="flex-direction: column-reverse; display: flex;" class="variations" {{ block.shopify_attributes }}>
                         {%- for option in product.options_with_values -%}
                           {%- liquid
                             assign option_name = option.name | downcase | escape
@@ -963,12 +961,14 @@ text-transform: uppercase;">{{ product.title }}</h1>
 																<scroll-shadow>
 													        <div class="product-popup-modal__content-info">
                                 <div style="display: flex; justify-content: row;">
-                                                            <p class="outer-paragraph"><p class="inner-paragraph" style="font-weight: 500;     margin-right: 10px;">{{ 'products.product.model_details' | t }}: </p>{{ 'products.product.model_details_size.' | append: product.metafields.custom.hinweis_zum_model | t }}</p>
+                                  <p class="outer-paragraph"><p class="inner-paragraph" style="font-weight: 500;     margin-right: 10px;">{{ 'products.product.model_details' | t }}: </p>{{ 'products.product.model_details_size.' | append: product.metafields.custom.hinweis_zum_model | t }}</p>
                                 </div>
-                                                                <div style="display: flex; justify-content: row;">
-
-                                                            <p class="outer-paragraph"><p class="inner-paragraph" style="font-weight: 500;     margin-right: 10px;">FIT DETAILS:</p> {{ product.metafields.custom.fitdetails }}</p>
-                                 </div>
+                                <div style="display: flex; justify-content: row;">
+                                  <p class="outer-paragraph">
+                                    <p class="inner-paragraph" style="font-weight: 500;     margin-right: 10px;">FIT DETAILS:</p> 
+                                      {{ product.metafields.custom.fitdetails }}
+                                    </p>
+                                </div>
 													         <strong style="text-transform: uppercase;">{{ sizingGuidePage.content }}</strong>
 													        </div>
 																</scroll-shadow>

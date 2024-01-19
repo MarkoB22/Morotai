@@ -1,4 +1,3 @@
-<script>console.log({{ product.options_with_values | json }},'hello', {{settings.color_swatches | json}});</script>
 {%- if settings.show_products_swatches -%}
 	{%- unless product.has_only_default_variant -%}
 		{%- for option in product.options_with_values -%}
@@ -42,7 +41,7 @@
 										assign variant_url = variant.url
 									endif
 								endfor
-								assign image_sizes = sizes | split: ","
+								assign image_sizes = sizes | split: "," 
 							-%}
 							{%- capture srcset -%}
 								{%- if variant_image != blank -%}
@@ -72,7 +71,7 @@
 									assign color_value = color_value
 							-%}
                          
-							<div class="product-card-swatch {{ active }}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
+							<div class="product-card-swatch {% if active_index == forloop.index %} active default{% endif %}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
 								<span class="visually-hidden" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
 									{{ value }}
                         
