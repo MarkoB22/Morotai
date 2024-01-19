@@ -66,7 +66,7 @@
 										{%- endfor -%}										
 
 										{% for option in product.options %}
-										{% if option == "Color" or option == "Colour" or option == "Farbe" %}
+										{% if option == "color" or option == "Color" or option == "Farbe" %}
 											{% assign index = forloop.index0 %}
 											{% assign colorlist = '' %}
 											{% assign color = '' %}
