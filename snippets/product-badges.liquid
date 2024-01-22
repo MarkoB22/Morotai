@@ -22,30 +22,6 @@
     height: 100%;
   }
 
-  .close {
-    height: 25px;
-    width: 25px;
-    border-radius: 250px;
-    color: black;
-    position: absolute;
-    top: -7px;
-    right: 6px;
-    font-size: 30px;
-    cursor: pointer;
-    transition: color 0.3s;
-     z-index: 20000;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #333;
-  }
-
-  .close:hover
-   {
-    color: #333;
-  }
-
   #popup-text {
     margin-bottom: 0rem;
   }
@@ -73,44 +49,111 @@
 </style>
 
 <script>
-  function openModal(badgeType) {
-    var modal = document.getElementById('popup1');
-    var popupText = document.getElementById('popup-text');
+document.addEventListener('DOMContentLoaded', function () {
+  const body = document.body;
+  const modal = document.getElementById('popup1');
 
-    popupText.innerHTML = badgeType;
-
+  function openModal(index) {
     modal.style.display = 'block';
+    body.style.overflow = 'hidden';
+    updateModalContent(index);
   }
 
   function closeModal() {
-    var modal = document.getElementById('popup1');
     modal.style.display = 'none';
+    body.style.overflow = '';
   }
 
   var closeBtn = document.querySelector('.close');
-  if(closeBtn) {
+  if (closeBtn) {
     closeBtn.addEventListener('click', closeModal);
   }
 
-  window.addEventListener('click', function (event) {
-    var modal = document.getElementById('popup1');
-    if (event.target === modal) {
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
       closeModal();
     }
   });
+
+  function updateModalContent(index) {
+    const modal = document.querySelector('.modal');
+    const titles = modal.querySelectorAll('.badge_title');
+    const texts = modal.querySelectorAll('.badge_content');
+    const modalButtons = modal.querySelectorAll('.badge_button');
+
+    titles.forEach((title) => {
+      title.classList.add('hidden');
+    });
+    texts.forEach((text) => {
+      text.classList.add('hidden');
+    });
+
+    modalButtons.forEach((button, btnIndex) => {
+      if (btnIndex == index) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+
+      button.addEventListener('click', () => {
+        modalButtons.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+        button.classList.add('active');
+
+        titles.forEach((title, titleIndex) => {
+          if (titleIndex === btnIndex) {
+            title.classList.remove('hidden');
+          } else {
+            title.classList.add('hidden');
+          }
+        });
+
+        texts.forEach((text, textIndex) => {
+          if (textIndex === btnIndex) {
+            text.classList.remove('hidden');
+          } else {
+            text.classList.add('hidden');
+          }
+        });
+
+        const correspondingTitle = titles[btnIndex];
+        const correspondingText = texts[btnIndex];
+
+        if (correspondingTitle && correspondingText) {
+          correspondingTitle.classList.remove('hidden');
+          correspondingText.classList.remove('hidden');
+        }
+      });
+    });
+
+    const initialTitle = titles[index];
+    const initialText = texts[index];
+
+    if (initialTitle && initialText) {
+      initialTitle.classList.remove('hidden');
+      initialText.classList.remove('hidden');
+    }
+  }
+
+  const buttons = document.querySelectorAll('[onclick="openModal()"]');
+  buttons.forEach((button, index) => {
+    button.dataset.index = index;
+    button.addEventListener('click', function () {
+      openModal(index);
+    });
+  });
+});
+
 </script>
+
+
 
 {%- case product-badges -%}
   {% when '360 STRETCH' %}
     <a
       href="#popup1"
-      onclick="
-        {% if request.locale.iso_code == 'en' %}
-        openModal('360 STRETCH' )
-        {% else %}
-        openModal('360 STRETCH' )
-        {% endif %}
-      "
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -123,7 +166,7 @@
   {% when 'WATER RESISTANT' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('WATER RESISTANT' ){% else %}openModal('WASSERRESISTEND' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -136,7 +179,7 @@
   {% when 'WATER-REPELLENT' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('WATER-REPELLENT' ){% else %}openModal('WASSERABWEISEND' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -146,14 +189,14 @@
         style="padding-left:0px"
       >
     </a>
-  {% when 'ULTRA LIGHT' %}
+  {% when 'LIGHT WEIGHT' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('ULTRA LIGHT' ){% else %}openModal('LEICHT' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
-        src="{{ 'ULTRA_LIGHT.png' | file_img_url: '148x148' }}"
+        src="{{ 'LIGHT_WEIGHT.png' | file_img_url: '148x148' }}"
         height="48px"
         width="48px"
         style="padding-left:0px"
@@ -162,7 +205,7 @@
   {% when 'ZIPPER POCKETS' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('ZIPPER POCKETS' ){% else %}openModal('REISSVERSCHLUSSTASCHEN' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -175,7 +218,7 @@
   {% when 'AIR VENTS' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('AIR VENTS' ){% else %}openModal('LUFTEINSCHLÜSSE' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -188,7 +231,7 @@
   {% when 'ANTI-WRINKLE' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('ANTI-WRINKLE' ){% else %}openModal('KNITTERFREI' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -201,7 +244,7 @@
   {% when 'BREATHABLE' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('BREATHABLE' ){% else %}openModal('ATMUNGSAKTIV' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -214,7 +257,7 @@
   {% when 'CHEST POCKET' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('CHEST POCKET' ){% else %}openModal('BRUSTTASCHE' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -227,7 +270,7 @@
   {% when 'DOUBLE LAYER' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('DOUBLE LAYER' ){% else %}openModal('ZWEI SCHICHTEN' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -240,7 +283,7 @@
   {% when 'DRAWSTRING' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('DRAWSTRING' ){% else %}openModal('KORDELZUG' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -253,7 +296,7 @@
   {% when 'DURABLE' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('DURABLE' ){% else %}openModal('LANGLEBIG' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -266,7 +309,7 @@
   {% when 'ELASTIC CORD' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('ELASTIC CORD' ){% else %}openModal('ELASTISCHE KORDEL' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -279,7 +322,7 @@
   {% when 'ELASTIC WAISTBAND' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('ELASTIC WAISTBAND' ){% else %}openModal('ELASTISCHER BUND' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -292,7 +335,7 @@
   {% when 'FLATLOCK SEAM' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('FLATLOCK-SEAM' ){% else %}openModal('FLACHNAHT' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -305,7 +348,7 @@
   {% when 'EMBROIDERED LOGO' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('EMBROIDERED-LOGO' ){% else %}openModal('GESTICKTES LOGO' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -318,7 +361,7 @@
   {% when 'HALF-ZIP' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('HALF-ZIP' ){% else %}openModal('HALBER REISSVERSCHLUSS' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -331,7 +374,7 @@
   {% when 'HIGH WAIST' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('HIGH WAIST' ){% else %}openModal('HOHE TAILLE' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -344,7 +387,7 @@
   {% when 'LASER MESH' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('LASER MESH' ){% else %}openModal('LASER MESH' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -357,7 +400,7 @@
   {% when 'MESH INSERT' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('MESH-INSERT' ){% else %}openModal('MESH EINSATZ' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -370,7 +413,7 @@
   {% when 'MODULAR PUSH-UP' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('MODULAR PUSH-UP' ){% else %}openModal('MODULAR PUSH-UP' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -383,7 +426,7 @@
   {% when 'MOISTURE WICKING' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('MOISTURE-WICKING' ){% else %}openModal('FEUCHTIGKEITSABWEISEND' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -396,7 +439,7 @@
   {% when 'OPAQUE FABRIC' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('OPAQUE-FABRIC' ){% else %}openModal('BLICKDICHTER STOFF' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -409,7 +452,7 @@
   {% when 'PERFECT FIT' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('PERFECT FIT' ){% else %}openModal('PERFEKTE PASSFORM' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -422,7 +465,7 @@
   {% when 'PHONE POCKET' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('PHONE POCKET' ){% else %}openModal('HANDYTASCHE' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -435,7 +478,7 @@
   {% when 'QUICK DRY' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('QUICK DRY' ){% else %}openModal('SCHNELLTROCKNEND' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -448,7 +491,7 @@
   {% when 'REFLECTIVE PRINTS' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('REFLECTIVE PRINTS' ){% else %}openModal('REFLEKTIERENDER DRUCKE' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -461,7 +504,7 @@
   {% when 'SEAMLESS DESIGN' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('SEAMLESS DESIGN' ){% else %}openModal('NAHTLOSES DESIGN' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -474,7 +517,7 @@
   {% when 'SIDE POCKETS' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('SIDE POCKETS' ){% else %}openModal('SEITENTASCHEN' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -487,7 +530,7 @@
   {% when 'THUMBHOLES' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('THUMBHOLES' ){% else %}openModal('DAUMENLÖCHER' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -500,7 +543,7 @@
   {% when 'SOFT FLEECE' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('SOFT-FLEECE' ){% else %}openModal('WEICHER VLIES' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -513,7 +556,7 @@
   {% when 'EASY CARE' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('EASY CARE' ){% else %}openModal('PFLEGELEICHT' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -526,7 +569,7 @@
   {% when 'FLEXIBILITY' %}
     <a
       href="#popup1"
-      onclick="{% if request.locale.iso_code == 'en' %} openModal('FLEXIBILITY' ){% else %}openModal('FLEXIBEL' ){% endif %}"
+      onclick="openModal()"
     >
       <img
         id="popup-trigger"
@@ -538,13 +581,167 @@
     </a>
 {%- endcase -%}
 
-<div id="popup1" class="modal">
+<div id="popup1" class="modal badges">
   <div class="modal-content">
-    <span class="close">
-      <p style="background-color: grey; align-items: center; height: 25px; border-radius: 250px; display: flex; margin-bottom: 0px; justify-content: center;">
-        &times;
-      </p>
-    </span>
-    <p id="popup-text"></p>
+    <div id="popup-text" class="popup-content">
+      <span class="close-button close">
+      </span>
+      <div class="active_badge-title">
+        {% if product.metafields.attributes.BULLET_POINT_1 %}
+          <div class="hidden badge_title ">
+             {{ product.metafields.attributes.BULLET_POINT_1.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_2 %}
+          <div class="hidden badge_title ">
+             {{ product.metafields.custom.bulletpoint_2.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_3 %}
+          <div class="hidden badge_title ">
+             {{ product.metafields.custom.bulletpoint_3.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_4 %}
+          <div class="hidden badge_title ">
+             {{ product.metafields.custom.bulletpoint_4.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_5 %}
+          <div class="hidden badge_title ">
+             {{ product.metafields.custom.bulletpoint_5.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_6 %}
+          <div class="hidden badge_title ">
+             {{ product.metafields.custom.bulletpoint_6.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_7 %}
+          <div class="hidden badge_title ">
+             {{ product.metafields.custom.bulletpoint_7.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_8 %}
+          <div class="hidden badge_title ">
+             {{ product.metafields.custom.bulletpoint_8.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_9 %}
+          <div class="hidden badge_title">
+             {{ product.metafields.custom.bulletpoint_9.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_10 %}
+          <div class="hidden badge_title">
+             {{ product.metafields.custom.bulletpoint_10.value }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="active_badge-text_wrapper">
+        {% if product.metafields.attributes.BULLET_POINT_1 %}
+          {% assign customFieldKey = product.metafields.attributes.BULLET_POINT_1.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_2 %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_2.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_3 %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_3.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_4 %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_4.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_5 %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_5.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_6 %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_6.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_7 %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_7.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_8 %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_8.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_9 %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_9.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_10 %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_10.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="badge_content hidden">{{ 'products.product.badges.' | append: sanitizedKey | t }}</div>
+        {% endif %}
+      </div>
+      <div class="badge-buttons">
+        {% if product.metafields.attributes.BULLET_POINT_1 %}
+          <div class="badge_button" data-attribute="1">
+             {{ product.metafields.attributes.BULLET_POINT_1.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_2 %}
+          <div class="badge_button" data-attribute="2">
+             {{ product.metafields.custom.bulletpoint_2.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_3 %}
+          <div class="badge_button" data-attribute="3">
+             {{ product.metafields.custom.bulletpoint_3.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_4 %}
+          <div class="badge_button" data-attribute="4">
+             {{ product.metafields.custom.bulletpoint_4.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_5 %}
+          <div class="badge_button" data-attribute="5">
+             {{ product.metafields.custom.bulletpoint_5.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_6 %}
+          <div class="badge_button" data-attribute="6">
+             {{ product.metafields.custom.bulletpoint_6.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_7 %}
+          <div class="badge_button" data-attribute="7">
+             {{ product.metafields.custom.bulletpoint_7.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_8 %}
+          <div class="badge_button" data-attribute="8">
+             {{ product.metafields.custom.bulletpoint_8.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_9 %}
+          <div class="badge_button" data-attribute="9">
+             {{ product.metafields.custom.bulletpoint_9.value }}
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.bulletpoint_10 %}
+          <div class="badge_button" data-attribute="10">
+             {{ product.metafields.custom.bulletpoint_10.value }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>

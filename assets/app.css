@@ -3922,3 +3922,89 @@ input[type="radio"], .field label, .quantity .minus svg,
     font-weight: 600;
     margin-bottom: 0px; }
 
+.modal.badges {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: 100vh;
+  background: rgb(0,0,0,0.45);
+}
+
+.badge_title {
+  border: 1px solid black;
+  width: fit-content;
+  margin: 0 auto 40px auto;
+  border-radius: 30px;
+  padding: 5px 10px;
+  font-weight: 700;
+}
+
+.badge_content {
+  padding: 0 0 50px;
+  border-bottom: 2px solid #80808057;
+  margin-bottom: 40px;
+}
+
+.badge-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.badge_button {
+  padding: 5px 8px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background: white;
+  color: black;
+  transition: all ease-in-out 0.3s;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 30px;
+  padding: 100px 50px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  top: 35px;
+  right: 45px;
+}
+
+.close-button::before,
+.close-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 40px;
+  background-color: #000;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.badge_content {
+  white-space: break-spaces;
+}
+
+.badge_button.active {
+  background: black;
+  color: white;
+  font-weight: 700;
+}
+
+
+@media print, screen and (min-width: 641px) {
+  .badge_content {
+    padding: 0 45px 50px;
+  }
+}

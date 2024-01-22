@@ -736,6 +736,12 @@ text-transform: uppercase;">{{ product.title }}</h1>
                             {% render 'product-badges' with product.metafields.custom.bulletpoint_2 %}
                             {% render 'product-badges' with product.metafields.custom.bulletpoint_3 %}
                             {% render 'product-badges' with product.metafields.custom.bulletpoint_4 %}
+                            {% render 'product-badges' with product.metafields.custom.bulletpoint_5 %}
+                            {% render 'product-badges' with product.metafields.custom.bulletpoint_6 %}
+                            {% render 'product-badges' with product.metafields.custom.bulletpoint_7 %}
+                            {% render 'product-badges' with product.metafields.custom.bulletpoint_8 %}
+                            {% render 'product-badges' with product.metafields.custom.bulletpoint_9 %}
+                            {% render 'product-badges' with product.metafields.custom.bulletpoint_10 %}  
                           </ul>
                           <span class="attribute-tooltiptext mb-0"> </span>
                         </div>
@@ -1549,16 +1555,11 @@ document.addEventListener('DOMContentLoaded', function() {
   initialCheckedInput.click();
   function updateMainProductImage() {
     let checkedInput = document.querySelector('input[name="Farbe"]:checked');
-    console.log('checkedInput: ', checkedInput);
     if (checkedInput) {
       let label = checkedInput.nextElementSibling.querySelector('label[option="Farbe"]');
-      console.log('label: ', label);
       let image = label.querySelector('img');
-      console.log('image: ', image);
       let imageUrl = image ? image.getAttribute('src') : '';
-      console.log('imageUrl: ', imageUrl);
       let mainProductImage = document.querySelector('.main-product-img');
-      console.log('mainProductImage: ', mainProductImage);
       if (mainProductImage) {
         mainProductImage.setAttribute('srcset', imageUrl);
       }
@@ -1568,7 +1569,6 @@ document.addEventListener('DOMContentLoaded', function() {
   updateMainProductImage();
 
   document.addEventListener('change', function(event) {
-    console.log('label change triggered');
     if (event.target.tagName === 'INPUT' && event.target.name === 'Farbe') {
       updateMainProductImage();
     }

@@ -551,7 +551,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 5; }
+      z-index: 0; }
   .thb-product-detail .product-single__media-zoom {
     position: absolute;
     top: 23px;
