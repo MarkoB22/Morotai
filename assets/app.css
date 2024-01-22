@@ -3952,11 +3952,8 @@ input[type="radio"], .field label, .quantity .minus svg,
 }
 
 .badge_button {
-  padding: 5px 8px;
-  border: 1px solid black;
-  border-radius: 50px;
-  background: white;
-  color: black;
+  padding: 1px;
+  border: 1px solid transparent;
   transition: all ease-in-out 0.3s;
 }
 
@@ -3997,9 +3994,7 @@ input[type="radio"], .field label, .quantity .minus svg,
 }
 
 .badge_button.active {
-  background: black;
-  color: white;
-  font-weight: 700;
+  border: 1px solid black;
 }
 
 

@@ -693,52 +693,102 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="badge-buttons">
         {% if product.metafields.attributes.BULLET_POINT_1 %}
           <div class="badge_button" data-attribute="1">
-             {{ product.metafields.attributes.BULLET_POINT_1.value }}
+          {%  assign image_name = product.metafields.attributes.BULLET_POINT_1.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+            <img id="popup-trigger"
+            src="{{ image_name | file_img_url: '148x148' }}"
+            height="48px"
+            width="48px"
+            style="padding-left:0px">
           </div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_2 %}
           <div class="badge_button" data-attribute="2">
-             {{ product.metafields.custom.bulletpoint_2.value }}
+            {%  assign image_name = product.metafields.custom.bulletpoint_2.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+              <img id="popup-trigger"
+              src="{{ image_name | file_img_url: '148x148' }}"
+              height="48px"
+              width="48px"
+              style="padding-left:0px">
           </div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_3 %}
           <div class="badge_button" data-attribute="3">
-             {{ product.metafields.custom.bulletpoint_3.value }}
+            {%  assign image_name = product.metafields.custom.bulletpoint_3.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+              <img id="popup-trigger"
+              src="{{ image_name | file_img_url: '148x148' }}"
+              height="48px"
+              width="48px"
+              style="padding-left:0px">
           </div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_4 %}
           <div class="badge_button" data-attribute="4">
-             {{ product.metafields.custom.bulletpoint_4.value }}
+            {%  assign image_name = product.metafields.custom.bulletpoint_4.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+            <img id="popup-trigger"
+            src="{{ image_name | file_img_url: '148x148' }}"
+            height="48px"
+            width="48px"
+            style="padding-left:0px">
           </div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_5 %}
           <div class="badge_button" data-attribute="5">
-             {{ product.metafields.custom.bulletpoint_5.value }}
+            {%  assign image_name = product.metafields.custom.bulletpoint_5.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+            <img id="popup-trigger"
+            src="{{ image_name | file_img_url: '148x148' }}"
+            height="48px"
+            width="48px"
+            style="padding-left:0px">
           </div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_6 %}
           <div class="badge_button" data-attribute="6">
-             {{ product.metafields.custom.bulletpoint_6.value }}
+            {%  assign image_name = product.metafields.custom.bulletpoint_6.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+            <img id="popup-trigger"
+            src="{{ image_name | file_img_url: '148x148' }}"
+            height="48px"
+            width="48px"
+            style="padding-left:0px">
           </div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_7 %}
           <div class="badge_button" data-attribute="7">
-             {{ product.metafields.custom.bulletpoint_7.value }}
+            {%  assign image_name = product.metafields.custom.bulletpoint_7.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+            <img id="popup-trigger"
+            src="{{ image_name | file_img_url: '148x148' }}"
+            height="48px"
+            width="48px"
+            style="padding-left:0px">
           </div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_8 %}
           <div class="badge_button" data-attribute="8">
-             {{ product.metafields.custom.bulletpoint_8.value }}
+            {%  assign image_name = product.metafields.custom.bulletpoint_8.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+            <img id="popup-trigger"
+            src="{{ image_name | file_img_url: '148x148' }}"
+            height="48px"
+            width="48px"
+            style="padding-left:0px">
           </div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_9 %}
           <div class="badge_button" data-attribute="9">
-             {{ product.metafields.custom.bulletpoint_9.value }}
+            {%  assign image_name = product.metafields.custom.bulletpoint_9.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+            <img id="popup-trigger"
+            src="{{ image_name | file_img_url: '148x148' }}"
+            height="48px"
+            width="48px"
+            style="padding-left:0px">
           </div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_10 %}
           <div class="badge_button" data-attribute="10">
-             {{ product.metafields.custom.bulletpoint_10.value }}
+            {%  assign image_name = product.metafields.custom.bulletpoint_10.value | append: '.png' | replace: ' ', '_' | replace: '-', '_' %}
+            <img id="popup-trigger"
+            src="{{ image_name | file_img_url: '148x148' }}"
+            height="48px"
+            width="48px"
+            style="padding-left:0px">
           </div>
         {% endif %}
       </div>
