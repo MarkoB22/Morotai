@@ -182,24 +182,7 @@ if (!customElements.get("product-card")) {
       let swatch_list = swatches.querySelectorAll(".product-card-swatch"),
           org_srcset = image ? image.dataset.srcset : "",
           activeSwatches = swatches.querySelector('.product-card-swatch.active'),
-          defaultSwatches = swatches.querySelectorAll('.product-card-swatch.default');
-
-          console.log('swatch_list: ', swatch_list);
-          console.log('org_srcset: ', org_srcset);
-          console.log('activeSwatches: ', activeSwatches);
-          console.log('defaultSwatches: ', defaultSwatches);
-    
-      function updateImage() {
-        console.log('updateImage initialized');
-        if (activeSwatches.length > 0) {
-          let active = activeSwatches[0];
-          if (active.dataset.srcset) {
-            image.setAttribute('srcset', active.dataset.srcset);
-          } else {
-            image.setAttribute('srcset', org_srcset);
-          }
-        }
-      }
+          defaultSwatches = swatches.querySelectorAll('.product-card-swatch.default')
     
       swatches.addEventListener('mouseleave', function() {
         defaultSwatches.forEach((defaultSwatch) => {

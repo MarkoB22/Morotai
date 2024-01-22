@@ -252,7 +252,8 @@
         border-radius: 6px;
         background: var(--option-color);
         background-image: var(--option-color-image);
-        background-size: cover; }
+        background-size: cover; 
+        border: 1px solid grey;}
       .product-card .product-card-swatches .product-card-swatch.active {
         box-shadow: 0 0 0 1px var(--color-accent) inset; }
     .product-card .product-card-swatches--container {

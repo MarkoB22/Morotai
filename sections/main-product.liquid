@@ -1542,6 +1542,40 @@ text-transform: uppercase;">{{ product.title }}</h1>
   }
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let initialCheckedInput = document.querySelector('input[name="Farbe"]:checked');
+  document.querySelector('input[name="Farbe"]').click();
+  initialCheckedInput.click();
+  function updateMainProductImage() {
+    let checkedInput = document.querySelector('input[name="Farbe"]:checked');
+    console.log('checkedInput: ', checkedInput);
+    if (checkedInput) {
+      let label = checkedInput.nextElementSibling.querySelector('label[option="Farbe"]');
+      console.log('label: ', label);
+      let image = label.querySelector('img');
+      console.log('image: ', image);
+      let imageUrl = image ? image.getAttribute('src') : '';
+      console.log('imageUrl: ', imageUrl);
+      let mainProductImage = document.querySelector('.main-product-img');
+      console.log('mainProductImage: ', mainProductImage);
+      if (mainProductImage) {
+        mainProductImage.setAttribute('srcset', imageUrl);
+      }
+    }
+  }
+
+  updateMainProductImage();
+
+  document.addEventListener('change', function(event) {
+    console.log('label change triggered');
+    if (event.target.tagName === 'INPUT' && event.target.name === 'Farbe') {
+      updateMainProductImage();
+    }
+  });
+});
+</script>
+
 {% schema %}
 {
   "name": "Product information",

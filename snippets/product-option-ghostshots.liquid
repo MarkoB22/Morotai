@@ -126,7 +126,7 @@ assign val_array = val_array | remove_first: ',' | split: ','
 		<div class="test" style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
 			<div class="test2"
 				style="display: flex; justify-content: center; align-items: center; align-self: stretch;">
-				<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
+				<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}" option="{{ option.name }}"
 					style="{% if option.name == 'Farbe' %} width: 92px; height: 105px;{% else %} padding: 6.605px 12px 4.395px 12.5px;{% endif %}">
 					{% if option.name == 'Farbe' %}
 					{%- for variant in product.variants -%}
@@ -151,31 +151,23 @@ assign val_array = val_array | remove_first: ',' | split: ','
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('handleInputChange initialized');
   const colorInputs = document.querySelectorAll('input[name="Farbe"], input[name="Color"]');
-  console.log('colorInputs: ', colorInputs);
   const sizeInputs = document.querySelectorAll('input[name="Größe"], input[name="Size"], input[name="size"]');
-  console.log('sizeInputs: ', sizeInputs);
   
   function handleInputChange() {
     
     const selectedColor = [...colorInputs].find(input => input.checked)?.getAttribute('value') || '';
-    console.log('selectedColor: ', selectedColor);
     const selectedSize = [...sizeInputs].find(input => input.checked)?.getAttribute('value') || '';
-    console.log('selectedSize: ', selectedSize);
 
     const quantity_warnings = document.querySelectorAll('.low_quantity');
-    console.log('quantity_warnings:', quantity_warnings);
     if (quantity_warnings.length > 0) {
       quantity_warnings.forEach(function (quantity_warning) {
         quantity_warning.classList.add('hidden_low_quantity');
       });
 
       const matchingElement = document.querySelector(`.low_quantity[color="${selectedColor}"][size="${selectedSize}"]`);
-      console.log('matchingElement: ', matchingElement);
 
       if (matchingElement) {
-        console.log('remove hidden from matching element');
         matchingElement.classList.remove('hidden_low_quantity');
       }
     }
@@ -183,12 +175,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   colorInputs.forEach(input => {
     input.addEventListener('change', handleInputChange);
-    console.log('color input changed');
   });
 
   sizeInputs.forEach(input => {
     input.addEventListener('change', handleInputChange);
-    console.log('size input changed');
   });
 
   handleInputChange();
