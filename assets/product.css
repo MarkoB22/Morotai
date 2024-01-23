@@ -1242,3 +1242,11 @@
     left: auto;
   }
 }
+
+.product-single__media-image {
+  border: 1px solid white;
+}
+
+.product-single__media-image.hovered {
+  border: 1px solid black;
+}

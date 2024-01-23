@@ -343,7 +343,7 @@ else {feren.style.display = "flex";
                
 
                   <div
-                    class="product-single__media product-single__media-image aspect-ratio aspect-ratio--{{ media_aspect_ratio }}"
+                    class="product-single__media product-single__media-image aspect-ratio aspect-ratio--{{ media_aspect_ratio }} "
                     id="Media-Thumbnails-{{ section.id }}-{{ featured_media.id }}"
                     style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 }}%;"
                   >
@@ -1587,6 +1587,28 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<script>
+// Script for changing main image when hovering over side images
+document.addEventListener('DOMContentLoaded', function () {
+    const mediaImages = document.querySelectorAll('.product-single__media-image');
+    const mainProductImage = document.querySelector('.main-product-img');
+
+    mediaImages.forEach((mediaImage) => {
+        mediaImage.addEventListener('mouseover', function () {
+          mediaImage.classList.add('hovered');
+            const srcsetValue = mediaImage.querySelector('img').getAttribute('srcset');
+            if (srcsetValue) {
+                mainProductImage.setAttribute('srcset', srcsetValue);
+            }
+        });
+        mediaImage.addEventListener('mouseleave', function () {
+          mediaImage.classList.remove('hovered');
+        });
+    });
+});
+</script>
+
 
 {% schema %}
 {
