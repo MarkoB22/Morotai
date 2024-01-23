@@ -1213,7 +1213,7 @@ text-transform: uppercase;">{{ product.title }}</h1>
                             gap: 9px;
                           "
                         >
-                          <div class="footer-payment-icons">
+                          <div class="footer-payment-icons hidden">
                             {%- unless shop.enabled_payment_types == empty -%}
                               {%- for type in shop.enabled_payment_types -%}
                                 <figure>{{ type | payment_type_svg_tag: class: 'payment-icons__icon' }}</figure>
