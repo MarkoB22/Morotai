@@ -1226,3 +1226,19 @@
   opacity: 1;
   transition: all ease-in-out .35s;
 }
+
+.warranty_badge {
+  position: absolute;
+  top: 4px;
+  left: 55px;
+}
+
+#badge-ribbon {
+  position: absolute;
+}
+
+@media only screen and (min-width: 768px) {
+  .warranty_badge {
+    left: auto;
+  }
+}

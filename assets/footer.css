@@ -188,12 +188,9 @@ align-items: flex-start;
       padding: 12px 24px 12px 17px;
       border: 1px solid rgba(var(--color-footer-border-rgb, #fff), 0.4); }
 
-.footer-payment-icons {
-  margin-bottom: 35px; }
   @media only screen and (min-width: 768px) {
     .footer-payment-icons {
-      text-align: right;
-      margin-bottom: 25px; } }
+      text-align: right;} }
   .footer-payment-icons figure {
     display: inline-flex;
     margin-left: 5px; }
