@@ -32,7 +32,7 @@
     "sale_badge_type": "save_amount",
     "badge_position": "top left",
     "badge_corner_radius": 0,
-    "color_swatches": "SCHWARZ: #000000\nDUNKELGRAU: #4A4E4D\nGRAUMELIERT: #4A4E4D\nVIOLETTGRAU: #3F3540\nHELLGRAU: #A9A9A9\nBEIGE: #EBE6D9\nCREME: #F6F3E7\nMOONMISTGRAU: #CCCCB3\nWeiß: #F3F3F3",
+    "color_swatches": "SCHWARZ: #000000\nDUNKELGRAU: #4A4E4D\nGRAUMELIERT: #4A4E4D\nGRAUMELIERT: #4A4E4D\nVIOLETTGRAU: #3F3540\nHELLGRAU: #A9A9A9\nBEIGE: #EBE6D9\nCREME: #F6F3E7\nMOONMISTGRAU: #CCCCB3\nWeiß: #F3F3F3",
     "free_shipping": true,
     "free_shipping_minimum": "90",
     "currency_code_enabled": false,
