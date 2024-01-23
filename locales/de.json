@@ -115,6 +115,7 @@
       "unavailable": "Nicht verfügbar",
       "only": "NUR NOCH",
       "left_in_stock": "AUF LAGER!",
+      "link_copied": "Produktlink kopiert!",
       "price": {
         "from_price_html": "Von {{ price }}",
         "regular_price": "Normaler Preis",

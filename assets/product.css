@@ -723,7 +723,8 @@
 .share-article {
   font-size: 0.8125rem;
   line-height: 1;
-  margin-bottom: 25px; }
+  margin-bottom: 25px; 
+  position: relative;}
   .share-article svg {
     height: 16px;
     width: auto; }
@@ -1212,4 +1213,16 @@
   overflow: hidden;
   opacity: 0;
   transition: all ease-in-out .3s;
+}
+
+.copy_url {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.link_copied_notification {
+  position: absolute;
+  top: 100%;
+  opacity: 1;
+  transition: all ease-in-out .35s;
 }
