@@ -109,7 +109,7 @@
        .product-slider-wrapper {
          overflow-x: auto;
          max-height: 750px;
-         height: 94vh !important;
+         height: 562px !important;
        }
 
          .product-slider-wrapper::-webkit-scrollbar {
@@ -267,9 +267,10 @@
   display: none;
 }
 
-    .multiple-slider {
-      display: none !important;
-    }
+  .multiple-slider {
+    display: none !important;
+  }
+
 </style>
 
 <script>
@@ -338,7 +339,7 @@ else {feren.style.display = "flex";
                   id="Slide-{{ section.id }}-{{ featured_media.id }}"
                   class="multiple-slider product-images__slide is-active {% if hide_variants and variant_images contains featured_media.src %} product-images__slide-item--variant{% endif %}"
                   data-media-id="{{ section.id }}-{{ featured_media.id }}"
-                  style="position: relative; display: none !important"
+                  style="position: relative; display: none !important";
                 >
                
 
