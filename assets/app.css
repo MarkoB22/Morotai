@@ -2850,11 +2850,14 @@ input[type="submit"] {
       input[type="submit"].white:hover {
         color: #fff;
         border-color: var(--color-body); } }
+
   .button.outline,
   input[type="submit"].outline {
     border: 1px solid var(--outline-button-label, var(--color-accent));
     color: var(--outline-button-label, var(--color-accent));
-    background: transparent; }
+    background: transparent; 
+  }
+  
     .button.outline:before,
     input[type="submit"].outline:before {
       background: var(--outline-button-label, var(--color-accent)); }

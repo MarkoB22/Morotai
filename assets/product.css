@@ -1254,3 +1254,36 @@
 .product-title {
   font-family: var(--heading-font-family);
 }
+
+.product-form .single-add-to-cart-button {
+  background: black;
+  color: white;
+  display: inline-flex;
+  cursor: pointer;
+  padding: 7px 30px;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: var(--button-letter-spacing, .02em);
+  border: 1px solid var(--solid-button-background, var(--color-accent));
+  background: var(--solid-button-background, var(--color-accent));
+  color: var(--solid-button-label, #fff);
+  border-radius: var(--button-border-radius, 0px);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: color .25s cubic-bezier(.104,.204,.492,1),background-color .25s cubic-bezier(.104,.204,.492,1),border-color .25s cubic-bezier(.104,.204,.492,1);
+  flex: 1;
+  text-transform: uppercase;
+}
+
+.product-form .single-add-to-cart-button:hover {
+  box-shadow: 5px 5px 5px grey;
+  transition: all ease-in-out .3s;
+}
