@@ -712,7 +712,13 @@ else {feren.style.display = "flex";
                   {{ block.settings.custom_liquid }}
                 {%- when 'title' -%}
                    <div class="product-title-container" {{ block.shopify_attributes }}>
-                    <h1 class="product-title uppercase--{{ block.settings.uppercase }}">{{ product.title }}</h1>
+                    <h1 class="product-title uppercase--{{ block.settings.uppercase }}" style="color: var(--Black, #000);
+font-family: Rajdhani, sans-serif;
+font-size: 22.5px;           
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;">{{ product.title }}</h1>
                     <div class="product-price-container">
                       <div class="no-js-hidden" id="price-{{ section.id }}">
                         {% render 'product-price', product: product, use_variant: true, show_badges: true %}
@@ -736,7 +742,7 @@ else {feren.style.display = "flex";
                             {% render 'product-badges' with product.metafields.custom.bulletpoint_7 %}
                             {% render 'product-badges' with product.metafields.custom.bulletpoint_8 %}
                             {% render 'product-badges' with product.metafields.custom.bulletpoint_9 %}
-                            {% render 'product-badges' with product.metafields.custom.bulletpoint_10 %}  
+                            {% render 'product-badges' with product.metafields.custom.bulletpoint_10 %}   
                           </ul>
                           <span class="attribute-tooltiptext mb-0"> </span>
                         </div>
@@ -1098,8 +1104,8 @@ else {feren.style.display = "flex";
                       href="
                         {% if request.locale.iso_code == 'en' %}
                           https://morotai.com/en-hr/pages/tracking-delivery-faq
-                                              {% else %}
-                                      https://morotai.com/de-hr/pages/tracking-delivery-faq
+                        {% else %}
+                          https://morotai.com/de-hr/pages/tracking-delivery-faq
                         {% endif %}
                       "
                       style="
@@ -1132,7 +1138,7 @@ else {feren.style.display = "flex";
                               display: flex;
                               padding-top: 0;
                               flex-direction: column;
-                              align-items: center;
+                              align-items: flex-start;
                               gap: 0;
                             "
                           >
@@ -1179,7 +1185,7 @@ else {feren.style.display = "flex";
                         <div
                           style="
                             display: flex;
-                            padding-top: 7px;
+                            padding-top: 0px;
                             flex-direction: column;
                             align-items: center;
                             gap: 4px;
@@ -1218,80 +1224,12 @@ else {feren.style.display = "flex";
                         </div>
                       </div>
                     </div>
-                    <div
-                      style="
-                        display: flex;
-                        padding: 16px;
-                        justify-content: space-between;
-                        align-items: center;
-                        align-self: stretch;
-                        border-top: 1px solid #000;
-                        position: relative;
-                      "
-                    >
-                      <div
-                        style="
-                          display: flex;
-                          align-items: center;
-                          gap: 20px;
-                        "
-                      >
-                        <img
-                          src="{{ 'Customer_Satisfaction.png' | file_img_url: '500x500' }}"
-                          height="45px"
-                          width="45px"
-                          style="padding-left:0px"
-                        >
-                        <div
-                          style="
-                            display: flex;
-                            padding-top: 7px;
-                            flex-direction: column;
-                            align-items: center;
-                            gap: 4px;
-                          "
-                        >
-                          <div class="warranty_badge"
-                            style="
-                              color: var(--Black, #000);
-                              font-family: Rajdhani;
-                              font-size: 24px;
-                              font-style: normal;
-                              font-weight: 500;
-                              line-height: normal;
-                              text-transform: uppercase;
-                            "
-                          >
-                            {% comment %}
-                            {{ 'products.product.badges.warranty' | t }}
-                            {% endcomment %}
-                            <script src="https://widget.reviews.io/badge-ribbon/dist.js"></script>
-                            <div id="badge-ribbon"></div>
-                            <script>
-                                reviewsBadgeRibbon("badge-ribbon", {
-                                    store: "morotai",
-                                    size: "small",
-                                    
-                                });
-                            </script>
-                          </div>
-                        </div>
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            gap: 9px;
-                          "
-                        ></div>
-                      </div>
-                    </div>
                     <a
                       href="
                         {% if request.locale.iso_code == 'en' %}
                           https://morotai.com/en-hr/pages/payment-accept-faq
-                                              {% else %}
-                                                https://morotai.com/de-hr/pages/payment-accept-faq
+                        {% else %}
+                          https://morotai.com/de-hr/pages/payment-accept-faq
                         {% endif %}
                       "
                       style="
@@ -1353,6 +1291,54 @@ else {feren.style.display = "flex";
                         </div>
                       </div>
                     </a>
+                    <div style="display: flex;
+                        padding: 16px;
+                        justify-content: space-between;
+                        align-items: center;
+                        align-self: stretch;
+                        border-top: 1px solid #000;
+                        position: relative;">
+                      <div style=" display: flex;
+                          align-items: center;
+                          gap: 20px;">
+                        <img src="{{ 'Customer_Satisfaction.png' | file_img_url: '500x500' }}"
+                          height="45px"
+                          width="45px"
+                          style="padding-left:0px">
+                        <div style="
+                            display: flex;
+                            padding-top: 7px;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 4px;">
+                          <div class="warranty_badge"
+                            style="color: var(--Black, #000);
+                              font-family: Rajdhani;
+                              font-size: 24px;
+                              font-style: normal;
+                              font-weight: 500;
+                              line-height: normal;
+                              text-transform: uppercase;">
+                            {% comment %}
+                            {{ 'products.product.badges.warranty' | t }}
+                            {% endcomment %}
+                            <script src="https://widget.reviews.io/badge-ribbon/dist.js"></script>
+                            <div id="badge-ribbon"></div>
+                            <script>
+                                reviewsBadgeRibbon("badge-ribbon", {
+                                    store: "morotai",
+                                    size: "small",
+                                    
+                                });
+                            </script>
+                          </div>
+                        </div>
+                        <div style="display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 9px;"></div>
+                      </div>
+                    </div>
                   </div>
 
 
