@@ -4013,3 +4013,7 @@ input[type="radio"], .field label, .quantity .minus svg,
 .product-information--inner {
   text-align: left;
 }
+
+.restock-alerts-branding-text {
+  display: none;
+}

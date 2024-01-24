@@ -12,7 +12,7 @@
     height: 450px;
 
 @media print, screen and (min-width: 48em) {
- height: 350px;
+ height: auto;
   }
 }
 
@@ -40,7 +40,6 @@
 .heading {
   font-size: 1.8em; 
   font-weight: bold;
-  background-color: rgba(0,0,0,.5);
 }
 
 .search-faq .search-input{
