@@ -3933,7 +3933,6 @@ input[type="radio"], .field label, .quantity .minus svg,
   border: 1px solid black;
   width: fit-content;
   margin: 0 auto 40px auto;
-  border-radius: 30px;
   padding: 5px 10px;
   font-weight: 700;
 }
@@ -3959,10 +3958,15 @@ input[type="radio"], .field label, .quantity .minus svg,
 
 .popup-content {
   background: white;
-  border-radius: 30px;
   padding: 100px 50px;
   position: relative;
-  width: 45vw;
+  width: 90vw;
+}
+
+@media print, screen and (min-width: 1068px) {
+  .popup-content {
+    width: 45vw;
+  }
 }
 
 .close-button {

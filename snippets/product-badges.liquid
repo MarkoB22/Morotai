@@ -579,6 +579,32 @@ document.addEventListener('DOMContentLoaded', function () {
         style="padding-left:0px"
       >
     </a>
+  {% when 'REFLECTIVE ZIPPER' %}
+    <a
+      href="#popup1"
+      onclick="openModal()"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'REFLECTIVE_ZIPPER.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
+  {% when 'HALF ZIP' %}
+    <a
+      href="#popup1"
+      onclick="openModal()"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'HALF_ZIP.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="48px"
+        style="padding-left:0px"
+      >
+    </a>
 {%- endcase -%}
 
 <div id="popup1" class="modal badges">
@@ -588,54 +614,54 @@ document.addEventListener('DOMContentLoaded', function () {
       </span>
       <div class="active_badge-title">
         {% if product.metafields.attributes.BULLET_POINT_1 %}
-          <div class="hidden badge_title ">
-             {{ product.metafields.attributes.BULLET_POINT_1.value }}
-          </div>
+            {% assign customFieldKey = product.metafields.attributes.BULLET_POINT_1.value %}
+            {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+            <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_2 %}
-          <div class="hidden badge_title ">
-             {{ product.metafields.custom.bulletpoint_2.value }}
-          </div>
-        {% endif %}
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_2.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
+      {% endif %}
         {% if product.metafields.custom.bulletpoint_3 %}
-          <div class="hidden badge_title ">
-             {{ product.metafields.custom.bulletpoint_3.value }}
-          </div>
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_3.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_4 %}
-          <div class="hidden badge_title ">
-             {{ product.metafields.custom.bulletpoint_4.value }}
-          </div>
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_4.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_5 %}
-          <div class="hidden badge_title ">
-             {{ product.metafields.custom.bulletpoint_5.value }}
-          </div>
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_5.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_6 %}
-          <div class="hidden badge_title ">
-             {{ product.metafields.custom.bulletpoint_6.value }}
-          </div>
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_6.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_7 %}
-          <div class="hidden badge_title ">
-             {{ product.metafields.custom.bulletpoint_7.value }}
-          </div>
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_7.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_8 %}
-          <div class="hidden badge_title ">
-             {{ product.metafields.custom.bulletpoint_8.value }}
-          </div>
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_8.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_9 %}
-          <div class="hidden badge_title">
-             {{ product.metafields.custom.bulletpoint_9.value }}
-          </div>
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_9.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
         {% endif %}
         {% if product.metafields.custom.bulletpoint_10 %}
-          <div class="hidden badge_title">
-             {{ product.metafields.custom.bulletpoint_10.value }}
-          </div>
+          {% assign customFieldKey = product.metafields.custom.bulletpoint_10.value %}
+          {% assign sanitizedKey = customFieldKey | replace: ' ', '_' | replace: '-', '_' %}
+          <div class="hidden badge_title">{{ 'products.product.badge_titles.' | append: sanitizedKey | t }}</div>
         {% endif %}
       </div>
       <div class="active_badge-text_wrapper">
