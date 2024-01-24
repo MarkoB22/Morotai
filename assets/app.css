@@ -3962,6 +3962,7 @@ input[type="radio"], .field label, .quantity .minus svg,
   border-radius: 30px;
   padding: 100px 50px;
   position: relative;
+  width: 45vw;
 }
 
 .close-button {
