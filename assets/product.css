@@ -1287,3 +1287,10 @@
   box-shadow: 5px 5px 5px grey;
   transition: all ease-in-out .3s;
 }
+
+.single-add-to-cart-button[disabled] {
+  background: white !important;
+  color: grey !important;
+  border: 1px solid grey !important;
+  box-shadow: none !important;
+}
