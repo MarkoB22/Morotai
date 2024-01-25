@@ -144,7 +144,7 @@
         "WATER_REPELLENT": "Der Stoff stößt Wasser ab, ohne die Oberfläche zu durchdringen und lässt gleichzeitig Feuchtigkeit entweichen, sodass du trocken und komfortabel bleibst.",
         "LIGHT_WEIGHT": "Dieses Produkt zeichnet sich durch seine besondere Leichtigkeit aus, für maximalen Komfort und Bewegungsfreiheit.",
         "ZIPPER_POCKETS": "Provide secure storage for personal items during physical activities.",
-        "AIR_VENTS": "This product features air vents for improved ventilation.",
+        "AIR_VENTS": "Dieses Produkt hat Luftöffnungen für verbesserte Belüftung.",
         "ANTI_WRINKLE": "Dieses Produkt besteht aus einem Stoff, der Knitterfalten widersteht und so stets ein gepflegtes Aussehen bewahrt.",
         "BREATHABLE": "Dieses Produkt ist für Luftdurchlässigkeit konzipiert, was den Tragekomfort erhöht.",
         "CHEST_POCKET": "Dieses Produkt verfügt über eine praktische Tasche im Brustbereich.",
@@ -168,10 +168,11 @@
         "REFLECTIVE_PRINT": "Dieses Produkt verfügt über reflektierende Elemente für erhöhte Sichtbarkeit.",
         "SEAMLESS_DESIGN": "Dieses Produkt bietet eine nahtlose Konstruktion für höchsten Tragekomfort.",
         "SIDE_POCKETS": "Dieses Produkt verfügt über Seitentaschen, die zusätzlichen Stauraum bieten.",
-        "THUMBHOLES": "Halten die Ärmel bei sportlichen Aktivitäten fest über die Hände.",
+        "THUMBHOLES": "Das Produkt verfügt über Daumenlöcher, die Vorteile wie verbesserte Wärmeerhaltung, bessere Passform und zusätzlichen Komfort bieten.",
         "SOFT_FLEECE": "Dieses Produkt besteht aus Fleece, das Wärme und Komfort bietet.",
         "EASY_CARE": "Dieses Produkt lässt sich einfach pflegen und instand halten.",
-        "FLEXIBILITY": "Dieses Produkt enthält Elastan, was Flexibilität und Bewegungsfreiheit ermöglicht."
+        "FLEXIBILITY": "Dieses Produkt enthält Elastan, was Flexibilität und Bewegungsfreiheit ermöglicht.",
+        "REFLECTIVE_ZIPPER": "Dieses Produkt verfügt über einen reflektierenden Reißverschluss für bessere Sichtbarkeit bei schlechten Lichtverhältnissen."
       },
       "badge_titles": {
         "360_STRETCH": "360 STRETCH",
@@ -188,13 +189,13 @@
         "DURABLE": "LANGLEBIG",
         "ELASTIC_CORD": "ELASTISCHE KORDEL",
         "ELASTIC_WAISTBAND": "ELASTISCHER BUND",
-        "FLATLOCK_SEAM": "FLACHNAHT",
+        "FLATLOCK_SEAM": "FLATLOCK NAHT",
         "EMBROIDERED_LOGO": "GESTICKTES LOGO",
         "HALF_ZIP": "HALBER REISSVERSCHLUSS",
-        "HIGH_WAIST": "HOHE TAILLE",
-        "LASER_MESH": "LASER MESH",
-        "MESH_INSERT": "MESH EINSATZ",
-        "MODULAR_PUSH_UP": "MODULAR PUSH UP",
+        "HIGH_WAIST": "HOHER BUND",
+        "LASER_MESH": "LASER-MESH",
+        "MESH_INSERT": "MESH",
+        "MODULAR_PUSH_UP": "MODULARE POLSTER",
         "MOISTURE_WICKING": "FEUCHTIGKEITSABWEISEND",
         "OPAQUE_FABRIC": "BLICKDICHTER STOFF",
         "PERFECT_FIT": "PERFEKTE PASSFORM",
@@ -207,7 +208,7 @@
         "SOFT_FLEECE": "WEICHER VLIES",
         "EASY_CARE": "PFLEGELEICHT",
         "FLEXIBILITY": "FLEXIBEL",
-        "REFLECTIVE_ZIPPER": "Missing translation"
+        "REFLECTIVE_ZIPPER": "REFLEKTIERENDER REIßVERSCHLUSS"
       },
       "weather_conditions": {
         "hot": "WARM",

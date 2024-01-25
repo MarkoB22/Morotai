@@ -4018,5 +4018,10 @@ input[type="radio"], .field label, .quantity .minus svg,
 }
 
 .restock-alerts-branding-text {
-  display: none;
+  display: none !important;
 }
+
+.PRODUCT_PAGE-notify-button {
+  flex-basis: 100% !important;
+}
+
