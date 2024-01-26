@@ -1,6 +1,6 @@
 {% assign badge_position = settings.badge_position %}
 {% unless product_card_product.available %}
-<span class="badge out-of-stock {{ badge_position }}">{{ 'products.product.sold_out' | t }}</span>
+<span class="badge out-of-stock {{ badge_position }} hidden">{{ 'products.product.sold_out' | t }}</span>
 {% endunless %}
 {% if product_card_product.compare_at_price > product_card_product.price and product_card_product.available %}
 {%- if settings.sale_badge_type == 'save_amount' -%}

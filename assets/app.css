@@ -3938,12 +3938,16 @@ input[type="radio"], .field label, .quantity .minus svg,
   margin: 0 auto 40px auto;
   padding: 5px 10px;
   font-weight: 700;
+  opacity: 1;
+  visibility: visible;
+  transition: all ease-in-out .3s;
 }
 
 .badge_content {
   padding: 0 0 50px;
   border-bottom: 2px solid #80808057;
   margin-bottom: 40px;
+  min-height: 161px;
 }
 
 .badge-buttons {
@@ -3969,7 +3973,8 @@ input[type="radio"], .field label, .quantity .minus svg,
 
 @media print, screen and (min-width: 1068px) {
   .popup-content {
-    width: 45vw;
+    width: 900px;
+    max-width: 70vw;
   }
 }
 

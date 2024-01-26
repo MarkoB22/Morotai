@@ -116,6 +116,17 @@ document.addEventListener('DOMContentLoaded', function() {
 	const newBox = html.querySelector(".cart-drawer").innerHTML;
 	document.querySelector(".cart-drawer").innerHTML = newBox;
 
+	let removes = document.querySelectorAll(".cart-drawer .remove");
+
+	removes.forEach((remove) => {
+      remove.addEventListener("click", (event) => {
+        event.preventDefault();
+
+		
+		updateCartDrawer();
+      });
+    });
+
 	var cartedItems = document.querySelectorAll('.cart-drawer .product-cart-item');
 	var itemCount = cartedItems.length;
 	var counterElement = document.querySelector('.thb-item-count');
