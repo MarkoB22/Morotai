@@ -2860,7 +2860,9 @@ input[type="submit"] {
   
     .button.outline:before,
     input[type="submit"].outline:before {
-      background: var(--outline-button-label, var(--color-accent)); }
+      background: var(--outline-button-label, var(--color-accent)); 
+      background: transparent;
+    }
     @media screen and (hover: hover) {
       .button.outline:hover,
       input[type="submit"].outline:hover {
@@ -4029,4 +4031,3 @@ input[type="radio"], .field label, .quantity .minus svg,
 .PRODUCT_PAGE-notify-button {
   flex-basis: 100% !important;
 }
-
