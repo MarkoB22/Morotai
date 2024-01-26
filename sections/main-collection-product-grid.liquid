@@ -75,9 +75,8 @@
 												{{ variant.options[index] }}
 											{% endcapture %}
 											{% unless colorlist contains color %}
-
 												<li class="column">
-													{%- render 'product-card', product_card_product: product, active_index: forloop.index -%} 
+													{%- render 'product-card', color: variant.options[index]; product_card_product: product, active_index: forloop.index -%} 
 												</li>
 												{% capture tempList %}
 												{{colorlist | append: color | append: ' '}}
@@ -104,6 +103,50 @@
 {{ 'nouislider.js' | asset_url | script_tag }}
 <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var sizeButtons = document.querySelectorAll('.size-button');
+
+  sizeButtons.forEach(function(button) {
+    if (!button.hasEventListener) {
+      button.hasEventListener = true;
+      button.addEventListener('click', function(event) {
+        event.stopPropagation();
+        var variantID = event.currentTarget.getAttribute('data-variant-id');
+
+        addToCart(variantID);
+      });
+    }
+  });
+
+  function addToCart(variantID) {
+    var formData = new FormData();
+    formData.append('id', variantID);
+    formData.append('quantity', 1);
+    container = document.getElementById("Cart-Drawer");
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.body.classList.add("open-cc");
+      document.body.classList.add("open-cart");
+      cartDrawer = document.getElementById("Cart-Drawer");
+      cartDrawer.classList.add("active");
+      drawerRecommendations = document.getElementByClass("cart-drawer--recommendations--container");
+      drawerRecommendations.classList.add("cart-drawer--recommendations--container");
+      
+    })
+    .catch(error => {
+      console.error('Error adding product to cart:', error);
+    });
+  }
+});
+
+</script>
 
 {% schema %}
   {

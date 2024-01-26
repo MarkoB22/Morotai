@@ -125,27 +125,35 @@ assign product_content_alignment = settings.product_content_alignment
     width: 100%;
     margin-left: -0.6rem;
     margin-top: -0.6rem;
-  }
+    justify-content: center;
   }
 
   .size-button {
-    /* overflow: hidden; */
+    margin: 0.6rem 0 0 0.6rem;
+    overflow: hidden;
     display: flex;
     align-items: center;
     position: relative;
     justify-content: center;
-    flex-grow: 1;
-    flex-shrink: 0;
+    flex-grow: 0;
+    font-weight: 500;
+    flex-shrink: 1;
+    min-width: 38px;
     flex-basis: calc(20% - 0.6rem);
+    white-space: nowrap;
     height: 3.33rem;
     border-radius: 4px;
     background: white;
-    filter: drop-shadow(0 0.4rem 1.5rem rgba(0, 0, 0, .1));
-    font-weight: 400;
-    font-size: 1.4rem;
+    filter: drop-shadow(0 0.4rem 1.5rem rgba(0,0,0,.1));
     line-height: 2.1rem;
     text-transform: uppercase;
     padding: 8px;
+    cursor: pointer;
+    transition: all ease-in-out .2s;
+  }
+
+  .size-button:hover {
+    box-shadow: 5px 5px 5px gray;
   }
 </style>
 
@@ -193,65 +201,36 @@ assign product_content_alignment = settings.product_content_alignment
 
     -%}
 
-
-
-
-
-    <div class="quick-add-container" style="
-            min-height: 50px;
-            position: absolute;
-            z-index: 6;
-          ">
+    <div class="quick-add-container" style="min-height: 50px; position: absolute; z-index: 6;">
       <div class="quick-add-title-and-sizes">
-        <div class="quick-add-title" style="
-                font-weight: 700;
-                font-size: 1.4rem;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow-x: hidden;
-              ">
+        <div class="quick-add-title" style="font-weight: 700; font-size: 1.4rem; text-overflow: ellipsis; white-space: nowrap; overflow-x: hidden;">
           <span>{{ 'products.product.available.sizes' | t }}</span>
         </div>
-        {%- assign pSizes = "" -%}
-        {%- for size in product_sizes -%}
-        {%- if size.available -%}
-        {%- assign pSize = size.title | split: '/' | first | strip -%}
-        {%- assign pSizes = pSizes | append: pSize | append: "," -%}
-        {%- endif -%}
-        {%- endfor -%}
-
-        {%- assign pSizesArray = pSizes | split: ',' | uniq -%}
 
         <div class="quick-add-sizes-container">
           <div class="quick-add-sizes">
-            {%- for size in pSizesArray -%}
+            {%- assign sizeButtonRendered = false -%}
+            {%- for variant in product_card_product.variants -%}
+              {%- assign variantOptions = variant.options | join: ',' -%}
+              {%- assign variantOptionsArray = variantOptions | split: ',' -%}
 
-            <span class="size-button" style="
-                      margin: 0.6rem 0 0 0.6rem;
-                      overflow: hidden;
-                      display: flex;
-                      align-items: center;
-                      position: relative;
-                      justify-content: center;
-                      flex-grow: 0;
-                      font-weight: 500;
-                      flex-shrink: 1;
-                      min-width: 38px;
-                      flex-basis: calc(20% - 0.6rem);
-                      white-space: nowrap;
-                      height: 3.33rem;
-                      border-radius: 4px;
-                      background: white;
-                      filter: drop-shadow(0 0.4rem 1.5rem rgba(0,0,0,.1));
-                      line-height: 2.1rem;
-                      text-transform: uppercase;
-                      padding: 8px;
-                    ">
+              {%- if variantOptionsArray.size == 2 -%}
+                {%- assign variantSize = variantOptionsArray[0] -%}
+                {%- assign variantColor = variantOptionsArray[1] -%}
+                
+                {%- if variantColor == color and variant.available -%}
+                  {% assign variantID = variant.id %}
+                  <span class="size-button" data-variant-id="{{ variantID }}">
+                    {{ variantSize }}
+                  </span>
+                  {%- assign sizeButtonRendered = true -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}  
 
-              {{ size }}
-            </span>
-
-            {%- endfor -%}
+            {%- unless sizeButtonRendered -%}
+              <p>{{ 'products.product.sold_out' | t }}</p>
+            {%- endunless -%}
           </div>
         </div>
       </div>
