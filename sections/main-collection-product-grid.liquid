@@ -108,16 +108,28 @@
 document.addEventListener('DOMContentLoaded', function() {
   var sizeButtons = document.querySelectorAll('.size-button');
 
+  async function updateCartDrawer() {	const res = await fetch("/?section_id=cart-drawer");
+	const text = await res.text();
+	const html = document.createElement("div");
+	html.innerHTML = text;
+
+	const newBox = html.querySelector(".cart-drawer").innerHTML;
+	document.querySelector(".cart-drawer").innerHTML = newBox;
+
+	var cartedItems = document.querySelectorAll('.cart-drawer .product-cart-item');
+	var itemCount = cartedItems.length;
+	var counterElement = document.querySelector('.thb-item-count');
+	if (counterElement) {
+		counterElement.innerHTML = itemCount.toString();
+	}
+  }
+
   sizeButtons.forEach(function(button) {
-    if (!button.hasEventListener) {
-      button.hasEventListener = true;
       button.addEventListener('click', function(event) {
         event.stopPropagation();
         var variantID = event.currentTarget.getAttribute('data-variant-id');
-
         addToCart(variantID);
       });
-    }
   });
 
   function addToCart(variantID) {
@@ -132,20 +144,22 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.json())
     .then(data => {
-      document.body.classList.add("open-cc");
-      document.body.classList.add("open-cart");
-      cartDrawer = document.getElementById("Cart-Drawer");
-      cartDrawer.classList.add("active");
-      drawerRecommendations = document.getElementByClass("cart-drawer--recommendations--container");
-      drawerRecommendations.classList.add("cart-drawer--recommendations--container");
-      
+	  updateCartDrawer();
+	  setTimeout(() => { 
+		document.body.classList.add("open-cc");
+		document.body.classList.add("open-cart");
+		cartDrawer = document.getElementById("Cart-Drawer");
+		cartDrawer.classList.add("active");
+		drawerRecommendations = document.querySelector(".cart-drawer--recommendations--container");
+		drawerRecommendations.classList.add("active");
+		}, 500);
     })
     .catch(error => {
       console.error('Error adding product to cart:', error);
     });
   }
-});
 
+});
 </script>
 
 {% schema %}
