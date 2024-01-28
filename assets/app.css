@@ -4031,3 +4031,7 @@ input[type="radio"], .field label, .quantity .minus svg,
 .PRODUCT_PAGE-notify-button {
   flex-basis: 100% !important;
 }
+
+.spinner-path {
+  stroke: white;
+}

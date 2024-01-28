@@ -748,123 +748,6 @@ text-transform: uppercase;">{{ product.title }}</h1>
                         </div>
                       </div>
                 
-                      <div
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          align-items: space-between;
-                          margin-top: 30px;
-                        "
-                      >
-                        <div style="display: flex; justify-content: space-between;">
-                          <div>
-                            <span
-                              style=""
-                            >
-                              {{- 'products.product.badges.temperature_range' | t -}}
-                            </span>
-                          </div>
-                          <div
-                            style="
-                              display: flex;
-                              align-items: flex-start;
-                              gap: 8px;
-                            "
-                          >
-                            <span style="cursor: pointer" onclick="switchToC()">°C</span>
-                            <span style="cursor: pointer" onclick="switchToF()">°F</span>
-                          </div>
-                        </div>
-
-                        <div
-                          style="
-                                                  display: flex;
-                            margin-bottom: 16px;
-                            height: 16px;
-                            {% if product.metafields.custom.temperature == '15-30°C' %}
-                                background: linear-gradient(90deg, #F4F4F4 61%, #000 80.5%, #F4F4F4 100%);
-                            {% elsif product.metafields.custom.temperature  == '5-20°C' %}
-                                background: linear-gradient(90deg, #F4F4F4 37.5%, #000 54.75%, #F4F4F4 72%);
-                            {% elsif product.metafields.custom.temperature  == '-5-30°C' %}
-                                background: linear-gradient(90deg, #F4F4F4 15%, #000 57.5%, #F4F4F4 100%);
-                            {% elsif product.metafields.custom.temperature  == '-5-25°C' %}
-                                background: linear-gradient(90deg, #F4F4F4 37.5%, #000 60.615%, #F4F4F4 83.73%);
-                            {% elsif product.metafields.custom.temperature  == '10-30°C' %}
-                                background: linear-gradient(90deg, #F4F4F4 50.0%, #000 73.865%, #F4F4F4 97.73%);
-                            {% elsif product.metafields.custom.temperature  == '5-25°C' %}
-                                background: linear-gradient(90deg, #F4F4F4 37.5%, #000 61.25%, #F4F4F4 85%);
-                            {% elsif product.metafields.custom.temperature  == '0-25°C' %}
-                                background: linear-gradient(90deg, #F4F4F4 25.5%, #000 54.615%, #F4F4F4 83.73%);
-                            {% elsif product.metafields.custom.temperature  == '-5°-20C°' %}
-                                background: linear-gradient(90deg, #F4F4F4 15%, #000 50%, #F4F4F4 85%);
-                            {% else %}
-                            {% endif %}
-                          "
-                        ></div>
-                        <div id="celsius" style="display: flex; flex-direction: row; justify-content: space-between">
-                          <div>-10°C</div>
-                          <div>0°C</div>
-                          <div>10°C</div>
-                          <div>20°C</div>
-                          <div>30°C</div>
-                        </div>
-                          <div id="feren" style="display: none; flex-direction: row; justify-content: space-between">
-                          <div>-14°F</div>
-                          <div>32°F</div>
-                          <div>50°F</div>
-                          <div>68°F</div>
-                          <div>86°F</div>
-                        </div>
-                      </div>
-                      <div
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          align-items: flex-start;
-                          margin-top: 15px;
-                          margin-bottom: 15px;
-                          gap: 8px;
-                        "
-                      >
-                        {{ 'products.product.badges.weather_conditions' | t }}
-
-                        <div style="height: 39px; width: 100%;">
-                          <div
-                            style="
-                              display: flex;
-                              align-items: flex-start;
-                              width: 100%;
-                              gap: 4px;
-                            "
-                          >
-                            <div
-                              class="div1"
-                              style="height: 12px; flex: 1 0 0; background-color: {% if product.metafields.custom.weather_conditions_1 == 'HOT' or product.metafields.custom.weather_conditions_2 == 'HOT' or product.metafields.custom.weather_conditions_3 == 'HOT' %}black{% else %}#F4F4F4{% endif %};"
-                            ></div>
-
-                            <div
-                              class="div2"
-                              style="height: 12px; flex: 1 0 0; background-color: {% if product.metafields.custom.weather_conditions_1 == 'RAIN' or product.metafields.custom.weather_conditions_2 == 'RAIN' or product.metafields.custom.weather_conditions_3 == 'RAIN' %}black{% else %}#F4F4F4{% endif %};"
-                            ></div>
-
-                            <div
-                              class="div3"
-                              style="height: 12px; flex: 1 0 0; background-color: {% if product.metafields.custom.weather_conditions_1 == 'COLD' or product.metafields.custom.weather_conditions_2 == 'COLD' or product.metafields.custom.weather_conditions_3 == 'COLD' %}black{% else %}#F4F4F4{% endif %};"
-                            ></div>
-
-                            <div
-                              class="div4"
-                              style="height: 12px; flex: 1 0 0; background-color: {% if product.metafields.custom.weather_conditions_1 == 'LOW LIGHT' or product.metafields.custom.weather_conditions_2 == 'LOW LIGHT' or product.metafields.custom.weather_conditions_3 == 'LOW LIGHT' %}black{% else %}#F4F4F4{% endif %};"
-                            ></div>
-                          </div>
-                          <div style="display: flex; justify-content: space-around;">
-                            <span>{{ 'products.product.weather_conditions.hot' | t }}</span>
-                            <span>{{ 'products.product.weather_conditions.rain' | t }}</span>
-                            <span>{{ 'products.product.weather_conditions.cold' | t }}</span>
-                            <span>{{ 'products.product.weather_conditions.low_light' | t }}</span>
-                          </div>
-                        </div>
-                      </div>
                     {%- if block.settings.show_products_rating and product.metafields.reviews.rating.value != blank -%}
                       <a class="star-rating-container" href="#shopify-product-reviews">
                         <div
@@ -1340,6 +1223,124 @@ text-transform: uppercase;">{{ product.title }}</h1>
                       </div>
                     </div>
                   </div>
+
+                  <div
+                        style="
+                          display: flex;
+                          flex-direction: column;
+                          align-items: space-between;
+                          margin-top: 30px;
+                        "
+                      >
+                        <div style="display: flex; justify-content: space-between;">
+                          <div>
+                            <span
+                              style=""
+                            >
+                              {{- 'products.product.badges.temperature_range' | t -}}
+                            </span>
+                          </div>
+                          <div
+                            style="
+                              display: flex;
+                              align-items: flex-start;
+                              gap: 8px;
+                            "
+                          >
+                            <span style="cursor: pointer" onclick="switchToC()">°C</span>
+                            <span style="cursor: pointer" onclick="switchToF()">°F</span>
+                          </div>
+                        </div>
+
+                        <div
+                          style="
+                                                  display: flex;
+                            margin-bottom: 16px;
+                            height: 16px;
+                            {% if product.metafields.custom.temperature == '15-30°C' %}
+                                background: linear-gradient(90deg, #F4F4F4 61%, #000 80.5%, #F4F4F4 100%);
+                            {% elsif product.metafields.custom.temperature  == '5-20°C' %}
+                                background: linear-gradient(90deg, #F4F4F4 37.5%, #000 54.75%, #F4F4F4 72%);
+                            {% elsif product.metafields.custom.temperature  == '-5-30°C' %}
+                                background: linear-gradient(90deg, #F4F4F4 15%, #000 57.5%, #F4F4F4 100%);
+                            {% elsif product.metafields.custom.temperature  == '-5-25°C' %}
+                                background: linear-gradient(90deg, #F4F4F4 37.5%, #000 60.615%, #F4F4F4 83.73%);
+                            {% elsif product.metafields.custom.temperature  == '10-30°C' %}
+                                background: linear-gradient(90deg, #F4F4F4 50.0%, #000 73.865%, #F4F4F4 97.73%);
+                            {% elsif product.metafields.custom.temperature  == '5-25°C' %}
+                                background: linear-gradient(90deg, #F4F4F4 37.5%, #000 61.25%, #F4F4F4 85%);
+                            {% elsif product.metafields.custom.temperature  == '0-25°C' %}
+                                background: linear-gradient(90deg, #F4F4F4 25.5%, #000 54.615%, #F4F4F4 83.73%);
+                            {% elsif product.metafields.custom.temperature  == '-5°-20C°' %}
+                                background: linear-gradient(90deg, #F4F4F4 15%, #000 50%, #F4F4F4 85%);
+                            {% else %}
+                            {% endif %}
+                          "
+                        ></div>
+                        <div id="celsius" style="display: flex; flex-direction: row; justify-content: space-between">
+                          <div>-10°C</div>
+                          <div>0°C</div>
+                          <div>10°C</div>
+                          <div>20°C</div>
+                          <div>30°C</div>
+                        </div>
+                          <div id="feren" style="display: none; flex-direction: row; justify-content: space-between">
+                          <div>-14°F</div>
+                          <div>32°F</div>
+                          <div>50°F</div>
+                          <div>68°F</div>
+                          <div>86°F</div>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          display: flex;
+                          flex-direction: column;
+                          align-items: flex-start;
+                          margin-top: 15px;
+                          margin-bottom: 25px;
+                          gap: 8px;
+                        "
+                      >
+                        {{ 'products.product.badges.weather_conditions' | t }}
+
+                        <div style="height: 39px; width: 100%;">
+                          <div
+                            style="
+                              display: flex;
+                              align-items: flex-start;
+                              width: 100%;
+                              gap: 4px;
+                            "
+                          >
+                            <div
+                              class="div1"
+                              style="height: 12px; flex: 1 0 0; background-color: {% if product.metafields.custom.weather_conditions_1 == 'HOT' or product.metafields.custom.weather_conditions_2 == 'HOT' or product.metafields.custom.weather_conditions_3 == 'HOT' %}black{% else %}#F4F4F4{% endif %};"
+                            ></div>
+
+                            <div
+                              class="div2"
+                              style="height: 12px; flex: 1 0 0; background-color: {% if product.metafields.custom.weather_conditions_1 == 'RAIN' or product.metafields.custom.weather_conditions_2 == 'RAIN' or product.metafields.custom.weather_conditions_3 == 'RAIN' %}black{% else %}#F4F4F4{% endif %};"
+                            ></div>
+
+                            <div
+                              class="div3"
+                              style="height: 12px; flex: 1 0 0; background-color: {% if product.metafields.custom.weather_conditions_1 == 'COLD' or product.metafields.custom.weather_conditions_2 == 'COLD' or product.metafields.custom.weather_conditions_3 == 'COLD' %}black{% else %}#F4F4F4{% endif %};"
+                            ></div>
+
+                            <div
+                              class="div4"
+                              style="height: 12px; flex: 1 0 0; background-color: {% if product.metafields.custom.weather_conditions_1 == 'LOW LIGHT' or product.metafields.custom.weather_conditions_2 == 'LOW LIGHT' or product.metafields.custom.weather_conditions_3 == 'LOW LIGHT' %}black{% else %}#F4F4F4{% endif %};"
+                            ></div>
+                          </div>
+                          <div style="display: flex; justify-content: space-around;">
+                            <span>{{ 'products.product.weather_conditions.hot' | t }}</span>
+                            <span>{{ 'products.product.weather_conditions.rain' | t }}</span>
+                            <span>{{ 'products.product.weather_conditions.cold' | t }}</span>
+                            <span>{{ 'products.product.weather_conditions.low_light' | t }}</span>
+                          </div>
+                        </div>
+                      </div>
 
 
                 {%- when 'collapsible_tab' -%}

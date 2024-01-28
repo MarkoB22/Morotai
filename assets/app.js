@@ -602,6 +602,7 @@ if (!customElements.get("side-panel-close")) {
 class CartDrawer {
   constructor() {
     this.container = document.getElementById("Cart-Drawer");
+    console.log('constructor cart drawer');
 
     if (!this.container) {
       return;
@@ -644,6 +645,8 @@ class CartDrawer {
   onChange(event) {
     if (event.target.classList.contains("qty")) {
       this.updateQuantity(event.target.dataset.index, event.target.value);
+      console.log('event.target.dataset.index: ', event.target.dataset.index);
+      console.log('event.target.value: ', event.target.value);
     }
   }
   removeProductEvent() {
@@ -652,7 +655,7 @@ class CartDrawer {
     removes.forEach((remove) => {
       remove.addEventListener("click", (event) => {
         this.updateQuantity(event.target.dataset.index, "0");
-
+        console.log('remove prevent default');
         event.preventDefault();
       });
     });
@@ -745,6 +748,7 @@ class CartDrawer {
       sections: this.getSectionsToRender().map((section) => section.section),
       sections_url: window.location.pathname,
     });
+    console.log('body app.js :', body);
 
     dispatchCustomEvent("line-item:change:start", {
       quantity: quantity,
@@ -754,6 +758,7 @@ class CartDrawer {
         .querySelector(".product-recommendations--full")
         .classList.remove("active");
     }
+    console.log('body: ', body);
     fetch(`${theme.routes.cart_change_url}`, {
       method: "POST",
       headers: {

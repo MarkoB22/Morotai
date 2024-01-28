@@ -136,8 +136,8 @@ assign val_array = val_array | remove_first: ',' | split: ','
 			<div class="test2"
 				style="display: flex; justify-content: center; align-items: center; align-self: stretch;">
 				<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}" option="{{ option.name }}"
-					style="{% if option.name == 'Farbe' %} width: 92px; height: 105px;{% else %} padding: 6.605px 12px 4.395px 12.5px;{% endif %}">
-					{% if option.name == 'Farbe' or option.name == 'Color' %}
+					style="{% if option.name == 'Farbe' or option.name == 'Color' or option.name == 'color' %} width: 92px; height: 105px;{% else %} padding: 6.605px 12px 4.395px 12.5px;{% endif %}">
+					{% if option.name == 'Farbe' or option.name == 'Color' or option.name == 'color' %}
 						{% assign imagePath = '' %}
 						{%- for variant in product.variants -%}
 							{% if variant.title contains value %}

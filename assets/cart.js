@@ -16,9 +16,11 @@ class Cart {
 
 
 		removes.forEach((remove) => {
+      console.log('remove: ', remove);
 			remove.addEventListener('click', (event) => {
 
 				this.updateQuantity(event.target.dataset.index, '0');
+        console.log('event.target.dataset.index: ', event.target.dataset.index);
 
 				event.preventDefault();
 			});
@@ -60,6 +62,7 @@ class Cart {
       sections: this.getSectionsToRender().map((section) => section.section),
       sections_url: window.location.pathname
     });
+    console.log('body: ', body);
 		dispatchCustomEvent('line-item:change:start', {
 			quantity: quantity
 		});
@@ -96,6 +99,7 @@ class Cart {
 			elementToReplace.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
 
 			let removes = this.container.querySelectorAll('.remove');
+      console.log('removes: ', removes);
 
 			if (removes) {
 				removes.forEach((remove) => {

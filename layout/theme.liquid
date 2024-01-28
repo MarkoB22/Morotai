@@ -179,8 +179,29 @@
       // Replace "&amp;" with "&"
       titleElement.innerHTML = titleElement.innerHTML.replace(/&amp;/g, '&');
     }
+
   });
 </script>
+
+{%- if settings.cart_drawer -%}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const cartDrawerToggle = document.getElementById("cart-drawer-toggle");
+    if (cartDrawerToggle) {
+      cartDrawerToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        document.body.classList.add("open-cc");
+        document.body.classList.add("open-cart");
+        cartDrawer = document.getElementById("Cart-Drawer");
+        cartDrawer.classList.add("active");
+        drawerRecommendations = document.querySelector(".cart-drawer--recommendations--container");
+        drawerRecommendations.classList.add("active");
+      });
+    }
+});
+</script>
+{% endif %}
+
 
   </body>
   <script src="{{ 'temperature-bar.js' | asset_url }}" defer></script>

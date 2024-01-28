@@ -4,7 +4,7 @@
     assign free_shipping_minimum = settings.free_shipping_minimum | times: 100
     assign total = cart.total_price
   -%}
-  <div class="side-panel cart-drawer" id="Cart-Drawer" tabindex="-1">
+  <cart-drawer class="side-panel cart-drawer" id="Cart-Drawer" tabindex="-1">
     <div class="side-panel-inner">
       <div class="side-panel-header">
         <div>
@@ -267,5 +267,5 @@
         </div>
       {%- endif -%}
     </div>
-  </div>
+  </cart-drawer>
 {%- endif -%}
