@@ -486,6 +486,7 @@ else {feren.style.display = "flex";
                               {{ 'products.product.xr_button' | t }}
                             </span>
                           </button>
+                        {% when 'shop-the-look' %}
                       {% endcase %}
                     </div>
                 {%- endfor -%}
@@ -1711,6 +1712,22 @@ document.addEventListener('DOMContentLoaded', function () {
 		{
 			"type": "@app"
 		},
+    {
+      "type": "shop-the-look",
+      "name": "Shop the look",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Second product"
+        },
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Third product"
+        }
+      ]
+    },
 		{
       "type": "text",
       "name": "Text",
