@@ -1294,3 +1294,7 @@
   border: 1px solid grey !important;
   box-shadow: none !important;
 }
+
+.notifyButtonStyle:hover {
+  color: black !important;
+}

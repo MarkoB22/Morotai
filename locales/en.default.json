@@ -116,6 +116,7 @@
       "only": "ONLY",
       "left_in_stock": "LEFT IN STOCK!",
       "link_copied": "Product link copied!",
+      "shop_the_look": "Shop the look",
       "price": {
         "from_price_html": "<span class=\"from\">From<\/span> {{ price }}",
         "regular_price": "Regular price",

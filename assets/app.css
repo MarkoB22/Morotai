@@ -3255,7 +3255,8 @@ select {
     margin-left: 13px; }
 
 .remove svg {
-  pointer-events: none; }
+  pointer-events: none; 
+}
 
 .badge {
   display: inline-flex;
@@ -3269,9 +3270,13 @@ select {
   font-weight: 600;
   height: 23px;
   padding: 0 10px;
-  line-height: 0; }
-  .badge.out-of-stock {
-    background: var(--color-badge-sold-out, #acacac); }
+  line-height: 0; 
+}
+
+.badge.out-of-stock {
+  background: var(--color-badge-sold-out, #acacac); 
+  display: none;
+}
 
 .price {
   display: block;

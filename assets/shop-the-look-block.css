@@ -1,0 +1,46 @@
+.shop_the_look-title {
+    font-family: Rajdhani, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.shop_the_look-blocks_wrapper .product-card {
+    display: flex;
+    gap: 16px;
+}
+
+.shop_the_look-blocks_wrapper .product-featured-image {
+    display: block !important;
+    width: 41.6343%;
+}
+
+.shop_the_look-blocks_wrapper .product-card .product-card-title{
+    font-family: Rajdhani, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.shop_the_look-blocks_wrapper .product-card-swatches {
+    justify-content: flex-start !important;
+}
+
+.shop_the_look-blocks_wrapper .product-card-swatches--container {
+    margin-bottom: 16px;
+}
+
+.shop_the_look-blocks_wrapper .price {
+    font-family: Rajdhani, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+}

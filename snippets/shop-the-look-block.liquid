@@ -1,21 +1,15 @@
 {{- 'shop-the-look-block.css' | asset_url | stylesheet_tag -}}
-<div class="shop_the_look-block_wrapper">
+<div class="shop_the_look-blocks_wrapper">
+    <div class="shop_the_look-title">
+    {{ 'products.product.shop_the_look' | t }}
+    </div>
     {% if block.settings.product_2 != '' or block.settings.product_3 != '' %}
-        <div class="main_product-shop_the_look shop_the_look-product">
-            <div class="shop_the_look-product_title">
-                {{ product.title }}
-            </div>
-            {% render 'product-card-swatch' %}
-        </div>
+        {% render 'product-card' product_card_product: product  %}
     {% endif %}
     {% if block.settings.product_2 != '' %}
-        <div class="shop_the_look-product">
-            shop_the_look-product_2: {{ block.settings.product_2 }}
-        </div>
+        {% render 'product-card' product_card_product: block.settings.product_2  %}
     {% endif %}
     {% if block.settings.product_3 != '' %}
-        <div class="shop_the_look-product">
-            shop_the_look-product_3: {{ block.settings.product_3 }}
-        </div>
+        {% render 'product-card' product_card_product: block.settings.product_3  %}
     {% endif %}
 </div>

@@ -201,7 +201,7 @@ assign product_content_alignment = settings.product_content_alignment
 
     -%}
 
-    <div class="quick-add-container" style="min-height: 50px; position: absolute; z-index: 6;">
+    <div class="quick-add-container" style="min-height: 50px; position: absolute; z-index: 6; {%- unless template == 'collection' -%} display: none !important;{%- endunless -%}">
       <div class="quick-add-title-and-sizes">
         <div class="quick-add-title" style="font-weight: 700; font-size: 1.4rem; text-overflow: ellipsis; white-space: nowrap; overflow-x: hidden;">
           <span>{{ 'products.product.available.sizes' | t }}</span>
@@ -295,13 +295,18 @@ assign product_content_alignment = settings.product_content_alignment
         class="product-card-title">
         {{- product_card_product.title -}}
       </a>
+      {% if template == 'product' %}
+        {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}
+      {% endif %}
       <div style="display: flex; justify-content: space-between;">
         {% render 'review-stars', product: product_card_product %}
         {% render 'product-price', product: product_card_product %}
 
       </div>
     </div>
-    {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}
+    {% unless template == 'product' %}
+      {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}
+    {% endunless %}
     {%- if settings.show_products_rating and product_card_product.metafields.reviews.rating.value != blank -%}
     <div class="star-rating" style="--star-rating: {{ product_card_product.metafields.reviews.rating.value.rating }};">
     </div>
