@@ -11,7 +11,7 @@
       }
     },
     "breadcrumbs": {
-      "type": "breadcrumbs",
+      "type": "breadcrumbs", 
       "disabled": true,
       "settings": {
       }
