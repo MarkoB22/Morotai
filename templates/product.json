@@ -113,11 +113,6 @@
             "show_dynamic_checkout": true
           }
         },
-        "share_YarUFX": {
-          "type": "share",
-          "settings": {
-          }
-        },
         "0b3e272b-c86a-4dba-946c-c6912251371c": {
           "type": "description",
           "disabled": true,
@@ -248,7 +243,6 @@
         "variant_picker",
         "aecefe89-698b-4444-8e5c-482a93cf4bc9",
         "buy_buttons",
-        "share_YarUFX",
         "0b3e272b-c86a-4dba-946c-c6912251371c",
         "24afdbc3-ca02-4a9e-a5bc-101a07ef67a3",
         "cfa68b76-082f-487f-92d6-0cd52df8037a",
