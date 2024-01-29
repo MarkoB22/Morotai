@@ -301,8 +301,26 @@ assign product_content_alignment = settings.product_content_alignment
       <div style="display: flex; justify-content: space-between;">
         {% render 'review-stars', product: product_card_product %}
         {% render 'product-price', product: product_card_product %}
-
       </div>
+      {% if shop_the_look == true %}
+        <div class="shop_the_look-sizes">
+          {% for variant in product_card_product.variants %}
+            {%- assign variantOptions = variant.options | join: ',' -%}
+            {%- assign variantOptionsArray = variantOptions | split: ',' -%}
+            {%- assign variantSize = variantOptionsArray[0] -%}
+            {%- assign variantColor = variantOptionsArray[1] -%}
+            
+            <div class="shop_the_look-size_button {% unless variantColor == 'SCHWARZ' or variantColor == 'BLACK' %}hidden{% endunless %}" 
+                 {% unless variant.available %} disabled{% endunless %}
+                 color="{{ variantColor }}" 
+                 size="{{ variantSize }}" 
+                 variant-id="{{ variant.id }}">
+                {{ variantSize }}
+              </div>
+            
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
     {% unless template == 'product' %}
       {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}

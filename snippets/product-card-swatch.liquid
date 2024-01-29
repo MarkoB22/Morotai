@@ -71,10 +71,8 @@
 									assign color_value = color_value
 							-%}
                          
-							<div class="product-card-swatch {% if active_index == forloop.index %} active default{% endif %}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
-								<span class="visually-hidden" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-									{{ value }}
-                        
+							<div class="product-card-swatch {%- if active_index == forloop.index -%} active default{%- endif -%}{%- if active_index == '' and forloop.index == '1' -%} active{%- endif -%}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
+								<span class="visually-hidden" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"> 
 								</span>
 							</div>
 						{%- endfor -%}
