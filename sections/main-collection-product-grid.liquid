@@ -117,30 +117,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const newBox = html.querySelector(".cart-drawer").innerHTML;
     document.querySelector(".cart-drawer").innerHTML = newBox;
 
-    const qtyButtons = document.querySelectorAll(".qty");
-    qtyButtons.forEach((qtyButton) => {
-      qtyButton.addEventListener('input', function(event) {
-        const line = event.target.getAttribute('data-index');
-        const quantity = event.target.value;
-        updateCartItemQuantity(line, quantity);
-      });
-    });
+
+	var counterElement = document.querySelector('.thb-item-count');
+	if (counterElement) {
+		counterElement.innerHTML = itemCount.toString();
+	}
 
     let removes = document.querySelectorAll(".cart-drawer .remove");
     removes.forEach((remove) => {
       remove.addEventListener('click', function(event) {
         event.preventDefault();
         const line = event.target.getAttribute('data-index');
-        updateCartItemQuantity(line, 0); // Set quantity to 0 to remove the item
+        updateCartItemQuantity(line, 0);
       });
     });
-
-    var cartedItems = document.querySelectorAll('.cart-drawer .product-cart-item');
-    var itemCount = cartedItems.length;
-    var counterElement = document.querySelector('.thb-item-count');
-    if (counterElement) {
-      counterElement.innerHTML = itemCount.toString();
-    }
   }
 
   sizeButtons.forEach(function(button) {
@@ -166,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.json())
     .then(data => {
-      console.log('response: ', data);
+	  incrementItemCount();
       updateCartDrawer();
       setTimeout(() => {
         document.body.classList.add("open-cc");
@@ -182,7 +172,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Function to update cart item quantity
   function updateCartItemQuantity(line, quantity) {
     fetch(`${theme.routes.cart_change_url}`, {
       method: "POST",
@@ -199,16 +188,13 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.json())
     .then(data => {
-      // Handle response if needed
-      console.log('Cart item quantity updated:', data);
-      updateCartDrawer(); // Update cart drawer after changing quantity
+      updateCartDrawer();
     })
     .catch(error => {
       console.error('Error updating cart item quantity:', error);
     });
   }
 
-  // Function to get sections to render
   function getSectionsToRender() {
     return [
       {
@@ -222,6 +208,15 @@ document.addEventListener('DOMContentLoaded', function() {
         selector: '.thb-item-count'
       }
     ];
+  }
+
+  function incrementItemCount() {
+    var counterElement = document.querySelector('.thb-item-count');
+    if (counterElement) {
+      var currentItemCount = parseInt(counterElement.innerHTML) || 0;
+      var newItemCount = currentItemCount + 1;
+      counterElement.innerHTML = newItemCount.toString();
+    }
   }
 });
 

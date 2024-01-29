@@ -42,7 +42,6 @@ setTimeout(()=>{
       $(function() {
         var endingTime = new Date().getTime();
         var tookTime = endingTime - startingTime;
-        console.log('jQuery is loaded, after ' + tookTime + ' milliseconds!');
       });
     });
   })();
@@ -617,7 +616,6 @@ setTimeout(()=>{
       actionButton.disabled = false;
       hidePreOrderTag();
       if (actionButton instanceof HTMLInputElement) {
-        console.log('is input');
         actionButton.classList.remove('appikon-pre-order-hide-input');
       }
     }
@@ -640,7 +638,6 @@ setTimeout(()=>{
       actionButton.classList.add('hidden');
       actionButton.disabled = false;
       if (actionButton instanceof HTMLInputElement) {
-        console.log('is input');
         actionButton.classList.add('appikon-pre-order-hide-input');
       }
     }

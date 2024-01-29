@@ -45,7 +45,6 @@
 <script>
   function changeImageSource(language, collection, element) {
   $('.changeImageBtn').click(function () {
-  console.log("CLICK DETECTED");
 
      $('.changeImageBtn').removeClass('underlined');
      $(element).addClass('underlined');
@@ -335,7 +334,6 @@
     var testval = '{{language_param }}';
 
     function handleSwipe(direction) {
-      console.log('Swipe detected on .Frame146!', 'Direction:', direction);
       if(direction == 'right') {
         if(testval == 'de') {
           updateTextEnglish('right', 'de')

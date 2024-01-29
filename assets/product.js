@@ -922,7 +922,6 @@ if (!customElements.get("product-form")) {
           );
 
           if (typeof CartDrawer !== "undefined") {
-            console.log('cartDrawer !== type of undefined');
             new CartDrawer();
           }
           if (typeof Cart !== "undefined") {

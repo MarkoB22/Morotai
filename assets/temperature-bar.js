@@ -15,7 +15,6 @@ function updateTemperatureBar() {
   const rawPercentage = (difference / range) * 100;
 
   const adjustedPercentage = Math.min(100, Math.max(0, rawPercentage));
-console.log("test")
 
   temperatureElement.style.background = `linear-gradient(90deg, #F4F4F4 ${adjustedPercentage}%, #000 ${adjustedPercentage}%, #000 ${100 - adjustedPercentage}%, #F4F4F4 ${100 - adjustedPercentage}%)`;
 }
