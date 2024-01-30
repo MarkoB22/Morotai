@@ -62,6 +62,7 @@
 							{%- liquid
                                
 								assign color_value = value | downcase | escape | remove: ' '
+								
 
 								for custom_color in key_array
 									if custom_color == color_value
@@ -71,8 +72,10 @@
 									assign color_value = color_value
 							-%}
                          
-							<div class="product-card-swatch {%- if active_index == forloop.index -%} active default{%- endif -%}{%- if active_index == '' and forloop.index == '1' -%} active{%- endif -%}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
+							<div class="product-card-swatch {%- if active_index == forloop.index -%} active default{%- endif -%}" 
+								 data-color="{%- for color in custom_colors -%}{%- assign color_parts = color | split: ':' -%}{%- assign color_name = color_parts[0] | strip | downcase -%}{%- assign color_hex = color_parts[1] | strip -%}{%- if color_hex == color_value -%}{{- color_name -}}{% break %}{%- endif -%}{%- endfor -%}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
 								<span class="visually-hidden" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"> 
+
 								</span>
 							</div>
 						{%- endfor -%}

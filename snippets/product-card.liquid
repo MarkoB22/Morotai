@@ -329,6 +329,11 @@ assign product_content_alignment = settings.product_content_alignment
     <div class="star-rating" style="--star-rating: {{ product_card_product.metafields.reviews.rating.value.rating }};">
     </div>
     {%- endif -%}
+    {% if shop_the_look == true %}
+      <button class="shop_the_look-add_to_cart" disabled>
+        {{ 'products.product.add_to_cart' | t }}
+      </button>
+    {% endif %}
   </div>
 </product-card>
 {%- else -%}

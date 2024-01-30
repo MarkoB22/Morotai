@@ -13,3 +13,126 @@
         {% render 'product-card' product_card_product: block.settings.product_3, shop_the_look: true %}
     {% endif %}
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  handleSwatchInteraction();
+});
+
+function handleSwatchInteraction() {
+  // Select all .product-card-swatch inside .shop_the_look-blocks_wrapper element
+  const swatches = document.querySelectorAll('.shop_the_look-blocks_wrapper .product-card-swatch');
+
+  // Attach mouseenter event to each swatch
+  swatches.forEach(swatch => {
+    swatch.addEventListener('mouseenter', function (event) {
+      setSwatchInteraction(event);
+    });
+  });
+
+  const sizeButtons = document.querySelectorAll('.shop_the_look-size_button');
+  sizeButtons.forEach(sizeButton => {
+    sizeButton.addEventListener('click', function (event) {
+      handleSizeButtonClick(event);
+    });
+  });
+
+  // Call the function on DOMContentLoaded
+  setSwatchInteraction();
+
+  // Select all .product-card elements
+  const productCards = document.querySelectorAll('.product-card');
+
+  // Iterate through each product-card
+  productCards.forEach(productCard => {
+    // Select all visible size buttons within the current product-card
+    const visibleSizeButtons = productCard.querySelectorAll('.shop_the_look-size_button:not(.hidden)');
+
+      // Find the first visible and not disabled size button
+      const activeSizeButton = Array.from(visibleSizeButtons).find(sizeButton => !sizeButton.hasAttribute('disabled'));
+
+      // If an active size button is found, set it as active and update add to cart button
+      if (activeSizeButton) {
+        const activeSizeButtonId = activeSizeButton.getAttribute('variant-id');
+
+        // Set the active class to the found size button
+        activeSizeButton.classList.add('active');
+
+        // Update add to cart button with variant-id and remove disabled attribute
+        const addToCartButton = productCard.querySelector('.shop_the_look-add_to_cart');
+        if (addToCartButton) {
+          addToCartButton.setAttribute('variant-id', activeSizeButtonId);
+          addToCartButton.removeAttribute('disabled');
+        }
+      }
+
+    
+  });
+}
+
+function setSwatchInteraction(event) {
+  // Get the common ancestor (.product-card)
+  const productCard = (event && event.currentTarget) ? event.currentTarget.closest('.product-card') : null;
+
+  // Hide all size buttons initially
+  if (productCard) {
+    const sizeButtons = productCard.querySelectorAll('.shop_the_look-size_button');
+    sizeButtons.forEach(sizeButton => {
+      sizeButton.classList.add('hidden');
+    });
+
+    // Show only size buttons with matching data-color value (case-insensitive and space symbols removed)
+    const swatch = event ? event.currentTarget : productCard.querySelector('.product-card-swatch.active');
+    if (swatch) {
+      const dataColorValue = swatch.getAttribute('data-color').toLowerCase().replace(/\s/g, '');
+      const matchingSizeButtons = productCard.querySelectorAll(`.shop_the_look-size_button`);
+      matchingSizeButtons.forEach(sizeButton => {
+        const buttonColor = sizeButton.getAttribute('color').toLowerCase().replace(/\s/g, '');
+        if (buttonColor === dataColorValue && !sizeButton.classList.contains('disabled')) {
+          sizeButton.classList.remove('hidden');
+        }
+      });
+
+      // Set active size button
+      let activeSizeButtonId;
+      matchingSizeButtons.forEach(sizeButton => {
+        // Check if the size button is not disabled before adding the "active" class
+        if (!sizeButton.classList.contains('disabled') && !sizeButton.classList.contains('hidden')) {
+          sizeButton.classList.remove('active'); // Remove "active" class from all size buttons
+          if (!activeSizeButtonId) {
+            activeSizeButtonId = sizeButton.getAttribute('variant-id');
+            sizeButton.classList.add('active'); // Set "active" class to the first visible and not disabled size button
+            const addToCartButton = productCard.querySelector('.shop_the_look-add_to_cart');
+            addToCartButton.disabled = !activeSizeButtonId;
+            addToCartButton.setAttribute('variant-id', activeSizeButtonId || '');
+          }
+        }
+      });
+    }
+  }
+}
+
+function handleSizeButtonClick(event) {
+  const clickedSizeButton = event.currentTarget;
+
+  // Check if the clicked size button is not disabled
+  if (!clickedSizeButton.hasAttribute('disabled')) {
+    const productCard = clickedSizeButton.closest('.product-card');
+
+    // Remove "active" class from siblings
+    const siblingSizeButtons = productCard.querySelectorAll('.shop_the_look-size_button');
+    siblingSizeButtons.forEach(siblingButton => {
+      siblingButton.classList.remove('active');
+    });
+
+    // Make the clicked size button active
+    clickedSizeButton.classList.add('active');
+
+    // Pass size button's variant-id to add to cart button
+    const addToCartButton = productCard.querySelector('.shop_the_look-add_to_cart');
+    if (addToCartButton) {
+      const variantId = clickedSizeButton.getAttribute('variant-id');
+      addToCartButton.setAttribute('variant-id', variantId);
+    }
+  }
+}
+</script>
