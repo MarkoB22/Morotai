@@ -322,9 +322,6 @@ assign product_content_alignment = settings.product_content_alignment
         </div>
       {% endif %}
     </div>
-    {% unless template == 'product' %}
-      {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}
-    {% endunless %}
     {%- if settings.show_products_rating and product_card_product.metafields.reviews.rating.value != blank -%}
     <div class="star-rating" style="--star-rating: {{ product_card_product.metafields.reviews.rating.value.rating }};">
     </div>
@@ -334,6 +331,9 @@ assign product_content_alignment = settings.product_content_alignment
         {{ 'products.product.add_to_cart' | t }}
       </button>
     {% endif %}
+    {% unless template == 'product' %}
+      {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}
+  {% endunless %}
   </div>
 </product-card>
 {%- else -%}

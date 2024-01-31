@@ -22,7 +22,7 @@
 				-%}
 				{% if option.values.size > 1 %}
 				<div class="product-card-swatches--container no-js-hidden">
-					<div class="product-card-swatches">
+					<div class="product-card-swatches {{ screen_size }}">
 						{%- for value in option.values -%}
 							{%- liquid
 								assign active = ''
@@ -72,10 +72,10 @@
 									assign color_value = color_value
 							-%}
                          
-							<div class="product-card-swatch {%- if active_index == forloop.index -%} active default{%- endif -%}" 
+							<div class="product-card-swatch {% if active_index == forloop.index %} active default{% endif %}" 
 								 data-color="{%- for color in custom_colors -%}{%- assign color_parts = color | split: ':' -%}{%- assign color_name = color_parts[0] | strip | downcase -%}{%- assign color_hex = color_parts[1] | strip -%}{%- if color_hex == color_value -%}{{- color_name -}}{% break %}{%- endif -%}{%- endfor -%}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
 								<span class="visually-hidden" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"> 
-
+									{{ value }}
 								</span>
 							</div>
 						{%- endfor -%}

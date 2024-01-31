@@ -1298,3 +1298,13 @@
 .notifyButtonStyle:hover {
   color: black !important;
 }
+
+.thb-product-detail.product .columns {
+  padding: 0 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .test2 img {
+    width: auto;
+  }
+}

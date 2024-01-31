@@ -198,6 +198,8 @@ if (!customElements.get("product-card")) {
           }
         });
       });
+
+      const screenWidth = window.innerWidth;
     
       swatch_list.forEach((swatch, index) => {
         swatch.addEventListener("mouseover", function () {
@@ -215,7 +217,9 @@ if (!customElements.get("product-card")) {
           swatch.classList.add("active");
         });
         swatch.addEventListener("click", function (evt) {
-          window.location.href = this.dataset.href;
+          if (screenWidth >= 1025) {
+            window.location.href = this.dataset.href;
+          }
           evt.preventDefault();
         });
       });

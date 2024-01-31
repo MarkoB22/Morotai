@@ -1388,7 +1388,7 @@ summary {
     .row {
       padding: 0 35px; } }
   .row .columns {
-    padding: 0 4px; }
+    padding: 0 12px; }
     @media only screen and (min-width: 768px) {
       .row .columns {
         padding: 0 15px; } }
@@ -4039,4 +4039,16 @@ input[type="radio"], .field label, .quantity .minus svg,
 
 .spinner-path {
   stroke: white;
+}
+
+@media print, screen and (max-width: 1366px) {
+  .not_mobile {
+    display: none !important;
+  }
+}
+
+@media print, screen and (min-width: 1367px) {
+  .not_desktop {
+    display: none !important;
+  }
 }

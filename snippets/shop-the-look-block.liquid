@@ -1,11 +1,10 @@
+{% if block.settings.product_2 != '' or block.settings.product_3 != '' %}
 {{- 'shop-the-look-block.css' | asset_url | stylesheet_tag -}}
 <div class="shop_the_look-blocks_wrapper">
     <div class="shop_the_look-title">
     {{ 'products.product.shop_the_look' | t }}
     </div>
-    {% if block.settings.product_2 != '' or block.settings.product_3 != '' %}
         {% render 'product-card' product_card_product: product, shop_the_look: true %}
-    {% endif %}
     {% if block.settings.product_2 != '' %}
         {% render 'product-card' product_card_product: block.settings.product_2, shop_the_look: true  %}
     {% endif %}
@@ -13,16 +12,17 @@
         {% render 'product-card' product_card_product: block.settings.product_3, shop_the_look: true %}
     {% endif %}
 </div>
+
+
 <script>
+  // This script handles "Shop the look behaviour"
 document.addEventListener('DOMContentLoaded', function () {
   handleSwatchInteraction();
 });
 
 function handleSwatchInteraction() {
-  // Select all .product-card-swatch inside .shop_the_look-blocks_wrapper element
   const swatches = document.querySelectorAll('.shop_the_look-blocks_wrapper .product-card-swatch');
 
-  // Attach mouseenter event to each swatch
   swatches.forEach(swatch => {
     swatch.addEventListener('mouseenter', function (event) {
       setSwatchInteraction(event);
@@ -36,28 +36,20 @@ function handleSwatchInteraction() {
     });
   });
 
-  // Call the function on DOMContentLoaded
   setSwatchInteraction();
 
-  // Select all .product-card elements
   const productCards = document.querySelectorAll('.product-card');
 
-  // Iterate through each product-card
   productCards.forEach(productCard => {
-    // Select all visible size buttons within the current product-card
     const visibleSizeButtons = productCard.querySelectorAll('.shop_the_look-size_button:not(.hidden)');
 
-      // Find the first visible and not disabled size button
       const activeSizeButton = Array.from(visibleSizeButtons).find(sizeButton => !sizeButton.hasAttribute('disabled'));
 
-      // If an active size button is found, set it as active and update add to cart button
       if (activeSizeButton) {
         const activeSizeButtonId = activeSizeButton.getAttribute('variant-id');
 
-        // Set the active class to the found size button
         activeSizeButton.classList.add('active');
 
-        // Update add to cart button with variant-id and remove disabled attribute
         const addToCartButton = productCard.querySelector('.shop_the_look-add_to_cart');
         if (addToCartButton) {
           addToCartButton.setAttribute('variant-id', activeSizeButtonId);
@@ -70,43 +62,50 @@ function handleSwatchInteraction() {
 }
 
 function setSwatchInteraction(event) {
-  // Get the common ancestor (.product-card)
   const productCard = (event && event.currentTarget) ? event.currentTarget.closest('.product-card') : null;
 
-  // Hide all size buttons initially
   if (productCard) {
     const sizeButtons = productCard.querySelectorAll('.shop_the_look-size_button');
     sizeButtons.forEach(sizeButton => {
       sizeButton.classList.add('hidden');
     });
 
-    // Show only size buttons with matching data-color value (case-insensitive and space symbols removed)
     const swatch = event ? event.currentTarget : productCard.querySelector('.product-card-swatch.active');
     if (swatch) {
       const dataColorValue = swatch.getAttribute('data-color').toLowerCase().replace(/\s/g, '');
       const matchingSizeButtons = productCard.querySelectorAll(`.shop_the_look-size_button`);
       matchingSizeButtons.forEach(sizeButton => {
         const buttonColor = sizeButton.getAttribute('color').toLowerCase().replace(/\s/g, '');
-        if (buttonColor === dataColorValue && !sizeButton.classList.contains('disabled')) {
-          sizeButton.classList.remove('hidden');
-        }
+        if (buttonColor === dataColorValue) {
+            sizeButton.classList.remove('hidden');  
+          }
       });
 
-      // Set active size button
       let activeSizeButtonId;
+      let hasActiveSizeButton = false;
+
       matchingSizeButtons.forEach(sizeButton => {
-        // Check if the size button is not disabled before adding the "active" class
-        if (!sizeButton.classList.contains('disabled') && !sizeButton.classList.contains('hidden')) {
-          sizeButton.classList.remove('active'); // Remove "active" class from all size buttons
+        sizeButton.classList.remove('active');
+
+        if (!sizeButton.hasAttribute('disabled') && !sizeButton.classList.contains('hidden')) {
           if (!activeSizeButtonId) {
             activeSizeButtonId = sizeButton.getAttribute('variant-id');
-            sizeButton.classList.add('active'); // Set "active" class to the first visible and not disabled size button
+            sizeButton.classList.add('active');
+            hasActiveSizeButton = true;
+            
             const addToCartButton = productCard.querySelector('.shop_the_look-add_to_cart');
             addToCartButton.disabled = !activeSizeButtonId;
             addToCartButton.setAttribute('variant-id', activeSizeButtonId || '');
           }
         }
       });
+
+      if (!hasActiveSizeButton) {
+        const addToCartButton = productCard.querySelector('.shop_the_look-add_to_cart');
+        addToCartButton.disabled = true;
+        addToCartButton.removeAttribute('variant-id');
+      }
+
     }
   }
 }
@@ -114,20 +113,16 @@ function setSwatchInteraction(event) {
 function handleSizeButtonClick(event) {
   const clickedSizeButton = event.currentTarget;
 
-  // Check if the clicked size button is not disabled
   if (!clickedSizeButton.hasAttribute('disabled')) {
     const productCard = clickedSizeButton.closest('.product-card');
 
-    // Remove "active" class from siblings
     const siblingSizeButtons = productCard.querySelectorAll('.shop_the_look-size_button');
     siblingSizeButtons.forEach(siblingButton => {
       siblingButton.classList.remove('active');
     });
 
-    // Make the clicked size button active
     clickedSizeButton.classList.add('active');
 
-    // Pass size button's variant-id to add to cart button
     const addToCartButton = productCard.querySelector('.shop_the_look-add_to_cart');
     if (addToCartButton) {
       const variantId = clickedSizeButton.getAttribute('variant-id');
@@ -136,3 +131,122 @@ function handleSizeButtonClick(event) {
   }
 }
 </script>
+
+<script>
+// This script handles "Quick add to cart button"
+document.addEventListener('DOMContentLoaded', function() {
+  var quickAddToCart = document.querySelectorAll('.shop_the_look-add_to_cart');
+
+  async function updateCartDrawer() {
+    const res = await fetch("/?section_id=cart-drawer");
+    const text = await res.text();
+    const html = document.createElement("div");
+    html.innerHTML = text;
+
+    const newBox = html.querySelector(".cart-drawer").innerHTML;
+    document.querySelector(".cart-drawer").innerHTML = newBox;
+
+
+    var counterElement = document.querySelector('.thb-item-count');
+    if (counterElement) {
+      counterElement.innerHTML = itemCount.toString();
+    }
+
+    let removes = document.querySelectorAll(".cart-drawer .remove");
+      removes.forEach((remove) => {
+        remove.addEventListener('click', function(event) {
+          event.preventDefault();
+          const line = event.target.getAttribute('data-index');
+          updateCartItemQuantity(line, 0);
+        });
+      });
+  }
+
+  quickAddToCart.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      event.stopPropagation();
+      var variantID = event.currentTarget.getAttribute('variant-id');
+      addToCart(variantID);
+      if (typeof CartDrawer !== "undefined") {
+        new CartDrawer();
+      }
+    });
+  });
+
+  function addToCart(variantID) {
+    var formData = new FormData();
+    formData.append('id', variantID);
+    formData.append('quantity', 1);
+    const container = document.getElementById("Cart-Drawer");
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+	  incrementItemCount();
+      updateCartDrawer();
+      setTimeout(() => {
+        document.body.classList.add("open-cc");
+        document.body.classList.add("open-cart");
+        cartDrawer = document.getElementById("Cart-Drawer");
+        cartDrawer.classList.add("active");
+        drawerRecommendations = document.querySelector(".cart-drawer--recommendations--container");
+        drawerRecommendations.classList.add("active");
+      }, 500);
+    })
+    .catch(error => {
+      console.error('Error adding product to cart:', error);
+    });
+  }
+
+  function updateCartItemQuantity(line, quantity) {
+    fetch(`${theme.routes.cart_change_url}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: `application/json`,
+      },
+      body: JSON.stringify({
+        line,
+        quantity,
+        sections: getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname,
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      updateCartDrawer();
+    })
+    .catch(error => {
+      console.error('Error updating cart item quantity:', error);
+    });
+  }
+
+  function getSectionsToRender() {
+    return [
+      {
+        id: 'Cart',
+        section: 'main-cart',
+        selector: '.thb-cart-form'
+      },
+      {
+        id: 'cart-drawer-toggle',
+        section: 'cart-bubble',
+        selector: '.thb-item-count'
+      }
+    ];
+  }
+
+  function incrementItemCount() {
+    var counterElement = document.querySelector('.thb-item-count');
+    if (counterElement) {
+      var currentItemCount = parseInt(counterElement.innerHTML) || 0;
+      var newItemCount = currentItemCount + 1;
+      counterElement.innerHTML = newItemCount.toString();
+    }
+  }
+});
+</script>
+{% endif %}
