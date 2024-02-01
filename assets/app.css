@@ -4052,3 +4052,21 @@ input[type="radio"], .field label, .quantity .minus svg,
     display: none !important;
   }
 }
+
+.quick-add-title_part-1 {
+  font-weight: 700;
+  font-size: 12px;
+  font-family: Rajdhani, sans-serif;
+  text-transform: uppercase;
+}
+
+.quick-add-title_part-2 {
+  font-weight: 400;
+  font-size: 12px;
+  font-family: Rajdhani, sans-serif;
+  text-transform: uppercase;
+}
+
+.product-card-info_left-side {
+  margin-bottom: 10px;
+}

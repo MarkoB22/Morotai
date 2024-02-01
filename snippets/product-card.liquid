@@ -82,9 +82,8 @@ assign product_content_alignment = settings.product_content_alignment
     opacity: 1;
     z-index: 1;
     transition: opacity .2s ease 0s;
-    backdrop-filter: blur(40px);
     -webkit-backdrop-filter: var(--glass-backdrop-filter-40);
-    background-color: #F8F8F8;
+    background:rgba(0, 0, 0, 0.3);
     border-radius: 4px;
   }
 
@@ -110,6 +109,7 @@ assign product_content_alignment = settings.product_content_alignment
     justify-content: center;
     align-items: center;
     width: 100%;
+    color: white;
   }
 
   .quick-add-sizes-container {
@@ -121,6 +121,7 @@ assign product_content_alignment = settings.product_content_alignment
 
   .quick-add-sizes {
     display: flex;
+    gap: 8px;
     flex-wrap: wrap;
     width: 100%;
     margin-left: -0.6rem;
@@ -129,22 +130,12 @@ assign product_content_alignment = settings.product_content_alignment
   }
 
   .size-button {
-    margin: 0.6rem 0 0 0.6rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: center;
-    flex-grow: 0;
-    font-weight: 500;
-    flex-shrink: 1;
-    min-width: 38px;
-    flex-basis: calc(20% - 0.6rem);
+    text-align: center;
+    min-width: 48px !important;
     white-space: nowrap;
     height: 3.33rem;
     border-radius: 4px;
     background: white;
-    filter: drop-shadow(0 0.4rem 1.5rem rgba(0,0,0,.1));
     line-height: 2.1rem;
     text-transform: uppercase;
     padding: 8px;
@@ -153,7 +144,9 @@ assign product_content_alignment = settings.product_content_alignment
   }
 
   .size-button:hover {
-    box-shadow: 5px 5px 5px gray;
+    background: black;
+    color: white;
+    box-shadow: 5px 5px 5px rgb(36, 36, 36);
   }
 </style>
 
@@ -203,8 +196,8 @@ assign product_content_alignment = settings.product_content_alignment
 
     <div class="quick-add-container" style="min-height: 50px; position: absolute; z-index: 6; {%- unless template == 'collection' -%} display: none !important;{%- endunless -%}">
       <div class="quick-add-title-and-sizes">
-        <div class="quick-add-title" style="font-weight: 700; font-size: 1.4rem; text-overflow: ellipsis; white-space: nowrap; overflow-x: hidden;">
-          <span>{{ 'products.product.available.sizes' | t }}</span>
+        <div class="quick-add-title">
+          <span class="quick-add-title_part-1">{{ 'products.product.available.sizes' | t }}&nbsp;</span><span class="quick-add-title_part-2">{{ 'products.product.available.sizes_2' | t }}</span>
         </div>
 
         <div class="quick-add-sizes-container">

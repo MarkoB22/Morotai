@@ -225,7 +225,8 @@
       "available": {
         "one": "Erhältlich in {{ count }} Farbe",
         "other": "Erhältlich in {{ count }} Farben",
-        "sizes": "Verfügbare Größen"
+        "sizes": "Schnelleinkauf",
+        "sizes_2": "(Wähle deine Größe)"
       },
       "shipping_policy_html": "<a href=\"{{ link }}\">Versand<\\\/a> wird beim Checkout berechnet",
       "quantity": {

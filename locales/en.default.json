@@ -225,7 +225,8 @@
       "available": {
         "one": "Available in {{ count }} color",
         "other": "Available in {{ count }} colors",
-        "sizes": "Available sizes"
+        "sizes": "Quick Shop",
+        "sizes_2": "(Select your Size)"
       },
       "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
       "quantity": {
