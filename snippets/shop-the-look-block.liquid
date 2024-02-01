@@ -1,15 +1,15 @@
-{% if block.settings.product_2 != '' or block.settings.product_3 != '' %}
+{% if product.metafields.custom.shop_the_look_2 or product.metafields.custom.shop_the_look_3 %}
 {{- 'shop-the-look-block.css' | asset_url | stylesheet_tag -}}
 <div class="shop_the_look-blocks_wrapper">
     <div class="shop_the_look-title">
     {{ 'products.product.shop_the_look' | t }}
     </div>
         {% render 'product-card' product_card_product: product, shop_the_look: true %}
-    {% if block.settings.product_2 != '' %}
-        {% render 'product-card' product_card_product: block.settings.product_2, shop_the_look: true  %}
+    {% if product.metafields.custom.shop_the_look_2 %}
+        {% render 'product-card' product_card_product: product.metafields.custom.shop_the_look_2.value, shop_the_look: true  %}
     {% endif %}
-    {% if block.settings.product_3 != '' %}
-        {% render 'product-card' product_card_product: block.settings.product_3, shop_the_look: true %}
+    {% if product.metafields.custom.shop_the_look_3 %}
+        {% render 'product-card' product_card_product: product.metafields.custom.shop_the_look_3.value, shop_the_look: true %}
     {% endif %}
 </div>
 

@@ -73,16 +73,27 @@ if (!customElements.get("variant-selects")) {
     getColorName(key) {
       const colorNames = {
         null: 'null',
-        black: 'black', schwarz: 'black',
-        white: 'white', weiß: 'white', weiss: 'white',
-        'dark grey': 'dark grey', dunkelgrau: 'dark grey',
-        'light grey': 'light grey', hellgrau: 'light grey',
-        'grey melange': 'grey melange', 'grau meliert': 'grey melange',
-        'moonmist grey': 'moonmist grey', 'moonmist grau': 'moonmist grey',
-        'violett grey': 'violett grey', 'violett grau': 'violett grey',
+        black: 'black', 
+        schwarz: 'black',
+        white: 'white', 
+        weiß: 'white', 
+        weiss: 'white',
+        'dark grey': 'dark grey', 
+        dunkelgrau: 'dark grey',
+        'light grey': 'light grey', 
+        hellgrau: 'light grey',
+        'grey melange': 'grey melange', 
+        'grau meliert': 'grey melange',
+        'moonmist grey': 'moonmist grey', 
+        'moonmist grau': 'moonmist grey',
+        'violett grey': 'violett grey', 
+        'violett grau': 'violett grey',
         beige: 'beige',
-        'off white': 'off white', creme: 'off white',
-        reflective: 'reflective'
+        'off white': 'off white', 
+        creme: 'off white',
+        reflective: 'reflective',
+        'sand beige': 'bleached sand',
+        'bleached sand': 'bleached sand'
      }
       
       return colorNames[key]

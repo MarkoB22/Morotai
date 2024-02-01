@@ -1206,6 +1206,14 @@
   height: 27px;
   opacity: 1;
   transition: all ease-in-out 0.3s;
+  padding: 5px 10px;
+  background: var(--color-badge-sold-out, #acacac);
+  text-transform: uppercase;
+  font-family: Rajdhani, sans-serif;
+  font-size: 13px;
+  color: white;
+  width: fit-content;
+  font-weight: 600;
 }
 
 .hidden_low_quantity {
