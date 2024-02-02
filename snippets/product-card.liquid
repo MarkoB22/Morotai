@@ -133,14 +133,17 @@ assign product_content_alignment = settings.product_content_alignment
     text-align: center;
     min-width: 48px !important;
     white-space: nowrap;
-    height: 3.33rem;
-    border-radius: 4px;
+    height: 48px;
     background: white;
-    line-height: 2.1rem;
+    line-height: 1;
     text-transform: uppercase;
     padding: 8px;
     cursor: pointer;
+    border: 1px solid black;
     transition: all ease-in-out .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .size-button:hover {
@@ -222,7 +225,7 @@ assign product_content_alignment = settings.product_content_alignment
             {%- endfor -%}  
 
             {%- unless sizeButtonRendered -%}
-              <p>{{ 'products.product.sold_out' | t }}</p>
+              <p style="color: white;">{{ 'products.product.sold_out' | t }}</p>
             {%- endunless -%}
           </div>
         </div>

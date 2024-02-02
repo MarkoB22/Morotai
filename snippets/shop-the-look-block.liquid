@@ -1,16 +1,15 @@
-{% if product.metafields.custom.shop_the_look_2 or product.metafields.custom.shop_the_look_3 %}
 {{- 'shop-the-look-block.css' | asset_url | stylesheet_tag -}}
 <div class="shop_the_look-blocks_wrapper">
-    <div class="shop_the_look-title">
-    {{ 'products.product.shop_the_look' | t }}
-    </div>
-        {% render 'product-card' product_card_product: product, shop_the_look: true %}
-    {% if product.metafields.custom.shop_the_look_2 %}
-        {% render 'product-card' product_card_product: product.metafields.custom.shop_the_look_2.value, shop_the_look: true  %}
-    {% endif %}
-    {% if product.metafields.custom.shop_the_look_3 %}
-        {% render 'product-card' product_card_product: product.metafields.custom.shop_the_look_3.value, shop_the_look: true %}
-    {% endif %}
+  <div class="shop_the_look-title">
+  {{ 'products.product.shop_the_look' | t }}
+  </div>
+  {% render 'product-card' product_card_product: product, shop_the_look: true %}
+  {% if product.metafields.custom.shop_the_look_2.value %}
+    {% render 'product-card' product_card_product: product.metafields.custom.shop_the_look_2.value, shop_the_look: true  %}
+  {% endif %}
+  {% if product.metafields.custom.shop_the_look_3.value %}
+    {% render 'product-card' product_card_product: product.metafields.custom.shop_the_look_3.value, shop_the_look: true %}
+  {% endif %}
 </div>
 
 
@@ -41,24 +40,64 @@ function handleSwatchInteraction() {
   const productCards = document.querySelectorAll('.product-card');
 
   productCards.forEach(productCard => {
-    const visibleSizeButtons = productCard.querySelectorAll('.shop_the_look-size_button:not(.hidden)');
+    // Select all size buttons inside the product card
+    const allSizeButtons = productCard.querySelectorAll('.shop_the_look-size_button');
 
-      const activeSizeButton = Array.from(visibleSizeButtons).find(sizeButton => !sizeButton.hasAttribute('disabled'));
+    // Filter out size buttons with the 'hidden' class
+    const visibleSizeButtons = Array.from(allSizeButtons).filter(sizeButton => !sizeButton.classList.contains('hidden'));
 
+    // Check if there are any visible size buttons
+    if (visibleSizeButtons.length > 0) {
+      // Find the first non-disabled size button
+      const activeSizeButton = visibleSizeButtons.find(sizeButton => !sizeButton.hasAttribute('disabled'));
+
+      // Check if an active size button is found
       if (activeSizeButton) {
         const activeSizeButtonId = activeSizeButton.getAttribute('variant-id');
 
+        // Add 'active' class to the active size button
         activeSizeButton.classList.add('active');
 
+        // Find the 'Add to Cart' button within the product card
         const addToCartButton = productCard.querySelector('.shop_the_look-add_to_cart');
+        // Check if 'Add to Cart' button exists
         if (addToCartButton) {
+          // Set variant ID attribute to the 'Add to Cart' button
           addToCartButton.setAttribute('variant-id', activeSizeButtonId);
+          // Remove 'disabled' attribute from the 'Add to Cart' button
           addToCartButton.removeAttribute('disabled');
         }
       }
+    } else {
+      // No visible size buttons, unhide all size buttons
+      allSizeButtons.forEach(sizeButton => {
+        // Remove 'hidden' and 'active' classes from all size buttons
+        sizeButton.classList.remove('hidden', 'active');
+      });
 
-    
+      // Find the first non-disabled size button
+      const firstNonDisabledSizeButton = Array.from(allSizeButtons).find(sizeButton => !sizeButton.hasAttribute('disabled'));
+
+      // Check if a non-disabled size button is found
+      if (firstNonDisabledSizeButton) {
+        const firstNonDisabledSizeButtonId = firstNonDisabledSizeButton.getAttribute('variant-id');
+
+        // Add 'active' class to the first non-disabled size button
+        firstNonDisabledSizeButton.classList.add('active');
+
+        // Find the 'Add to Cart' button within the product card
+        const addToCartButton = productCard.querySelector('.shop_the_look-add_to_cart');
+        // Check if 'Add to Cart' button exists
+        if (addToCartButton) {
+          // Set variant ID attribute to the 'Add to Cart' button
+          addToCartButton.setAttribute('variant-id', firstNonDisabledSizeButtonId);
+          // Remove 'disabled' attribute from the 'Add to Cart' button
+          addToCartButton.removeAttribute('disabled');
+        }
+      }
+    }
   });
+
 }
 
 function setSwatchInteraction(event) {
@@ -106,7 +145,7 @@ function setSwatchInteraction(event) {
         addToCartButton.removeAttribute('variant-id');
       }
 
-    }
+    } 
   }
 }
 
@@ -127,6 +166,7 @@ function handleSizeButtonClick(event) {
     if (addToCartButton) {
       const variantId = clickedSizeButton.getAttribute('variant-id');
       addToCartButton.setAttribute('variant-id', variantId);
+      addToCartButton.removeAttribute('disabled');
     }
   }
 }
@@ -249,4 +289,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-{% endif %}
+<script>
+  // Scroll button
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollButton = document.getElementById('shop_the_look-scroll'); // Fix typo in getElementById
+  var targetElement = document.querySelector('.shop_the_look-blocks_wrapper'); // Fix typo in querySelector
+
+  scrollButton.addEventListener('click', function () {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+});
+</script>

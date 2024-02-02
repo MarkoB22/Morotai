@@ -117,6 +117,7 @@
       "left_in_stock": "AUF LAGER!",
       "link_copied": "Produktlink kopiert!",
       "shop_the_look": "Shop the Look",
+      "scroll": "Scrollen Sie, um alle Produkte anzuzeigen",
       "price": {
         "from_price_html": "Von {{ price }}",
         "regular_price": "Normaler Preis",
@@ -144,7 +145,7 @@
         "WATER_RESISTANT": "Dieses Produkt ist wasserabweisend und daher ideal für nasse Bedingungen geeignet.",
         "WATER_REPELLENT": "Der Stoff stößt Wasser ab, ohne die Oberfläche zu durchdringen und lässt gleichzeitig Feuchtigkeit entweichen, sodass du trocken und komfortabel bleibst.",
         "LIGHT_WEIGHT": "Dieses Produkt zeichnet sich durch seine besondere Leichtigkeit aus, für maximalen Komfort und Bewegungsfreiheit.",
-        "ZIPPER_POCKETS": "Provide secure storage for personal items during physical activities.",
+        "ZIPPER_POCKETS": "Dieses Produkt ist mit Reißverschlusstaschen für eine sichere Aufbewahrung ausgestattet.",
         "AIR_VENTS": "Dieses Produkt hat Luftöffnungen für verbesserte Belüftung.",
         "ANTI_WRINKLE": "Dieses Produkt besteht aus einem Stoff, der Knitterfalten widersteht und so stets ein gepflegtes Aussehen bewahrt.",
         "BREATHABLE": "Dieses Produkt ist für Luftdurchlässigkeit konzipiert, was den Tragekomfort erhöht.",

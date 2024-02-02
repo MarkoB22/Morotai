@@ -1207,7 +1207,24 @@ else {feren.style.display = "flex";
                       </div>
                     </div>
                   </div>
-
+                  {% if product.metafields.custom.shop_the_look_2.value or product.metafields.custom.shop_the_look_3.value %}            
+                  <div class="shop_the_look-scroll_button" id="shop_the_look-scroll"> 
+                    <div class="shop_the_look-scroll_button_left_side">
+                      <div class="shop_the_look-scroll_button_title">
+                        {{ 'products.product.shop_the_look' | t }}
+                      </div>
+                      <div class="shop_the_look-scroll_button_text">
+                        {{ 'products.product.scroll' | t }}
+                      </div>
+                    </div>
+                    {% if product.metafields.custom.shop_the_look_scroll_button_image.value %}
+                      {% assign scrollImage = product.metafields.custom.shop_the_look_scroll_button_image.value %}
+                      <div class="shop_the_look-scroll_button_image" style="width: 100px;">
+                        {%- render 'responsive-image', image: scrollImage, sizes: '128x0' -%}
+                      </div>
+                    {% endif %}
+                  </div>
+                  {% endif %}
                   <div
                         style="
                           display: flex;
@@ -1326,6 +1343,7 @@ else {feren.style.display = "flex";
                         </div>
                       </div>
 
+                        
 
                 {%- when 'collapsible_tab' -%}
                   <collapsible-row class="product__accordion accordion" {{ block.shopify_attributes }}>
@@ -1394,10 +1412,11 @@ else {feren.style.display = "flex";
                       <script src="{{ 'product-recommendations.js' | asset_url }}" defer="defer"></script>
                     {%- endif -%}
                   </product-recommendations>
-                  {% when 'shop_the_look' %}
-                    {% include 'shop-the-look-block' product: product %}
               {%- endcase -%}
             {% endfor %}
+            {% if product.metafields.custom.shop_the_look_2.value or product.metafields.custom.shop_the_look_3.value %}
+              {% include 'shop-the-look-block' product: product %}
+            {% endif %}
           </div>
         </div>
       </div>
@@ -1697,22 +1716,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		{
 			"type": "@app"
 		},
-    {
-      "type": "shop_the_look",
-      "name": "Shop the look",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product_2",
-          "label": "Second product"
-        },
-        {
-          "type": "product",
-          "id": "product_3",
-          "label": "Third product"
-        }
-      ]
-    },
 		{
       "type": "text",
       "name": "Text",
