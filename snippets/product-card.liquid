@@ -70,10 +70,7 @@ assign product_content_alignment = settings.product_content_alignment
 <style>
   .quick-add-container {
     position: absolute;
-    bottom: 8px;
-    left: 8px;
-    right: 8px;
-    max-width: calc(100% - 16px);
+    bottom: 0;
     width: 100%;
     display: none;
     justify-content: center;
@@ -84,7 +81,6 @@ assign product_content_alignment = settings.product_content_alignment
     transition: opacity .2s ease 0s;
     -webkit-backdrop-filter: var(--glass-backdrop-filter-40);
     background:rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
   }
 
   @media (min-width: 768px) {

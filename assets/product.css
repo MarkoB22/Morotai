@@ -1221,6 +1221,7 @@
   overflow: hidden;
   opacity: 0;
   transition: all ease-in-out .3s;
+  padding: 0;
 }
 
 .copy_url {

@@ -90,7 +90,7 @@
        #Product-Slider {
           grid-gap: 16px;
           scroll-behavior: smooth;
-          grid-template-columns: 182px 450px;
+          grid-template-columns: 130px 522px;
           grid-column: 2;
           justify-self: end;
           display: grid;
@@ -109,7 +109,7 @@
        .product-slider-wrapper {
          overflow-x: auto;
          max-height: 750px;
-         height: 562px !important;
+         height: 652.5px !important;
        }
 
          .product-slider-wrapper::-webkit-scrollbar {
@@ -389,7 +389,7 @@ else {feren.style.display = "flex";
 
 
                     
-                    <div>
+                    <div class="product_image_slider">
                       {%- case media.media_type -%}
                         {% when 'image' %}
                           {%- liquid
@@ -1594,6 +1594,49 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Select all elements with class ".product_image_slider"
+  const sliders = document.querySelectorAll('.product_image_slider');
+
+  // Create an object to store orders for each alt value
+  const altOrders = {};
+
+  // Loop through each slider
+  sliders.forEach(slider => {
+    // Select all images within the slider
+    const images = slider.querySelectorAll('img');
+
+    // Loop through each image
+    images.forEach((image, index) => {
+      // Read the alt attribute of the image
+      const altValue = image.getAttribute('alt');
+
+      // If the alt value is not in the altOrders object, initialize it
+      if (!altOrders.hasOwnProperty(altValue)) {
+        altOrders[altValue] = [];
+      }
+
+      // Push the image into the array for its alt value
+      altOrders[altValue].push(image);
+    });
+
+    // Loop through each alt value
+    Object.values(altOrders).forEach((imageArray, index) => {
+      // Loop through each image in the array
+      imageArray.forEach((image, imageIndex) => {
+        // Calculate the order based on whether it's the first image in the array
+        const order = imageIndex === 0 ? (index + 1) * 2 : (index + 1) * 2 - 1;
+
+        // Set the order style on the parent of the parent element (grandparent)
+        image.parentElement.parentElement.style.order = order;
+      });
+    });
+  });
+});
+
 </script>
 
 
