@@ -2,11 +2,69 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+      }
+    },
+    "slideshow_CtYmQQ": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_tWV9TF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Newsletter_Image.jpg",
+            "slide_link": "",
+            "video_background": false,
+            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "subheading": "",
+            "heading": "Newsletter",
+            "heading_size": "h1-xlarge",
+            "content": "",
+            "description_size": "medium",
+            "content_position": "middle-center",
+            "text_alignment": "center",
+            "content_size": "medium",
+            "overlay_color": "#000000",
+            "overlay_opacity": 70,
+            "overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4) 100%)",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_outline": true,
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_outline": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_tWV9TF"
+      ],
+      "settings": {
+        "desktop_height": "desktop-height-full",
+        "mobile_height": "mobile-height-500",
+        "full_width": true,
+        "autoplay": true,
+        "autoplay_length": 5,
+        "transition": "swipe",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "email_signup_M4ndre": {
+      "type": "email-signup",
+      "settings": {
+        "heading": "WERDE TEIL DER MOROTAI FAMILY",
+        "description": "<h1><\/h1><p>Melde Dich jetzt zu unserem Newsletter an und erhalte exklusive Vorteile.<\/p><p>Mit Deiner Anmeldung bist Du damit einverstanden, exklusive Werbebotschaften über MOROTAI Produkte, Events und Aktionen zu erhalten und stimmst der <a href=\"https:\/\/morotai.de\/datenschutz\/\">Datenschutzrichtlinie<\/a> und den <a href=\"https:\/\/morotai.de\/agb\/\">Nutzungsbedingungen<\/a> von MOROTAI zu. Du kannst Dich jederzeit wieder abmelden.<\/p>",
+        "color_bg": "#ffffff",
+        "color_text": "#151515",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "slideshow_CtYmQQ",
+    "email_signup_M4ndre"
   ]
 }
