@@ -2580,7 +2580,7 @@ flex-shrink: 0;}
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    max-height: 30vw;
+    max-height: 700px;
     grid-column-gap: 110px !important;
     list-style: none;
     padding: 50px 0;
