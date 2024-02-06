@@ -3,7 +3,7 @@
 	{%- form 'localization' -%}
 		{%- if show_language_switcher -%}
 		<div class="select">
-			<select name="language_code" class="thb-language-code resize-select" style="background-color: black;">
+			<select name="language_code" class="thb-language-code resize-select">
 		    {%- for language in localization.available_languages -%}
 		      <option style="background-color: black;" value="{{ language.iso_code }}" {%- if language == localization.language %} selected="selected"{% endif %}>{{- language.endonym_name -}}</option>
 		    {%- endfor -%}
