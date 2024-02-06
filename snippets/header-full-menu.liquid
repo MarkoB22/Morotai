@@ -58,9 +58,13 @@
 
 					-%}
 					<div style="gap: 120px;" class="sub-menu mega-menu-container" tabindex="-1">
-				    <ul style="display: flex; justify-content: center;" class="mega-menu-columns" tabindex="-1">
+				    <ul class="mega-menu-columns" tabindex="-1">
 			        {%- for l in link.links -%}
-				        <li class="{% if l.active %} active{% endif %}" role="none">
+				        <li class="{% if l.active %} active{% endif %} mega-menu-column" role="none" 
+							{% if forloop.index == 1 %}style="order: 1;"{% endif %}
+							{% if forloop.index == 2 %}style="order: 3;"{% endif %}
+							{% if forloop.index == 3 %}style="order: 2;"{% endif %}
+							{% if forloop.index == 4 %}style="order: 4;"{% endif %}>
 				          <a href="{{ l.url }}" title="{{ l.title | escape }}" class="mega-menu-columns__heading" role="menuitem">{{ l.title }}</a>
 									{%- if l.links.size > 0 -%}
 										<ul role="menu">
