@@ -193,7 +193,7 @@ assign product_content_alignment = settings.product_content_alignment
 
     -%}
 
-    <div class="quick-add-container" style="min-height: 50px; position: absolute; z-index: 6; {%- unless template == 'collection' -%} display: none !important;{%- endunless -%}">
+    <div class="quick-add-container not_mobile" style="min-height: 50px; position: absolute; z-index: 6; {%- unless template == 'collection' -%} display: none !important;{%- endunless -%}">
       <div class="quick-add-title-and-sizes">
         <div class="quick-add-title">
           <span class="quick-add-title_part-1">{{ 'products.product.available.sizes' | t }}&nbsp;</span><span class="quick-add-title_part-2">{{ 'products.product.available.sizes_2' | t }}</span>
@@ -327,6 +327,40 @@ assign product_content_alignment = settings.product_content_alignment
       {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}
   {% endunless %}
   </div>
+<div class="quick-add-container not_desktop" style="min-height: 50px; position: absolute; z-index: 6; {%- unless template == 'collection' -%} display: none !important;{%- endunless -%}">
+  <div class="quick-add-title-and-sizes">
+    <div class="quick-add-title">
+      <span class="quick-add-title_part-1">{{ 'products.product.available.sizes' | t }}&nbsp;</span><span class="quick-add-title_part-2">{{ 'products.product.available.sizes_2' | t }}</span>
+    </div>
+
+    <div class="quick-add-sizes-container">
+      <div class="quick-add-sizes">
+        {%- assign sizeButtonRendered = false -%}
+        {%- for variant in product_card_product.variants -%}
+          {%- assign variantOptions = variant.options | join: ',' -%}
+          {%- assign variantOptionsArray = variantOptions | split: ',' -%}
+
+          {%- if variantOptionsArray.size == 2 -%}
+            {%- assign variantSize = variantOptionsArray[0] -%}
+            {%- assign variantColor = variantOptionsArray[1] -%}
+            
+            {%- if variantColor == color and variant.available -%}
+              {% assign variantID = variant.id %}
+              <span class="size-button" data-variant-id="{{ variantID }}">
+                {{ variantSize }}
+              </span>
+              {%- assign sizeButtonRendered = true -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}  
+
+        {%- unless sizeButtonRendered -%}
+          <p style="color: white;">{{ 'products.product.sold_out' | t }}</p>
+        {%- endunless -%}
+      </div>
+    </div>
+  </div>
+</div>
 </product-card>
 {%- else -%}
 <product-card class="product-card">
