@@ -1,7 +1,7 @@
 <nav id="mobile-menu" class="mobile-menu-drawer" role="dialog" tabindex="-1">
   <div class="mobile-menu-drawer--inner">
     {%- if header_settings.menu -%}
-      <ul class="mobile-menu">
+      <ul class="mobile-menu not_mobile">
         {%- for link in header_settings.menu.links -%}
           {%- assign has_sub_menu = false -%}
           {%- if link.links.size > 0 -%}
@@ -78,7 +78,7 @@
     {%- if header_settings.mobile_secondary_menu -%}
       <ul class="mobile-secondary-menu">
         {%- for link in header_settings.mobile_secondary_menu.links -%}
-          <li class="{% if link.active %} active{% endif %}">
+          <li class="{% if link.active %} active{% endif %} mobile_menu-image">
             <a href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>
           </li>
         {%- endfor -%}
