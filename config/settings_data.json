@@ -1039,7 +1039,7 @@
       ".thb-full-menu > li > a {font-weight: 500;}",
       ".header a {color: var(--White, #fff); text-align: center; font-family: Rajdhani; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; text-transform: uppercase;}",
       ".thb-secondary-area-item.thb-secondary-myaccount {color: var(--White, #fff); text-align: center; font-family: Rajdhani; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; text-transform: uppercase;}",
-      ".thb-currency-code option {color: var(--White, #fff); text-align: center; font-family: Rajdhani; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; text-transform: uppercase;}",
+      ".thb-currency-code option {color: var(--White, #fff); text-align: center; font-family: Rajdhani; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; text-transform: uppercase; background: var(--color-header-bg, #fff);}",
       ".thb-localization-forms.inside-header .select select {color: var(--White, #fff); text-align: center; font-family: Rajdhani; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; text-transform: uppercase;}",
       ".header.style3 .logolink {align-items: center;}"
     ]

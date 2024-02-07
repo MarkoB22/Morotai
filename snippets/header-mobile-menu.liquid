@@ -91,7 +91,7 @@
         {%- endif -%}
         {%- render 'responsive-image', image: header_settings.mobile_promo_image, sizes: '670x0' -%}
         {%- if header_settings.mobile_promo_link -%}</a>{%- endif -%}
-        <div class="mega-menu-promotion--cover">
+        <div class="mega-menu-promotion--cover" style="display: block !important;">
           {%- if header_settings.mobile_promo_heading -%}
             <p class="heading-font">{{ header_settings.mobile_promo_heading }}</p>
           {%- endif -%}
