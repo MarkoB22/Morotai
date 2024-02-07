@@ -78,8 +78,44 @@
     {%- if header_settings.mobile_secondary_menu -%}
       <ul class="mobile-secondary-menu">
         {%- for link in header_settings.mobile_secondary_menu.links -%}
-          <li class="{% if link.active %} active{% endif %} mobile_menu-image">
-            <a href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>
+          <li class="{% if forloop.index == 1 %} active{% endif %} mobile_menu-image" 
+            {% if forloop.index == 1 and section.settings.mobile_menu_image_1 %}
+            style="background-image: url({{ section.settings.mobile_menu_image_1 | image_url: width: section.settings.mobile_menu_image_1.src.width }})"
+            {% endif %}
+            {% if forloop.index == 2 and section.settings.mobile_menu_image_2 %}
+            style="background-image: url({{ section.settings.mobile_menu_image_2 | image_url: width: section.settings.mobile_menu_image_2.src.width }})"
+            {% endif %}
+            {% if forloop.index == 3 and section.settings.mobile_menu_image_3 %}
+              style="background-image: url({{ section.settings.mobile_menu_image_3 | image_url: width: section.settings.mobile_menu_image_3.src.width }})"
+              {% endif %}
+            >
+            <a class="mobile_menu-image_title" title="{{ link.title | escape }}">{{ link.title }}</a>
+            {% if link.links %}
+              <div class="sublinks_container-level_2">
+                {% for sublink in link.links %}
+                  <div class="sublink_level_2">
+                    <a class="sublink_level_2-link" href="{{ sublink.url }}">
+                      {{ sublink.title }}
+                    </a>
+                    {% for sublink in sublink.links %}
+                    {% if sublink.links %}
+                      <span class="arrow">{% render 'svg-icons' with 'collapsible-arrow' %}</span>
+                      {% break %}
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                  {% if sublink.links %}
+                    <div class="sublinks_container-level_3" style="display: none;">
+                      {% for sublink in sublink.links %}
+                        <a href="{{ sublink.url }}" class="sublink_level_3" style="margin-left: 20px">
+                          {{ sublink.title }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
           </li>
         {%- endfor -%}
       </ul>
@@ -91,7 +127,7 @@
         {%- endif -%}
         {%- render 'responsive-image', image: header_settings.mobile_promo_image, sizes: '670x0' -%}
         {%- if header_settings.mobile_promo_link -%}</a>{%- endif -%}
-        <div class="mega-menu-promotion--cover" style="display: block !important;">
+        <div class="mega-menu-promotion--cover">
           {%- if header_settings.mobile_promo_heading -%}
             <p class="heading-font">{{ header_settings.mobile_promo_heading }}</p>
           {%- endif -%}
@@ -132,3 +168,45 @@
 </nav>
 <link rel="stylesheet" href="{{ 'mobile-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'mobile-menu.css' | asset_url | stylesheet_tag }}</noscript>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to position sublinks containers
+    function positionSublinksContainers() {
+        setTimeout(function() {
+            var mobileMenuImages = document.querySelectorAll('.mobile_menu-image');
+            mobileMenuImages.forEach(function(menuImage) {
+                // Calculate the distance from the left side of the viewport
+                var distanceFromLeft = menuImage.offsetLeft;
+                
+                // Find and position all child elements with class '.sublinks_container-level_2'
+                var sublinksContainers = menuImage.querySelectorAll('.sublinks_container-level_2');
+                sublinksContainers.forEach(function(sublinksContainer) {
+                    sublinksContainer.style.left = -distanceFromLeft + 'px';
+                });
+            });
+        }, 300);
+    }
+    
+    // Initial positioning of sublinks containers
+    positionSublinksContainers();
+    
+    // Event listener for clicks on '.mobile_menu-image' elements
+    var mobileMenuImages = document.querySelectorAll('.mobile_menu-image');
+    mobileMenuImages.forEach(function(menuImage) {
+        menuImage.addEventListener('click', function() {
+            // Remove 'active' class from all elements with class '.mobile_menu-image'
+            mobileMenuImages.forEach(function(image) {
+                image.classList.remove('active');
+            });
+            
+            // Add 'active' class to the clicked element
+            menuImage.classList.add('active');
+            
+            // Reposition sublinks containers
+            positionSublinksContainers();
+        });
+    });
+});
+
+</script>
