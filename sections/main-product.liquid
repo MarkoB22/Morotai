@@ -336,7 +336,7 @@ else {feren.style.display = "flex";
           endif
         -%}
         <div class="carousel__slide product-single__media product-single__media-image carousel_thumbnail"
-             style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 | divided_by: 7.3529 }}%;">
+             style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 | divided_by: 5.9115 }}%;">
           {%- render 'responsive-image', image: media.preview_image, sizes: sizes -%}
           {%- if media.preview_image.alt != blank and display_captions -%}
             <span class="figcaption">{{ media.preview_image.alt }}</span>
@@ -348,8 +348,8 @@ else {feren.style.display = "flex";
 
 <!-- Button row -->
 <div class="button-row not_desktop">
-  <button class="button--previous">&larr;</button>
-  <button class="button--next">&rarr;</button>
+  <button class="button--previous">{% render 'svg-icons' with 'carousel-arrow-right' %}</button>
+  <button class="button--next">{% render 'svg-icons' with 'carousel-arrow-right' %}</button>
 </div>
 
             <product-slider

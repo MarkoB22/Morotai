@@ -1315,7 +1315,7 @@
 }
 
 .carousel_thumbnail {
-  width: 16% !important;
+  width: 17.5% !important;
 }
 
 
@@ -1331,6 +1331,13 @@
     top: calc(50% - 59px);
     transform: translateY(-50%);
     left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button--previous svg {
+    transform: rotate(180deg);
   }
 
   .button--next {
@@ -1338,6 +1345,9 @@
     top: calc(50% - 59px);
     transform: translateY(-50%);
     right: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -1348,7 +1358,6 @@
 .button-row button {
   background: white;
   border-radius: 100%;
-  border: 1px solid grey;
   color: black;
   width: 35px;
   height: 35px;
