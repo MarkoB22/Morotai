@@ -140,7 +140,7 @@
         "logo_light": "shopify:\/\/shop_images\/morotai-logo-zeichen-weiss-01.png",
         "show_language_switcher": true,
         "show_currency_switcher": true,
-        "mobile_secondary_menu": "",
+        "mobile_secondary_menu": "mobile-menu-test",
         "mobile_promo_image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_22_b442e82d-adf6-4e76-ade3-a19d93e37593.jpg",
         "mobile_promo_heading": "Entdecke die NEOTECH LINE, die perfekte Wahl für kühle Tage",
         "mobile_promo_link_label": "SHOP NOW",
