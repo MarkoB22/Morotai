@@ -107,13 +107,12 @@ assign val_array = val_array | remove_first: ',' | split: ','
 	{%- assign size = variant_title_parts.first -%}
 	{%- assign color = variant_title_parts.last -%}
 		{% if variant.inventory_quantity < 4 and variant.inventory_quantity > 0 %}
+			{{ variant.inventory_quantity }}
 			<div class="low_quantity hidden_low_quantity" color="{{ color | lstrip }}" size="{{ size | rstrip }}">{{ "products.product.only" | t }} {{ variant.inventory_quantity }} {{ "products.product.left_in_stock" | t }}</div>
 		{% endif %}
 		{% if variant.inventory_quantity < 1 %} 
+			{{ variant.inventory_quantity }}
 			<div class="low_quantity hidden_low_quantity" color="{{ color | lstrip }}" size="{{ size | rstrip }}">{{ "products.product.out_of_stock" | t }}!</div>
-		{% endif %}
-		{% if variant.inventory_quantity == -1 %}
-			inventory_quantity = -1
 		{% endif %}
 	{% endfor %}
 {% endif %}
