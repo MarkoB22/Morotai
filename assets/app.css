@@ -4084,13 +4084,13 @@ input[type="radio"], .field label, .quantity .minus svg,
   stroke: white;
 }
 
-@media print, screen and (max-width: 1366px) {
+@media print, screen and (max-width: 1024px) {
   .not_mobile {
     display: none !important;
   }
 }
 
-@media print, screen and (min-width: 1367px) {
+@media print, screen and (min-width: 1025px) {
   .not_desktop {
     display: none !important;
   }
