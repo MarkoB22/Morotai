@@ -94,7 +94,7 @@
               <div class="sublinks_container-level_2">
                 {% for sublink in link.links %}
                   <div class="sublink_level_2">
-                <a class="sublink_level_2-link" {% if sublink.links %}href="{{ sublink.url }}{% endif %}">
+                    <a class="sublink_level_2-link" href="{{ sublink.url }}">
                       {{ sublink.title }}
                     </a>
                     {% for sublink_child in sublink.links %}
