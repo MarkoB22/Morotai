@@ -194,6 +194,9 @@ assign product_content_alignment = settings.product_content_alignment
     -%}
 
     <div class="quick-add-container not_mobile" style="min-height: 50px; position: absolute; z-index: 6; {%- unless template == 'collection' -%} display: none !important;{%- endunless -%}">
+      {% if product_card_product.variants.size == 1 %}
+        {% assign onlyOneVariant = true %}
+      {% endif %}
       <div class="quick-add-title-and-sizes">
         <div class="quick-add-title">
           <span class="quick-add-title_part-1">{{ 'products.product.available.sizes' | t }}&nbsp;</span><span class="quick-add-title_part-2">{{ 'products.product.available.sizes_2' | t }}</span>
@@ -218,10 +221,18 @@ assign product_content_alignment = settings.product_content_alignment
                   {%- assign sizeButtonRendered = true -%}
                 {%- endif -%}
               {%- endif -%}
+              {% if onlyOneVariant == true %}
+                <span class="size-button" style="font-weight: 600;" data-variant-id="{{ variant.id }}">
+                    {{ 'products.product.add_to_cart' | t }}
+                </span>
+              {% endif %}
             {%- endfor -%}  
 
             {%- unless sizeButtonRendered -%}
+              {% if onlyOneVariant != true %}
               <p style="color: white;">{{ 'products.product.sold_out' | t }}</p>
+              onlyOneVariant: {{ onlyOneVariant }}
+              {% endif %}
             {%- endunless -%}
           </div>
         </div>
@@ -328,6 +339,9 @@ assign product_content_alignment = settings.product_content_alignment
   {% endunless %}
   </div>
 <div class="quick-add-container not_desktop" style="min-height: 50px; position: absolute; z-index: 6; {%- unless template == 'collection' -%} display: none !important;{%- endunless -%}">
+  {% if product_card_product.variants.size == 1 %}
+    {% assign onlyOneVariant = true %}
+  {% endif %}
   <div class="quick-add-title-and-sizes">
     <div class="quick-add-title">
       <span class="quick-add-title_part-1">{{ 'products.product.available.sizes' | t }}&nbsp;</span><span class="quick-add-title_part-2">{{ 'products.product.available.sizes_2' | t }}</span>
@@ -355,7 +369,10 @@ assign product_content_alignment = settings.product_content_alignment
         {%- endfor -%}  
 
         {%- unless sizeButtonRendered -%}
+          {% if onlyOneVariant != true %}
           <p style="color: white;">{{ 'products.product.sold_out' | t }}</p>
+          onlyOneVariant: {{ onlyOneVariant }}
+          {% endif %}
         {%- endunless -%}
       </div>
     </div>

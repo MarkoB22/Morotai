@@ -158,18 +158,32 @@
     padding-left: 1px;
     padding-top: 1px; 
     position: relative; }
-    .variations .product-form__input--block input[type="radio"] + label {
-      width: auto;
-      min-width: 48px;
-      height: 48px;
-      display: inline-flex;
+  .variations .product-form__input--block input[type="radio"] + label {
+    width: auto;
+    min-width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    font-size: 0.8125rem;
+    margin-left: -1px;
+    margin-top: -1px;
+    cursor: pointer; }
+
+    .size-variants label {
+      padding: 8px !important;
+      min-width: 41px;
+      min-height: 41px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 5px 15px;
-      font-size: 0.8125rem;
-      margin-left: -1px;
-      margin-top: -1px;
-      cursor: pointer; }
+    }
+
+    .size-variants .test:hover {
+      box-shadow: 5px 5px 5px gray;
+      transition: all ease-in-out .3s;
+    }
       @media only screen and (min-width: 768px) {
         .variations .product-form__input--block input[type="radio"] + label {
           margin-right: 0; } }
