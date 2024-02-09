@@ -55,28 +55,28 @@
     "header": {
       "type": "header",
       "blocks": {
-        "c947d47d-abab-4f58-b89e-58ad729f6986": {
+        "5d54b5c5-59ec-4c0d-9eae-c97eb3ea5ae9": {
           "type": "megamenu",
           "settings": {
             "position": "1",
-            "promo_1_image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_2sdsd2.jpg",
-            "promo_1_heading": "Entdecke die NEOTECH LINE, die perfekte Wahl für kühle Tage",
+            "promo_1_image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_22_b442e82d-adf6-4e76-ade3-a19d93e37593.jpg",
+            "promo_1_heading": "<p>Entdecke die NEOTECH LINE, <br\/>die perfekte Wahl für kühle Tage<\/p>",
             "promo_1_link_label": "ENTDECKE NEOTECH",
-            "promo_1_link": "shopify:\/\/collections\/damen-neotech-line",
-            "promo_2_heading": "Promotion heading",
+            "promo_1_link": "shopify:\/\/collections\/herren-neotech-line",
+            "promo_2_heading": "<p>Promotion heading<\/p>",
             "promo_2_link_label": "Shop",
             "promo_2_link": ""
           }
         },
-        "5d54b5c5-59ec-4c0d-9eae-c97eb3ea5ae9": {
+        "c947d47d-abab-4f58-b89e-58ad729f6986": {
           "type": "megamenu",
           "settings": {
             "position": "2",
-            "promo_1_image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_22_b442e82d-adf6-4e76-ade3-a19d93e37593.jpg",
-            "promo_1_heading": "Entdecke die NEOTECH LINE, die perfekte Wahl für kühle Tage",
+            "promo_1_image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_2sdsd2.jpg",
+            "promo_1_heading": "<p>Entdecke die NEOTECH LINE, <br\/>die perfekte Wahl für kühle Tage<\/p>",
             "promo_1_link_label": "ENTDECKE NEOTECH",
-            "promo_1_link": "shopify:\/\/collections\/herren-neotech-line",
-            "promo_2_heading": "Promotion heading",
+            "promo_1_link": "shopify:\/\/collections\/damen-neotech-line",
+            "promo_2_heading": "<p>Promotion heading<\/p>",
             "promo_2_link_label": "Shop",
             "promo_2_link": ""
           }
@@ -102,7 +102,7 @@
             "promo_1_heading": "",
             "promo_1_link_label": "",
             "promo_1_link": "shopify:\/\/collections\/accessoires-1",
-            "promo_2_heading": "Promotion heading",
+            "promo_2_heading": "<p>Promotion heading<\/p>",
             "promo_2_link_label": "Shop",
             "promo_2_link": ""
           }
@@ -122,8 +122,8 @@
         }
       },
       "block_order": [
-        "c947d47d-abab-4f58-b89e-58ad729f6986",
         "5d54b5c5-59ec-4c0d-9eae-c97eb3ea5ae9",
+        "c947d47d-abab-4f58-b89e-58ad729f6986",
         "11127309-ef6e-4b5d-9db6-d7f8bbfcb593",
         "013f67a1-c33a-486e-8aca-60b48ba1045c",
         "cf928c75-3556-4418-baf2-5f334cc5831f"

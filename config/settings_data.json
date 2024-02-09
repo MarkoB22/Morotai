@@ -88,10 +88,10 @@
             "settings": {
               "position": "1",
               "promo_1_image": "shopify:\/\/shop_images\/MadeInGermany_Header.jpg",
-              "promo_1_heading": "Promotion heading",
+              "promo_1_heading": "<p>Promotion heading<\/p>",
               "promo_1_link_label": "Shop",
               "promo_1_link": "",
-              "promo_2_heading": "Promotion heading",
+              "promo_2_heading": "<p>Promotion heading<\/p>",
               "promo_2_link_label": "Shop",
               "promo_2_link": ""
             }
@@ -101,11 +101,11 @@
             "settings": {
               "position": "2",
               "promo_1_image": "shopify:\/\/shop_images\/Zeichenflaeche_1.png",
-              "promo_1_heading": "Promotion heading",
+              "promo_1_heading": "<p>Promotion heading<\/p>",
               "promo_1_link_label": "Shop",
               "promo_1_link": "",
               "promo_2_image": "shopify:\/\/shop_images\/Zeichenflaeche_1.png",
-              "promo_2_heading": "Promotion heading",
+              "promo_2_heading": "<p>Promotion heading<\/p>",
               "promo_2_link_label": "Shop",
               "promo_2_link": ""
             }
@@ -115,11 +115,11 @@
             "settings": {
               "position": "3",
               "promo_1_image": "shopify:\/\/shop_images\/M-201T101-07_NKMR_Training_Dry_Half_Zip_Top_008.jpg",
-              "promo_1_heading": "Promotion heading",
+              "promo_1_heading": "<p>Promotion heading<\/p>",
               "promo_1_link_label": "Shop",
               "promo_1_link": "",
               "promo_2_image": "shopify:\/\/shop_images\/HarteJungs_Header-05-2.png",
-              "promo_2_heading": "Promotion heading",
+              "promo_2_heading": "<p>Promotion heading<\/p>",
               "promo_2_link_label": "Shop",
               "promo_2_link": ""
             }
@@ -129,11 +129,11 @@
             "settings": {
               "position": "4",
               "promo_1_image": "shopify:\/\/shop_images\/20847.jpg",
-              "promo_1_heading": "Promotion heading",
+              "promo_1_heading": "<p>Promotion heading<\/p>",
               "promo_1_link_label": "Shop",
               "promo_1_link": "",
               "promo_2_image": "shopify:\/\/shop_images\/D2A4643_done.jpg",
-              "promo_2_heading": "Promotion heading",
+              "promo_2_heading": "<p>Promotion heading<\/p>",
               "promo_2_link_label": "Shop",
               "promo_2_link": ""
             }
@@ -143,11 +143,11 @@
             "settings": {
               "position": "5",
               "promo_1_image": "shopify:\/\/shop_images\/HarteJungs_Header-05-2.png",
-              "promo_1_heading": "Kida Ramadan X MOROTAI",
+              "promo_1_heading": "<p>Kida Ramadan X MOROTAI<\/p>",
               "promo_1_link_label": "Zum Video",
               "promo_1_link": "",
               "promo_2_image": "shopify:\/\/shop_images\/2.jpg",
-              "promo_2_heading": "#BEMOROTAI mit Ann",
+              "promo_2_heading": "<p>#BEMOROTAI mit Ann<\/p>",
               "promo_2_link_label": "Zum Video",
               "promo_2_link": ""
             }
