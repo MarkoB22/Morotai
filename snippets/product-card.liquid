@@ -82,6 +82,27 @@ assign product_content_alignment = settings.product_content_alignment
     background:rgba(0, 0, 0, 0.3);
   }
 
+  .quick-add-container.not_desktop {
+    display: block;
+    position: relative !important;
+    padding: 5px;
+    background: transparent;
+    margin-top: -10px;
+  }
+
+  .quick-add-container.not_desktop .quick-add-sizes {
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+
+  .quick-add-container.not_desktop .size-button {
+    padding: 4px;
+    min-width: 30px !important;
+    min-height: 30px !important;
+    height: 30px;
+    font-size: 13px;
+  }
+
   @media (min-width: 768px) {
     .product-card:hover .quick-add-container {
       display: flex;
@@ -342,14 +363,11 @@ assign product_content_alignment = settings.product_content_alignment
       {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}
   {% endunless %}
   </div>
-<div class="quick-add-container not_desktop" style="min-height: 50px; position: absolute; z-index: 6; {%- unless template == 'collection' -%} display: none !important;{%- endunless -%}">
+<div class="quick-add-container not_desktop" style="min-height: 50px; z-index: 6; {%- unless template == 'collection' -%} display: none !important;{%- endunless -%}">
   {% if product_card_product.variants.size == 1 %}
     {% assign onlyOneVariant = true %}
   {% endif %}
   <div class="quick-add-title-and-sizes">
-    <div class="quick-add-title">
-      <span class="quick-add-title_part-1">{{ 'products.product.available.sizes' | t }}&nbsp;</span><span class="quick-add-title_part-2">{{ 'products.product.available.sizes_2' | t }}</span>
-    </div>
 
     <div class="quick-add-sizes-container">
       <div class="quick-add-sizes">
@@ -374,7 +392,7 @@ assign product_content_alignment = settings.product_content_alignment
 
         {%- unless sizeButtonRendered -%}
           {% if onlyOneVariant != true %}
-          <p style="color: white;">{{ 'products.product.sold_out' | t }}</p>
+          <p style="color: black; border: 1px solid black; padding: 0 5px;">{{ 'products.product.sold_out' | t }}</p>
           {% endif %}
         {%- endunless -%}
       </div>

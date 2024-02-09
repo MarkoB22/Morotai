@@ -790,6 +790,16 @@ else {feren.style.display = "flex";
                   -%}
                 
                 {%- when 'variant_picker' -%}
+                  {% if product.variants.size == 1 and product.available != true %}
+                    <div class="low_quantity" color="{{ color | lstrip }}" size="{{ size | rstrip }}">{{ "products.product.out_of_stock" | t }}!</div>
+                  {% endif %}
+                  {% if product.variants.size == 1 %}
+                  {% for variant in product.variants %}
+                  {% if variant.inventory_quantity < 4 and variant.inventory_quantity > 0 %}
+                    <div class="low_quantity" color="{{ color | lstrip }}" size="{{ size | rstrip }}">{{ "products.product.only" | t }} {{ variant.inventory_quantity }} {{ "products.product.left_in_stock" | t }}</div>
+                  {% endif %}
+                  {% endfor %}
+                  {% endif %}
                   {%- unless product.has_only_default_variant -%}
                     {% assign is_disabled = block.settings.variant_is_disabled %}
                     <variant-selects
