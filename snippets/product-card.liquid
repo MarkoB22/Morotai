@@ -2,7 +2,6 @@
 assign first_3d_model = product.media | where: 'media_type', 'model' | first
 assign full_width = section.settings.full_width
 assign media_layout = section.settings.media_layout
-assign display_slider_pagination = section.settings.display_slider_pagination
 assign media_aspect_ratio = section.settings.media_aspect_ratio
 assign enable_sticky_info = section.settings.enable_sticky_info
 assign enable_sticky_add_to_cart = section.settings.enable_sticky_add_to_cart
@@ -199,7 +198,7 @@ assign product_content_alignment = settings.product_content_alignment
       {% endif %}
       <div class="quick-add-title-and-sizes">
         <div class="quick-add-title">
-          <span class="quick-add-title_part-1">{{ 'products.product.available.sizes' | t }}&nbsp;</span><span class="quick-add-title_part-2">{{ 'products.product.available.sizes_2' | t }}</span>
+    <span class="quick-add-title_part-1">{{ 'products.product.available.sizes' | t }}&nbsp;</span>{% unless onlyOneVariant %}<span class="quick-add-title_part-2">{{ 'products.product.available.sizes_2' | t }}</span>{% endunless %}
         </div>
 
         <div class="quick-add-sizes-container">
@@ -221,17 +220,22 @@ assign product_content_alignment = settings.product_content_alignment
                   {%- assign sizeButtonRendered = true -%}
                 {%- endif -%}
               {%- endif -%}
-              {% if onlyOneVariant == true %}
+              {% if onlyOneVariant == true and variant.available %}
                 <span class="size-button" style="font-weight: 600;" data-variant-id="{{ variant.id }}">
                     {{ 'products.product.add_to_cart' | t }}
                 </span>
               {% endif %}
+              {% if onlyOneVariant == true and variant.available != true %}
+                <span style="font-weight: 600;" data-variant-id="{{ variant.id }}">
+                    {{ 'products.product.sold_out' | t }}
+                </span>
+              {% endif %}
+
             {%- endfor -%}  
 
             {%- unless sizeButtonRendered -%}
               {% if onlyOneVariant != true %}
-              <p style="color: white;">{{ 'products.product.sold_out' | t }}</p>
-              onlyOneVariant: {{ onlyOneVariant }}
+                <p style="color: white;">{{ 'products.product.sold_out' | t }}</p>
               {% endif %}
             {%- endunless -%}
           </div>
@@ -371,7 +375,6 @@ assign product_content_alignment = settings.product_content_alignment
         {%- unless sizeButtonRendered -%}
           {% if onlyOneVariant != true %}
           <p style="color: white;">{{ 'products.product.sold_out' | t }}</p>
-          onlyOneVariant: {{ onlyOneVariant }}
           {% endif %}
         {%- endunless -%}
       </div>

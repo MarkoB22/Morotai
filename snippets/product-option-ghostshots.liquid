@@ -168,9 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const sizeInputs = document.querySelectorAll('input[name="Größe"], input[name="Size"], input[name="size"]');
   
   function handleInputChange() {
+    const selectedColorInput = [...colorInputs].find(input => input.checked);
+    const selectedSizeInput = [...sizeInputs].find(input => input.checked);
     
-    const selectedColor = [...colorInputs].find(input => input.checked)?.getAttribute('value') || '';
-    const selectedSize = [...sizeInputs].find(input => input.checked)?.getAttribute('value') || '';
+    const selectedColor = selectedColorInput ? selectedColorInput.getAttribute('value') : '';
+    const selectedSize = selectedSizeInput ? selectedSizeInput.getAttribute('value') : '';
 
     const quantity_warnings = document.querySelectorAll('.low_quantity');
     if (quantity_warnings.length > 0) {
@@ -178,10 +180,27 @@ document.addEventListener('DOMContentLoaded', function() {
         quantity_warning.classList.add('hidden_low_quantity');
       });
 
-      const matchingElement = document.querySelector(`.low_quantity[color="${selectedColor}"][size="${selectedSize}"]`);
+      if (selectedColor && selectedSize) {
+        // Both color and size are selected
+        const matchingElement = document.querySelector(`.low_quantity[color="${selectedColor}"][size="${selectedSize}"]`);
 
-      if (matchingElement) {
-        matchingElement.classList.remove('hidden_low_quantity');
+        if (matchingElement) {
+          matchingElement.classList.remove('hidden_low_quantity');
+        }
+      } else if (selectedColor && !selectedSize) {
+        // Only color is selected
+        const matchingElementsByColor = document.querySelectorAll(`.low_quantity[color="${selectedColor}"]`);
+        
+        matchingElementsByColor.forEach(function (matchingElement) {
+          matchingElement.classList.remove('hidden_low_quantity');
+        });
+      } else if (!selectedColor && selectedSize) {
+        // Only size is selected
+        const matchingElementsBySize = document.querySelectorAll(`.low_quantity[size="${selectedSize}"]`);
+        
+        matchingElementsBySize.forEach(function (matchingElement) {
+          matchingElement.classList.remove('hidden_low_quantity');
+        });
       }
     }
   }
@@ -196,4 +215,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
   handleInputChange();
 });
+
 </script>

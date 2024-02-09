@@ -3,7 +3,6 @@
   assign first_3d_model = product.media | where: 'media_type', 'model' | first
   assign full_width = section.settings.full_width
   assign media_layout = section.settings.media_layout
-  assign display_slider_pagination = section.settings.display_slider_pagination
   assign media_aspect_ratio = section.settings.media_aspect_ratio
   assign enable_sticky_info = section.settings.enable_sticky_info
   assign enable_sticky_add_to_cart = section.settings.enable_sticky_add_to_cart
@@ -689,32 +688,6 @@ else {feren.style.display = "flex";
                   </div>
               {%- endfor -%}
             </product-slider>
-
-            {%- if display_slider_pagination -%}
-              {%- unless single_media_visible_mobile -%}
-                <div class="product-images-buttons no-js-hidden">
-                  <button
-                    type="button"
-                    class="slider-button slider-button--prev"
-                    name="previous"
-                  >
-                    {% render 'svg-icons' with 'thb-caret-left' %}
-                  </button>
-                  <div class="slider-counter caption">
-                    <span class="slider-counter--current">1</span>
-                    <span aria-hidden="true"> / </span>
-                    <span class="slider-counter--total">{{ media_count }}</span>
-                  </div>
-                  <button
-                    type="button"
-                    class="slider-button slider-button--next"
-                    name="next"
-                  >
-                    {% render 'svg-icons' with 'thb-caret-right' %}
-                  </button>
-                </div>
-              {%- endunless -%}
-            {%- endif -%}
           </div>
         </div>
         <div class="product-information">
@@ -1786,12 +1759,6 @@ flktyNav.on('select', function() {
 			"default": "grid",
 			"label": "Layout"
 		},
-		{
-      "type": "checkbox",
-      "id": "display_slider_pagination",
-      "default": true,
-      "label": "Display pagination on mobile"
-    },
 		{
 			"type": "select",
 			"id": "media_aspect_ratio",
