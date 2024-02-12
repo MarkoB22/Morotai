@@ -187,15 +187,17 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function positionSublinksContainers() {
-          var mobileMenuImages = document.querySelectorAll('.mobile_menu-image');
-          mobileMenuImages.forEach(function(menuImage) {
-              var distanceFromLeft = menuImage.offsetLeft;
-              
-              var sublinksContainers = menuImage.querySelectorAll('.sublinks_container-level_2');
-              sublinksContainers.forEach(function(sublinksContainer) {
-                  sublinksContainer.style.left = -distanceFromLeft + 'px';
-              });
+    setTimeout(function() {
+      var mobileMenuImages = document.querySelectorAll('.mobile_menu-image');
+      mobileMenuImages.forEach(function(menuImage) {
+          var distanceFromLeft = menuImage.offsetLeft;
+          
+          var sublinksContainers = menuImage.querySelectorAll('.sublinks_container-level_2');
+          sublinksContainers.forEach(function(sublinksContainer) {
+              sublinksContainer.style.left = -distanceFromLeft + 'px';
           });
+      });
+    }, 300);
   }
   
   var mobileMenuImages = document.querySelectorAll('.mobile_menu-image');
