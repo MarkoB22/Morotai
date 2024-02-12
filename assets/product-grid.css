@@ -370,6 +370,7 @@
 .collection-container .product-card .product-card-swatches--container {
   height: 31px;
   width: 100%;
+  display: none;
 }
 
 .collection-container .product-card .product-card-swatches .product-card-swatch {
@@ -389,6 +390,7 @@
   .collection-container .product-card .product-card-swatches--container {
     height: 22px;
     width: auto;
+    display: block;
   }
 
   .collection-container .product-card .product-card-swatches .product-card-swatch {
