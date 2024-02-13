@@ -303,53 +303,114 @@ else {feren.style.display = "flex";
       <div class="product-grid-container">
         <div id="MediaGallery-{{ section.id }}">
           <div class="product-image-container">
-            <!-- Main carousel -->
-<div class="carousel main_mobile-carousel not_desktop">
-  {% for media in product.media %}
-    {%- case media.media_type -%}
-      {% when 'image' %}
-        {%- liquid
-          if media_aspect_ratio == 'adapt'
-            assign ratio = media.preview_image.aspect_ratio
-          endif
-        -%}
-        <div class="carousel__slide product-single__media product-single__media-image"
-             style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 }}%;">
-          {%- render 'responsive-image', image: media.preview_image, sizes: sizes -%}
-          {%- if media.preview_image.alt != blank and display_captions -%}
-            <span class="figcaption">{{ media.preview_image.alt }}</span>
-          {%- endif -%}
-        </div>
-    {% endcase %}
-  {% endfor %}
-</div>
 
-<!-- Thumbnail carousel -->
-<div class="carousel thumbnail-carousel not_desktop">
-  {% for media in product.media %}
-    {%- case media.media_type -%}
-      {% when 'image' %}
-        {%- liquid
-          if media_aspect_ratio == 'adapt'
-            assign ratio = media.preview_image.aspect_ratio
-          endif
-        -%}
-        <div class="carousel__slide product-single__media product-single__media-image carousel_thumbnail"
-             style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 | divided_by: 5.9115 }}%;">
-          {%- render 'responsive-image', image: media.preview_image, sizes: sizes -%}
-          {%- if media.preview_image.alt != blank and display_captions -%}
-            <span class="figcaption">{{ media.preview_image.alt }}</span>
-          {%- endif -%}
-        </div>
-    {% endcase %}
-  {% endfor %}
-</div>
+          {% assign uniqueAlts = '' %}
 
-<!-- Button row -->
-<div class="button-row not_desktop">
-  <button class="button--previous">{% render 'svg-icons' with 'carousel-arrow-right' %}</button>
-  <button class="button--next">{% render 'svg-icons' with 'carousel-arrow-right' %}</button>
-</div>
+          {% comment %}
+            Iterate through product.media to collect unique alt values
+          {% endcomment %}
+          {% for media in product.media %}
+            {% if media.alt != nil and media.alt != blank %}
+              {% unless uniqueAlts contains media.alt %}
+                {% assign uniqueAlts = uniqueAlts | append: media.alt | append: ',' %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+          
+          {% comment %}
+            Convert the string of unique alt values to an array by splitting it at commas
+          {% endcomment %}
+          {% assign uniqueAlts = uniqueAlts | split: ',' %}
+          
+          <!-- Main carousel -->
+          <div class="main_mobile-carousel not_desktop">
+            {% for alt in uniqueAlts %}
+              {% assign altImages = product.media | where: "alt", alt %}
+              {% assign altImagesCount = altImages.size %}
+              {% assign firstImage = altImages | first %}
+              {% assign remainingImages = altImages | slice: 1, altImagesCount %}
+              
+              {% for media in remainingImages %}
+                {%- case media.media_type -%}
+                  {% when 'image' %}
+                    {%- liquid
+                      if media_aspect_ratio == 'adapt'
+                        assign ratio = media.preview_image.aspect_ratio
+                      endif
+                    -%}
+                    <div class="carousel__slide product-single__media product-single__media-image"
+                      style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 }}%;">
+                      {%- render 'responsive-image', image: media.preview_image, sizes: sizes -%}
+                      {%- if media.preview_image.alt != blank and display_captions -%}
+                        <span class="figcaption">{{ media.preview_image.alt }}</span>
+                      {%- endif -%}
+                    </div>
+                {% endcase %}
+              {% endfor %}
+              
+              {%- liquid
+                if media_aspect_ratio == 'adapt'
+                  assign ratio = firstImage.preview_image.aspect_ratio
+                endif
+              -%}
+              <div class="carousel__slide product-single__media product-single__media-image"
+                style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 }}%;">
+                {%- render 'responsive-image', image: firstImage.preview_image, sizes: sizes -%}
+                {%- if firstImage.preview_image.alt != blank and display_captions -%}
+                  <span class="figcaption">{{ firstImage.preview_image.alt }}</span>
+                {%- endif -%}
+              </div>
+            {% endfor %}
+          </div>
+          
+          <!-- Thumbnail carousel -->
+          <div class="thumbnail-carousel not_desktop">
+            {% for alt in uniqueAlts %}
+              {% assign altImages = product.media | where: "alt", alt %}
+              {% assign altImagesCount = altImages.size %}
+              {% assign firstImage = altImages | first %}
+              {% assign remainingImages = altImages | slice: 1, altImagesCount %}
+              
+              {% for media in remainingImages %}
+                {%- case media.media_type -%}
+                  {% when 'image' %}
+                    {%- liquid
+                      if media_aspect_ratio == 'adapt'
+                        assign ratio = media.preview_image.aspect_ratio
+                      endif
+                    -%}
+                    <div class="carousel__slide product-single__media product-single__media-image carousel_thumbnail"
+                      style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 | divided_by: 5.9115 }}%;">
+                      {%- render 'responsive-image', image: media.preview_image, sizes: sizes -%}
+                      {%- if media.preview_image.alt != blank and display_captions -%}
+                        <span class="figcaption">{{ media.preview_image.alt }}</span>
+                      {%- endif -%}
+                    </div>
+                {% endcase %}
+              {% endfor %}
+              
+              {%- liquid
+                if media_aspect_ratio == 'adapt'
+                  assign ratio = firstImage.preview_image.aspect_ratio
+                endif
+              -%}
+              <div class="carousel__slide product-single__media product-single__media-image carousel_thumbnail"
+                style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 | divided_by: 5.9115 }}%;">
+                {%- render 'responsive-image', image: firstImage.preview_image, sizes: sizes -%}
+                {%- if firstImage.preview_image.alt != blank and display_captions -%}
+                  <span class="figcaption">{{ firstImage.preview_image.alt }}</span>
+                {%- endif -%}
+              </div>
+            {% endfor %}
+          </div>
+ 
+                    
+
+          <!-- Button row -->
+          <div class="button-row not_desktop">
+            <button class="button--previous">{% render 'svg-icons' with 'carousel-arrow-right' %}</button>
+            <button class="button--next">{% render 'svg-icons' with 'carousel-arrow-right' %}</button>
+          </div>
 
             <product-slider
               id="Product-Slider"
@@ -1649,22 +1710,25 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script>
-  // Script for connecting main image slider with thumbnails slider
 document.addEventListener('DOMContentLoaded', function () {
 // Get reference to main and thumbnail carousels
-var mainCarousel = document.querySelector('.carousel.main_mobile-carousel');
-var thumbnailCarousel = document.querySelector('.carousel.thumbnail-carousel');
+var mainCarousel = document.querySelector('.main_mobile-carousel');
+var thumbnailCarousel = document.querySelector('.thumbnail-carousel');
 
 // Initialize both Flickity instances
 var flktyMain = new Flickity(mainCarousel, {
   prevNextButtons: false,
-  pageDots: false
+  wrapAround: true,
+  pageDots: true
 });
 
 var flktyThumbnail = new Flickity(thumbnailCarousel, {
   prevNextButtons: false,
   pageDots: false,
-  wrapAround: true
+  {% if product.media.size > 5 %}
+  wrapAround: true,
+  {% endif %}
+  cellAlign: 'left'
 });
 
 // Synchronize both carousels

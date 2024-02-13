@@ -1358,7 +1358,7 @@
     position: absolute;
     top: calc(50% - 59px);
     transform: translateY(-50%);
-    right: 34px;
+    right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1375,4 +1375,21 @@
   color: black;
   width: 35px;
   height: 35px;
+}
+
+.main_mobile-carousel .flickity-page-dots {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.main_mobile-carousel .flickity-page-dots .dot {
+  margin: 0;
+  flex-grow: 1;
+  background: transparent;
+}
+
+.main_mobile-carousel .flickity-page-dots .dot.is-selected {
+  background: black;
 }

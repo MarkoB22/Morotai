@@ -29,13 +29,16 @@
   assign focal_point = image.presentation.focal_point
 -%}
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-
 <img
   class="lazyload{% if retina %} retina_size{% endif %} {{ class | escape }}"
   width="{{ w }}"
   height="{{ h }}"
   data-sizes="auto"
+  {% if image.src %}
   src="{{- image.src | img_url: small_size, crop: 'center' -}}"
+  {% else %}
+  src="{{- file_link | img_url: small_size, crop: 'center' -}}"
+  {% endif %}
   data-srcset="{{ srcset | slice: 0, l | strip_newlines -}}"
   alt="{{ image.alt | escape }}"
   data-thumbnail-color="{{ image.alt | escape }}"
@@ -48,7 +51,11 @@
     width="{{ image.width }}"
     height="{{ image.height }}"
     sizes="auto"
+    {% if image.src %}
     src="{{- image.src | img_url: small_size, crop: 'center' -}}"
+    {% else %}
+    src="{{- media -}}"
+    {% endif %}
     srcset="{{ srcset | slice: 0, l | strip_newlines }}"
     alt="{{ image.alt | escape }}"
     data-thumbnail-color="{{ image.alt | escape }}"
