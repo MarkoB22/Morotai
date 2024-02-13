@@ -1387,7 +1387,8 @@
 .main_mobile-carousel .flickity-page-dots .dot {
   margin: 0;
   flex-grow: 1;
-  background: transparent;
+  background: #00000060;
+  border-radius: 0;
 }
 
 .main_mobile-carousel .flickity-page-dots .dot.is-selected {
