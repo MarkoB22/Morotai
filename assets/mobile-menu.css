@@ -207,6 +207,12 @@
   transform: translateX(-50%);
   padding: 5px 0;
   width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
 }
 
 .mobile_menu-image.active {

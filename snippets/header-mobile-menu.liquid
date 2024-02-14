@@ -78,7 +78,7 @@
     {%- if header_settings.mobile_secondary_menu -%}
       <ul class="mobile-secondary-menu">
         {%- for link in header_settings.mobile_secondary_menu.links -%}
-          <li class="{% if forloop.index == 1 %} active{% endif %} mobile_menu-image" 
+          <{% if link.links.size > 0 %}li{% else %}a{% endif %} {% if link.links.size == 0 %}href="{{ link.url }}"{% endif %}class="{% if forloop.index == 1 %} active{% endif %} mobile_menu-image" 
             {% if forloop.index == 1 and section.settings.mobile_menu_image_1 %}
             style="background-image: url({{ section.settings.mobile_menu_image_1 | image_url: width: section.settings.mobile_menu_image_1.src.width }})"
             {% endif %}
@@ -89,8 +89,8 @@
               style="background-image: url({{ section.settings.mobile_menu_image_3 | image_url: width: section.settings.mobile_menu_image_3.src.width }})"
               {% endif %}
             >
-            <a class="mobile_menu-image_title" title="{{ link.title | escape }}">{{ link.title }}</a>
-            {% if link.links %}
+            <div class="mobile_menu-image_title" title="{{ link.title | escape }}">{{ link.title }}</div>
+            {% if link.links.size > 0 %}
               <div class="sublinks_container-level_2" style="left:-{{- forloop.index0 | times: 2 -}}00%;">
                 {% for sublink in link.links %}
                   <div class="sublink_level_2">
@@ -104,7 +104,7 @@
                       {% endif %}
                     {% endfor %}
                   </div>
-                  {% if sublink.links %}
+                  {% if sublink.links.size > 0 %}
                     <div class="sublinks_container-level_3" style="max-height: 0;">
                       {% for sublink_child in sublink.links %}
                         <a href="{{ sublink_child.url }}" class="sublink_level_3">
@@ -116,7 +116,7 @@
                 {% endfor %}
               </div>
             {% endif %}            
-          </li>
+          </{% if link.links %}li{% else %}a{% endif %}>
         {%- endfor -%}
       </ul>
     {%- endif -%}
