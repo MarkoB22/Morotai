@@ -587,7 +587,8 @@
       transform: scale(1.2); }
     @media only screen and (min-width: 1068px) {
       .thb-product-detail .product-single__media-zoom {
-        opacity: 0; } }
+        opacity: 0; 
+        display: none;} }
   @media only screen and (min-width: 1068px) {
     .thb-product-detail .product-single__media:hover .product-single__media-zoom {
       opacity: 1; } }
