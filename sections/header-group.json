@@ -46,7 +46,7 @@
       ],
       "settings": {
         "announcement_bar": true,
-        "announcement_bar_homepage_only": false,
+        "announcement_bar_homepage_only": true,
         "announcement_bar_layout": "marquee",
         "direction": "left",
         "speed": "50s"
