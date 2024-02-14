@@ -247,7 +247,8 @@
 .product-image-container {
   margin: 0 -15px 25px;
   width: calc(100% + 30px); 
-  overflow: hidden; }
+  overflow: hidden; 
+  position: relative;}
   @media only screen and (min-width: 768px) {
     .product-image-container {
       margin: 0 -50px 25px;
@@ -1343,8 +1344,8 @@
 .product-image-container {
   .button--previous {
     position: absolute;
-    top: calc(50% - 59px);
-    transform: translateY(-50%);
+    top: calc(50%);
+    transform: translateY(calc(-50% - 45px));
     left: 10px;
     display: flex;
     align-items: center;
@@ -1357,8 +1358,8 @@
 
   .button--next {
     position: absolute;
-    top: calc(50% - 59px);
-    transform: translateY(-50%);
+    top: calc(50%);
+    transform: translateY(calc(-50% - 45px));
     right: 10px;
     display: flex;
     align-items: center;
