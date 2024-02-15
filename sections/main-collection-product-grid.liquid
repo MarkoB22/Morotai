@@ -19,10 +19,12 @@
 {%- render 'facets-mobile', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, show_counts: show_counts, filter_color_swatches: filter_color_swatches -%}
 
 {% if collection.metafields.custom.menu_with_collections_and_images %}
-	<div class="collections_navigation-wrapper not_desktop collections_navigation-carousel {% if full_width %}full-width-row{% endif %}">
+<div class="collections_navigation-outter_wrapper not_desktop">
+	<div class="collections_navigation-wrapper collections_navigation-carousel {% if full_width %}full-width-row{% endif %}">
 		{% assign collection_menu_handle = collection.metafields.custom.menu_with_collections_and_images %}
 		{% assign collection_menu = linklists[collection_menu_handle] %}
 		{% for link in collection_menu.links %}
+      {% unless forloop.index == 1 %}
 			{% assign altIndex = forloop.index %}
 			<a href="{{ link.url }}" class="collections_navigation-menu_item carousel__slide">
 				<div class="collections_navigation-image">
@@ -37,29 +39,52 @@
 					{{ link.title }}
 				</div>
 			</a>
+        {% endunless %}
 		{% endfor %}
 	</div>
+  {% for link in collection_menu.links %}
+    {% if forloop.index == 1 %}
+      {% assign altIndex = forloop.index %}
+			<div class="collections_navigation-menu_item collections_navigation-current_page">
+				<div class="collections_navigation-image">
+					{% for image in collection.metafields.custom.collection_menu_images.value %}
+						{% if altIndex == forloop.index %}
+							{% assign myImage = image %}
+						{% endif %}
+					{% endfor %}
+					{%- render 'responsive-image', image: myImage, sizes: '128x0' -%}
+				</div>
+				<div class="collections_navigation-title">
+					{{ link.title }}
+				</div>
+			</div>
+    {% endif %}
+  {% endfor %}
+  <div class="button-row not_desktop">
+    <button class="button--next">{% render 'svg-icons' with 'carousel-arrow-right' %}</button>
+  </div>
+</div>
 
-	<div class="collections_navigation-wrapper not_mobile {% if full_width %}full-width-row{% endif %}">
-		{% assign collection_menu_handle = collection.metafields.custom.menu_with_collections_and_images %}
-		{% assign collection_menu = linklists[collection_menu_handle] %}
-		{% for link in collection_menu.links %}
-			{% assign altIndex = forloop.index %}
-			<a href="{{ link.url }}" class="collections_navigation-menu_item carousel__slide">
-				<div class="collections_navigation-image">
-					{% for image in collection.metafields.custom.collection_menu_images.value %}
-						{% if altIndex == forloop.index %}
-							{% assign myImage = image %}
-						{% endif %}
-					{% endfor %}
-					{%- render 'responsive-image', image: myImage, sizes: '128x0' -%}
-				</div>
-				<div class="collections_navigation-title">
-					{{ link.title }}
-				</div>
-			</a>
-		{% endfor %}
-	</div>
+<div class="collections_navigation-wrapper not_mobile {% if full_width %}full-width-row{% endif %}">
+  {% assign collection_menu_handle = collection.metafields.custom.menu_with_collections_and_images %}
+  {% assign collection_menu = linklists[collection_menu_handle] %}
+  {% for link in collection_menu.links %}
+    {% assign altIndex = forloop.index %}
+    <a href="{{ link.url }}" class="collections_navigation-menu_item carousel__slide">
+      <div class="collections_navigation-image">
+        {% for image in collection.metafields.custom.collection_menu_images.value %}
+          {% if altIndex == forloop.index %}
+            {% assign myImage = image %}
+          {% endif %}
+        {% endfor %}
+        {%- render 'responsive-image', image: myImage, sizes: '128x0' -%}
+      </div>
+      <div class="collections_navigation-title">
+        {{ link.title }}
+      </div>
+    </a>
+  {% endfor %}
+</div>
 {% endif %}
 
 <div class="row {% if full_width %}full-width-row{% endif %}">
@@ -287,14 +312,19 @@ document.addEventListener('DOMContentLoaded', function() {
 	// Collection menu (images carousel)
 document.addEventListener('DOMContentLoaded', function () {
 	var collectionMenu = document.querySelector('.collections_navigation-carousel');
+  var nextButton = document.querySelector('.button--next');
 
 	var flktyMain = new Flickity(collectionMenu, {
-		prevNextButtons: false,
+		prevNextButtons: true,
 		wrapAround: false,
 		pageDots: false,
 		contain: true,
 		cellAlign: 'left'
 	});
+
+  nextButton.addEventListener('click', function() {
+    flktyMain.next();
+  });
 });
 </script>
 

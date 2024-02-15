@@ -403,25 +403,57 @@
   }
 }
 
+.collections_navigation-outter_wrapper {
+  position: relative;
+}
+
 .collections_navigation-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 24px;
   margin-bottom: 30px;
+  margin-left: calc(24.5% + 12px);
 }
 
 .collections_navigation-menu_item {
-  max-width: 21%;
-}
-
-.collections_navigation-menu_item {
+  max-width: 32.5%;
   padding-left: 12px
+}
+
+.collections_navigation-menu_item:last-child {
+  max-width: calc(32.5% + 12px);
+  padding-right: 12px;
+}
+
+.collections_navigation-current_page {
+  position: absolute;
+  background: #fff;
+  top: 0;
+  height: calc(100% - 28px);
+  padding-right: 12px;
+  width: calc(24.5% + 14px);
+}
+
+.collections_navigation-current_page:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(249, 249, 249, 0) 0%, #f9f9f9 100%);
+  pointer-events: none;
+  z-index: 100;
+}
+
+.collections_navigation-current_page .collections_navigation-image  {
+  border: 2px solid black;
 }
 
 .collections_navigation-image {
   border-radius: 100%;
-  border: 2px solid black;
   overflow: hidden;
 }
 
@@ -432,15 +464,31 @@
 
 .collections_navigation-title {
   text-align: center;
-  font-weight: 600;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 13px;
   line-height: 1;
   margin-top: 4px;
 }
 
+.collections_navigation-current_page .collections_navigation-title {
+  font-weight: 600;
+}
+
+.collections_navigation-outter_wrapper .button-row {
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-100% - 19px));
+  right: 12px;
+}
+
+.collections_navigation-outter_wrapper .button-row button {
+  width: 25px;
+  height: 25px;
+}
+
 @media only screen and (min-width: 1025px) {
   .collections_navigation-menu_item {
-    max-width: 128px;
+    max-width: 100px;
     padding: 0;
   }
 
@@ -453,6 +501,22 @@
     max-width: 95%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .collections_navigation-menu_item:last-child {
+    position: relative;
+    max-width: 100px;
+    padding-right: 0;
+  }
+  
+  .collections_navigation-wrapper .collections_navigation-menu_item:first-child {
+    .collections_navigation-image {
+      border: 2px solid black;
+    }
+
+    .collections_navigation-title {
+      font-weight: 600;
+    }
   }
 }
 
