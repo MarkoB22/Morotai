@@ -57,15 +57,16 @@
       margin-right: 20px; }
     .mobile-menu-drawer .thb-mobile-menu-footer .shopify-localization-form .select {
       margin-bottom: 0;
-      padding-right: 14px; }
+      padding-right: 24px; }
       .mobile-menu-drawer .thb-mobile-menu-footer .shopify-localization-form .select-arrow {
-        right: 0; }
+        right: 10px; }
         .mobile-menu-drawer .thb-mobile-menu-footer .shopify-localization-form .select-arrow svg path {
           stroke: var(--color-header-text, --color-body); }
     .mobile-menu-drawer .thb-mobile-menu-footer .shopify-localization-form select {
       font-size: 0.875rem;
       white-space: nowrap;
       text-overflow: ellipsis;
+      min-width: 26px;
       color: var(--color-header-text, --color-body); }
     .mobile-menu-drawer .thb-mobile-menu-footer .thb-mobile-account-link {
       display: flex;
