@@ -155,7 +155,7 @@
 												{% endcapture %}
 												{% unless colorlist contains color %}
 												<li class="column">
-													{%- render 'product-card', color: variant.options[index], product_card_product: product, active_index: forloop.index -%} 
+													{%- render 'product-card', color: variant.options[index], product_card_product: product, active_index: forloop.index, variant: variant.id -%} 
 												</li>
 												{% capture tempList %}
 													{{ colorlist | append: color | append: ' ' }}
