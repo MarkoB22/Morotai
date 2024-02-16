@@ -14,7 +14,7 @@
   -%}
   {%- if show_announcement_bar -%}
     {{- 'announcement-bar.css' | asset_url | stylesheet_tag -}}
-    <div class="announcement-bar">
+    <div class="announcement-bar {% if section.settings.announcement_bar_mobile_homepage_only and template != 'index' %} not_mobile{% endif %}">
       <div
         class="announcement-bar--inner direction-{{ direction }} announcement-bar--{{ announcement_bar_layout }}"
         style="--marquee-speed: {{ speed }}"
@@ -87,8 +87,8 @@
 		},
 		{
 			"type": "checkbox",
-			"id": "announcement_bar_homepage_only",
-			"label": "Show on home page only",
+			"id": "announcement_bar_mobile_homepage_only",
+			"label": "Show on home page only when on mobile",
 			"default": true
 		},
 		{
