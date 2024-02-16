@@ -16,7 +16,21 @@
 <script>
   // This script handles "Shop the look behaviour"
 document.addEventListener('DOMContentLoaded', function () {
+  
   handleSwatchInteraction();
+
+  const initialSwatches = document.querySelectorAll('.shop_the_look-blocks_wrapper .product-card-swatch.active');
+
+  // Iterate over each initial swatch
+  initialSwatches.forEach(swatch => {
+      // Create a custom event object with the desired currentTarget
+      var customEvent = {
+          currentTarget: swatch
+      };
+
+      // Call the setSwatchInteraction function with the custom event object
+      setSwatchInteraction(customEvent);
+  });
 });
 
 function handleSwatchInteraction() {

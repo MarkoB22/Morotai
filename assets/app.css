@@ -2705,7 +2705,7 @@ flex-shrink: 0;}
     margin: 0 15px 0 0;
     padding-right: 12px; }
     .thb-localization-forms.inside-header .select-arrow {
-      right: 0; }
+      right: 15px; }
       .thb-localization-forms.inside-header .select-arrow svg path {
         stroke: var(--color-header-text, --color-body); }
     .thb-localization-forms.inside-header .select select {

@@ -159,6 +159,14 @@ assign val_array = val_array | remove_first: ',' | split: ','
 	</div>
 	{% endfor %}
 	</div>
+	{% if option.name == 'Farbe' or option.name == 'Color' or option.name == 'color' %}
+		{% for product in product.metafields.custom.connected_products.value %}
+			<a href="{{ product.url }}" class="connected_product-wrapper">
+				{%- render 'responsive-image', image: product.featured_media, sizes: '128x0' -%}
+			</a>
+		{% endfor %}
+	{% endif %}
+
 </fieldset>
 {%- endcase -%}
 

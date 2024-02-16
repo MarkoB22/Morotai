@@ -324,7 +324,7 @@ assign product_content_alignment = settings.product_content_alignment
         {{- product_card_product.title -}}
       </a>
       {% if template == 'product' %}
-        {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index %}
+        {% render 'product-card-swatch', product: product_card_product, sizes: sizes, active_index: active_index, shop_the_look: shop_the_look %}
       {% endif %}
       <div style="display: flex; justify-content: space-between;">
         {% render 'review-stars', product: product_card_product %}
@@ -338,7 +338,7 @@ assign product_content_alignment = settings.product_content_alignment
             {%- assign variantSize = variantOptionsArray[0] -%}
             {%- assign variantColor = variantOptionsArray[1] -%}
             
-            <div class="shop_the_look-size_button {% unless variantColor == 'SCHWARZ' or variantColor == 'BLACK' %}hidden{% endunless %}" 
+            <div class="shop_the_look-size_button" 
                  {% unless variant.available %} disabled{% endunless %}
                  color="{{ variantColor }}" 
                  size="{{ variantSize }}" 
@@ -346,6 +346,23 @@ assign product_content_alignment = settings.product_content_alignment
                 {{ variantSize }}
               </div>
             
+          {% endfor %}
+          {% for product in product_card_product.metafields.custom.connected_products.value %}
+            {% for variant in product.variants %}
+              {%- assign variantOptions = variant.options | join: ',' -%}
+              {%- assign variantOptionsArray = variantOptions | split: ',' -%}
+              {%- assign variantSize = variantOptionsArray[0] -%}
+              {%- assign variantColor = variantOptionsArray[1] -%}
+              
+              <div class="shop_the_look-size_button hidden" 
+                  {% unless variant.available %} disabled{% endunless %}
+                  color="{{ variantColor }}" 
+                  size="{{ variantSize }}" 
+                  variant-id="{{ variant.id }}">
+                  {{ variantSize }}
+                </div>
+              
+            {% endfor %}
           {% endfor %}
         </div>
       {% endif %}

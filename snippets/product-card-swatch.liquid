@@ -72,7 +72,16 @@
 									assign color_value = color_value
 							-%}
                          
-							<div class="product-card-swatch {% if active_index == forloop.index %} active default{% endif %}" 
+							<div class="product-card-swatch 
+										{% if active_index == forloop.index %} 
+											active
+										{% endif %}
+										{% if shop_the_look == true and forloop.index == 1 %}
+											active
+										{% endif %}
+										{% if shop_the_look != true and active_index == forloop.index %} 
+											default
+										{% endif %}" 
 								 data-color="{%- for color in custom_colors -%}{%- assign color_parts = color | split: ':' -%}{%- assign color_name = color_parts[0] | strip | downcase -%}{%- assign color_hex = color_parts[1] | strip -%}{%- if color_hex == color_value -%}{{- color_name -}}{% break %}{%- endif -%}{%- endfor -%}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
 								<span class="visually-hidden" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"> 
 									{{ value }}
@@ -85,4 +94,172 @@
 			{% endif %}
 		{%- endfor -%}
 	{%- endunless -%}
+	{% if product.metafields.custom.connected_products.value %}
+		<div class="connected_products-swatches">
+			<div class="product-card-swatches--container no-js-hidden">
+				<div class="product-card-swatches {{ screen_size }}">
+					{%- for option in product.options_with_values -%}
+						{% assign option_name = option.name | downcase | escape %}
+						{% assign translatedColor = 'products.product.color' | t %}
+			
+						{% if option_name contains translatedColor or option_name contains 'colour' %}
+							{%- liquid
+							assign custom_colors = settings.color_swatches | newline_to_br | split: '<br />'
+							assign key_array = ''
+							assign val_array = ''
+			
+							for color in custom_colors 
+								assign key = color | split: ':' | first | rstrip
+								assign value = color | split: ':' | last | lstrip
+								assign key_array = key_array | append: ',' | append: key
+								assign val_array = val_array | append: ',' | append: value
+							endfor
+			
+							assign key_array = key_array | remove_first: ',' | strip_newlines | downcase | split: ','
+							assign val_array = val_array | remove_first: ',' | split: ','
+							-%}
+							{% if option.values.size > 0 %}
+									{%- for value in option.values -%}
+										{%- liquid
+											assign active = ''
+											assign variant_image = blank
+											assign variant_url = ''
+											assign srcset = ''
+			
+											for variant in product.variants
+												if variant.title contains value
+													if variant.image.id == product.featured_image.id
+														assign active = 'active'
+													endif
+													if variant.image
+														assign variant_image = variant.image
+													endif
+													assign variant_url = variant.url
+												endif
+											endfor
+											assign image_sizes = sizes | split: "," 
+										-%}
+										{%- capture srcset -%}
+											{%- if variant_image != blank -%}
+											  {%- for size in image_sizes -%}
+												{%- assign small_size = '20x' -%}
+												{%- assign size_array = size | split: "x" -%}
+												{%- assign size_x = size_array[0] | append: 'x' -%}
+												{% if size_array[1] != "0" %}
+												  {%- assign size_x = size -%}
+												  {%- assign small_x = size_array[1] | times: 20 | divided_by: size_array[0] | floor -%}
+												  {%- assign small_size = small_size | append: small_x -%}
+												{% endif %}
+												{{- variant_image.src | img_url: size_x, crop: 'center' }} {{ size_array[0] }}w,
+											  {%- endfor -%}
+											{%- endif -%}
+										{%- endcapture -%}
+										{% assign l = srcset | size | minus: 1 %}
+										{%- liquid
+										   
+											assign color_value = value | downcase | escape | remove: ' '
+											
+			
+											for custom_color in key_array
+												if custom_color == color_value
+													assign color_value = val_array[forloop.index0]
+												endif
+											endfor
+												assign color_value = color_value
+										-%}
+									 
+										<div class="product-card-swatch {% if forloop.index == 1 %} active{% endif %} {% if forloop.index == 1 and shop_the_look != true %} default{% endif %}" 
+											 data-color="{%- for color in custom_colors -%}{%- assign color_parts = color | split: ':' -%}{%- assign color_name = color_parts[0] | strip | downcase -%}{%- assign color_hex = color_parts[1] | strip -%}{%- if color_hex == color_value -%}{{- color_name -}}{% break %}{%- endif -%}{%- endfor -%}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
+											<span class="visually-hidden" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"> 
+												{{ value }}
+											</span>
+										</div>
+									{%- endfor -%}
+							{% endif %}
+						{% endif %}
+					{%- endfor -%}
+					{%- for product in product.metafields.custom.connected_products.value -%}
+						{%- for option in product.options_with_values -%}
+							{% assign option_name = option.name | downcase | escape %}
+							{% assign translatedColor = 'products.product.color' | t %}
+		
+							{% if option_name contains translatedColor or option_name contains 'colour' %}
+							{%- liquid
+							assign custom_colors = settings.color_swatches | newline_to_br | split: '<br />'
+							assign key_array = ''
+							assign val_array = ''
+			
+							for color in custom_colors 
+								assign key = color | split: ':' | first | rstrip
+								assign value = color | split: ':' | last | lstrip
+								assign key_array = key_array | append: ',' | append: key
+								assign val_array = val_array | append: ',' | append: value
+							endfor
+			
+							assign key_array = key_array | remove_first: ',' | strip_newlines | downcase | split: ','
+							assign val_array = val_array | remove_first: ',' | split: ','
+							-%}
+							{%- for value in option.values -%}
+								{%- liquid
+									assign active = ''
+									assign variant_image = blank
+									assign variant_url = ''
+									assign srcset = ''
+
+									for variant in product.variants
+										if variant.title contains value
+											if variant.image.id == product.featured_image.id
+												assign active = 'active'
+											endif
+											if variant.image
+												assign variant_image = variant.image
+											endif
+											assign variant_url = variant.url
+										endif
+									endfor
+									assign image_sizes = sizes | split: "," 
+								-%}
+								{%- capture srcset -%}
+									{%- if variant_image != blank -%}
+										{%- for size in image_sizes -%}
+										{%- assign small_size = '20x' -%}
+										{%- assign size_array = size | split: "x" -%}
+										{%- assign size_x = size_array[0] | append: 'x' -%}
+										{% if size_array[1] != "0" %}
+											{%- assign size_x = size -%}
+											{%- assign small_x = size_array[1] | times: 20 | divided_by: size_array[0] | floor -%}
+											{%- assign small_size = small_size | append: small_x -%}
+										{% endif %}
+										{{- variant_image.src | img_url: size_x, crop: 'center' }} {{ size_array[0] }}w,
+										{%- endfor -%}
+									{%- endif -%}
+								{%- endcapture -%}
+								{% assign l = srcset | size | minus: 1 %}
+								{%- liquid
+									
+									assign color_value = value | downcase | escape | remove: ' '
+									
+
+									for custom_color in key_array
+										if custom_color == color_value
+											assign color_value = val_array[forloop.index0]
+										endif
+									endfor
+										assign color_value = color_value
+								-%}
+								
+								<div class="product-card-swatch" 
+										data-color="{%- for color in custom_colors -%}{%- assign color_parts = color | split: ':' -%}{%- assign color_name = color_parts[0] | strip | downcase -%}{%- assign color_hex = color_parts[1] | strip -%}{%- if color_hex == color_value -%}{{- color_name -}}{% break %}{%- endif -%}{%- endfor -%}" style="--option-color: {{ color_value | downcase | escape | remove: ' ' }};" data-srcset="{{- srcset | slice: 0, l | strip_newlines -}}" data-href="{{ variant_url }}">
+									<span class="visually-hidden" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"> 
+										{{ value }}
+									</span>
+								</div>
+							{%- endfor -%}
+						{% endif %}
+						{% endfor %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	{% endif %}
 {%- endif -%}

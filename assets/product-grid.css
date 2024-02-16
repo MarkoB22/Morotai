@@ -458,7 +458,7 @@
 }
 
 .collections_navigation-image img {
-  object-fit: cover;
+  object-fit: contain;
   aspect-ratio: 1;
 }
 

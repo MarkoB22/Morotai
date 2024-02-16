@@ -1396,3 +1396,15 @@
 .main_mobile-carousel .flickity-page-dots .dot.is-selected {
   background: black;
 }
+
+.connected_product-wrapper {
+  width: 92px;
+  height: 105px;
+  padding: 6.605px 12.5px 4.394px 12px;
+  box-shadow: 0 0 0 1px var(--color-border) inset;
+  margin-left: 16px;
+}
+
+.product-form__input  {
+  display: flex !important;
+}
