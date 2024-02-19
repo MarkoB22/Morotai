@@ -2688,7 +2688,9 @@ flex-shrink: 0;}
 
 
 .thb-localization-forms {
-  text-align: right; }
+  text-align: right; 
+}
+
   .thb-localization-forms .shopify-localization-form {
     display: inline-flex; }
     .thb-localization-forms .shopify-localization-form > div {
@@ -2701,20 +2703,30 @@ flex-shrink: 0;}
     margin: 0;
     font-size: 0.75rem;
     line-height: 1; }
-  .thb-localization-forms.inside-header .select {
-    margin: 0 15px 0 0;
-    padding-right: 12px; }
-    .thb-localization-forms.inside-header .select-arrow {
-      right: 15px; }
-      .thb-localization-forms.inside-header .select-arrow svg path {
-        stroke: var(--color-header-text, --color-body); }
-    .thb-localization-forms.inside-header .select select {
-      font-weight: 500;
-      font-size: calc(var(--font-navigation-scale, 1) * 15px);
-      color: var(--color-header-text, --color-body); 
-      min-width: 100px;}
-      .navigation-uppercase-true .thb-localization-forms.inside-header .select select {
-        text-transform: uppercase; }
+
+.thb-localization-forms.inside-header .select {
+  margin: 0 15px 0 0;
+  padding-right: 12px; 
+}
+
+.thb-localization-forms.inside-header .select-arrow {
+  right: 14px; 
+}
+
+.thb-localization-forms.inside-header .select-arrow svg path {
+  stroke: var(--color-header-text, --color-body); 
+}
+
+.thb-localization-forms.inside-header .select select {
+  font-weight: 500;
+  font-size: calc(var(--font-navigation-scale, 1) * 15px);
+  color: var(--color-header-text, --color-body);
+  padding-right: 12px;
+} 
+
+.navigation-uppercase-true .thb-localization-forms.inside-header .select select {
+  text-transform: uppercase; 
+}
 
 .shopify-payment-button__more-options,
 .spr-summary-actions-newreview,
@@ -3096,7 +3108,7 @@ label {
 select {
   width: auto; }
   select.resize-select {
-    width: 100px;
+    width: 72px;
     overflow: hidden;
     text-overflow: ellipsis;
     transition-property: color; }
