@@ -1,1 +1,121 @@
-{"sections":{"main-collection-banner":{"type":"main-collection-banner","custom_css":["h1,.h1,.h1-large,.h1-xlarge {font-size: calc(var(--font-heading-scale) * 25px);}"],"settings":{"show_collection_image":false,"show_collection_description":true,"show_subcollections":false,"make_heading_uppercase":true,"image":"shopify:\/\/shop_images\/MOROTAI_CHROME_By_Tribunalova_final_16.jpg","overlay_color":"#000000","overlay_opacity":44}},"product-grid":{"type":"main-collection-product-grid","settings":{"full_width":false,"products_per_page":48,"columns_desktop":4,"pagination_type":"infinite","enable_filtering":true,"enable_sorting":true,"show_counts":true,"filter_color_swatches":true,"facets_desktop":"drawer"}},"166366972953e881f5":{"type":"collection-list","settings":{"heading":"SHOP IN COLLECTIONS","heading_left":false,"description":"","full_width":true,"collection_list":["neotech-line","chrome-line","spirit-line","style-line"],"image_ratio":"portrait","layout":"grid","style":"style1","columns_desktop":4,"columns_mobile":"2","show_progress_bar":true,"mobile_swipe":true,"overlay_color":"#000000","overlay_opacity":0,"disable_top_spacing":true,"disable_bottom_spacing":true}},"16636704759cbf64c5":{"type":"spacer","settings":{"spacer_mobile":50,"spacer_desktop":125,"border_separator":true,"border_separator_full":true}}},"order":["main-collection-banner","product-grid","166366972953e881f5","16636704759cbf64c5"]}
+{
+  "sections": {
+    "slideshow_collection_hJHnUD": {
+      "type": "slideshow_collection",
+      "blocks": {
+        "slide_dtz8gG": {
+          "type": "slide",
+          "settings": {
+            "image": "{{ collection.metafields.custom.collection_banner.value }}",
+            "mobile_image": "{{ collection.metafields.custom.collection_banner_mobile.value }}",
+            "slide_link": "",
+            "video_background": false,
+            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "subheading": "",
+            "heading": "<p>DAMEN | ALLE PRODUKTE<\/p>",
+            "heading_size": "h1",
+            "content": "",
+            "description_size": "medium",
+            "content_position": "bottom-right",
+            "text_alignment": "center",
+            "content_size": "medium",
+            "overlay_color": "#000000",
+            "overlay_opacity": 70,
+            "overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4) 100%)",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_outline": true,
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_outline": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_dtz8gG"
+      ],
+      "settings": {
+        "desktop_height": "desktop-height-550",
+        "mobile_height": "mobile-height-400",
+        "full_width": true,
+        "autoplay": true,
+        "autoplay_length": 5,
+        "transition": "swipe",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "custom_css": [
+        "h1,.h1,.h1-large,.h1-xlarge {font-size: calc(var(--font-heading-scale) * 25px);}"
+      ],
+      "settings": {
+        "show_collection_image": false,
+        "show_collection_description": true,
+        "show_subcollections": false,
+        "make_heading_uppercase": true,
+        "image": "shopify:\/\/shop_images\/MOROTAI_CHROME_By_Tribunalova_final_16.jpg",
+        "overlay_color": "#000000",
+        "overlay_opacity": 44
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "full_width": false,
+        "products_per_page": 48,
+        "columns_desktop": 4,
+        "pagination_type": "infinite",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "show_counts": true,
+        "filter_color_swatches": true,
+        "facets_desktop": "drawer"
+      }
+    },
+    "166366972953e881f5": {
+      "type": "collection-list",
+      "settings": {
+        "heading": "SHOP IN COLLECTIONS",
+        "heading_left": false,
+        "description": "",
+        "full_width": true,
+        "collection_list": [
+          "neotech-line",
+          "chrome-line",
+          "spirit-line",
+          "style-line"
+        ],
+        "image_ratio": "portrait",
+        "layout": "grid",
+        "style": "style1",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "show_progress_bar": true,
+        "mobile_swipe": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "16636704759cbf64c5": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 50,
+        "spacer_desktop": 125,
+        "border_separator": true,
+        "border_separator_full": true
+      }
+    }
+  },
+  "order": [
+    "slideshow_collection_hJHnUD",
+    "main-collection-banner",
+    "product-grid",
+    "166366972953e881f5",
+    "16636704759cbf64c5"
+  ]
+}
