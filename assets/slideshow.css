@@ -243,6 +243,21 @@
 
 .slideshow-image--desktop {
   display: none; }
-  @media only screen and (min-width: 768px) {
-    .slideshow-image--desktop {
-      display: block; } }
+
+@media only screen and (min-width: 768px) {
+  .slideshow-image--desktop {
+    display: block; 
+  } 
+}
+
+.slideshow-collection .slideshow__slide-content {
+  width: fit-content;
+  max-width: 80%;
+}
+
+.slideshow-collection h1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
