@@ -118,6 +118,7 @@
       "link_copied": "Produktlink kopiert!",
       "shop_the_look": "Shop the Look",
       "scroll": "Scrollen Sie, um alle Produkte anzuzeigen",
+      "new": "NEU",
       "price": {
         "from_price_html": "Von {{ price }}",
         "regular_price": "Normaler Preis",

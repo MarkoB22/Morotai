@@ -118,6 +118,7 @@
       "link_copied": "Product link copied!",
       "shop_the_look": "Shop the look",
       "scroll": "Scroll to see all products",
+      "new": "NEW",
       "price": {
         "from_price_html": "<span class=\"from\">From<\/span> {{ price }}",
         "regular_price": "Regular price",

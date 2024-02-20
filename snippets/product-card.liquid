@@ -269,6 +269,17 @@ assign product_content_alignment = settings.product_content_alignment
 
 
     {% render 'product-card-badge', product_card_product: product_card_product %}
+    {% for tag in product_card_product.tags %}
+    {% if tag == 'NEW' %}
+      {% assign badge_position = settings.badge_position %}
+      <div class="badge badge-new {{ badge_position }}"
+      {% if product_card_product.compare_at_price > product_card_product.price and product_card_product.available %} 
+      style="top: 42px;"
+      {% endif %}>
+        {{ 'products.product.new' | t }}
+      </div>
+    {% endif %}
+    {% endfor %}
     {% assign variantURL = product_card_product.url | append: '?variant=' | append: variant %}
     <a href="{{ variantURL | within: collection }}" title="{{ product_card_product.title | escape }}"
       class="product-featured-image-link aspect-ratio aspect-ratio--{{ settings.product_aspect_ratio }}"
