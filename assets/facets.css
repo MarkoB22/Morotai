@@ -7,6 +7,7 @@
 .facets--bar {
   display: block;
   margin-bottom: 25px;
+  margin-top: 25px;
   font-size: 0.8125rem;
   z-index: 45; }
   @media only screen and (min-width: 1068px) {

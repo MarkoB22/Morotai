@@ -89,5 +89,13 @@
         </span>
       {% endif %}
     </span>
+    {% for tag in product.tags %}
+      {% if tag == 'NEW' %}
+        {% assign badge_position = settings.badge_position %}
+        <div class="badge badge-new {{ badge_position }}">
+          {{ 'products.product.new' | t }}
+        </div>
+      {% endif %}
+      {% endfor %}
   {% endif %}
 </span>

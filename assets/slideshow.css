@@ -259,5 +259,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  text-transform: uppercase;
 }
 

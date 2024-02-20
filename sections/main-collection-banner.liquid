@@ -27,6 +27,7 @@
 		{% endif %}
 	{%- endcapture -%}
 {%- endif -%}
+{% unless collection.metafields.custom.use_banner == true %}
 {{ 'collection-banner.css' | asset_url | stylesheet_tag }}
 
 <div class="collection-banner collection-banner--heading-uppercase-{{ make_heading_uppercase }}{% if show_collection_image and image %} collection-banner--has-bg{% endif %}" style="--overlay-color-rgb: {{ overlay_color | color_extract: 'red' }}, {{ overlay_color | color_extract: 'green' }}, {{ overlay_color | color_extract: 'blue' }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.0 }}">
@@ -85,7 +86,7 @@
 		</div>
 	</div>
 </div>
-
+{% endunless %}
 {% schema %}
   {
     "name": "Collection banner",
