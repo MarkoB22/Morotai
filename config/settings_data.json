@@ -75,7 +75,6 @@
         ],
         "settings": {
           "announcement_bar": true,
-          "announcement_bar_homepage_only": false,
           "direction": "left",
           "speed": "50s"
         }
