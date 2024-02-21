@@ -79,10 +79,11 @@
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
-    z-index: 0; }
+    z-index: 0; 
+    display: block !important;}
     @media only screen and (min-width: 768px) {
       .product-card .product-featured-image {
-        margin-bottom: 20px; } }
+        margin-bottom: 20px;} }
     @media (hover: hover) {
       .product-card .product-featured-image.thb-hover:hover .product-primary-image {
         opacity: 0; } }
