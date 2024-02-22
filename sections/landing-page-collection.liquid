@@ -9,6 +9,7 @@
 	assign products_per_page = section.settings.products_per_page
 	assign columns_desktop = section.settings.columns_desktop
 	assign facets_desktop = section.settings.facets_desktop
+    assign collection = section.settings.collection_picker
 
 	unless enable_filtering
 		assign facets_desktop = 'drawer'
@@ -95,20 +96,20 @@
 							{%- render 'facets-desktop', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, show_counts: show_counts, filter_color_swatches: filter_color_swatches -%}
 						{%- endif -%}
 						<div>
-							{%- if section.settings.collection_picker.products.size == 0 -%}
+							{%- if collection.products.size == 0 -%}
 								<div class="collection-empty">
 									{% render 'svg-icons' with 'thb-no-products' %}
 									<p>
 										{{ 'sections.collection_template.empty' | t }}<br>
-										{%- if section.settings.collection_picker.terms -%}
+										{%- if collection.terms -%}
 										{{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url }}
 										{%- endif -%}
 									</p>
 								</div>
 							{%- else -%}
-								{%- render 'facets-bar', results: section.settings.collection_picker, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop -%}
+								{%- render 'facets-bar', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop -%}
 								<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }}">
-									{%- for product in section.settings.collection_picker.products -%}
+									{%- for product in collection.products -%}
 										{%- assign product_loop = forloop -%}
 										{%- for block in section.blocks -%}
 											{%- liquid
@@ -118,7 +119,7 @@
 												endif
 
 												if block.settings.promotion_collection != blank
-													if section.settings.collection_picker.handle == block.settings.promotion_collection.handle and product_loop.index == block.settings.promotion_position
+													if collection.handle == block.settings.promotion_collection.handle and product_loop.index == block.settings.promotion_position
 														assign display_promotion = true
 													else
 														assign display_promotion = false
