@@ -22,10 +22,10 @@
     "animations": true,
     "social_instagram_link": "https:\/\/www.instagram.com\/morotaiofficial\/",
     "product_content_alignment": "left",
-    "product_aspect_ratio": "portrait",
-    "products_hover_images": false,
+    "product_aspect_ratio": "adapt",
+    "products_hover_images": true,
     "products_hover_images_count": 1,
-    "products_hover_dots": true,
+    "products_hover_dots": false,
     "show_products_vendor": false,
     "show_products_swatches": true,
     "show_products_rating": true,
@@ -362,7 +362,6 @@
           ],
           "settings": {
             "announcement_bar": true,
-            "announcement_bar_homepage_only": false,
             "direction": "left",
             "speed": "20s"
           }
@@ -374,10 +373,10 @@
               "type": "megamenu",
               "settings": {
                 "position": "2",
-                "promo_1_heading": "Promotion heading",
+                "promo_1_heading": "<p>Promotion heading<\/p>",
                 "promo_1_link_label": "Shop",
                 "promo_1_link": "",
-                "promo_2_heading": "Promotion heading",
+                "promo_2_heading": "<p>Promotion heading<\/p>",
                 "promo_2_link_label": "Shop",
                 "promo_2_link": ""
               }
@@ -393,12 +392,12 @@
             "header_shadow": "header--shadow-small",
             "menu": "main-menu",
             "transparent_header": true,
+            "show_language_switcher": true,
+            "show_currency_switcher": true,
             "mobile_secondary_menu": "",
             "mobile_promo_heading": "Alexandre Vauthier A\/W 22 Haute Couture",
             "mobile_promo_link_label": "Shop",
-            "mobile_promo_link": "shopify:\/\/collections\/all",
-            "show_language_switcher": true,
-            "show_currency_switcher": true
+            "mobile_promo_link": "shopify:\/\/collections\/all"
           }
         },
         "footer": {
@@ -548,7 +547,6 @@
           ],
           "settings": {
             "announcement_bar": false,
-            "announcement_bar_homepage_only": false,
             "direction": "left",
             "speed": "20s"
           }
@@ -560,10 +558,10 @@
               "type": "megamenu",
               "settings": {
                 "position": "2",
-                "promo_1_heading": "Promotion heading",
+                "promo_1_heading": "<p>Promotion heading<\/p>",
                 "promo_1_link_label": "Shop",
                 "promo_1_link": "",
-                "promo_2_heading": "Promotion heading",
+                "promo_2_heading": "<p>Promotion heading<\/p>",
                 "promo_2_link_label": "Shop",
                 "promo_2_link": ""
               }
@@ -711,7 +709,6 @@
           ],
           "settings": {
             "announcement_bar": true,
-            "announcement_bar_homepage_only": false,
             "direction": "left",
             "speed": "20s"
           }
@@ -724,10 +721,10 @@
               "settings": {
                 "position": "2",
                 "promo_1_image": "shopify:\/\/shop_images\/promotion2.jpg",
-                "promo_1_heading": "Luxury Bras & Undies",
+                "promo_1_heading": "<p>Luxury Bras & Undies<\/p>",
                 "promo_1_link_label": "Shop now",
                 "promo_1_link": "shopify:\/\/collections\/all",
-                "promo_2_heading": "Promotion heading",
+                "promo_2_heading": "<p>Promotion heading<\/p>",
                 "promo_2_link_label": "Shop",
                 "promo_2_link": ""
               }
@@ -744,13 +741,13 @@
             "header_shadow": "header--shadow-medium",
             "menu": "main-menu",
             "transparent_header": false,
+            "show_language_switcher": true,
+            "show_currency_switcher": true,
             "mobile_secondary_menu": "company",
             "mobile_promo_image": "shopify:\/\/shop_images\/promotion2.jpg",
             "mobile_promo_heading": "LUXURY BRAS & UNDIES",
             "mobile_promo_link_label": "Shop",
-            "mobile_promo_link": "shopify:\/\/collections\/all",
-            "show_language_switcher": true,
-            "show_currency_switcher": true
+            "mobile_promo_link": "shopify:\/\/collections\/all"
           }
         },
         "footer": {
@@ -880,7 +877,6 @@
           ],
           "settings": {
             "announcement_bar": true,
-            "announcement_bar_homepage_only": false,
             "direction": "left",
             "speed": "20s"
           }
@@ -892,10 +888,10 @@
               "type": "megamenu",
               "settings": {
                 "position": "1",
-                "promo_1_heading": "Promotion heading",
+                "promo_1_heading": "<p>Promotion heading<\/p>",
                 "promo_1_link_label": "Shop",
                 "promo_1_link": "",
-                "promo_2_heading": "Promotion heading",
+                "promo_2_heading": "<p>Promotion heading<\/p>",
                 "promo_2_link_label": "Shop",
                 "promo_2_link": ""
               }
@@ -912,13 +908,13 @@
             "header_shadow": "header--shadow-small",
             "menu": "main-menu",
             "transparent_header": false,
+            "show_language_switcher": true,
+            "show_currency_switcher": true,
             "mobile_secondary_menu": "",
             "mobile_promo_image": "shopify:\/\/shop_images\/img21.jpg",
             "mobile_promo_heading": "Luxury Wallets",
             "mobile_promo_link_label": "Shop",
-            "mobile_promo_link": "shopify:\/\/collections\/all",
-            "show_language_switcher": true,
-            "show_currency_switcher": true
+            "mobile_promo_link": "shopify:\/\/collections\/all"
           }
         },
         "footer": {
