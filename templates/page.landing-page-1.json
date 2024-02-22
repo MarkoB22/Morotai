@@ -69,7 +69,7 @@
       "type": "landing-page-collection",
       "settings": {
         "full_width": false,
-        "collection_picker": "bademode-badehosen-herren",
+        "collection_picker": "accessoires-1",
         "products_per_page": 12,
         "columns_desktop": 3,
         "enable_filtering": true,
