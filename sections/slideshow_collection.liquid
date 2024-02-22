@@ -1,5 +1,4 @@
-{{ template }}
-{% if collection.metafields.custom.use_banner == true %}
+{% if collection.metafields.custom.use_banner == true or template != 'collection' %}
 {{- 'slideshow.css' | asset_url | stylesheet_tag -}}
 {%- liquid
 	assign desktop_height = section.settings.desktop_height
