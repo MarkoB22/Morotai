@@ -5,9 +5,54 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "slideshow_collection_8fxQiJ": {
+      "type": "slideshow_collection",
+      "blocks": {
+        "slide_HpFDWY": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MOROTAI_CT_by_Tribunalova_web_10_2_1.png",
+            "slide_link": "",
+            "video_background": false,
+            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "subheading": "Add a tagline",
+            "heading": "<p>Slide Heading<\/p>",
+            "heading_size": "h1-xlarge",
+            "content": "Add descriptive text for your slide here.",
+            "description_size": "medium",
+            "content_position": "bottom-right",
+            "text_alignment": "center",
+            "content_size": "medium",
+            "overlay_color": "#000000",
+            "overlay_opacity": 70,
+            "overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4) 100%)",
+            "button_1_text": "Shop Now",
+            "button_1_link": "",
+            "button_1_outline": true,
+            "button_2_text": "Shop Now",
+            "button_2_link": "",
+            "button_2_outline": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_HpFDWY"
+      ],
+      "settings": {
+        "desktop_height": "desktop-height-650",
+        "mobile_height": "mobile-height-500",
+        "full_width": true,
+        "autoplay": true,
+        "autoplay_length": 5,
+        "transition": "swipe",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "slideshow_collection_8fxQiJ"
   ]
 }
