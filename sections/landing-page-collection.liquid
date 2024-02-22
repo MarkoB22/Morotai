@@ -109,7 +109,7 @@
 							{%- else -%}
 								{%- render 'facets-bar', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop -%}
 								<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }}">
-									{%- for product in collection.products -%}
+									{%- for product in collection.products limit:products_per_page -%}
 										{%- assign product_loop = forloop -%}
 										{%- for block in section.blocks -%}
 											{%- liquid
