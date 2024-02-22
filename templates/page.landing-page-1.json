@@ -52,6 +52,7 @@
     },
     "main_collection_product_grid_AAUcFz": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "full_width": false,
         "products_per_page": 12,
@@ -63,11 +64,26 @@
         "filter_color_swatches": true,
         "facets_desktop": "sidebar"
       }
+    },
+    "landing_page_collection_HUVrhb": {
+      "type": "landing-page-collection",
+      "settings": {
+        "full_width": false,
+        "collection_picker": "bademode-badehosen-herren",
+        "products_per_page": 12,
+        "columns_desktop": 3,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "show_counts": true,
+        "filter_color_swatches": true,
+        "facets_desktop": "sidebar"
+      }
     }
   },
   "order": [
     "main",
     "slideshow_collection_8fxQiJ",
-    "main_collection_product_grid_AAUcFz"
+    "main_collection_product_grid_AAUcFz",
+    "landing_page_collection_HUVrhb"
   ]
 }
