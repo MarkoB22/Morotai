@@ -281,7 +281,7 @@ assign product_content_alignment = settings.product_content_alignment
     {% endif %}
     {% endfor %}
     {% assign variantURL = product_card_product.url | append: '?variant=' | append: variant %}
-    <a href="{{ variantURL | within: collection }}" title="{{ product_card_product.title | escape }}"
+    <a href="{{ variantURL }}" title="{{ product_card_product.title | escape }}"
       class="product-featured-image-link aspect-ratio aspect-ratio--{{ settings.product_aspect_ratio }}"
       style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 }}%;">
       {%- if products_hover_images and product_card_product.images.size > 1 -%}
