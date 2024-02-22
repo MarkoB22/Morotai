@@ -331,7 +331,7 @@ assign product_content_alignment = settings.product_content_alignment
         </a>
       </div>
       {%- endif -%}
-      <a href="{{ product_card_product.url | within: collection }}" title="{{ product_card_product.title | escape }}"
+      <a href="{{ variantURL }}" title="{{ product_card_product.title | escape }}"
         class="product-card-title">
         {{- product_card_product.title -}}
       </a>
@@ -432,7 +432,7 @@ assign product_content_alignment = settings.product_content_alignment
 {%- else -%}
 <product-card class="product-card">
   <figure class="product-featured-image {% if settings.products_hover_images %}thb-hover{% endif %}">
-    <a href="{{ product_card_product.url | within: collection }}" title="{{ product_card_product.title | escape }}"
+    <a href="{{ variantURL }}" title="{{ product_card_product.title | escape }}"
       class="product-featured-image-link aspect-ratio aspect-ratio--{{ settings.product_aspect_ratio }}"
       style="--padding-bottom: {{ 1 | divided_by: 1 | times: 100 }}%;">
       <div class="thb-placeholder">
