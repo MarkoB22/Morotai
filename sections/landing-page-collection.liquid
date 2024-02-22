@@ -6,7 +6,6 @@
 	assign enable_sorting = section.settings.enable_sorting
 	assign show_counts = section.settings.show_counts
 	assign filter_color_swatches = section.settings.filter_color_swatches
-	assign pagination_type = section.settings.pagination_type
 	assign products_per_page = section.settings.products_per_page
 	assign columns_desktop = section.settings.columns_desktop
 	assign facets_desktop = section.settings.facets_desktop
@@ -108,7 +107,7 @@
 								</div>
 							{%- else -%}
 								{%- render 'facets-bar', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop -%}
-								<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}">
+								<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }}">
 									{%- for product in collection.products -%}
 										{%- assign product_loop = forloop -%}
 										{%- for block in section.blocks -%}
@@ -352,27 +351,6 @@ document.addEventListener('DOMContentLoaded', function () {
             "step": 1,
             "label": "Number of columns on desktop",
             "default": 3
-        },
-        {
-            "type": "select",
-            "id": "pagination_type",
-            "options": [
-                {
-                    "value": "paginated",
-                    "label": "Paginated"
-                },
-                {
-                    "value": "loadmore",
-                    "label": "Click to load"
-                },
-                {
-                    "value": "infinite",
-                    "label": "Infinite"
-                }
-            ],
-            "default": "paginated",
-            "label": "Pagination",
-            "info": "Choose how additional pages of products are navigated."
         },
         {
             "type": "header",
