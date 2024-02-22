@@ -70,8 +70,8 @@
       "settings": {
         "full_width": false,
         "collection_picker": "damen-alle-produkte",
-        "products_per_page": 2,
-        "columns_desktop": 4,
+        "products_per_page": 3,
+        "columns_desktop": 5,
         "enable_filtering": true,
         "enable_sorting": true,
         "show_counts": true,
