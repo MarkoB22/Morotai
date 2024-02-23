@@ -86,5 +86,11 @@
     color: white;
     transform: scale(1.05);
   }
+
+  .content_position-bottom_right {
+    margin-top: auto;
+    margin-left: auto;
+    text-align: right;
+  }
 }
 
