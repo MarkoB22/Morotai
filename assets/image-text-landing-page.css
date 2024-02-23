@@ -65,5 +65,9 @@
   .image_text_landing-content {
     height: fit-content;
   }
+
+  .content_position-top_right {
+    margin-left: auto;
+  }
 }
 
