@@ -82,12 +82,25 @@
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
+    },
+    "image_text_landing_page_Pmy9yj": {
+      "type": "image-text-landing-page",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_5.png",
+        "image_position": "left",
+        "header": "Header",
+        "subheader": "<p>Subheader<\/p>",
+        "button_text": "Button",
+        "button_link": "shopify:\/\/collections\/accessoires-1",
+        "content_position": "center"
+      }
     }
   },
   "order": [
     "main",
     "slideshow_collection_8fxQiJ",
     "landing_page_collection_HUVrhb",
-    "featured_collection_DWPRiT"
+    "featured_collection_DWPRiT",
+    "image_text_landing_page_Pmy9yj"
   ]
 }
