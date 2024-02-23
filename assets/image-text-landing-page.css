@@ -17,7 +17,7 @@
 
 .image_text_landing-header {
   font-size: 35px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .image_text_landing-subheader {
@@ -32,5 +32,8 @@
   color: white;
   display: block;
   margin-top: 108px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 24px;
 }
 
