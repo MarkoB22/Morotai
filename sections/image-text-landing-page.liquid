@@ -10,17 +10,19 @@
     {%- render 'responsive-image', image: image, sizes: master_width, class: class -%}
   </div>
 {% endif %}
-  <div class="image_text_landing-content_wrapper">
-    <div class="image_text_landing-content content_position-{{ section.settings.content_position }}">
-      <div class="image_text_landing-header">
-        {{ section.settings.header }}
+  <div class="image_text_landing-content_wrapper_outter">
+    <div class="image_text_landing-content_wrapper_inner">
+      <div class="image_text_landing-content content_position-{{ section.settings.content_position }}">
+        <div class="image_text_landing-header">
+          {{ section.settings.header }}
+        </div>
+        <div class="image_text_landing-subheader">
+          {{ section.settings.subheader }}
+        </div>
+        <a href="{{ section.settings.button_link }}" class="image_text_landing-button">
+          {{ section.settings.button_text }}
+        </a>
       </div>
-      <div class="image_text_landing-subheader">
-        {{ section.settings.subheader }}
-      </div>
-      <a href="{{ section.settings.button_link }}" class="image_text_landing-button">
-        {{ section.settings.button_text }}
-      </a>
     </div>
   </div>
 </div>
