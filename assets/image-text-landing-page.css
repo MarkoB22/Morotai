@@ -20,7 +20,17 @@
   font-weight: 600;
 }
 
+.image_text_landing-subheader {
+  margin-top: 40px;
+}
+
+.image_text_landing-subheader p {
+  margin: 0;
+}
+
 .image_text_landing-button {
   color: white;
   display: block;
+  margin-top: 108px;
 }
+
