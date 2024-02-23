@@ -41,3 +41,13 @@
   font-size: 24px;
 }
 
+@media print, screen and (min-width: 1025px) {
+  .image_position-left {
+    flex-direction: row;
+  }
+  
+  .image_position-right {
+    flex-direction: row-reverse;
+  }
+}
+
