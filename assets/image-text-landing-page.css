@@ -3,6 +3,9 @@
   flex-direction: column;
   background: black;
   color: white;
+}
+
+.image_text_landing-content_wrapper {
   padding: 10px;
 }
 
