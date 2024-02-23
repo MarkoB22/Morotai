@@ -6,6 +6,36 @@
       "settings": {
       }
     },
+    "image_text_landing_page_Pmy9yj": {
+      "type": "image-text-landing-page",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_5.png",
+        "image_position": "left",
+        "header": "Header",
+        "subheader": "<p>Subheader<\/p>",
+        "button_text": "Button",
+        "button_link": "shopify:\/\/collections\/accessoires-1",
+        "content_position": "center"
+      }
+    },
+    "featured_collection_DWPRiT": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Featured Collection",
+        "heading_left": true,
+        "description": "<p>Describe your featured collection here<\/p>",
+        "full_width": true,
+        "collection": "alle-produkte",
+        "display_type": "grid",
+        "product_limit": 4,
+        "columns_desktop": 4,
+        "show_view_all": true,
+        "mobile_swipe": true,
+        "show_progress_bar": true,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
     "slideshow_collection_8fxQiJ": {
       "type": "slideshow_collection",
       "blocks": {
@@ -49,42 +79,12 @@
         "disable_top_spacing": true,
         "disable_bottom_spacing": true
       }
-    },
-    "featured_collection_DWPRiT": {
-      "type": "featured-collection",
-      "settings": {
-        "heading": "Featured Collection",
-        "heading_left": true,
-        "description": "<p>Describe your featured collection here<\/p>",
-        "full_width": true,
-        "collection": "alle-produkte",
-        "display_type": "grid",
-        "product_limit": 4,
-        "columns_desktop": 4,
-        "show_view_all": true,
-        "mobile_swipe": true,
-        "show_progress_bar": true,
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": false
-      }
-    },
-    "image_text_landing_page_Pmy9yj": {
-      "type": "image-text-landing-page",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_5.png",
-        "image_position": "left",
-        "header": "Header",
-        "subheader": "<p>Subheader<\/p>",
-        "button_text": "Button",
-        "button_link": "shopify:\/\/collections\/accessoires-1",
-        "content_position": "center"
-      }
     }
   },
   "order": [
     "main",
-    "slideshow_collection_8fxQiJ",
+    "image_text_landing_page_Pmy9yj",
     "featured_collection_DWPRiT",
-    "image_text_landing_page_Pmy9yj"
+    "slideshow_collection_8fxQiJ"
   ]
 }
