@@ -1,5 +1,6 @@
 {{- 'image-text-landing-page.css' | asset_url | stylesheet_tag -}}
 <div class="image_text_landing-wrapper">
+{% if section.settings.image %}
   <div class="image_text_landing-image">
     {%- liquid
        assign image = section.settings.image
@@ -9,9 +10,10 @@
      -%}
     {%- render 'responsive-image', image: image, sizes: width, class: class -%}
   </div>
-  <div class="image_text_landing-text">
-  
-  </div>
+{% endif %}
+<div class="image_text_landing-text">
+
+</div>
 </div>
 {% schema %}
   {
@@ -57,6 +59,34 @@
         "id": "button_link",
         "type": "url",
         "label": "Button link"
+      },
+      {
+        "type": "select",
+        "id": "text_position",
+        "options": [
+          {
+            "value": "top_left",
+            "label": "Top left"
+          },
+          {
+            "value": "top_right",
+            "label": "Top right"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "bottom_right",
+            "label": "Bottom right"
+          },
+          {
+            "value": "bottom_left",
+            "label": "Bottom left"
+          }
+        ],
+        "default": "center",
+        "label": "Text position"
       }
     ]
   }
