@@ -70,5 +70,10 @@
     margin-left: auto;
     text-align: right;
   }
+
+  .content_position-center {
+    align-self: center;
+    margin: 0 auto;
+  }
 }
 
