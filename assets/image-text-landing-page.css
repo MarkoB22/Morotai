@@ -49,5 +49,9 @@
   .image_position-right {
     flex-direction: row-reverse;
   }
+
+  .image_text_landing-content_wrapper_inner {
+    height: 100%;
+  }
 }
 
