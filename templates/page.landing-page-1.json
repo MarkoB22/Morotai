@@ -27,10 +27,10 @@
             "overlay_color": "#000000",
             "overlay_opacity": 70,
             "overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4) 100%)",
-            "button_1_text": "Shop Now",
+            "button_1_text": "",
             "button_1_link": "",
             "button_1_outline": true,
-            "button_2_text": "Shop Now",
+            "button_2_text": "",
             "button_2_link": "",
             "button_2_outline": false
           }
@@ -48,21 +48,6 @@
         "transition": "swipe",
         "disable_top_spacing": true,
         "disable_bottom_spacing": true
-      }
-    },
-    "landing_page_collection_HUVrhb": {
-      "type": "landing-page-collection",
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "collection_picker": "damen-alle-produkte",
-        "products_per_page": 3,
-        "columns_desktop": 4,
-        "enable_filtering": false,
-        "enable_sorting": false,
-        "show_counts": false,
-        "filter_color_swatches": true,
-        "facets_desktop": "drawer"
       }
     },
     "featured_collection_DWPRiT": {
@@ -99,7 +84,6 @@
   "order": [
     "main",
     "slideshow_collection_8fxQiJ",
-    "landing_page_collection_HUVrhb",
     "featured_collection_DWPRiT",
     "image_text_landing_page_Pmy9yj"
   ]
