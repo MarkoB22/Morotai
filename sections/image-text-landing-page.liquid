@@ -11,9 +11,19 @@
     {%- render 'responsive-image', image: image, sizes: width, class: class -%}
   </div>
 {% endif %}
-<div class="image_text_landing-text">
-
-</div>
+  <div class="image_text_landing-content_wrapper">
+    <div class="image_text_landing-content content_position-{{ content_position }}">
+      <div class="image_text_landing-header">
+        {{ section.settings.header }}
+      </div>
+      <div class="image_text_landing-subheader">
+        {{ section.settings.subheader }}
+      </div>
+      <a href="{{ section.settings.button_link }}" class="image_text_landing-button">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+  </div>
 </div>
 {% schema %}
   {
@@ -62,7 +72,7 @@
       },
       {
         "type": "select",
-        "id": "text_position",
+        "id": "content_position",
         "options": [
           {
             "value": "top_left",
@@ -86,7 +96,7 @@
           }
         ],
         "default": "center",
-        "label": "Text position"
+        "label": "Content position"
       }
     ]
   }
