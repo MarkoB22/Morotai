@@ -52,6 +52,7 @@
     },
     "landing_page_collection_HUVrhb": {
       "type": "landing-page-collection",
+      "disabled": true,
       "settings": {
         "full_width": true,
         "collection_picker": "damen-alle-produkte",
@@ -63,11 +64,30 @@
         "filter_color_swatches": true,
         "facets_desktop": "drawer"
       }
+    },
+    "featured_collection_DWPRiT": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Featured Collection",
+        "heading_left": true,
+        "description": "<p>Describe your featured collection here<\/p>",
+        "full_width": true,
+        "collection": "alle-produkte",
+        "display_type": "grid",
+        "product_limit": 6,
+        "columns_desktop": 4,
+        "show_view_all": true,
+        "mobile_swipe": true,
+        "show_progress_bar": true,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
     }
   },
   "order": [
     "main",
     "slideshow_collection_8fxQiJ",
-    "landing_page_collection_HUVrhb"
+    "landing_page_collection_HUVrhb",
+    "featured_collection_DWPRiT"
   ]
 }
