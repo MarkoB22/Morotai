@@ -1,5 +1,6 @@
 .image_text_landing-wrapper {
   display: flex;
+  flex-direction: collumn;
   background: black;
   color: white;
 }
