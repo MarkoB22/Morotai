@@ -4130,3 +4130,16 @@ input[type="radio"], .field label, .quantity .minus svg,
 .mega-menu-column {
   margin-bottom: 20px;
 }
+
+.section-header-left--true {
+  text-align: left;
+}
+@media print, screen and (min-width: 1025px) {
+  .featured-collection .flickity-prev {
+    left: 9px;
+  }
+  
+  .featured-collection .flickity-next {
+    right: 9px;
+  }
+}
