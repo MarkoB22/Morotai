@@ -618,9 +618,9 @@
       ],
       "settings": {
         "heading": "Welcher Style passt zu Dir?",
-        "heading_left": false,
+        "heading_left": true,
         "description": "<p>Finde Deinen passenden Style<\/p>",
-        "full_width": false,
+        "full_width": true,
         "product_limit": 10,
         "columns_desktop": 4,
         "show_view_all": true,
