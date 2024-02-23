@@ -10,6 +10,7 @@
 }
 
 .image_text_landing-content_wrapper_inner {
+  display: flex;
   border: 2px solid white;
 }
 
