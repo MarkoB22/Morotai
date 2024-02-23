@@ -96,5 +96,9 @@
   .content_position-bottom_right .image_text_landing-button {
     transform-origin: right;
   }
+
+  .content_position-bottom_left {
+    margin-top: auto;
+  }
 }
 
