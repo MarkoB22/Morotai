@@ -5,14 +5,13 @@
     {%- liquid
        assign image = section.settings.image
         assign master_width = image.src.width | append: 'x' | append: image.src.height
-        assign width = '375x' | append: mobile_image_height | append: ',' | append: master_width
         assign class = nil
      -%}
-    {%- render 'responsive-image', image: image, sizes: width, class: class -%}
+    {%- render 'responsive-image', image: image, sizes: master_width, class: class -%}
   </div>
 {% endif %}
   <div class="image_text_landing-content_wrapper">
-    <div class="image_text_landing-content content_position-{{ content_position }}">
+    <div class="image_text_landing-content content_position-{{ section.settings.content_position }}">
       <div class="image_text_landing-header">
         {{ section.settings.header }}
       </div>
