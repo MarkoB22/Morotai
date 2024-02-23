@@ -77,13 +77,14 @@
   }
 
   .image_text_landing-button {
-    transform: scale(1);
     transform-origin: center;
+    transform: scale(1);
     transition: all ease-in-out .3s;
   }
 
   .image_text_landing-button:hover {
     color: white;
+    transform-origin: center;
     transform: scale(1.1);
   }
 }
