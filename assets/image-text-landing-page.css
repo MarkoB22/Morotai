@@ -92,5 +92,9 @@
     margin-left: auto;
     text-align: right;
   }
+
+  .content_position-bottom_right .image_text_landing-button {
+    transform-origin: right;
+  }
 }
 
