@@ -12,7 +12,7 @@
             "video_background": false,
             "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "subheading": "",
-            "heading": "<p>DAMEN | ALLE PRODUKTE<\/p>",
+            "heading": "<p>{{ collection.title }}<\/p>",
             "heading_size": "h1",
             "content": "",
             "description_size": "medium",
