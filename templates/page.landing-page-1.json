@@ -25,7 +25,7 @@
         "heading_left": true,
         "description": "<p>Describe your featured collection here<\/p>",
         "full_width": true,
-        "collection": "alle-produkte",
+        "collection": "damen-alle-produkte",
         "display_type": "carousel",
         "product_limit": 10,
         "columns_desktop": 4,
