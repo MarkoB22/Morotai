@@ -45,6 +45,10 @@
   text-align: right;
 }
 
+.content_position-bottom_right {
+  text-align: right;
+}
+
 @media print, screen and (min-width: 1025px) {
   .image_position-left {
     flex-direction: row;
@@ -93,7 +97,6 @@
   .content_position-bottom_right {
     margin-top: auto;
     margin-left: auto;
-    text-align: right;
   }
 
   .content_position-bottom_right .image_text_landing-button {
