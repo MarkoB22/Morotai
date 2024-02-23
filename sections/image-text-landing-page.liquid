@@ -1,5 +1,5 @@
 {{- 'image-text-landing-page.css' | asset_url | stylesheet_tag -}}
-<div class="image_text_landing-wrapper">
+<div class="image_text_landing-wrapper image_position-{{ section.settings.image_position }}">
 {% if section.settings.image %}
   <div class="image_text_landing-image">
     {%- liquid
