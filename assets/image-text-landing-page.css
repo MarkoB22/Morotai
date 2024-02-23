@@ -13,6 +13,12 @@
   border: 2px solid white;
 }
 
+.image_text_landing-header {
+  font-family: Rajdhani, sans-serif; 
+  font-size: 35px;
+  font-weight: 600;
+}
+
 .image_text_landing-button {
   color: white;
   display: block;
