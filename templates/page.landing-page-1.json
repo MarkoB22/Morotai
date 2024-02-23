@@ -71,7 +71,7 @@
         "full_width": false,
         "collection_picker": "damen-alle-produkte",
         "products_per_page": 3,
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "enable_filtering": false,
         "enable_sorting": false,
         "show_counts": false,
