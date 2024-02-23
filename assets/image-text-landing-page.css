@@ -5,6 +5,10 @@
   color: white;
 }
 
+.image_position-right {
+  flex-direction: column-reverse;
+}
+
 .image_text_landing-content_wrapper_outter {
   padding: 10px;
 }
