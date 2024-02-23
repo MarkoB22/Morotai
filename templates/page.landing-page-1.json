@@ -12,7 +12,7 @@
         "image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_5.png",
         "image_position": "left",
         "header": "Header",
-        "subheader": "<p>Subheader<\/p>",
+        "subheader": "<p>Subheader subheader subheader sub header. Subheader subheader subheader sub headerSubheader subheader subheader sub header. Subheader subheader subheader sub header<\/p>",
         "button_text": "Button",
         "button_link": "shopify:\/\/collections\/accessoires-1",
         "content_position": "center"
