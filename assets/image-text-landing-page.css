@@ -114,5 +114,9 @@
   .content_position-bottom_left {
     margin-top: auto;
   }
+
+  .content_position-bottom_left .image_text_landing-button {
+    transform-origin: left;
+  }
 }
 
