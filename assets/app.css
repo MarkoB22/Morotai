@@ -4136,10 +4136,10 @@ input[type="radio"], .field label, .quantity .minus svg,
 }
 @media print, screen and (min-width: 1025px) {
   .featured-collection .flickity-prev {
-    left: 9px;
+    left: 9px !important;
   }
   
   .featured-collection .flickity-next {
-    right: 9px;
+    right: 9px !important;
   }
 }
