@@ -77,7 +77,7 @@
   }
 
   .image_text_landing-button {
-    transform-origin: right;
+    transform-origin: left;
     transform: scale(1);
     transition: all ease-in-out .3s;
   }
