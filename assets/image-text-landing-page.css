@@ -53,5 +53,9 @@
   .image_text_landing-content_wrapper_inner {
     height: 100%;
   }
+
+  .image_text_landing-content_wrapper_inner {
+    padding: 112px;
+  }
 }
 
