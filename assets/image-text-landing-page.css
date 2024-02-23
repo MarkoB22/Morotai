@@ -74,6 +74,10 @@
     height: fit-content;
   }
 
+  .content_position-top_left .image_text_landing-button {
+    transform-origin: left;
+  }
+
   .content_position-top_right {
     margin-left: auto;
     transform-origin: right;
