@@ -79,6 +79,10 @@
     transform-origin: right;
   }
 
+  .content_position-top_right .image_text_landing-button {
+    transform-origin: right;
+  }
+
   .content_position-center {
     align-self: center;
     margin: 0 auto;
