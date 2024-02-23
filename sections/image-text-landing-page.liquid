@@ -17,7 +17,47 @@
   {
     "name": "Image text landing",
     "settings": [
-      
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "options": [
+          {
+            "value": "left",
+            "label": "left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "label": "Image position"
+      },
+      {
+        "type": "text",
+        "id": "header",
+        "label": "Header"
+      },
+      {
+        "type": "richtext",
+        "id": "subheader",
+        "label": "Subheader"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "id": "button_link",
+        "type": "url",
+        "label": "Button link"
+      }
     ]
   }
 {% endschema %}
