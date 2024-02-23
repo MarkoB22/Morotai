@@ -53,7 +53,7 @@
     "landing_page_collection_HUVrhb": {
       "type": "landing-page-collection",
       "settings": {
-        "full_width": false,
+        "full_width": true,
         "collection_picker": "damen-alle-produkte",
         "products_per_page": 3,
         "columns_desktop": 4,
