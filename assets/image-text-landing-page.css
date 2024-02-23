@@ -1,8 +1,13 @@
 .image_text_landing-wrapper {
   display: flex;
-  flex-direction: collumn;
+  flex-direction: column;
   background: black;
   color: white;
+  padding: 10px;
+}
+
+.image_text_landing-content {
+  border: 2px solid white;
 }
 
 .image_text_landing-button {
