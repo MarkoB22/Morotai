@@ -778,7 +778,7 @@ else {feren.style.display = "flex";
                     {% for tag in product.tags %}
                       {% if tag == 'NEW' %}
                         {% assign badge_position = settings.badge_position %}
-                        <div class="badge badge-new {{ badge_position }}">
+                        <div class="badge badge_new-main_product {{ badge_position }}">
                           {{ 'products.product.new' | t }}
                         </div>
                       {% endif %}
