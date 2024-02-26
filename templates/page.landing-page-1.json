@@ -10,7 +10,7 @@
       "type": "image-text-landing-page",
       "settings": {
         "image": "shopify:\/\/shop_images\/MOROTAI_Iceland_22_5.png",
-        "image_position": "right",
+        "image_position": "left",
         "header": "Header",
         "subheader": "<p>Elevating active lifestyles through innovative,<\/p><p>design-driven and sustainable<\/p><p>contemporary sportswear.<\/p>",
         "button_text": "Button",
