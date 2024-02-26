@@ -775,6 +775,14 @@ else {feren.style.display = "flex";
                         font-weight: 400;
                         line-height: normal;
                         text-transform: uppercase;">{{ product.title }}</h1>
+                    {% for tag in product.tags %}
+                      {% if tag == 'NEW' %}
+                        {% assign badge_position = settings.badge_position %}
+                        <div class="badge badge-new {{ badge_position }}">
+                          {{ 'products.product.new' | t }}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
                     <div class="product-price-container">
                       <div class="no-js-hidden" id="price-{{ section.id }}">
                         {% render 'product-price', product: product, use_variant: true, show_badges: true %}
