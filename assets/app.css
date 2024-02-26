@@ -3329,9 +3329,20 @@ select {
   line-height: 0; 
 }
 
+.badge_new-main_product {
+  margin-left: 8px;
+  margin-bottom: 3px;
+}
+
 .badge.out-of-stock {
   background: var(--color-badge-sold-out, #acacac); 
   display: none;
+}
+
+.product-title-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .price {
