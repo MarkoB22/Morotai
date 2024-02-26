@@ -96,6 +96,10 @@
     margin: 0 auto;
   }
 
+  .content_position-center .image_text_landing-button {
+    transform-origin: left;
+  }
+
   .image_text_landing-button {
     transform: scale(1);
     transition: all ease-in-out .3s;
