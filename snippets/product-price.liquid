@@ -90,7 +90,7 @@
       {% endif %}
     </span>
     {% for tag in product.tags %}
-      {% if tag == 'NEW' and temaplte != 'product' %}
+      {% if tag == 'NEW' and template != 'product' %}
         {% assign badge_position = settings.badge_position %}
         <div class="badge badge-new {{ badge_position }}">
           {{ 'products.product.new' | t }}
