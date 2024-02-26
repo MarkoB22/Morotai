@@ -3345,6 +3345,10 @@ select {
   flex-wrap: wrap;
 }
 
+.product-price-container {
+  width: 100%;
+}
+
 .price {
   display: block;
   font-weight: 400;
