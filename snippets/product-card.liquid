@@ -272,17 +272,17 @@ assign product_content_alignment = settings.product_content_alignment
     {% assign badge_position = settings.badge_position %}
     {% assign badges = '' %}
     {% if product_card_product.compare_at_price > product_card_product.price and product_card_product.available %}
-    {% increment badges %}
+    <span class="not_desktop not_mobile">{% increment badges %}</span>
     {% endif %}
     {% for tag in product_card_product.tags %}
     {% if tag == 'NEW' or tag == 'New' or tag == 'new' %}
-      {% increment badges %}
+      <span class="not_desktop not_mobile">{% increment badges %}</span>
       <div class="badge badge-new {{ badge_position }} badges-{{ badges }}">
         {{ 'products.product.new' | t }}
       </div>
     {% endif %}
     {% if tag == 'Bestseller' or tag == 'bestseller' or tag == 'BESTSELLER' %}
-      {% increment badges %}
+      <span class="not_desktop not_mobile">{% increment badges %}</span>
       <div class="badge badge-bestseller {{ badge_position }} badges-{{ badges }}">
         {{ 'products.product.bestseller' | t }}
       </div>
