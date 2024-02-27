@@ -601,17 +601,16 @@ else {feren.style.display = "flex";
 
               
               <div class="zoom-container">
-                <div class="image-wrapper" style="position: relative;">
+                <div class="image-wrapper " style="position: relative;">
                      <a
                                 href="{{ first_image.src | image_url }}"
-                                class="product-single__media-zoom image-zoom"
+                                class="product-single__media-zoom"
                                 data-msrc="{{- first_image.src | image_url: width: 20 -}}"
                                 data-h="{{ first_image.height }}"
                                 data-w="{{ first_image.width }}"
                                 target="_blank"
                                 tabindex="-1"
                                 data-index="{{ image_index }}"
-                                data-zoom="{{ first_image.src | image_url }}"
                               >
                                 {%- render 'svg-icons' with 'zoom' -%}
                               </a>
