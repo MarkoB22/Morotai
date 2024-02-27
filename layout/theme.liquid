@@ -138,6 +138,9 @@
         gsap.registerPlugin(ScrollTrigger);
       </script>
     {% endif %}
+    {% if template contains 'product' %}
+      <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}" defer=”defer”></script>
+    {% endif %}
     {% if settings.enable_quick_view %}
       {{ 'product.js' | asset_url | script_tag }}
     {% endif %}
