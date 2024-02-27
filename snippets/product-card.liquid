@@ -270,11 +270,24 @@ assign product_content_alignment = settings.product_content_alignment
 
     {% render 'product-card-badge', product_card_product: product_card_product %}
     {% for tag in product_card_product.tags %}
-    {% if tag == 'NEW' %}
+    {% if tag == 'NEW' or tag == 'New' or tag == 'new' %}
+      {% assign tag_new = true %}
       {% assign badge_position = settings.badge_position %}
       <div class="badge badge-new {{ badge_position }}"
       {% if product_card_product.compare_at_price > product_card_product.price and product_card_product.available %} 
       style="top: 42px;"
+      {% endif %}>
+        {{ 'products.product.new' | t }}
+      </div>
+    {% endif %}
+    {% if tag == 'Bestseller' or tag == 'bestseller' or tag == 'BESTSELLER' %}
+      {% assign badge_position = settings.badge_position %}
+      <div class="badge badge-bestseller {{ badge_position }}"
+      {% if product_card_product.compare_at_price > product_card_product.price and product_card_product.available %} 
+      style="top: 42px;"
+      {% endif %}
+      {% if product_card_product.compare_at_price > product_card_product.price and product_card_product.available and tag_new == true %} 
+      style="top: 62px;"
       {% endif %}>
         {{ 'products.product.new' | t }}
       </div>
