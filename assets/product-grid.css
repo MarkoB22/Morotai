@@ -522,13 +522,13 @@
 }
 
 .badges-0 {
-  top: 16px;
+  top: 16px !important;
 }
 
 .badges-1 {
-  top: 42px;
+  top: 42px !important;
 }
 
 .badges-2 {
-  top: 68px;
+  top: 68px !important;
 }
