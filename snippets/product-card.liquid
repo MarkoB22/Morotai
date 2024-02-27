@@ -289,7 +289,7 @@ assign product_content_alignment = settings.product_content_alignment
       {% if product_card_product.compare_at_price > product_card_product.price and product_card_product.available and tag_new == true %} 
       style="top: 62px;"
       {% endif %}>
-        {{ 'products.product.new' | t }}
+        {{ 'products.product.bestseller' | t }}
       </div>
     {% endif %}
     {% endfor %}
