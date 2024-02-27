@@ -1594,6 +1594,20 @@ else {feren.style.display = "flex";
     assign seo_media = product.featured_media
   endif
 -%}
+
+<script>
+  //Image Zoom
+  $(document).ready(function(){
+    $('.image-zoom')
+    .wrap('<span style="display:inline-block"></span>')
+    .css('display', 'block')
+    .parent()
+    .zoom({
+      url: $(this).find('img').attr('data-zoom')
+    });
+  });
+</script>
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org/",
