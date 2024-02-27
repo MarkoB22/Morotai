@@ -270,7 +270,7 @@ assign product_content_alignment = settings.product_content_alignment
 
     {% render 'product-card-badge', product_card_product: product_card_product %}
     {% assign badge_position = settings.badge_position %}
-    {% assign badges == '' %}
+    {% assign badges = '' %}
     {% if product_card_product.compare_at_price > product_card_product.price and product_card_product.available %}
     {% increment badges %}
     {% endif %}
