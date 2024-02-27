@@ -88,13 +88,21 @@
           {{ 'products.product.sold_out' | t }}
         </span>
       {% endif %}
+      {% for tag in product.tags %}
+        {% if tag == 'bestseller' or tag == 'Bestseller' or tag == 'BESTSELLER' %}
+          <div class="badge badge-bestseller">
+            {{ 'products.product.bestseller' | t }}
+          </div>
+        {% endif %}
+      {% endfor %}
     </span>
     {% for tag in product.tags %}
-      {% if tag == 'NEW' and template != 'product' %}
-        {% assign badge_position = settings.badge_position %}
-        <div class="badge badge-new {{ badge_position }}">
-          {{ 'products.product.new' | t }}
-        </div>
+      {% if tag == 'NEW' or tag == 'new' or tag == 'New' %}
+        {% if template != 'product' %}
+          <div class="badge badge-new">
+            {{ 'products.product.new' | t }}
+          </div>
+        {% endif %}
       {% endif %}
     {% endfor %}
   {% endif %}
