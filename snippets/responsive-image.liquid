@@ -30,7 +30,7 @@
 -%}
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 <img
-  class="lazyload{% if retina %} retina_size{% endif %} {{ class | escape }} {% if template == 'product' %} image-zoom{% endif %}"
+  class="lazyload{% if retina %} retina_size{% endif %} {{ class | escape }}"
   width="{{ w }}"
   height="{{ h }}"
   data-sizes="auto"
