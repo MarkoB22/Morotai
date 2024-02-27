@@ -276,14 +276,12 @@ assign product_content_alignment = settings.product_content_alignment
     {% endif %}
     {% for tag in product_card_product.tags %}
     {% if tag == 'NEW' or tag == 'New' or tag == 'new' %}
-      <span class="not_desktop not_mobile">{% increment badges %}</span>
-      <div class="badge badge-new {{ badge_position }} badges-{{ badges }}">
+      <div class="badge badge-new {{ badge_position }} badges-{% increment badges %}">
         {{ 'products.product.new' | t }}
       </div>
     {% endif %}
     {% if tag == 'Bestseller' or tag == 'bestseller' or tag == 'BESTSELLER' %}
-      <span class="not_desktop not_mobile">{% increment badges %}</span>
-      <div class="badge badge-bestseller {{ badge_position }} badges-{{ badges }}">
+      <div class="badge badge-bestseller {{ badge_position }} badges-{% increment badges %}}">
         {{ 'products.product.bestseller' | t }}
       </div>
     {% endif %}
