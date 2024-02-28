@@ -599,7 +599,7 @@ else {feren.style.display = "flex";
               
 
               
-              <div class="zoom-container">
+              <div class="zoom-container"  id="container">
                 <div class="image-wrapper" style="position: relative;">
                      <a
                                 href="{{ first_image.src | image_url }}"
@@ -619,7 +619,6 @@ else {feren.style.display = "flex";
 {%- if first_media -%}
     <a
                         href="{{ featured_media.src | image_url }}"
-                        id="container"
                         class="product-single__media-zoom"
                         data-msrc="{{- featured_media.src | image_url: width: 20 -}}"
                         data-h="{{ featured_media.height }}"
