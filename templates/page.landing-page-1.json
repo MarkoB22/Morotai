@@ -27,7 +27,7 @@
         "full_width": true,
         "collection": "damen-alle-produkte",
         "display_type": "carousel",
-        "product_limit": 10,
+        "product_limit": 12,
         "columns_desktop": 4,
         "show_view_all": true,
         "mobile_swipe": true,
