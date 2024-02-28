@@ -1626,8 +1626,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById('container');
   const image = document.getElementById('image-zoom');
   const zoom = document.getElementById('zoom');
+
+  container.addEventListener('mousemove', function(event) {
+    const { left, top, width, height } = container.getBoundingClientRect();
+    const x = (event.clientX - left) / width;
+    const y = (event.clientY - top) / height;
+    
+    zoom.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+    zoom.style.display = 'block';
+  });
+
+  container.addEventListener('mouseleave', function() {
+    zoom.style.display = 'none';
+  });
+
+  const container = document.getElementById('container');
+  const image = document.getElementById('image-zoom');
+  const zoom = document.getElementById('zoom');
   const zoomWidth = container.offsetWidth * 2; // Adjust zoom width as needed
-  const zoomHeight = container.offsetHeight * 2,6; // Adjust zoom height as needed
+  const zoomHeight = container.offsetHeight * 2; // Adjust zoom height as needed
   
   container.addEventListener('mousemove', function(event) {
     const { left, top, width, height } = container.getBoundingClientRect();
