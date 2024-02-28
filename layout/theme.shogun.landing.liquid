@@ -118,6 +118,11 @@ This file can be re-written at any time.
   
   {% include "globale-js" %}
 
+    {% if template contains 'product' %}
+      <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}" defer=”defer”></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" defer=”defer”></script>
+    {% endif %} 
+
 </head>
 
   
@@ -163,7 +168,24 @@ This file can be re-written at any time.
       // Replace "&amp;" with "&"
       titleElement.innerHTML = titleElement.innerHTML.replace(/&amp;/g, '&');
     }
+
   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const cartDrawerToggle = document.getElementById("cart-drawer-toggle");
+    if (cartDrawerToggle) {
+      cartDrawerToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        document.body.classList.add("open-cc");
+        document.body.classList.add("open-cart");
+        cartDrawer = document.getElementById("Cart-Drawer");
+        cartDrawer.classList.add("active");
+        drawerRecommendations = document.querySelector(".cart-drawer--recommendations--container");
+        drawerRecommendations.classList.add("active");
+      });
+    }
+});
 </script>
 <script src="{{ 'temperature-bar.js' | asset_url }}" defer></script>
   <style type="text/css">
