@@ -1643,7 +1643,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const y = (event.clientY - top) / height;
     console.log('y: ', y);
     
-    zoom.style.backgroundImage = `url(high-resolution-image.jpg)`;
     zoom.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
     zoom.style.display = 'block';
   });
