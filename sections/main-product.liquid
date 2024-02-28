@@ -1731,6 +1731,7 @@ document.addEventListener('DOMContentLoaded', function () {
           mediaImage.classList.add('hovered');
             const srcsetValue = mediaImage.querySelector('img').getAttribute('srcset');
             const zoomImage = mediaImage.querySelector('img').getAttribute('data-zoom');
+            console.log('zoomImage: ', zoomImage);
             if (srcsetValue) {
                 mainProductImage.setAttribute('srcset', srcsetValue);
                 mainProductImage.setAttribute('data-zoom', zoomImage);
