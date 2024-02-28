@@ -634,7 +634,7 @@ else {feren.style.display = "flex";
                         {%- render 'svg-icons' with 'zoom' -%}
                       </a>
   {%- render 'responsive-image-main-product', image: first_media, sizes: sizes -%}
-  <div id="zoom"></div>
+  <div id="zoom" style="background-image: url({{ first_media | image_url: width: 1024 }});"></div>
 {%- endif -%}
      </div>  
   
@@ -1611,7 +1611,8 @@ else {feren.style.display = "flex";
 </style>
 
 <script>
-const container = document.getElementById('container');
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('container');
   const image = document.getElementById('image-zoom');
   const zoom = document.getElementById('zoom');
 
@@ -1627,6 +1628,7 @@ const container = document.getElementById('container');
 
   container.addEventListener('mouseleave', function() {
     zoom.style.display = 'none';
+  });
 });
 </script>
 
