@@ -1594,25 +1594,49 @@ else {feren.style.display = "flex";
   endif
 -%}
 
+<style>
+  #container {
+    position: relative;
+    width: 400px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
+  }
+  #image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #zoom {
+    position: absolute;
+    display: none;
+    width: 200%; /* Adjust as needed */
+    height: 200%; /* Adjust as needed */
+    top: 0;
+    left: 0;
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    pointer-events: none; /* So it doesn't interfere with hover */
+  }
+</style>
+
 <script>
-  var $window = $(window);
- 
-$(window).on('scroll', function() {
-    $topOffset = $(this).scrollTop();
- 
-    console.log($topOffset);
- 
-});
-  //Image Zoom
-  $(document).ready(function(){
-    $('.image-zoom')
-    .wrap('<span style="display:inline-block"></span>')
-    .css('display', 'block')
-    .parent()
-    .zoom({
-      url: $(this).find('img').attr('data-zoom')
-    });
+const container = document.getElementById('container');
+  const image = document.getElementById('image');
+  const zoom = document.getElementById('zoom');
+
+  container.addEventListener('mousemove', function(event) {
+    const { left, top, width, height } = container.getBoundingClientRect();
+    const x = (event.clientX - left) / width;
+    const y = (event.clientY - top) / height;
+
+    zoom.style.backgroundImage = `url(high-resolution-image.jpg)`;
+    zoom.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+    zoom.style.display = 'block';
   });
+
+  container.addEventListener('mouseleave', function() {
+    zoom.style.display = 'none';
+});
 </script>
 
 <script type="application/ld+json">
