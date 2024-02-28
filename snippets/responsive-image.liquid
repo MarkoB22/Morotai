@@ -41,6 +41,9 @@
   {% if focal_point -%}
     style="object-position: {{ focal_point }}"
   {% endif %}
+  {% if template == 'product' %}
+  data-zoom="{{ image | image_url: width: 1024 }}"
+  {% endif %}
 >
 <noscript>
   <img
