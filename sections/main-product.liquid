@@ -1595,6 +1595,14 @@ else {feren.style.display = "flex";
 -%}
 
 <script>
+  var $window = $(window);
+ 
+$(window).on('scroll', function() {
+    $topOffset = $(this).scrollTop();
+ 
+    console.log($topOffset);
+ 
+});
   //Image Zoom
   $(document).ready(function(){
     $('.image-zoom')
