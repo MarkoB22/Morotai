@@ -522,13 +522,27 @@
 }
 
 .badges-0 {
-  top: 16px !important;
-}
+    top: 16px !important;
+  }
+  
+  .badges-1 {
+    top: 34px !important;
+  }
+  
+  .badges-2 {
+    top: 60px !important;
+  }
 
-.badges-1 {
-  top: 42px !important;
-}
-
-.badges-2 {
-  top: 68px !important;
+@media only screen and (min-width: 1025px) {
+  .badges-0 {
+    top: 16px !important;
+  }
+  
+  .badges-1 {
+    top: 42px !important;
+  }
+  
+  .badges-2 {
+    top: 68px !important;
+  }
 }
