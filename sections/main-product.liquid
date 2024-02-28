@@ -1597,31 +1597,14 @@ else {feren.style.display = "flex";
 <script>
   //Image Zoom
   $(document).ready(function(){
-    console.log("Document is ready"); // Log when the document is ready
     $('.image-zoom')
     .wrap('<span style="display:inline-block"></span>')
-    .css('display', 'block');
-    console.log("Wrapped elements with class 'image-zoom'"); // Log after wrapping elements
-    
-    $('.image-zoom').each(function(index, element) {
-        console.log("Element " + index + ": ", element); // Log each element with class 'image-zoom'
+    .css('display', 'block')
+    .parent()
+    .zoom({
+      url: $(this).find('img').attr('data-zoom')
     });
-    
-    var $this = $(this); // Store $(this) in a variable
-    
-    $('.image-zoom').parent();
-    console.log("Selected parent elements"); // Log after selecting parent elements
-    
-    $('.image-zoom').each(function(index, element) {
-        console.log("Parent of element " + index + ": ", $(element).parent()); // Log parent of each element
-    });
-    
-    $('.image-zoom').zoom({
-      url: $this.find('img').attr('data-zoom') // Use $this instead of $(this)
-    });
-    
-    console.log("Applied zoom functionality to elements"); // Log after applying zoom functionality
-});
+  });
 </script>
 
 <script type="application/ld+json">
