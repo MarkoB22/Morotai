@@ -30,7 +30,9 @@ assign focal_point = image.presentation.focal_point
 -%}
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 <img class="main-product-img lazyload{% if retina %} retina_size{% endif %} {{ class | escape }} {% if template == 'product' %} image-zoom{% endif %}" 
-  {% if template == 'product' %} data-zoom="{{ image | img_url: '1024x1024', scale: 2 }}"{% endif %}
+  {% if template == 'product' %} 
+  data-zoom="{{ image | img_url: '1024x1024', scale: 2 }}"
+  {% endif %}
   width="{{ w }}"
   height="{{ h }}" data-sizes="auto" src="{{- image.src | img_url: small_size, crop: 'center' -}}"
   data-srcset="{{ srcset | slice: 0, l | strip_newlines -}}" alt="{{ image.alt | escape }}" {% if focal_point -%}
