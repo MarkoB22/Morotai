@@ -1734,7 +1734,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('zoomImage: ', zoomImage);
             if (srcsetValue) {
                 mainProductImage.setAttribute('srcset', srcsetValue);
-                zoomContainer.style.backgroundImage = "url(''' + zoomImage + '''')";
+                zoomContainer.style.backgroundImage = zoomImage;
             }
         });
         mediaImage.addEventListener('mouseleave', function () {
