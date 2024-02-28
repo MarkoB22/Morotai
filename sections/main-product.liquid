@@ -1627,10 +1627,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const image = document.getElementById('image-zoom');
   const zoom = document.getElementById('zoom');
 
-  console.log('container: ', container);
-  console.log('image: ', image);
-  console.log('zoom: ', zoom);
-
   container.addEventListener('mousemove', function(event) {
     const { left, top, width, height } = container.getBoundingClientRect();
     const x = (event.clientX - left) / width;
