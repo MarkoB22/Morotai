@@ -1730,6 +1730,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (srcsetValue) {
                 mainProductImage.setAttribute('srcset', srcsetValue);
                 zoomContainer.style.backgroundImage = `url('${zoomImage}')`;
+                console.log('zoomImage: ', zoomImage);
             }
         });
         mediaImage.addEventListener('mouseleave', function () {
