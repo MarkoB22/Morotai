@@ -110,6 +110,10 @@
     {% include 'globale-js' %}
   
   {% include "globale-js" %}
+
+    {% if template contains 'product' %}
+      <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}" defer=”defer”></script>
+    {% endif %}
 </head>
   <body class="animations-{{ settings.animations }} button-uppercase-{{ settings.button_uppercase }} navigation-uppercase-{{ settings.navigation_uppercase }} product-title-uppercase-{{ settings.product_title_uppercase }}{% if customer %} customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} template-{{ template | replace: '.', '-' | handle }}">
     <a class="screen-reader-shortcut" href="#main-content">{{ 'accessibility.skip_to_text' | t }}</a>
@@ -137,9 +141,6 @@
          });
         gsap.registerPlugin(ScrollTrigger);
       </script>
-    {% endif %}
-    {% if template contains 'product' %}
-      <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}" defer=”defer”></script>
     {% endif %}
     {% if settings.enable_quick_view %}
       {{ 'product.js' | asset_url | script_tag }}
