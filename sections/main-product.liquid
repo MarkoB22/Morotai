@@ -1632,16 +1632,9 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('zoom: ', zoom);
 
   container.addEventListener('mousemove', function(event) {
-    console.log('mousemove event triggered');
     const { left, top, width, height } = container.getBoundingClientRect();
-    console.log('left: ', left);
-    console.log('top: ', top);
-    console.log('width: ', width);
-    console.log('height: ', height);
     const x = (event.clientX - left) / width;
-    console.log('x: ', x);
     const y = (event.clientY - top) / height;
-    console.log('y: ', y);
     
     zoom.style.backgroundPosition = `${x * 100}% ${y * 135}%`;
     zoom.style.display = 'block';
