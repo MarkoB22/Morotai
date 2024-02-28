@@ -1628,11 +1628,22 @@ document.addEventListener('DOMContentLoaded', function() {
   const image = document.getElementById('image-zoom');
   const zoom = document.getElementById('zoom');
 
-  container.addEventListener('mousemove', function(event) {
-    const { left, top, width, height } = container.getBoundingClientRect();
-    const x = (event.clientX - left) / width;
-    const y = (event.clientY - top) / height;
+  console.log('container: ', container);
+  console.log('image: ', image);
+  console.log('zoom: ', zoom);
 
+  container.addEventListener('mousemove', function(event) {
+    console.log('mousemove event triggered');
+    const { left, top, width, height } = container.getBoundingClientRect();
+    console.log('left: ', left);
+    console.log('top: ', top);
+    console.log('width: ', width);
+    console.log('height: ', height);
+    const x = (event.clientX - left) / width;
+    console.log('x: ', x);
+    const y = (event.clientY - top) / height;
+    console.log('y: ', y);
+    
     zoom.style.backgroundImage = `url(high-resolution-image.jpg)`;
     zoom.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
     zoom.style.display = 'block';
