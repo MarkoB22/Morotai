@@ -619,7 +619,7 @@ else {feren.style.display = "flex";
 {%- if first_media -%}
     <a
                         href="{{ featured_media.src | image_url }}"
-                        class="product-single__media-zoom"
+                        class="product-single__media-zoom container"
                         data-msrc="{{- featured_media.src | image_url: width: 20 -}}"
                         data-h="{{ featured_media.height }}"
                         data-w="{{ featured_media.width }}"
