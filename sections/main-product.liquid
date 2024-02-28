@@ -1626,16 +1626,38 @@ document.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById('container');
   const image = document.getElementById('image-zoom');
   const zoom = document.getElementById('zoom');
-
+  const zoomWidth = container.offsetWidth * 2; // Adjust zoom width as needed
+  const zoomHeight = container.offsetHeight * 2; // Adjust zoom height as needed
+  
   container.addEventListener('mousemove', function(event) {
     const { left, top, width, height } = container.getBoundingClientRect();
     const x = (event.clientX - left) / width;
     const y = (event.clientY - top) / height;
     
+    const zoomX = event.clientX - (zoomWidth / 2);
+    const zoomY = event.clientY - (zoomHeight / 2);
+  
+    zoom.style.backgroundImage = `url('${zoomImage}')`;
     zoom.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+    zoom.style.left = `${zoomX}px`;
+    zoom.style.top = `${zoomY}px`;
+  
+    // Ensure zoomed image remains within bounds
+    if (zoomX < left) {
+      zoom.style.left = `${left}px`;
+    } else if (zoomX + zoomWidth > left + width) {
+      zoom.style.left = `${left + width - zoomWidth}px`;
+    }
+  
+    if (zoomY < top) {
+      zoom.style.top = `${top}px`;
+    } else if (zoomY + zoomHeight > top + height) {
+      zoom.style.top = `${top + height - zoomHeight}px`;
+    }
+  
     zoom.style.display = 'block';
   });
-
+  
   container.addEventListener('mouseleave', function() {
     zoom.style.display = 'none';
   });
