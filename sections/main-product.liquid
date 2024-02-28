@@ -1,5 +1,4 @@
 {{- 'product.css' | asset_url | stylesheet_tag -}}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" defer=”defer”></script>
 
 {%- liquid
   assign first_3d_model = product.media | where: 'media_type', 'model' | first
