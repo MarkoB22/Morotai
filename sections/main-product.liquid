@@ -619,7 +619,8 @@ else {feren.style.display = "flex";
 {%- if first_media -%}
     <a
                         href="{{ featured_media.src | image_url }}"
-                        class="product-single__media-zoom container"
+                        id="container"
+                        class="product-single__media-zoom"
                         data-msrc="{{- featured_media.src | image_url: width: 20 -}}"
                         data-h="{{ featured_media.height }}"
                         data-w="{{ featured_media.width }}"
@@ -1610,7 +1611,7 @@ else {feren.style.display = "flex";
 
 <script>
 const container = document.getElementById('container');
-  const image = document.getElementById('image');
+  const image = document.getElementById('image-zoom');
   const zoom = document.getElementById('zoom');
 
   container.addEventListener('mousemove', function(event) {
