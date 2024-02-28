@@ -633,7 +633,7 @@ else {feren.style.display = "flex";
                         {%- render 'svg-icons' with 'zoom' -%}
                       </a>
   {%- render 'responsive-image-main-product', image: first_media, sizes: sizes -%}
-  <img id="zoom" src="{{ first_media | image_url: width: 1024 }}">
+  <div id="zoom" style="background-image: url({{ first_media | image_url: width: 1024 }});"></div>
 {%- endif -%}
      </div>  
   
