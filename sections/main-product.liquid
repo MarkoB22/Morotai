@@ -1731,13 +1731,16 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function () {
     const mediaImages = document.querySelectorAll('.product-single__media-image');
     const mainProductImage = document.querySelector('.main-product-img');
+    const zoomContainer = document.querySelector('#zoom');
 
     mediaImages.forEach((mediaImage) => {
         mediaImage.addEventListener('mouseover', function () {
           mediaImage.classList.add('hovered');
             const srcsetValue = mediaImage.querySelector('img').getAttribute('srcset');
+            const zoomImage = mediaImage.querySelector('img').getAttribute('data-zoom');
             if (srcsetValue) {
                 mainProductImage.setAttribute('srcset', srcsetValue);
+                mainProductImage.setAttribute('data-zoom', zoomImage);
             }
         });
         mediaImage.addEventListener('mouseleave', function () {
@@ -1779,6 +1782,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script>
+// Mobile image carousels
 document.addEventListener('DOMContentLoaded', function () {
 // Get reference to main and thumbnail carousels
 var mainCarousel = document.querySelector('.main_mobile-carousel');
