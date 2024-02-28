@@ -1725,7 +1725,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const mediaImages = document.querySelectorAll('.product-single__media-image');
     const mainProductImage = document.querySelector('.main-product-img');
     const zoomContainer = document.querySelector('#zoom');
-    console.log('zoomContainer: ', zoomContainer);
 
     mediaImages.forEach((mediaImage) => {
         mediaImage.addEventListener('mouseover', function () {
@@ -1735,7 +1734,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('zoomImage: ', zoomImage);
             if (srcsetValue) {
                 mainProductImage.setAttribute('srcset', srcsetValue);
-                mainProductImage.setAttribute('data-zoom', zoomImage);
+                zoomContainer.style.backgroundImage = "url('zoomImage')";
             }
         });
         mediaImage.addEventListener('mouseleave', function () {
