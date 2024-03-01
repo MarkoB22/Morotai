@@ -233,7 +233,7 @@ assign product_content_alignment = settings.product_content_alignment
                 {%- assign variantSize = variantOptionsArray[0] -%}
                 {%- assign variantColor = variantOptionsArray[1] -%}
                 
-                {%- if variantColor == color and variant.available -%}
+                {%- if variantColor == color and variant.available and onlyOneVariant != true -%}
                   {% assign variantID = variant.id %}
                   <span class="size-button" data-variant-id="{{ variantID }}">
                     {{ variantSize }}
