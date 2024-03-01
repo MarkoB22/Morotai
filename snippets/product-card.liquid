@@ -229,7 +229,7 @@ assign product_content_alignment = settings.product_content_alignment
               {%- assign variantOptions = variant.options | join: ',' -%}
               {%- assign variantOptionsArray = variantOptions | split: ',' -%}
 
-              {%- if variantOptionsArray.size == 2 -%}
+
                 {%- assign variantSize = variantOptionsArray[0] -%}
                 {%- assign variantColor = variantOptionsArray[1] -%}
                 
@@ -240,7 +240,7 @@ assign product_content_alignment = settings.product_content_alignment
                   </span>
                   {%- assign sizeButtonRendered = true -%}
                 {%- endif -%}
-              {%- endif -%}
+
               {% if onlyOneVariant == true and variant.available %}
                 <span class="size-button" style="font-weight: 600;" data-variant-id="{{ variant.id }}">
                     {{ 'products.product.add_to_cart' | t }}
@@ -411,7 +411,7 @@ assign product_content_alignment = settings.product_content_alignment
           {%- assign variantOptions = variant.options | join: ',' -%}
           {%- assign variantOptionsArray = variantOptions | split: ',' -%}
 
-          {%- if variantOptionsArray.size == 2 -%}
+
             {%- assign variantSize = variantOptionsArray[0] -%}
             {%- assign variantColor = variantOptionsArray[1] -%}
             
@@ -422,7 +422,7 @@ assign product_content_alignment = settings.product_content_alignment
               </span>
               {%- assign sizeButtonRendered = true -%}
             {%- endif -%}
-          {%- endif -%}
+
         {%- endfor -%}  
 
         {%- unless sizeButtonRendered -%}
