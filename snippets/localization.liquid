@@ -15,7 +15,7 @@
 		<div class="select">
 			<select name="currency_code" class="thb-currency-code resize-select">
 		    {%- for country in localization.available_countries -%}
-		      <option value="{{ country.currency.iso_code }}" data-country="{{ country }}" {%- if country == localization.country %} selected="selected"{% endif %}>{{ country.iso_code }} ({{ country.currency.symbol }})</option>
+		      <option value="{{ country.currency.iso_code }}" data-country="{{ country.iso_code }}" {%- if country == localization.country %} selected="selected"{% endif %}>{{ country.iso_code }} ({{ country.currency.symbol }})</option>
 		    {%- endfor -%}
 		  </select>
 			<div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
