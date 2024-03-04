@@ -1408,3 +1408,7 @@
 .product-form__input  {
   display: flex !important;
 }
+
+.payment-icon-local {
+  width: 30px;
+}
