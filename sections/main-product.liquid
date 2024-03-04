@@ -1173,12 +1173,8 @@ else {feren.style.display = "flex";
                             gap: 9px;
                           "
                         >
-                          <div class="footer-payment-icons hidden">
-                            {%- unless shop.enabled_payment_types == empty -%}
-                              {%- for type in shop.enabled_payment_types -%}
-                                <figure>{{ type | payment_type_svg_tag: class: 'payment-icons__icon' }}</figure>
-                              {%- endfor -%}
-                            {%- endunless -%}
+                          <div class="localization-payment-icons">
+                            {% render 'payment-options' %}
                           </div>
                         </div>
                       </div>
