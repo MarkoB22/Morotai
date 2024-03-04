@@ -1409,6 +1409,12 @@
   display: flex !important;
 }
 
+.payment-icons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .payment-icon-local {
-  width: 30px;
+  width: 55px;
+  height: 37px;
 }
