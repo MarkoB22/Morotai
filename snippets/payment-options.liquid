@@ -1,5 +1,4 @@
-country.iso_code: {{ country.iso_code }}
-country: {{ country }}
+{% assign country.iso_code = 'DE' %}
 {% if country.iso_code == "AD" %}
   <div class="payment-icons-wrapper">
     <div class="payment-icon-local">
