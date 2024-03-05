@@ -817,6 +817,27 @@
       {% render 'svg-payment-icons' with 'visa' %}
     </div>
   </div>
+{% elsif localization.country.iso_code == "DE" %}
+  <div class="payment-icons-wrapper">
+    <div class="payment-icon-local">
+      {% render 'svg-payment-icons' with 'visa' %}
+    </div>
+    <div class="payment-icon-local">
+      {% render 'svg-payment-icons' with 'mastercard' %}
+    </div>
+    <div class="payment-icon-local">
+      {% render 'svg-payment-icons' with 'american-express' %}
+    </div>
+    <div class="payment-icon-local">
+      {% render 'svg-payment-icons' with 'giropay' %}
+    </div>
+    <div class="payment-icon-local">
+      {% render 'svg-payment-icons' with 'klarna' %}
+    </div>
+    <div class="payment-icon-local">
+      {% render 'svg-payment-icons' with 'sofortuberweisung' %}
+    </div>
+  </div>
 {% elsif localization.country.iso_code == "DJ" %}
   <div class="payment-icons-wrapper">
     <div class="payment-icon-local">
