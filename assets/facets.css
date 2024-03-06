@@ -81,7 +81,7 @@
     font-size: inherit;
     margin: 0 0 0 30px; }
   .facets--bar .facets__form {
-    display: grid;
+    display: flex;
     grid-gap: 20px;
     grid-template-columns: auto 1fr;
     align-items: flex-start; }
