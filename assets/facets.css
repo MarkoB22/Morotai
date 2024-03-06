@@ -73,6 +73,9 @@
       color: white;
       padding: 3px 29px 3px 5px;
       border: 1px solid white;}
+  .facets--bar .thb-filter-sort-count select option {
+    background: black;
+  }
   .thb-filter-sort .select-arrow svg {
     fill: white;
   }
