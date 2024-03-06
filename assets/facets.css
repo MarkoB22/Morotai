@@ -38,8 +38,7 @@
     text-transform: uppercase;
     margin-right: 30px;
     letter-spacing: 0.1em;
-    padding: 2px;
-    padding-right: 5px;
+    padding: 2px 5px;
     background: white;}
     .facets--bar .facets-toggle svg {
       width: 14px;
