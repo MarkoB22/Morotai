@@ -36,7 +36,7 @@
     text-transform: uppercase;
     margin-right: 30px;
     letter-spacing: 0.1em;
-    color: var(--color-body); }
+    color: white; }
     .facets--bar .facets-toggle svg {
       width: 14px;
       height: auto;
