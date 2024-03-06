@@ -15,8 +15,6 @@
   color: white;
   width: fit-content;
 }
-.facets--bar .facets-toggle svg path {
-        stroke: white; }
   @media only screen and (min-width: 1068px) {
     .facets--bar.facets--bar-inline {
       display: flex;
