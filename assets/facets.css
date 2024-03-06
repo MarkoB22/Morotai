@@ -41,6 +41,9 @@
       width: 14px;
       height: auto;
       margin-right: 10px; }
+    .facets--bar .facets-toggle svg {
+      fill: white;
+    }
       .facets--bar .facets-toggle svg path {
         stroke: var(--color-body); }
   .facets--bar .thb-filter-sort-count {
