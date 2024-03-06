@@ -72,7 +72,8 @@
       height: auto;
       padding-left: 0;
       padding-top: 0;
-      padding-bottom: 0; }
+      padding-bottom: 0; 
+      color: white;}
   .facets--bar .facets__label {
     font-size: inherit;
     margin: 0 0 0 30px; }
