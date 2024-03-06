@@ -73,6 +73,12 @@
       color: white;
       padding: 3px 29px 3px 5px;
       border: 1px solid white;}
+  .thb-filter-sort .select-arrow svg {
+    fill: white;
+  }
+  .thb-filter-sort .select-arrow svg path {
+    stroke: white;
+  }
   .facets--bar .facets__label {
     font-size: inherit;
     margin: 0 0 0 30px; }
