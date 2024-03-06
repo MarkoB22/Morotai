@@ -46,8 +46,6 @@
     .facets--bar .facets-toggle svg {
       fill: white;
     }
-      .facets--bar .facets-toggle svg path {
-        stroke: var(--color-body); }
   .facets--bar .thb-filter-sort-count {
     text-align: right;
     margin-left: auto;
