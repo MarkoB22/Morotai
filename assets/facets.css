@@ -5,7 +5,7 @@
 
 
 .facets--bar {
-  display: block;
+  display: flex;
   margin-bottom: 25px;
   margin-top: 25px;
   font-size: 0.8125rem;
