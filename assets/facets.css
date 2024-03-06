@@ -9,7 +9,12 @@
   margin-bottom: 25px;
   margin-top: 25px;
   font-size: 0.8125rem;
-  z-index: 45; }
+  z-index: 45; 
+  padding: 7px 10px 5px 10px;
+  background: black;
+  color: white;
+  width: fit-content;
+}
   @media only screen and (min-width: 1068px) {
     .facets--bar.facets--bar-inline {
       display: flex;
