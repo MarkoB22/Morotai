@@ -87,7 +87,7 @@
     flex-direction: row;
   }
   
-  .main_account_page-side_slideshow {
+  .main_account_page-slideshow_wrapper {
     width: 50vw;
   }
 }
