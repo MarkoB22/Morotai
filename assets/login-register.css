@@ -135,11 +135,10 @@
 }
 
 .main_account_page-carousel_cell_content_container {
-  top: 50%;
-  left: 50px;
+  top: 50px;
+  left: 30px;
   position: relative;
-  transform: translateY(-100%);
-  color: white;
+  color: #fff;
 }
 
 .main_account_page-subheading {
@@ -214,5 +213,13 @@
 
   .main_account_page-carousel_cell_content_container {
     position: absolute;
+  }
+
+  .main_account_page-carousel_cell_content_container {
+    top: 50%;
+    left: 50px;
+    position: relative;
+    transform: translateY(-100%);
+    color: white;
   }
 }
