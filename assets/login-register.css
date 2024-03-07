@@ -145,6 +145,17 @@
   font-size: 40px;
 }
 
+.main_account_page-carousel_cell_image_container::before {
+  content:"";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .8);
+}
+
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
