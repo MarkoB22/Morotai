@@ -756,24 +756,6 @@
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
-    },
-    "featured_collection_d7mGYM": {
-      "type": "featured-collection",
-      "settings": {
-        "heading": "Featured Collection",
-        "heading_left": false,
-        "description": "<p>Describe your featured collection here<\/p>",
-        "full_width": true,
-        "collection": "",
-        "display_type": "grid",
-        "product_limit": 4,
-        "columns_desktop": 4,
-        "show_view_all": true,
-        "mobile_swipe": true,
-        "show_progress_bar": true,
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": false
-      }
     }
   },
   "order": [
@@ -793,7 +775,6 @@
     "76bc07ec-39c8-4833-affb-7b9443a5f88e",
     "be9101f4-94e1-46a1-b8d0-27dd982ce2ce",
     "9842cffd-64b4-4d70-99b4-fbeb2225b1c4",
-    "9046ab09-956d-4173-91ad-b8dc5393342e",
-    "featured_collection_d7mGYM"
+    "9046ab09-956d-4173-91ad-b8dc5393342e"
   ]
 }
