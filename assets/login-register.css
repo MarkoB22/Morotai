@@ -134,7 +134,7 @@
 .main_account_page-carousel_cell_content_container {
   top: 50px;
   left: 30px;
-  position: relative;
+  position: absolute;
   color: #fff;
   width: calc(100% - 60px);
 }
@@ -224,7 +224,6 @@
   }
 
   .main_account_page-carousel_cell_content_container {
-    position: absolute;
     top: 50%;
     left: 50px;
     transform: translateY(-100%);
