@@ -88,6 +88,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  margin-bottom: 30px;
 }
 
 .buttons-wrapper .tab_button {
@@ -137,7 +138,4 @@
     width: 50%;
   }
 
-  .buttons-wrapper {
-    width: 640px;
-  }
 }
