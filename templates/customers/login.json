@@ -5,7 +5,6 @@
       "blocks": {
         "slideshow_cell_QDDwn9": {
           "type": "slideshow_cell",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/A-241B200-01_PERFORMANCEBASKETBALL_00.jpg",
             "subheading": "Add text here.",
@@ -15,7 +14,6 @@
         },
         "slideshow_cell_T3CCwH": {
           "type": "slideshow_cell",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/W-210T206-01NAKAPerformanceStringe_008.jpg",
             "subheading": "Add text here.",
@@ -31,12 +29,22 @@
             "heading": "Heading",
             "text": "<p>Add a short description<\/p>"
           }
+        },
+        "slideshow_cell_mobile_9f3db9": {
+          "type": "slideshow_cell_mobile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Difference_Page_Banner_Cut.jpg",
+            "subheading": "Add text here.",
+            "heading": "Heading",
+            "text": "<p>Add a short description<\/p>"
+          }
         }
       },
       "block_order": [
         "slideshow_cell_QDDwn9",
         "slideshow_cell_T3CCwH",
-        "slideshow_cell_e3f8WD"
+        "slideshow_cell_e3f8WD",
+        "slideshow_cell_mobile_9f3db9"
       ],
       "settings": {
         "slideshow_position": "left"
