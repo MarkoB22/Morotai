@@ -1,7 +1,23 @@
 {{ 'login-register.css' | asset_url | stylesheet_tag }}
 <div class="main_account_page-wrapper">
+  {% if section.blocks.size > 0 %}
 	<div class="main_account_page-side_slideshow not_mobile">
-
+      <div class="main_account_page-side_slideshow-slideshow_carousel">
+      {% for block in section.blocks %}
+        <div class="main_account_page-carousel_cell">
+          <div class="main_account_page-carousel_cell_image_container">
+            {% assign image = block.settings.image %}
+            {%- liquid
+               assign image = section.settings.image
+                assign master_width = image.src.width | append: 'x' | append: image.src.height
+                assign class = nil
+             -%}
+            {%- render 'responsive-image', image: image, sizes: master_width, class: class -%}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+  {% endif %}
 	</div>
 	<div class="main_account_page-side_image not_mobile">
 
