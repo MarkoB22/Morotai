@@ -136,6 +136,7 @@
   left: 30px;
   position: relative;
   color: #fff;
+  width: calc(100% - 60px);
 }
 
 .main_account_page-subheading {
@@ -211,9 +212,6 @@
 
   .main_account_page-carousel_cell_content_container {
     position: absolute;
-  }
-
-  .main_account_page-carousel_cell_content_container {
     top: 50%;
     left: 50px;
     position: relative;
