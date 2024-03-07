@@ -161,6 +161,10 @@
   width: 100%;
 }
 
+.main_account_page-slideshow_carousel {
+  height: 50vh;
+}
+
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
