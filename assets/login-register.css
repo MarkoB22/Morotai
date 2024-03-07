@@ -137,7 +137,7 @@
 .main_account_page-carousel_cell_content_container {
   top: 50%;
   left: 50px;
-  position: absolute;
+  position: relative;
   transform: translateY(-100%);
   color: white;
 }
@@ -209,5 +209,9 @@
 
   .main_account_page-text {
     font-size: 22px;
+  }
+
+  .main_account_page-carousel_cell_content_container {
+    position: absolute;
   }
 }
