@@ -11,10 +11,20 @@
             "heading": "Heading",
             "text": "<p>Add a short description<\/p>"
           }
+        },
+        "slideshow_cell_T3CCwH": {
+          "type": "slideshow_cell",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/W-210T206-01NAKAPerformanceStringe_008.jpg",
+            "subheading": "Add text here.",
+            "heading": "Heading",
+            "text": "<p>Add a short description<\/p>"
+          }
         }
       },
       "block_order": [
-        "slideshow_cell_QDDwn9"
+        "slideshow_cell_QDDwn9",
+        "slideshow_cell_T3CCwH"
       ],
       "settings": {
       }
