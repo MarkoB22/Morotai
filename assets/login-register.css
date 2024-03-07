@@ -97,6 +97,10 @@
   border-bottom: 3px solid grey;
 }
 
+.tab_button.active {
+  border-bottom: 3px solid black;
+}
+
 .main_account_page-login_register_wrapper {
   display: flex;
   flex-direction: column;
