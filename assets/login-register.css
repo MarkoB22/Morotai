@@ -91,7 +91,7 @@
     width: 50vw;
   }
 
-  .main_account_page-carousel_cell_image_container {
+  .main_account_page-carousel_cell_image_container img {
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
   }
 }
