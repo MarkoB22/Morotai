@@ -156,6 +156,10 @@
   background-color: rgba(0, 0, 0, .2);
 }
 
+.login-wrapper {
+  width: 100%;
+}
+
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
