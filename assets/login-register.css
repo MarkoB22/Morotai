@@ -174,7 +174,15 @@
     display: none;
   }
 
+  .main_account_page-subheading {
+    font-size: 17px;
+  }
+
   .main_account_page-heading {
     font-size: 52px;
+  }
+
+  .main_account_page-text {
+    font-size: 22px;
   }
 }
