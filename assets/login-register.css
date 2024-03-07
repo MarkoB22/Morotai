@@ -168,6 +168,10 @@
   position: relative;
 }
 
+.account_image {
+  position: absolute;
+}
+
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
@@ -181,7 +185,6 @@
   .account_image {
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
     object-fit: cover;
-    position: absolute;
   }
 
   .main_account_page-slideshow_carousel,
