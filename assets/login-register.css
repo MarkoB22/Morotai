@@ -77,3 +77,11 @@
   @media only screen and (min-width: 768px) {
     .account-activate-buttons {
       flex-direction: row; } }
+
+.main_account_page-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+@media only screen and (min-width: 1025px) {
+  flex-direction: row;
+}
