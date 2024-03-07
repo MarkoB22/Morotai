@@ -13,7 +13,7 @@
                 assign master_width = image.src.width | append: 'x' | append: image.src.height
                 assign class = nil
              -%}
-            {%- render 'responsive-image', image: image, sizes: master_width, class: 'account_image' -%}
+            {%- render 'responsive-image', image: image, sizes: master_width, class: 'account_image_desktop' -%}
           </div>
           <div class="main_account_page-carousel_cell_content_container">
             {% if block.settings.subheading %}
