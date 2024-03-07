@@ -6,9 +6,8 @@
       {% for block in section.blocks %}
         <div class="main_account_page-carousel_cell carousel__slide">
           <div class="main_account_page-carousel_cell_image_container">
-            {% assign image = block.settings.image %}
             {%- liquid
-               assign image = section.settings.image
+               assign image = block.settings.image
                 assign master_width = image.src.width | append: 'x' | append: image.src.height
                 assign class = nil
              -%}
