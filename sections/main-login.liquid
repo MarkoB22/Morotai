@@ -43,7 +43,8 @@
         {% case block.type %}
         {% when 'slideshow_cell_mobile' %}
         <div class="main_account_page-carousel_cell carousel__slide">
-          <div class="main_account_page-carousel_cell_image_container">
+          {% assign image_ratio = block.settings.image.aspect_ratio %}
+          <div class="main_account_page-carousel_cell_image_container" style="padding-bottom: {{ 1 | divided_by: image_ratio | times: 100 }}%;">
             {%- liquid
                assign image = block.settings.image
                 assign master_width = image.src.width | append: 'x' | append: image.src.height
