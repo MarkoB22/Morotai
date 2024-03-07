@@ -98,6 +98,10 @@
   border-bottom: 3px solid #80808060;
 }
 
+.tab_button {
+  cursor: pointer;
+}
+
 .tab_button.active {
   border-bottom: 3px solid black;
   cursor: pointer;
