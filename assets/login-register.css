@@ -94,7 +94,7 @@
   text-transform: uppercase;
   font-weight: 600;
   padding: 10px 40px;
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid #80808060;
 }
 
 .tab_button.active {
