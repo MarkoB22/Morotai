@@ -135,6 +135,11 @@
   transform: translateY(-100%);
 }
 
+.main_account_page-heading {
+  font-weight: 600;
+  font-size: 40px;
+}
+
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
@@ -163,5 +168,9 @@
     padding-top: 0;
     width: 640px;
     display: none;
+  }
+
+  .main_account_page-heading {
+    font-size: 52px;
   }
 }
