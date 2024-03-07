@@ -1,1 +1,26 @@
-{"sections":{"main-login":{"type":"main-login","settings":{}}},"order":["main-login"]}
+{
+  "sections": {
+    "main-login": {
+      "type": "main-login",
+      "blocks": {
+        "slideshow_cell_QDDwn9": {
+          "type": "slideshow_cell",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/A-241B200-01_PERFORMANCEBASKETBALL_00.jpg",
+            "subheading": "Add text here.",
+            "heading": "Heading",
+            "text": "<p>Add a short description<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow_cell_QDDwn9"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main-login"
+  ]
+}
