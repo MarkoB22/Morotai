@@ -135,6 +135,10 @@
   transform: translateY(-100%);
 }
 
+.main_account_page-subheading {
+  font-size: 13px;
+}
+
 .main_account_page-heading {
   font-weight: 600;
   font-size: 40px;
