@@ -4,7 +4,7 @@
 	<div class="main_account_page-side_slideshow not_mobile">
       <div class="main_account_page-side_slideshow-slideshow_carousel">
       {% for block in section.blocks %}
-        <div class="main_account_page-carousel_cell">
+        <div class="main_account_page-carousel_cell carousel__slide">
           <div class="main_account_page-carousel_cell_image_container">
             {% assign image = block.settings.image %}
             {%- liquid
@@ -149,6 +149,18 @@
 		</div>
 	</div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var carousel = document.querySelector('.main_account_page-side_slideshow');
+
+  var flktyMain = new Flickity(carousel, {
+    prevNextButtons: false,
+    wrapAround: true,
+    pageDots: true
+  });
+});
+</script>
+
 
 {%  schema  %}  
   {
