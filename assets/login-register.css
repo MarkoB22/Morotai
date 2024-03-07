@@ -97,6 +97,13 @@
   height: fit-content;
 }
 
+.main_account_page-wrapper .thb-form-container {
+  padding-top: 0;
+}
+
+.buttons-wrapper .active {
+  
+}
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
