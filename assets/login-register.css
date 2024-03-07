@@ -133,6 +133,10 @@
     object-fit: cover;
   }
 
+  .main_account_page-slideshow_carousel {
+    max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
+  }
+
   .main_account_page-login_register_wrapper {
     width: 50%;
   }
