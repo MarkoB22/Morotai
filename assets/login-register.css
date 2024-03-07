@@ -226,4 +226,8 @@
     transform: translateY(-100%);
     color: white;
   }
+
+  .account_image_desktop {
+    object-fit: cover;
+  }
 }
