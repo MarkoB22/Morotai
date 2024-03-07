@@ -124,6 +124,10 @@
   left: 27px;
 }
 
+.main_account_page-text p {
+  margin-bottom: 0 !important;
+}
+
 .main_account_page-carousel_cell_content_container {
   top: 50%;
   left: 50px;
