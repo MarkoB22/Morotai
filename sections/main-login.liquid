@@ -13,6 +13,23 @@
              -%}
             {%- render 'responsive-image', image: image, sizes: master_width, class: class -%}
           </div>
+          <div class="main_account_page-carousel_cell_content_container">
+            {% if block.settings.subheading %}
+            <div class="main_account_page-subheading">
+              {{ block.settings.subheading }}
+            </div>
+            {% endif %}
+            {% if block.settings.heading %}
+            <div class="main_account_page-heading">
+              {{ block.settings.heading }}
+            </div>
+            {% endif %}
+            {% if block.settings.text %}
+            <div class="main_account_page-text">
+              {{ block.settings.text }}
+            </div>
+            {% endif %}
+          </div>
         </div>
       {% endfor %}
       </div>
