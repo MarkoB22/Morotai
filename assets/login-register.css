@@ -126,6 +126,13 @@
   background-color: #00000060;
 }
 
+.main_account_page-carousel_cell_content_container {
+  top: 50%;
+  left: 50px;
+  position: absolute;
+  transform: translateY(-100%);
+}
+
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
