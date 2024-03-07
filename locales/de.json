@@ -675,7 +675,8 @@
       "submit_register": "Ein Konto erstellen",
       "already_have_an_account": "Du hast bereits ein Konto?",
       "submit": "Einreichen",
-      "cancel": "Absagen"
+      "cancel": "Absagen",
+      "sign_up": "Sign up"
     },
     "recover_password": {
       "title": "Setze dein Passwort zurück",
