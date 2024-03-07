@@ -81,6 +81,7 @@
 .main_account_page-wrapper {
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
 }
 
 .buttons-wrapper {
