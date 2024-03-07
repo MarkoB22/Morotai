@@ -88,7 +88,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 640px;
 }
 
 .buttons-wrapper .tab_button {
@@ -119,9 +118,6 @@
   display: flex;
 }
 
-.buttons-wrapper .active {
-  
-}
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
@@ -139,5 +135,9 @@
 
   .main_account_page-login_register_wrapper {
     width: 50%;
+  }
+
+  .buttons-wrapper {
+    width: 640px;
   }
 }
