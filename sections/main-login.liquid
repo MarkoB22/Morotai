@@ -230,7 +230,36 @@ document.addEventListener('DOMContentLoaded', function () {
   "blocks": [
       {
         "type": "slideshow_cell",
-        "name": "Slideshow cell",
+        "name": "Slideshow cell desktop",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Slideshow image"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading",
+            "default": "Add text here."
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Add a short description</p>"
+          }
+        ]
+      },
+      {
+        "type": "slideshow_cell_mobile",
+        "name": "Slideshow cell mobile",
         "settings": [
           {
             "type": "image_picker",
