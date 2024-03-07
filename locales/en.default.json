@@ -675,7 +675,8 @@
       "submit_register": "Create an account",
       "already_have_an_account": "Already have an account?",
       "submit": "Submit",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "sign_up": "Sign up"
     },
     "recover_password": {
       "title": "Reset your password",
