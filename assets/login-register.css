@@ -167,8 +167,9 @@
 }
 
 .main_account_page-slideshow_wrapper {
-    width: 100%;
-  }
+  width: 100%;
+  position: relative;
+}
 
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
@@ -178,7 +179,6 @@
   .main_account_page-slideshow_wrapper {
     width: 50%;
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
-    position: relative;
   }
 
   .main_account_page-carousel_cell_image_container img {
