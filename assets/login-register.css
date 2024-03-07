@@ -111,7 +111,6 @@
 
 .main_account_page-wrapper .thb-form-container {
   padding-top: 0;
-  width: 640px;
   display: none;
 }
 
@@ -138,4 +137,9 @@
     width: 50%;
   }
 
+  .main_account_page-wrapper .thb-form-container {
+    padding-top: 0;
+    width: 640px;
+    display: none;
+  }
 }
