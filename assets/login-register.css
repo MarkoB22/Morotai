@@ -89,6 +89,14 @@
   justify-content: center;
   align-items: flex-end;
 }
+
+.main_account_page-login_register_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+}
+
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
