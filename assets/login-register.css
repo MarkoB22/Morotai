@@ -133,7 +133,8 @@
     object-fit: cover;
   }
 
-  .main_account_page-slideshow_carousel {
+  .main_account_page-slideshow_carousel,
+  .flickity-viewport {
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
   }
 
