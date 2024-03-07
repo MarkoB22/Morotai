@@ -133,6 +133,7 @@
   left: 50px;
   position: absolute;
   transform: translateY(-100%);
+  color: white;
 }
 
 .main_account_page-subheading {
