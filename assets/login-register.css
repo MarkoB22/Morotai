@@ -180,16 +180,19 @@
   .main_account_page-slideshow_wrapper {
     width: 50%;
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
+    min-height: 450px;
   }
 
   .account_image {
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
+    min-height: 450px;
     object-fit: cover;
   }
 
   .main_account_page-slideshow_carousel,
   .flickity-viewport {
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
+    min-height: 450px;
   }
 
   .main_account_page-login_register_wrapper {
@@ -216,6 +219,7 @@
   .main_account_page-carousel_cell,
   .main_account_page-carousel_cell_image_container {
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
+    min-height: 450px;
     display: flex;
   }
 
