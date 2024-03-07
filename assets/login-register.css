@@ -118,6 +118,14 @@
   display: flex;
 }
 
+.main_account_page-wrapper .flickity-page-dots {
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00000060;
+}
+
 @media only screen and (min-width: 1025px) {
   .main_account_page-wrapper {
     flex-direction: row;
