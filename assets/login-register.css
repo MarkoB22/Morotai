@@ -119,11 +119,9 @@
 }
 
 .main_account_page-wrapper .flickity-page-dots {
-  bottom: 0;
+  top: 50%;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #00000060;
+  left: 27px;
 }
 
 .main_account_page-carousel_cell_content_container {
