@@ -37,6 +37,42 @@
       {% endfor %}
       </div>
     </div>
+    <div class="main_account_page-slideshow_wrapper not_desktop">
+      <div class="main_account_page-slideshow_carousel">
+      {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'slideshow_cell_mobile' %}
+        <div class="main_account_page-carousel_cell carousel__slide">
+          <div class="main_account_page-carousel_cell_image_container">
+            {%- liquid
+               assign image = block.settings.image
+                assign master_width = image.src.width | append: 'x' | append: image.src.height
+                assign class = nil
+             -%}
+            {%- render 'responsive-image', image: image, sizes: master_width, class: class -%}
+          </div>
+          <div class="main_account_page-carousel_cell_content_container">
+            {% if block.settings.subheading %}
+            <div class="main_account_page-subheading">
+              {{ block.settings.subheading }}
+            </div>
+            {% endif %}
+            {% if block.settings.heading %}
+            <div class="main_account_page-heading">
+              {{ block.settings.heading }}
+            </div>
+            {% endif %}
+            {% if block.settings.text %}
+            <div class="main_account_page-text">
+              {{ block.settings.text }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% endcase %}
+      {% endfor %}
+      </div>
+    </div>
   {% endif %}
 	
 
