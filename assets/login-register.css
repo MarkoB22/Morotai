@@ -89,5 +89,6 @@
   
   .main_account_page-slideshow_wrapper {
     width: 50vw;
+    max-height: 100vh;
   }
 }
