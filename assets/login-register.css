@@ -90,10 +90,11 @@
   align-items: flex-end;
 }
 
-.buttons-wrapper div {
+.buttons-wrapper .tab_button {
   text-transform: uppercase;
   font-weight: 600;
   padding: 10px 40px;
+  border-bottom: 3px solid grey;
 }
 
 .main_account_page-login_register_wrapper {
