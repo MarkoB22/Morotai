@@ -83,5 +83,11 @@
   flex-direction: column-reverse;
 }
 @media only screen and (min-width: 1025px) {
-  flex-direction: row;
+  .main_account_page-wrapper {
+    flex-direction: row;
+  }
+  
+  .main_account_page-side_slideshow {
+    width: 50vw;
+  }
 }
