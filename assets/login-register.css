@@ -1,6 +1,3 @@
-
-
-
 .thb-form-container {
   display: flex;
   flex-direction: column;
@@ -183,6 +180,7 @@
   .main_account_page-carousel_cell_image_container img {
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
     object-fit: cover;
+    position: absolute;
   }
 
   .main_account_page-slideshow_carousel,
