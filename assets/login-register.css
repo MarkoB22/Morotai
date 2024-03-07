@@ -213,6 +213,10 @@
     font-size: 22px;
   }
 
+  .main_account_page-carousel_cell {
+    max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
+  }
+
   .main_account_page-carousel_cell_content_container {
     position: absolute;
     top: 50%;
