@@ -100,6 +100,7 @@
 .main_account_page-wrapper .thb-form-container {
   padding-top: 0;
   width: 640px;
+  display: none;
 }
 
 .buttons-wrapper .active {
