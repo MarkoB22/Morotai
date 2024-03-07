@@ -178,7 +178,7 @@
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
   }
 
-  .main_account_page-carousel_cell_image_container img {
+  .account_image {
     max-height: calc(100vh - var(--header-height) - var(--announcement-height, 44px));
     object-fit: cover;
     position: absolute;
