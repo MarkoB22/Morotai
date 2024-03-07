@@ -1,8 +1,8 @@
 {{ 'login-register.css' | asset_url | stylesheet_tag }}
 <div class="main_account_page-wrapper">
   {% if section.blocks.size > 0 %}
-	<div class="main_account_page-side_slideshow not_mobile">
-      <div class="main_account_page-side_slideshow-slideshow_carousel">
+	<div class="main_account_page-slideshow_wrapper">
+      <div class="main_account_page-slideshow_carousel">
       {% for block in section.blocks %}
         <div class="main_account_page-carousel_cell carousel__slide">
           <div class="main_account_page-carousel_cell_image_container">
