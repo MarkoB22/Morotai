@@ -1,9 +1,11 @@
 {{ 'login-register.css' | asset_url | stylesheet_tag }}
 <div class="main_account_page-wrapper">
   {% if section.blocks.size > 0 %}
-	<div class="main_account_page-slideshow_wrapper">
+	<div class="main_account_page-slideshow_wrapper not_mobile">
       <div class="main_account_page-slideshow_carousel">
       {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'slideshow_cell' %}
         <div class="main_account_page-carousel_cell carousel__slide">
           <div class="main_account_page-carousel_cell_image_container">
             {%- liquid
@@ -31,6 +33,7 @@
             {% endif %}
           </div>
         </div>
+        {% endcase %}
       {% endfor %}
       </div>
     </div>
