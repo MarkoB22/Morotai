@@ -46,7 +46,6 @@
       ],
       "settings": {
         "announcement_bar": true,
-        "announcement_bar_homepage_only": true,
         "announcement_bar_layout": "marquee",
         "direction": "left",
         "speed": "50s"
@@ -101,7 +100,7 @@
             "promo_1_image": "shopify:\/\/shop_images\/20847.jpg",
             "promo_1_heading": "",
             "promo_1_link_label": "",
-            "promo_1_link": "shopify:\/\/collections\/accessoires-1",
+            "promo_1_link": "shopify:\/\/collections\/accessoires",
             "promo_2_heading": "<p>Promotion heading<\/p>",
             "promo_2_link_label": "Shop",
             "promo_2_link": ""
