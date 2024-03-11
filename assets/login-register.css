@@ -233,4 +233,13 @@
   .account_image_desktop {
     object-fit: cover;
   }
+
+  .main_account_page-wrapper .flickity-page-dots {
+    bottom: 50%;
+    left: 27px;
+  }
+
+  .main_account_page-carousel_cell_content_container {
+    bottom: 50%;
+  }
 }
