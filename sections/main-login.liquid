@@ -6,7 +6,35 @@
       {% for block in section.blocks %}
         {% case block.type %}
         {% when 'slideshow_cell' %}
-        <div class="main_account_page-carousel_cell carousel__slide">
+        <div class="main_account_page-carousel_cell carousel__slide not_mobile">
+          <div class="main_account_page-carousel_cell_image_container">
+            {%- liquid
+               assign image = block.settings.image
+                assign master_width = image.src.width | append: 'x' | append: image.src.height
+                assign class = nil
+             -%}
+            {%- render 'responsive-image', image: image, sizes: master_width, class: 'account_image_desktop' -%}
+          </div>
+          <div class="main_account_page-carousel_cell_content_container">
+            {% if block.settings.subheading %}
+            <div class="main_account_page-subheading">
+              {{ block.settings.subheading }}
+            </div>
+            {% endif %}
+            {% if block.settings.heading %}
+            <div class="main_account_page-heading">
+              {{ block.settings.heading }}
+            </div>
+            {% endif %}
+            {% if block.settings.text %}
+            <div class="main_account_page-text">
+              {{ block.settings.text }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% when 'slideshow_cell_mobile' %}
+        <div class="main_account_page-carousel_cell carousel__slide not_desktop">
           <div class="main_account_page-carousel_cell_image_container">
             {%- liquid
                assign image = block.settings.image
@@ -263,7 +291,6 @@ document.addEventListener('DOMContentLoaded', function () {
       {
         "type": "slideshow_cell_mobile",
         "name": "Image mobile",
-        "limit": 1,
         "settings": [
           {
             "type": "image_picker",
