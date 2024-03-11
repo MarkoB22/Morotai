@@ -228,6 +228,7 @@
     left: 50px;
     transform: translateY(-100%);
     color: white;
+    height: fit-content;
   }
 
   .account_image_desktop {
@@ -235,7 +236,6 @@
   }
 
   .main_account_page-wrapper .flickity-page-dots {
-    top: 50%;
     left: 27px;
   }
 
