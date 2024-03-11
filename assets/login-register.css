@@ -238,6 +238,8 @@
 
   .main_account_page-wrapper .flickity-page-dots {
     left: 27px;
+    bottom: 50%;
+    transform: translateY(100%);
   }
 
   .main_account_page-carousel_cell_content_container {
