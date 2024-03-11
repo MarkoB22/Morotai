@@ -132,7 +132,7 @@
 }
 
 .main_account_page-carousel_cell_content_container {
-  top: 50px;
+  bottom: 50px;
   left: 30px;
   position: absolute;
   color: #fff;
