@@ -20,11 +20,20 @@
             "heading": "Heading",
             "text": "<p>Add a short description<\/p>"
           }
+        },
+        "slideshow_cell_mobile_UKttGT": {
+          "type": "slideshow_cell_mobile",
+          "settings": {
+            "subheading": "Add text here.",
+            "heading": "Heading",
+            "text": "<p>Add a short description<\/p>"
+          }
         }
       },
       "block_order": [
         "slideshow_cell_QDDwn9",
-        "slideshow_cell_T3CCwH"
+        "slideshow_cell_T3CCwH",
+        "slideshow_cell_mobile_UKttGT"
       ],
       "settings": {
         "slideshow_position": "left"
