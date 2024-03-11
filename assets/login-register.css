@@ -122,9 +122,9 @@
 }
 
 .main_account_page-wrapper .flickity-page-dots {
-  top: 50%;
+  bottom: 6px;
   position: absolute;
-  left: 27px;
+  left: 8px;
 }
 
 .main_account_page-text p {
