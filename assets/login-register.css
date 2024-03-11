@@ -229,6 +229,7 @@
     transform: translateY(-100%);
     color: white;
     height: fit-content;
+    width: calc(100% - 100px);
   }
 
   .account_image_desktop {
