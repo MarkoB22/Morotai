@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="main_account_page-slideshow_wrapper not_desktop">
-      <div class="main_account_page-slideshow_carousel">
+      <div class="main_account_page-slideshow_carousel main_account_page-slideshow_carousel_mobile">
       {% for block in section.blocks %}
         {% case block.type %}
         {% when 'slideshow_cell_mobile' %}
@@ -205,8 +205,15 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var carousel = document.querySelector('.main_account_page-slideshow_carousel');
+  var carouselMobile = document.querySelector('.main_account_page-slideshow_carousel_mobile');
 
   var flktyMain = new Flickity(carousel, {
+    prevNextButtons: false,
+    wrapAround: true,
+    pageDots: true
+  });
+
+  var flktyMain = new Flickity(carouselMobile, {
     prevNextButtons: false,
     wrapAround: true,
     pageDots: true
