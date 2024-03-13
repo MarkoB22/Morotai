@@ -609,6 +609,19 @@ document.addEventListener('DOMContentLoaded', function () {
         style="padding-left:0px"
       >
     </a>
+  {% when 'HALF ZIP' %}
+    <a
+      href="#popup1"
+      onclick="openModal()"
+    >
+      <img
+        id="popup-trigger"
+        src="{{ 'SHAPING_EFFECT.png' | file_img_url: '148x148' }}"
+        height="48px"
+        width="55px"
+        style="padding-left:0px"
+      >
+    </a>
 {%- endcase -%}
 
 <div id="popup1" class="modal badges">
