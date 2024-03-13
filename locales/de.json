@@ -176,7 +176,8 @@
         "SOFT_FLEECE": "Dieses Produkt besteht aus Fleece, das Wärme und Komfort bietet.",
         "EASY_CARE": "Dieses Produkt lässt sich einfach pflegen und instand halten.",
         "FLEXIBILITY": "Dieses Produkt enthält Elastan, was Flexibilität und Bewegungsfreiheit ermöglicht.",
-        "REFLECTIVE_ZIPPER": "Dieses Produkt verfügt über einen reflektierenden Reißverschluss für bessere Sichtbarkeit bei schlechten Lichtverhältnissen."
+        "REFLECTIVE_ZIPPER": "Dieses Produkt verfügt über einen reflektierenden Reißverschluss für bessere Sichtbarkeit bei schlechten Lichtverhältnissen.",
+        "SHAPING_EFFECT": "Dieses Produkt bietet eine perfekte Passform, die Ihre Figur schön betont."
       },
       "badge_titles": {
         "360_STRETCH": "360 STRETCH",
@@ -212,7 +213,8 @@
         "SOFT_FLEECE": "WEICHER VLIES",
         "EASY_CARE": "PFLEGELEICHT",
         "FLEXIBILITY": "FLEXIBEL",
-        "REFLECTIVE_ZIPPER": "REFLEKTIERENDER REIßVERSCHLUSS"
+        "REFLECTIVE_ZIPPER": "REFLEKTIERENDER REIßVERSCHLUSS",
+        "SHAPING_EFFECT": "SHAPING EFFEKT"
       },
       "weather_conditions": {
         "hot": "WARM",
