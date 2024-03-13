@@ -496,10 +496,17 @@
           </div>
         </div>
         <div class="MaximalerKomfort third" style="align-items: flex-end; max-width: 500px;">
-         <img
+        {% if language.iso_code == 'de' %}
+          <img
               style="width: 100%; height: auto; max-width: 500px;"
               src="{{ 'custom_resized_9b17ac00-b15e-441d-9203-5a6007175b38.jpg' | file_img_url: '3195x4472' }}"
             >
+        {% else %}
+           <img
+              style="width: 100%; height: auto; max-width: 500px;"
+              src="{{ 'USP_Graphics_1_EN_1000x_d62aecbb-d746-421b-880f-0b0a2712a62b.jpg?v=1710337713' | file_img_url: '1000x1400' }}"
+            >
+        {% endif %}
         </div>
       </div>
       <div class="Frame155" style="justify-content: flex-start; align-items: center; gap: 160px; display: inline-flex">
@@ -554,11 +561,19 @@
           </div>
         </div>
         <div class="SmarteDetails third" style="width: 100%; position: relative; justify-content: flex-end; display: flex;">
+          {% if language.iso_code == 'de' %}
           <img
             src="{{ 'custom_resized_ae807d5f-d0de-4f8e-a986-b49232beeab4.jpg' | file_img_url: '3195x4472' }}"
             class="Rectangle83"
             style="max-width: 500px;"
           >
+          {% else %}
+            <img
+            src="{{ 'USP_smart_details_1000x_d420e312-7e8a-44a1-bbf5-fd4335edb9fc.jpg?v=1710337962.jpg' | file_img_url: '1000x1400' }}"
+            class="Rectangle83"
+            style="max-width: 500px;"
+          >
+          {% endif %}
         </div>
       </div>
       <div class="Frame157" style="justify-content: flex-start; align-items: center; gap: 160px; display: inline-flex">
