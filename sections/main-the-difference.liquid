@@ -496,8 +496,8 @@
           </div>
         </div>
         <div class="MaximalerKomfort third" style="align-items: flex-end; max-width: 500px;">
-          language.iso_code: {{ language.iso_code }}
-        {% if language.iso_code == 'de' %}
+          language.iso_code: {{ localization.language.iso_code }}
+        {% if localization.language.iso_code == 'de' %}
           <img
               style="width: 100%; height: auto; max-width: 500px;"
               src="{{ 'custom_resized_9b17ac00-b15e-441d-9203-5a6007175b38.jpg' | file_img_url: '3195x4472' }}"
@@ -562,7 +562,7 @@
           </div>
         </div>
         <div class="SmarteDetails third" style="width: 100%; position: relative; justify-content: flex-end; display: flex;">
-          {% if language.iso_code == 'de' %}
+          {% if localization.language.iso_code == 'de' %}
           <img
             src="{{ 'custom_resized_ae807d5f-d0de-4f8e-a986-b49232beeab4.jpg' | file_img_url: '3195x4472' }}"
             class="Rectangle83"
