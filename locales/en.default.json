@@ -176,7 +176,8 @@
         "SOFT_FLEECE": "This product is made with fleece material, offering warmth and comfort.",
         "EASY_CARE": "This product is easy to care for and maintain.",
         "FLEXIBILITY": "This product contains elastane, providing flexibility and freedom of movement.",
-        "REFLECTIVE_ZIPPER": "This product features a zipper with reflective elements for visibility in low light."
+        "REFLECTIVE_ZIPPER": "This product features a zipper with reflective elements for visibility in low light.",
+        "SHAPING_EFFECT": "This product offers a perfect fit that beautifully accentuates your figure."
       },
       "badge_titles": {
         "360_STRETCH": "360 STRETCH",
@@ -212,7 +213,8 @@
         "SOFT_FLEECE": "SOFT FLEECE",
         "EASY_CARE": "EASY CARE",
         "FLEXIBILITY": "FLEXIBILITY",
-        "REFLECTIVE_ZIPPER": "REFLECTIVE ZIPPER"
+        "REFLECTIVE_ZIPPER": "REFLECTIVE ZIPPER",
+        "SHAPING_EFFECT": "SHAPING EFFECT"
       },
       "weather_conditions": {
         "hot": "HOT",
