@@ -4159,7 +4159,7 @@ input[type="radio"], .field label, .quantity .minus svg,
   }
 }
 
-.klarna-background 
+.klarna-background {
   background-color: #FFB3C7;
   border: 2px solid white;
   border-radius: 5px;
